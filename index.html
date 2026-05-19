@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microeconomics Section 2 – Study Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --accent: #c0392b;
+    --gold: #d4a017;
+    --cream: #fdf6ec;
+    --soft: #f0e8d8;
+    --blue: #2471a3;
+    --green: #1a7a4a;
+    --muted: #7f8c8d;
+    --border: #d5c9b5;
+    --card-bg: #ffffff;
+    --keyword-bg: #fef9e7;
+    --trap-bg: #fdf2f2;
+    --exercise-bg: #f0f8f0;
+    --answer-bg: #eaf4fb;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 64px 48px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 80px);
+  }
+  .hero-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.15;
+    max-width: 700px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    margin-top: 20px;
+    color: #c8c8d8;
+    font-style: italic;
+    font-size: 15px;
+  }
+
+  /* NAV */
+  .toc {
+    background: var(--soft);
+    border-bottom: 2px solid var(--border);
+    padding: 24px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .toc a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .toc a:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+  /* MAIN LAYOUT */
+  main { max-width: 960px; margin: 0 auto; padding: 48px 32px 80px; }
+
+  /* CHAPTER */
+  .chapter {
+    margin-bottom: 72px;
+  }
+  .chapter-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .chapter-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 80px;
+  }
+  .chapter-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+  }
+  .chapter-title p {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* CONCEPT BLOCK */
+  .concept {
+    margin-bottom: 48px;
+  }
+  .concept-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .concept-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .concept-en {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .concept-body { margin-bottom: 16px; }
+  .concept-body p { margin-bottom: 10px; }
+  .concept-body strong { color: var(--accent); }
+
+  /* FORMULA BOX */
+  .formula {
+    background: var(--ink);
+    color: #e8e0d0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin: 16px 0;
+    border-left: 4px solid var(--gold);
+    line-height: 2;
+  }
+  .formula .label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  /* KEYWORDS */
+  .keywords {
+    background: var(--keyword-bg);
+    border: 1.5px solid var(--gold);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .keywords-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .kw-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .kw {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  /* TRAP / WARNING */
+  .trap {
+    background: var(--trap-bg);
+    border: 1.5px solid var(--accent);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .trap-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .trap ul { padding-left: 20px; }
+  .trap li { margin-bottom: 8px; font-size: 15px; }
+
+  /* EXERCISE */
+  .exercise {
+    background: var(--exercise-bg);
+    border: 1.5px solid var(--green);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .exercise-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .ex-q {
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .ex-en { color: var(--muted); font-style: italic; margin-bottom: 8px; }
+
+  /* ANSWER */
+  .answer {
+    background: var(--answer-bg);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin-top: 12px;
+  }
+  .answer-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .answer p { margin-bottom: 8px; font-size: 15px; }
+
+  /* TOGGLE */
+  details > summary {
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--blue);
+    user-select: none;
+    padding: 8px 0;
+    list-style: none;
+  }
+  details > summary::before { content: '▶ '; font-size: 10px; }
+  details[open] > summary::before { content: '▼ '; }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  th {
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:nth-child(even) td { background: var(--soft); }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  /* HIGHLIGHT */
+  .hl-gold { color: var(--gold); font-weight: 600; }
+  .hl-red { color: var(--accent); font-weight: 600; }
+  .hl-blue { color: var(--blue); font-weight: 600; }
+  .hl-green { color: var(--green); font-weight: 600; }
+
+  /* COMPARISON */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .compare-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .compare-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  .compare-card p { font-size: 14px; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 40px 24px 32px; }
+    .toc { padding: 16px 24px; }
+    main { padding: 32px 20px 60px; }
+    .compare { grid-template-columns: 1fr; }
+    .chapter-num { font-size: 40px; min-width: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-label">Microeconomics · Section 2 · OMIK 2026</div>
+  <h1>Consumer Behavior:<br><span>Budget Constraints</span> &amp; Preferences</h1>
+  <p class="hero-sub">Tài liệu học tập chuyên sâu — Kiến thức Tiếng Anh · Giải thích Tiếng Việt · Bài tập có lời giải</p>
+</header>
+
+<nav class="toc">
+  <a href="#overview">Tổng quan</a>
+  <a href="#budget">Budget Constraints</a>
+  <a href="#budget-line">Budget Line</a>
+  <a href="#income-change">Income Changes</a>
+  <a href="#price-change">Price Changes</a>
+  <a href="#preferences">Preferences</a>
+  <a href="#axioms">3 Axioms</a>
+  <a href="#ic">Indifference Curves</a>
+  <a href="#mrs">MRS</a>
+  <a href="#types">Perfect Sub/Comp</a>
+  <a href="#utility">Utility</a>
+  <a href="#mu">Marginal Utility</a>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- OVERVIEW -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="chapter" id="overview">
+  <div class="chapter-header">
+    <div class="chapter-num">00</div>
+    <div class="chapter-title">
+      <h2>Tổng quan: Theory of Consumer Behavior</h2>
+      <p>Lý thuyết hành vi người tiêu dùng — Khung phân tích 3 bước</p>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-title">Consumer Behavior Theory</div>
+    <div class="concept-en">DEFINITION IN ENGLISH</div>
+    <div class="concept-body">
+      <p><strong>Theory of consumer behavior</strong>: Description of how consumers allocate incomes among different goods and services to <strong>maximize their well-being</strong>.</p>
+      <p>Lý thuyết hành vi người tiêu dùng mô tả cách người tiêu dùng phân bổ thu nhập giữa các hàng hóa và dịch vụ khác nhau để <strong>tối đa hóa phúc lợi</strong> (sự thỏa mãn) của họ.</p>
+    </div>
+
+    <div class="formula">
+      <div class="label">3-Step Framework</div>
+      Step 1: Consumer Preferences  →  "Tôi thích cái gì?"<br>
+      Step 2: Budget Constraints    →  "Tôi có thể mua được gì?"<br>
+      Step 3: Consumer Choices      →  "Tôi sẽ chọn gì để tối ưu?"
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords cần nhớ</div>
+      <div class="kw-list">
+        <span class="kw">allocate income</span>
+        <span class="kw">maximize well-being</span>
+        <span class="kw">preferences</span>
+        <span class="kw">budget constraints</span>
+        <span class="kw">consumer choices</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Bẫy thường gặp</div>
+      <ul>
+        <li><strong>Nhầm thứ tự 3 bước:</strong> Preferences (sở thích) phân tích TRƯỚC budget (ngân sách). Sở thích là chủ quan, ngân sách mới là giới hạn khách quan. Tuy nhiên trong thực tế cả hai tương tác cùng lúc.</li>
+        <li><strong>"Maximize utility" ≠ "spend all money":</strong> Tối đa hóa tiện ích không có nghĩa là tiêu hết tiền (dù trong mô hình 1 kỳ thì thường vậy), mà là chọn rổ hàng tốt nhất trong giới hạn ngân sách.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 1: BUDGET CONSTRAINTS -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="chapter" id="budget">
+  <div class="chapter-header">
+    <div class="chapter-num">01</div>
+    <div class="chapter-title">
+      <h2>Budget Constraints</h2>
+      <p>Ràng buộc ngân sách</p>
+    </div>
+  </div>
+
+  <!-- CONCEPT: Budget Constraints Definition -->
+  <div class="concept" id="budget-line">
+    <div class="concept-title">Budget Constraints &amp; The Budget Line</div>
+    <div class="concept-en">RÀNG BUỘC NGÂN SÁCH VÀ ĐƯỜNG NGÂN SÁCH</div>
+    <div class="concept-body">
+      <p><strong>Budget Constraints:</strong> Constraints that consumers face as a result of <strong>limited incomes</strong>.</p>
+      <p>Ràng buộc ngân sách là giới hạn mà người tiêu dùng phải đối mặt vì thu nhập có hạn. Đây là thực tế hiển nhiên: bạn không thể mua mọi thứ bạn muốn vì túi tiền có giới hạn.</p>
+
+      <p><strong>The Budget Line:</strong> All combinations of goods for which the <strong>total amount of money spent equals income</strong>.</p>
+      <p>Đường ngân sách (budget line) là tập hợp tất cả các rổ hàng hóa mà người tiêu dùng có thể mua khi <strong>tiêu hết toàn bộ thu nhập</strong>. Đây là đường thẳng dốc xuống trên đồ thị.</p>
+    </div>
+
+    <div class="formula">
+      <div class="label">Budget Line Equation</div>
+      P<sub>F</sub> · F + P<sub>C</sub> · C = I<br><br>
+      Ví dụ cụ thể từ slide:<br>
+      $1 · F + $2 · C = $80<br>
+      → F + 2C = 80<br><br>
+      Intercepts (điểm chặn trục):<br>
+      F-axis: F = I/P<sub>F</sub> = 80/1 = 80 (nếu chỉ mua Food)<br>
+      C-axis: C = I/P<sub>C</sub> = 80/2 = 40 (nếu chỉ mua Clothing)
+    </div>
+
+    <table>
+      <tr><th>Market Basket</th><th>Food (F)</th><th>Clothing (C)</th><th>Total Spending</th></tr>
+      <tr><td>A</td><td>0</td><td>40</td><td>$80 ✓</td></tr>
+      <tr><td>B</td><td>20</td><td>30</td><td>$80 ✓</td></tr>
+      <tr><td>D</td><td>40</td><td>20</td><td>$80 ✓</td></tr>
+      <tr><td>E</td><td>60</td><td>10</td><td>$80 ✓</td></tr>
+      <tr><td>G</td><td>80</td><td>0</td><td>$80 ✓</td></tr>
+    </table>
+
+    <div class="formula">
+      <div class="label">Slope of Budget Line</div>
+      Slope = −P<sub>F</sub> / P<sub>C</sub> = −$1/$2 = −1/2<br><br>
+      Ý nghĩa kinh tế: Để mua thêm 1 đơn vị Food, phải từ bỏ 1/2 đơn vị Clothing.<br>
+      → Đây chính là "chi phí cơ hội" (opportunity cost) của Food tính bằng Clothing.
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords</div>
+      <div class="kw-list">
+        <span class="kw">P_F · F + P_C · C = I</span>
+        <span class="kw">slope = −P_F/P_C</span>
+        <span class="kw">intercept = I/P</span>
+        <span class="kw">opportunity cost</span>
+        <span class="kw">market basket</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Bẫy &amp; Nhầm lẫn thường gặp</div>
+      <ul>
+        <li><strong>Slope âm ≠ "xấu":</strong> Dốc âm phản ánh đánh đổi (trade-off) — để có thêm thứ này phải bỏ bớt thứ kia. Đây là quy luật kinh tế tự nhiên.</li>
+        <li><strong>Điểm DƯỚI đường ngân sách:</strong> Là "có thể mua được" nhưng chưa tiêu hết tiền. Trong mô hình tĩnh 1 kỳ, không tối ưu vì còn tiền dư. Điểm TRÊN đường ngân sách là "không thể mua được" (unattainable).</li>
+        <li><strong>Slope của budget line ≠ MRS:</strong> Slope của budget line = tỷ lệ giá (P_F/P_C), còn MRS là độ dốc của đường bàng quan (indifference curve) — hai khái niệm KHÁC NHAU, chỉ bằng nhau tại điểm tối ưu.</li>
+        <li><strong>Nhớ dấu âm:</strong> Slope = <em>−</em>P_F/P_C (không phải dương). Vì tăng F thì phải giảm C.</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title">✏️ Bài tập 1 — Budget Line</div>
+      <div class="ex-q">Thu nhập I = $120. Giá Pizza P_P = $3/cái, giá Soda P_S = $2/lon. Hãy: (a) Viết phương trình đường ngân sách. (b) Tìm các điểm chặn trục. (c) Tính slope và giải thích ý nghĩa kinh tế.</div>
+      <div class="ex-en">Income I = $120. Price of Pizza P_P = $3, Price of Soda P_S = $2. (a) Write the budget line equation. (b) Find the intercepts. (c) Calculate slope and explain economic meaning.</div>
+      <details>
+        <summary>Xem đáp án & giải thích</summary>
+        <div class="answer">
+          <div class="answer-title">Đáp án</div>
+          <p><strong>(a) Phương trình:</strong> 3P + 2S = 120</p>
+          <p><strong>(b) Điểm chặn:</strong></p>
+          <p>• Trục Pizza (S=0): P = 120/3 = <span class="hl-red">40 cái Pizza</span> (nếu chỉ mua Pizza)</p>
+          <p>• Trục Soda (P=0): S = 120/2 = <span class="hl-blue">60 lon Soda</span> (nếu chỉ mua Soda)</p>
+          <p><strong>(c) Slope:</strong> = −P_P/P_S = −3/2 = <span class="hl-red">−1.5</span></p>
+          <p><strong>Ý nghĩa kinh tế:</strong> Để mua thêm 1 cái Pizza, người tiêu dùng phải từ bỏ 1.5 lon Soda. Hay nói cách khác, chi phí cơ hội của 1 Pizza = 1.5 Soda. Đây phản ánh tỷ lệ giá trên thị trường — Pizza đắt hơn Soda 1.5 lần.</p>
+          <p><em>Economic insight: The slope doesn't reflect personal preferences — it's determined purely by market prices. Everyone faces the same budget line slope if facing the same prices.</em></p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- INCOME CHANGES -->
+  <div class="concept" id="income-change">
+    <div class="concept-title">Effects of Income Changes on Budget Line</div>
+    <div class="concept-en">TÁC ĐỘNG CỦA THAY ĐỔI THU NHẬP ĐẾN ĐƯỜNG NGÂN SÁCH</div>
+    <div class="concept-body">
+      <p>A change in income (with prices unchanged) causes the budget line to <strong>shift parallel</strong> to the original line.</p>
+      <p>Khi thu nhập thay đổi (giá cả không đổi), đường ngân sách <strong>dịch chuyển song song</strong>:</p>
+      <p>• <strong>Thu nhập tăng</strong> → đường ngân sách dịch ra ngoài (outward shift) → người tiêu dùng có thể mua nhiều hơn</p>
+      <p>• <strong>Thu nhập giảm</strong> → đường ngân sách dịch vào trong (inward shift) → sức mua giảm</p>
+      <p>Từ slide: I=$80 (L1) → I=$160 (L2, dịch ra) → I=$40 (L3, dịch vào)</p>
+    </div>
+
+    <div class="formula">
+      <div class="label">Tại sao song song?</div>
+      Slope = −P_F/P_C → Giá không đổi, nên slope không đổi<br>
+      Chỉ có intercepts thay đổi: I/P_F và I/P_C đều tăng/giảm cùng tỷ lệ<br>
+      → Đường mới song song với đường cũ ✓
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords</div>
+      <div class="kw-list">
+        <span class="kw">parallel shift</span>
+        <span class="kw">income increase → outward</span>
+        <span class="kw">income decrease → inward</span>
+        <span class="kw">slope unchanged</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Bẫy</div>
+      <ul>
+        <li><strong>Income thay đổi → PARALLEL shift (song song), không xoay.</strong> Ngược lại, giá thay đổi → ROTATE (xoay). Đây là câu hỏi trắc nghiệm rất hay bẫy!</li>
+        <li><strong>Proportional price change = income change:</strong> Nếu cả P_F và P_C đều tăng/giảm cùng tỷ lệ, tác động giống hệt thay đổi thu nhập theo chiều ngược lại — đường ngân sách dịch song song.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRICE CHANGES -->
+  <div class="concept" id="price-change">
+    <div class="concept-title">Effects of Price Changes on Budget Line</div>
+    <div class="concept-en">TÁC ĐỘNG CỦA THAY ĐỔI GIÁ ĐẾN ĐƯỜNG NGÂN SÁCH</div>
+    <div class="concept-body">
+      <p>A change in the price of one good (with income unchanged) causes the budget line to <strong>rotate</strong> about one intercept.</p>
+      <p>Khi giá của một hàng hóa thay đổi (thu nhập không đổi), đường ngân sách <strong>xoay quanh một điểm chặn trục</strong>:</p>
+      <p>• <strong>Giá Food giảm (P_F ↓):</strong> Intercept trên trục F = I/P_F tăng → đường xoay ra ngoài quanh intercept trục C</p>
+      <p>• <strong>Giá Food tăng (P_F ↑):</strong> Intercept trên trục F = I/P_F giảm → đường xoay vào trong quanh intercept trục C</p>
+      <p>Từ slide: P_F = $1 (L1), P_F giảm = $0.50 (L2 xoay ra), P_F tăng = $2 (L3 xoay vào)</p>
+    </div>
+
+    <div class="formula">
+      <div class="label">Tại sao xoay (ROTATE)?</div>
+      Intercept trục C = I/P_C → KHÔNG thay đổi (vì P_C, I không đổi)<br>
+      Intercept trục F = I/P_F → THAY ĐỔI (vì P_F thay đổi)<br>
+      Slope = −P_F/P_C → THAY ĐỔI<br>
+      → Một đầu cố định, một đầu di chuyển → XoAY (rotate) ✓
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords</div>
+      <div class="kw-list">
+        <span class="kw">rotate about one intercept</span>
+        <span class="kw">price decrease → rotate outward</span>
+        <span class="kw">price increase → rotate inward</span>
+        <span class="kw">slope changes</span>
+        <span class="kw">one intercept fixed</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Bẫy cực quan trọng</div>
+      <ul>
+        <li><strong>Income change → SHIFT (song song) | Price change → ROTATE (xoay)</strong> — Đây là câu phân biệt kinh điển trong đề thi.</li>
+        <li><strong>Xoay quanh điểm NÀO?</strong> Nếu P_F thay đổi, thì intercept trục C không đổi (vì I và P_C không đổi) → xoay quanh intercept trục C. Nhiều sinh viên nhầm chiều xoay.</li>
+        <li><strong>Giá giảm ≠ đường ngân sách dịch ra hoàn toàn:</strong> Chỉ một phần của đường thay đổi, điểm chặn kia cố định.</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title">✏️ Bài tập 2 — Income vs Price Change</div>
+      <div class="ex-q">I = $60, P_X = $2, P_Y = $3. Xét hai tình huống: (A) Thu nhập tăng lên $90. (B) Giá X giảm xuống $1. Mô tả sự thay đổi đường ngân sách trong mỗi tình huống và cho biết sự khác biệt.</div>
+      <details>
+        <summary>Xem đáp án & giải thích</summary>
+        <div class="answer">
+          <div class="answer-title">Đáp án</div>
+          <p><strong>Đường ngân sách ban đầu:</strong> 2X + 3Y = 60</p>
+          <p>• Intercept X: X = 30 &nbsp;|&nbsp; Intercept Y: Y = 20 &nbsp;|&nbsp; Slope = −2/3</p>
+
+          <p><strong>(A) Thu nhập tăng I = $90:</strong></p>
+          <p>Đường mới: 2X + 3Y = 90</p>
+          <p>• Intercept X = 45, Intercept Y = 30, Slope vẫn = −2/3</p>
+          <p>→ <span class="hl-green">Đường dịch SONG SONG ra ngoài</span> (parallel shift outward)</p>
+
+          <p><strong>(B) Giá X giảm P_X = $1:</strong></p>
+          <p>Đường mới: 1X + 3Y = 60</p>
+          <p>• Intercept X = 60 (tăng từ 30 lên 60)</p>
+          <p>• Intercept Y = 20 (không đổi!)</p>
+          <p>• Slope mới = −1/3 (thoải hơn)</p>
+          <p>→ <span class="hl-red">Đường XOAY ra ngoài quanh intercept Y = 20</span> (rotate outward about Y-intercept)</p>
+
+          <p><em>Key insight: In case (A), both intercepts increase proportionally. In case (B), only the X-intercept changes — the Y-intercept is "pinned" because nothing affecting the Y-axis changed.</em></p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 2: PREFERENCES -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="chapter" id="preferences">
+  <div class="chapter-header">
+    <div class="chapter-num">02</div>
+    <div class="chapter-title">
+      <h2>Consumer Preferences</h2>
+      <p>Sở thích người tiêu dùng</p>
+    </div>
+  </div>
+
+  <!-- 3 AXIOMS -->
+  <div class="concept" id="axioms">
+    <div class="concept-title">Three Basic Assumptions (Axioms) of Preferences</div>
+    <div class="concept-en">BA TIÊN ĐỀ CƠ BẢN CỦA SỞ THÍCH</div>
+    <div class="concept-body">
+      <p>Để xây dựng lý thuyết sở thích, kinh tế học giả định người tiêu dùng có sở thích thỏa mãn 3 tiên đề (axioms):</p>
+    </div>
+
+    <div style="background:var(--card-bg);border:1.5px solid var(--border);border-radius:8px;overflow:hidden;margin:16px 0;">
+      <div style="padding:16px 20px;border-bottom:1px solid var(--border);">
+        <h4 style="font-family:'Playfair Display',serif;color:var(--accent);margin-bottom:8px;">① Completeness (Tính đầy đủ)</h4>
+        <p style="font-size:15px;"><strong>EN:</strong> For any two market baskets A and B, a consumer will: prefer A to B, OR prefer B to A, OR be indifferent between the two.</p>
+        <p style="font-size:15px;margin-top:8px;"><strong>VI:</strong> Người tiêu dùng luôn có thể so sánh và xếp hạng MỌI cặp rổ hàng. Không có trường hợp "không biết chọn cái nào" trong mô hình này. Với bất kỳ A và B: hoặc A ≻ B, hoặc B ≻ A, hoặc A ~ B (bàng quan).</p>
+      </div>
+      <div style="padding:16px 20px;border-bottom:1px solid var(--border);">
+        <h4 style="font-family:'Playfair Display',serif;color:var(--accent);margin-bottom:8px;">② Transitivity (Tính bắc cầu)</h4>
+        <p style="font-size:15px;"><strong>EN:</strong> If a consumer prefers A to B and B to C, then the consumer also prefers A to C.</p>
+        <p style="font-size:15px;margin-top:8px;"><strong>VI:</strong> Nếu A ≻ B và B ≻ C thì A ≻ C. Đây là tính nhất quán trong sở thích — không có vòng lặp mâu thuẫn. Ví dụ: nếu thích Sushi hơn Phở, thích Phở hơn Cơm, thì phải thích Sushi hơn Cơm. Transitivity đảm bảo người tiêu dùng không đưa ra quyết định mâu thuẫn với bản thân.</p>
+      </div>
+      <div style="padding:16px 20px;">
+        <h4 style="font-family:'Playfair Display',serif;color:var(--accent);margin-bottom:8px;">③ More is Better (Không bão hòa / Tính phi bão hòa)</h4>
+        <p style="font-size:15px;"><strong>EN:</strong> Goods are desirable. Consumers always prefer more of any good to less. Consumers are never satiated.</p>
+        <p style="font-size:15px;margin-top:8px;"><strong>VI:</strong> Hàng hóa luôn là "tốt" (goods, không phải "bads"). Nhiều hơn luôn tốt hơn, dù chỉ tốt hơn một chút. Đây gọi là giả định "non-satiation". Trong thực tế có thể vi phạm (ví dụ: ăn quá nhiều gây khó chịu), nhưng trong mô hình cơ bản, giả định này được duy trì.</p>
+      </div>
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords</div>
+      <div class="kw-list">
+        <span class="kw">Completeness</span>
+        <span class="kw">Transitivity</span>
+        <span class="kw">Non-satiation</span>
+        <span class="kw">A ≻ B (A preferred to B)</span>
+        <span class="kw">A ~ B (indifferent)</span>
+        <span class="kw">rational consumer</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Bẫy về 3 Axioms</div>
+      <ul>
+        <li><strong>Completeness không có nghĩa là "thích tất cả mọi thứ như nhau":</strong> Chỉ có nghĩa là có thể so sánh và ra quyết định.</li>
+        <li><strong>Transitivity là điều kiện đủ cho sự nhất quán nhưng không phải điều kiện cần trong thực tế:</strong> Trong thực nghiệm (behavioral economics), con người đôi khi vi phạm transitivity — nhưng trong lý thuyết chuẩn tắc (normative theory), đây là giả định nền tảng.</li>
+        <li><strong>"More is better" áp dụng cho goods, không phải bads:</strong> "Bads" (như ô nhiễm, tiếng ồn) không áp dụng tiên đề này.</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title">✏️ Bài tập 3 — Kiểm tra Axioms</div>
+      <div class="ex-q">Cho biết sở thích của Nam: Bún bò ≻ Phở, Phở ~ Mì Quảng, Cơm ≻ Bún bò. Hỏi: (a) Sở thích có thỏa mãn Transitivity không? (b) Xếp hạng toàn bộ 4 món theo sở thích của Nam.</div>
+      <details>
+        <summary>Xem đáp án</summary>
+        <div class="answer">
+          <div class="answer-title">Đáp án</div>
+          <p><strong>(a) Kiểm tra Transitivity:</strong></p>
+          <p>• Bún bò ≻ Phở và Phở ~ Mì Quảng → Bún bò ≻ Mì Quảng ✓ (transitivity áp dụng cả với indifference)</p>
+          <p>• Cơm ≻ Bún bò và Bún bò ≻ Phở → Cơm ≻ Phở ✓</p>
+          <p>• Cơm ≻ Bún bò và Bún bò ≻ Mì Quảng → Cơm ≻ Mì Quảng ✓</p>
+          <p>→ <span class="hl-green">Có, thỏa mãn Transitivity.</span></p>
+
+          <p><strong>(b) Xếp hạng:</strong></p>
+          <p>Cơm ≻ Bún bò ≻ Phở ~ Mì Quảng</p>
+          <p><em>Note: Phở và Mì Quảng nằm cùng "indifference level" — trên cùng một đường bàng quan.</em></p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- INDIFFERENCE CURVES -->
+  <div class="concept" id="ic">
+    <div class="concept-title">Indifference Curves &amp; Indifference Maps</div>
+    <div class="concept-en">ĐƯỜNG BÀNG QUAN VÀ BẢN ĐỒ BÀNG QUAN</div>
+    <div class="concept-body">
+      <p><strong>Indifference Curve:</strong> Curve representing all combinations of market baskets that provide a consumer with the <strong>same level of satisfaction</strong>.</p>
+      <p>Đường bàng quan là tập hợp tất cả các rổ hàng mang lại <strong>cùng mức độ thỏa mãn</strong> cho người tiêu dùng. Người tiêu dùng "bàng quan" (indifferent) giữa bất kỳ hai điểm nào trên cùng một đường bàng quan.</p>
+
+      <p><strong>Indifference Map:</strong> A set of indifference curves showing all market baskets among which a consumer is indifferent — each curve representing a different utility level.</p>
+      <p>Bản đồ bàng quan là TẬP HỢP các đường bàng quan. Đường càng xa gốc tọa độ → mức thỏa mãn càng cao (do axiom "more is better"): U3 &gt; U2 &gt; U1.</p>
+    </div>
+
+    <div style="background:var(--card-bg);border:1.5px solid var(--border);border-radius:8px;padding:16px 20px;margin:16px 0;">
+      <h4 style="font-family:'Playfair Display',serif;margin-bottom:12px;">4 Tính chất của Indifference Curves</h4>
+      <p style="margin-bottom:8px;font-size:15px;"><strong>① Dốc xuống (Downward sloping):</strong> Do axiom "more is better" — để duy trì cùng mức utility, giảm X thì phải tăng Y.</p>
+      <p style="margin-bottom:8px;font-size:15px;"><strong>② Các đường bàng quan KHÔNG cắt nhau (Cannot intersect):</strong> Nếu cắt nhau → mâu thuẫn logic (vi phạm transitivity). Xem ví dụ slide 18.</p>
+      <p style="margin-bottom:8px;font-size:15px;"><strong>③ Lồi về phía gốc tọa độ (Convex to origin):</strong> Phản ánh MRS giảm dần — càng có nhiều X, càng sẵn sàng từ bỏ ít Y hơn để có thêm X.</p>
+      <p style="font-size:15px;"><strong>④ Đường càng xa gốc tọa độ → utility càng cao</strong> (do non-satiation axiom).</p>
+    </div>
+
+    <div class="formula">
+      <div class="label">Tại sao IC không được cắt nhau? (Proof by contradiction)</div>
+      Giả sử U1 và U2 cắt nhau tại điểm A.<br>
+      Gọi B ∈ U1 (không phải A), D ∈ U2 (không phải A), và B có nhiều cả X lẫn Y hơn D.<br><br>
+      • A ∈ U1 và B ∈ U1 → A ~ B (bàng quan trên cùng đường U1)<br>
+      • A ∈ U2 và D ∈ U2 → A ~ D (bàng quan trên cùng đường U2)<br>
+      • Transitivity: A ~ B và A ~ D → B ~ D<br>
+      • Nhưng B có nhiều hơn D → B ≻ D (more is better) → MÂU THUẪN! ✗<br>
+      → IC không thể cắt nhau (Q.E.D.)
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords</div>
+      <div class="kw-list">
+        <span class="kw">same utility level</span>
+        <span class="kw">downward sloping</span>
+        <span class="kw">cannot intersect</span>
+        <span class="kw">convex to origin</span>
+        <span class="kw">higher IC = higher utility</span>
+        <span class="kw">indifference map</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Bẫy về Indifference Curves</div>
+      <ul>
+        <li><strong>IC dốc xuống ≠ IC phải là đường thẳng:</strong> IC thông thường là đường cong lồi (convex), không phải thẳng. Đường thẳng chỉ xảy ra khi là Perfect Substitutes.</li>
+        <li><strong>"Bàng quan" không có nghĩa là "không có sở thích":</strong> Indifferent có nghĩa là bằng nhau về mức thỏa mãn — người tiêu dùng vẫn có sở thích rõ ràng giữa các đường bàng quan khác nhau.</li>
+        <li><strong>Đường bàng quan không bao giờ cắt nhau</strong> — đây là câu hỏi lý thuyết KINH ĐIỂN. Phải nhớ cả lý do tại sao (vi phạm transitivity + more is better).</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title">✏️ Bài tập 4 — Indifference Curve Logic</div>
+      <div class="ex-q">Tại sao đường bàng quan không thể có dốc dương (upward sloping)? Giải thích bằng cách sử dụng các axioms của sở thích.</div>
+      <details>
+        <summary>Xem đáp án</summary>
+        <div class="answer">
+          <div class="answer-title">Đáp án</div>
+          <p>Nếu IC có dốc dương, nghĩa là đi từ điểm A đến điểm B trên cùng IC, cả X và Y đều tăng.</p>
+          <p>Tuy nhiên, theo axiom <strong>"More is Better"</strong>: nếu B có nhiều X hơn VÀ nhiều Y hơn A, thì B ≻ A (B được ưa thích hơn A).</p>
+          <p>Nhưng nếu A và B cùng nằm trên một IC, theo định nghĩa: A ~ B (bàng quan).</p>
+          <p>Đây là mâu thuẫn: B ≻ A và A ~ B không thể đồng thời đúng.</p>
+          <p>→ <span class="hl-green">IC không thể có dốc dương. IC phải có dốc âm.</span></p>
+          <p><em>English version: An upward-sloping IC would imply a consumer is indifferent between a basket with less of everything and one with more of everything — violating the non-satiation axiom.</em></p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- MRS -->
+  <div class="concept" id="mrs">
+    <div class="concept-title">Marginal Rate of Substitution (MRS)</div>
+    <div class="concept-en">TỶ LỆ THAY THẾ BIÊN</div>
+    <div class="concept-body">
+      <p><strong>MRS:</strong> The maximum amount of one good that a consumer is willing to give up in order to obtain one additional unit of another good, <strong>while maintaining the same utility level</strong>.</p>
+      <p>MRS là lượng tối đa của hàng hóa Y mà người tiêu dùng sẵn sàng từ bỏ để có thêm 1 đơn vị hàng hóa X, <strong>trong khi giữ nguyên mức thỏa mãn</strong>. MRS chính là độ dốc tuyệt đối (absolute value of slope) của đường bàng quan tại một điểm.</p>
+    </div>
+
+    <div class="formula">
+      <div class="label">MRS Formula &amp; Relationship to Marginal Utility</div>
+      MRS_XY = −ΔY/ΔX (dọc theo đường bàng quan) = |slope of IC|<br><br>
+      Liên hệ với Marginal Utility:<br>
+      MRS_XY = MU_X / MU_Y<br><br>
+      Tại sao? Dọc theo IC, tổng thay đổi utility = 0:<br>
+      MU_X · ΔX + MU_Y · ΔY = 0<br>
+      → −ΔY/ΔX = MU_X / MU_Y = MRS ✓<br><br>
+      Từ slide: MRS = 6 (A→B), 4 (B→D), 2 (D→E), 1 (E→G) → giảm dần
+    </div>
+
+    <div class="concept-body">
+      <p><strong>Diminishing MRS (MRS giảm dần):</strong> As we move down along an IC (consuming more X, less Y), the MRS falls. This means the consumer is willing to give up less and less Y for each additional unit of X.</p>
+      <p>MRS giảm dần khi di chuyển xuống dọc theo đường bàng quan: Khi bạn có càng nhiều X, X trở nên ít khan hiếm hơn với bạn, nên bạn sẵn sàng đánh đổi ít Y hơn để có thêm X. Đây là cơ sở cho hình dạng <strong>lồi (convex)</strong> của đường bàng quan.</p>
+      <p><strong>Ví dụ trực quan:</strong> Nếu bạn có 1 cái áo và 10 cái quần, bạn sẵn sàng đổi nhiều quần để có thêm áo. Nhưng nếu bạn đã có 8 áo và 3 quần, bạn chỉ sẵn sàng đổi rất ít quần để có thêm áo nữa.</p>
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords</div>
+      <div class="kw-list">
+        <span class="kw">MRS = MU_X/MU_Y</span>
+        <span class="kw">|slope of IC|</span>
+        <span class="kw">same utility level</span>
+        <span class="kw">diminishing MRS</span>
+        <span class="kw">convex IC</span>
+        <span class="kw">willingness to trade</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Bẫy cực kỳ quan trọng về MRS</div>
+      <ul>
+        <li><strong>MRS ≠ Slope của budget line:</strong> MRS = MU_X/MU_Y (liên quan đến sở thích), còn slope của budget line = P_X/P_Y (liên quan đến giá thị trường). Chúng CHỈ bằng nhau tại điểm tối ưu của người tiêu dùng (consumer optimum).</li>
+        <li><strong>MRS_XY ≠ MRS_YX:</strong> MRS phụ thuộc vào thứ tự (directional). MRS_XY = MU_X/MU_Y là bạn từ bỏ Y để lấy X. MRS_YX = MU_Y/MU_X là nghịch đảo.</li>
+        <li><strong>MRS giảm dần → IC lồi:</strong> Đây là mối liên hệ nhân quả. Nếu MRS không giảm (hằng số), IC là đường thẳng (perfect substitutes).</li>
+        <li><strong>MRS chỉ đo tại một điểm trên IC</strong> — không phải toàn bộ đường. Dọc theo IC, MRS thay đổi liên tục.</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title">✏️ Bài tập 5 — Tính MRS</div>
+      <div class="ex-q">Cho hàm utility U = X · Y (Cobb-Douglas). Tại giỏ hàng A = (4, 6): (a) Tính MU_X và MU_Y. (b) Tính MRS_XY. (c) Nếu người tiêu dùng đang ở điểm A và muốn mua thêm 1 đơn vị X trong khi vẫn giữ nguyên utility, họ phải từ bỏ bao nhiêu Y?</div>
+      <details>
+        <summary>Xem đáp án</summary>
+        <div class="answer">
+          <div class="answer-title">Đáp án</div>
+          <p><strong>(a) Marginal Utilities tại (X=4, Y=6):</strong></p>
+          <p>MU_X = ∂U/∂X = Y = 6</p>
+          <p>MU_Y = ∂U/∂Y = X = 4</p>
+
+          <p><strong>(b) MRS_XY:</strong></p>
+          <p>MRS_XY = MU_X / MU_Y = 6/4 = <span class="hl-red">1.5</span></p>
+          <p>Ý nghĩa: Tại điểm (4, 6), người tiêu dùng sẵn sàng từ bỏ 1.5 đơn vị Y để có thêm 1 đơn vị X.</p>
+
+          <p><strong>(c) Từ bỏ bao nhiêu Y để lấy thêm 1 X?</strong></p>
+          <p>MRS_XY = 1.5 → từ bỏ <span class="hl-red">1.5 đơn vị Y</span> để có thêm 1 đơn vị X.</p>
+          <p>Kiểm tra: U ban đầu = 4 × 6 = 24. Sau khi thay đổi: (5) × (6 - 1.5) = 5 × 4.5 = 22.5 ≈ 24 (xấp xỉ vì MRS là biến thiên biên, chính xác hơn khi ΔX → 0)</p>
+          <p><em>Note for Cobb-Douglas U = X^a · Y^b: MRS = (a/b) · (Y/X). In this case a=b=1, so MRS = Y/X = 6/4 = 1.5. ✓</em></p>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- PERFECT SUBSTITUTES & COMPLEMENTS -->
+  <div class="concept" id="types">
+    <div class="concept-title">Perfect Substitutes &amp; Perfect Complements</div>
+    <div class="concept-en">THẾ PHẨM HOÀN HẢO VÀ HÀNG BỔ SUNG HOÀN HẢO</div>
+
+    <div class="compare">
+      <div class="compare-card">
+        <h4>Perfect Substitutes (Thế phẩm hoàn hảo)</h4>
+        <p><strong>Định nghĩa:</strong> Two goods for which the MRS is <em>constant</em> — the consumer is always willing to trade them at a fixed ratio.</p>
+        <p style="margin-top:8px;"><strong>Đặc điểm IC:</strong> Đường thẳng (straight lines), dốc âm hằng số.</p>
+        <p style="margin-top:8px;"><strong>Ví dụ (từ slide):</strong> Orange juice và Apple juice — Bob luôn bàng quan giữa 1 ly nước cam và 1 ly nước táo.</p>
+        <p style="margin-top:8px;"><strong>Ví dụ thực tế:</strong> Hai loại nước suối cùng nhãn hiệu, xăng RON 92 và RON 95 (với một số người).</p>
+      </div>
+      <div class="compare-card">
+        <h4>Perfect Complements (Hàng bổ sung hoàn hảo)</h4>
+        <p><strong>Định nghĩa:</strong> Two goods for which the MRS is 0 or infinite — they must be consumed together in fixed proportions.</p>
+        <p style="margin-top:8px;"><strong>Đặc điểm IC:</strong> Hình chữ L (right angles / L-shaped).</p>
+        <p style="margin-top:8px;"><strong>Ví dụ (từ slide):</strong> Giày trái và giày phải — thêm 1 giày trái khi đã có đủ cặp sẽ không tăng thêm utility.</p>
+        <p style="margin-top:8px;"><strong>Ví dụ thực tế:</strong> Bàn phím và chuột máy tính, cốc và đĩa cà phê.</p>
+      </div>
+    </div>
+
+    <div class="formula">
+      <div class="label">So sánh 3 loại Indifference Curves</div>
+      1. Perfect Substitutes:  IC là đường THẲNG, MRS = hằng số<br>
+         Utility: U = aX + bY (linear)<br><br>
+      2. Imperfect Substitutes (Normal case): IC là đường CONG LỒI, MRS giảm dần<br>
+         Utility: U = X^a · Y^b (Cobb-Douglas) — phổ biến nhất<br><br>
+      3. Perfect Complements: IC là hình CHỮ L, tiêu dùng theo tỷ lệ cố định<br>
+         Utility: U = min(aX, bY)
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords</div>
+      <div class="kw-list">
+        <span class="kw">constant MRS → straight IC</span>
+        <span class="kw">zero/infinite MRS → L-shaped IC</span>
+        <span class="kw">U = aX + bY</span>
+        <span class="kw">U = min(aX, bY)</span>
+        <span class="kw">fixed proportion</span>
+        <span class="kw">U = X^a · Y^b (normal)</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Nhận biết &amp; Phân biệt</div>
+      <ul>
+        <li><strong>Hình dạng IC → nhận diện loại hàng hóa:</strong> Thẳng = Perfect Sub, L-shape = Perfect Comp, Cong lồi = Imperfect sub (normal case).</li>
+        <li><strong>Perfect complements không có nghĩa là "phải mua cùng nhau"</strong> về mặt vật lý — mà là về mặt thỏa mãn, chúng chỉ hữu ích khi đi kèm nhau đúng tỷ lệ.</li>
+        <li><strong>Perfect substitutes: MRS hằng số ≠ bằng 1:</strong> Có thể MRS = 2 (sẵn sàng đổi 2 đơn vị Y để lấy 1 đơn vị X, mãi mãi như vậy).</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title">✏️ Bài tập 6 — Phân loại hàng hóa</div>
+      <div class="ex-q">Xác định loại quan hệ (Perfect Substitute / Perfect Complement / Normal) và dạng đường IC cho các cặp hàng sau: (a) Xăng từ cây xăng A và cây xăng B cùng loại. (b) Xe đạp và mũ bảo hiểm xe đạp (theo tỷ lệ 1:1). (c) Cà phê và trà (người dùng thích một trong hai nhưng không hoàn toàn giống nhau).</div>
+      <details>
+        <summary>Xem đáp án</summary>
+        <div class="answer">
+          <div class="answer-title">Đáp án</div>
+          <p><strong>(a) Xăng từ 2 cây xăng cùng loại:</strong> <span class="hl-red">Perfect Substitutes</span> — IC là đường thẳng, MRS = 1 (hằng số). Chất lượng hoàn toàn như nhau, người tiêu dùng hoàn toàn bàng quan.</p>
+          <p><strong>(b) Xe đạp và mũ bảo hiểm (tỷ lệ 1:1):</strong> <span class="hl-blue">Perfect Complements</span> — IC hình chữ L. Có 2 xe đạp và 1 mũ = có 1 xe và 1 mũ (về mặt thỏa mãn thực tế của việc đi xe). Điểm góc (kink point) tại tỷ lệ 1 xe : 1 mũ.</p>
+          <p><strong>(c) Cà phê và trà:</strong> <span class="hl-green">Imperfect Substitutes (Normal case)</span> — IC cong lồi với MRS giảm dần. Người dùng có sự ưa thích khác nhau nhưng sẵn sàng đánh đổi ở mức độ phụ thuộc vào lượng đang có.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CHAPTER 3: UTILITY -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="chapter" id="utility">
+  <div class="chapter-header">
+    <div class="chapter-num">03</div>
+    <div class="chapter-title">
+      <h2>Utility &amp; Marginal Utility</h2>
+      <p>Hàm tiện ích và tiện ích biên</p>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-title">Utility &amp; Utility Functions</div>
+    <div class="concept-en">TIỆN ÍCH VÀ HÀM TIỆN ÍCH</div>
+    <div class="concept-body">
+      <p><strong>Utility:</strong> Numerical score representing the satisfaction that a consumer gets from a given market basket.</p>
+      <p>Tiện ích (utility) là con số đo mức độ thỏa mãn mà người tiêu dùng nhận được từ một rổ hàng hóa. Đây là công cụ toán học để biểu diễn sở thích.</p>
+
+      <p><strong>Utility Function:</strong> Formula that assigns a level of utility to individual market baskets.</p>
+      <p>Hàm tiện ích gán một số cho mỗi rổ hàng. Quan trọng: chỉ cần thứ hạng (ordinal), không cần giá trị tuyệt đối (cardinal). Rổ A có U=100 và rổ B có U=50 chỉ có nghĩa là A được ưa thích hơn B, không phải A "gấp đôi tốt hơn" B.</p>
+    </div>
+
+    <div class="formula">
+      <div class="label">Cobb-Douglas Utility Function (Quan trọng nhất)</div>
+      U(F, C) = F · C  (ví dụ đơn giản từ slide)<br><br>
+      Dạng tổng quát:<br>
+      U(X, Y) = X^α · Y^β  (α, β > 0)<br><br>
+      Đây là hàm utility phổ biến nhất trong kinh tế vi mô vì:<br>
+      • Tạo ra IC cong lồi (thực tế)<br>
+      • Dễ tính MRS: MRS = (α/β) · (Y/X)<br>
+      • Dễ tối ưu hóa
+    </div>
+
+    <div class="concept-body">
+      <p><strong>Utility Functions và Indifference Curves:</strong> Mỗi giá trị U xác định một đường bàng quan. Ví dụ từ slide, U(F,C) = FC:</p>
+      <p>• U = 25: FC = 25 → đường IC thứ nhất</p>
+      <p>• U = 50: FC = 50 → đường IC thứ hai (xa gốc hơn)</p>
+      <p>• U = 100: FC = 100 → đường IC thứ ba (xa gốc nhất)</p>
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords</div>
+      <div class="kw-list">
+        <span class="kw">ordinal utility</span>
+        <span class="kw">cardinal utility</span>
+        <span class="kw">U = X^α · Y^β</span>
+        <span class="kw">Cobb-Douglas</span>
+        <span class="kw">utility function</span>
+        <span class="kw">monotonic transformation</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Ordinal vs Cardinal — Bẫy kinh điển</div>
+      <ul>
+        <li><strong>Utility chỉ có ý nghĩa ORDINAL (thứ hạng), không phải CARDINAL (giá trị tuyệt đối):</strong> U(A) = 100 &gt; U(B) = 50 chỉ nghĩa là A ≻ B. Không có nghĩa "A gấp đôi tốt hơn B". Không thể so sánh utility giữa các cá nhân khác nhau.</li>
+        <li><strong>Hai hàm utility khác nhau có thể biểu diễn cùng sở thích:</strong> U = XY và V = ln(X) + ln(Y) biểu diễn CÙNG sở thích (monotonic transformation). IC của chúng giống hệt nhau.</li>
+        <li><strong>Utility không phải "hạnh phúc" theo nghĩa tâm lý</strong> — đây là khái niệm toán học/kinh tế để mô hình hóa sở thích.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MARGINAL UTILITY -->
+  <div class="concept" id="mu">
+    <div class="concept-title">Marginal Utility (MU) &amp; Diminishing MU</div>
+    <div class="concept-en">TIỆN ÍCH BIÊN VÀ QUY LUẬT TIỆN ÍCH BIÊN GIẢM DẦN</div>
+    <div class="concept-body">
+      <p><strong>Marginal Utility:</strong> Additional satisfaction obtained from consuming <strong>one additional unit</strong> of a good.</p>
+      <p>Tiện ích biên là lượng thỏa mãn <strong>tăng thêm</strong> khi tiêu dùng thêm <strong>một đơn vị</strong> hàng hóa, trong khi giữ nguyên lượng tiêu dùng các hàng hóa khác.</p>
+
+      <p><strong>Diminishing Marginal Utility (Quy luật tiện ích biên giảm dần):</strong> As more of a good is consumed, the consumption of additional amounts will yield <strong>smaller and smaller additions to utility</strong>.</p>
+      <p>Khi tiêu dùng càng nhiều một hàng hóa, mỗi đơn vị thêm vào sẽ mang lại mức tăng thỏa mãn ngày càng ít hơn. Đây là quy luật tâm lý-kinh tế phổ quát.</p>
+    </div>
+
+    <div class="formula">
+      <div class="label">Marginal Utility Formula</div>
+      MU_X = ΔU / ΔX = ∂U/∂X (đạo hàm riêng)<br><br>
+      Ví dụ với U = X · Y:<br>
+      MU_X = ∂(XY)/∂X = Y<br>
+      MU_Y = ∂(XY)/∂Y = X<br><br>
+      Diminishing MU: Khi X tăng (Y cố định), MU_X = Y không đổi trong trường hợp này.<br>
+      Nhưng với U = X^0.5 · Y^0.5:<br>
+      MU_X = 0.5 · X^(-0.5) · Y^0.5 = 0.5·√(Y/X) → giảm khi X tăng ✓
+    </div>
+
+    <div class="concept-body">
+      <p><strong>Ví dụ trực quan về Diminishing MU:</strong></p>
+      <p>Bạn đang rất khát. Ly nước đầu tiên: MU rất cao. Ly thứ hai: MU cao. Ly thứ ba: MU trung bình. Ly thứ tư: MU thấp. Ly thứ mười: MU gần bằng 0 (thậm chí âm nếu bị ép uống). Đây chính là quy luật tiện ích biên giảm dần trong thực tế.</p>
+
+      <p><strong>Liên hệ MU với MRS:</strong></p>
+    </div>
+
+    <div class="formula">
+      <div class="label">MRS = MU_X / MU_Y — Chứng minh</div>
+      Dọc theo IC, utility không đổi: dU = 0<br>
+      dU = MU_X · dX + MU_Y · dY = 0<br>
+      → MU_X · dX = −MU_Y · dY<br>
+      → −dY/dX = MU_X / MU_Y<br>
+      → MRS_XY = MU_X / MU_Y ✓<br><br>
+      Ý nghĩa: MRS phản ánh tỷ lệ giá trị biên của hai hàng hóa theo đánh giá chủ quan của người tiêu dùng.
+    </div>
+
+    <div class="keywords">
+      <div class="keywords-title">🔑 Keywords</div>
+      <div class="kw-list">
+        <span class="kw">MU = ∂U/∂X</span>
+        <span class="kw">diminishing MU</span>
+        <span class="kw">MRS = MU_X/MU_Y</span>
+        <span class="kw">additional unit</span>
+        <span class="kw">MU generally positive</span>
+        <span class="kw">MU decreases with consumption</span>
+      </div>
+    </div>
+
+    <div class="trap">
+      <div class="trap-title">⚠️ Bẫy về MU</div>
+      <ul>
+        <li><strong>MU giảm ≠ tổng utility giảm:</strong> Khi ăn thêm bánh, MU của mỗi cái bánh thêm giảm dần, nhưng tổng utility vẫn TĂNG (chỉ tăng chậm hơn). Tổng utility chỉ giảm khi MU âm.</li>
+        <li><strong>MU giảm dần ≠ MU âm:</strong> Trong mô hình cơ bản, MU luôn dương (goods, not bads). MU có thể tiến về 0 nhưng không âm.</li>
+        <li><strong>Diminishing MU ≠ Diminishing MRS:</strong> Đây là hai khái niệm khác nhau! Diminishing MRS (MRS giảm dọc IC) → IC convex. Diminishing MU là về mỗi hàng hóa riêng lẻ. MRS giảm dần không đòi hỏi MU của mỗi hàng phải giảm riêng lẻ.</li>
+      </ul>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title">✏️ Bài tập 7 — Tổng hợp: MU, MRS, Budget Line</div>
+      <div class="ex-q">Lan có thu nhập I = $100. Giá sách P_B = $10, giá cà phê P_C = $5. Hàm utility U = B · C. Tại giỏ hàng hiện tại: B = 5, C = 10. (a) Tính MU_B và MU_C. (b) Tính MRS_BC. (c) Tính −P_B/P_C (slope budget line). (d) So sánh MRS và −P_B/P_C. Lan có đang tối ưu không? Nếu không, Lan nên thay đổi như thế nào?</div>
+      <details>
+        <summary>Xem đáp án & giải thích</summary>
+        <div class="answer">
+          <div class="answer-title">Đáp án toàn diện</div>
+          <p><strong>(a) Marginal Utilities tại (B=5, C=10):</strong></p>
+          <p>MU_B = ∂(B·C)/∂B = C = <span class="hl-blue">10</span></p>
+          <p>MU_C = ∂(B·C)/∂C = B = <span class="hl-blue">5</span></p>
+
+          <p><strong>(b) MRS_BC = MU_B / MU_C = 10/5 = <span class="hl-red">2</span></strong></p>
+          <p>Ý nghĩa: Tại (5, 10), Lan sẵn sàng từ bỏ 2 cốc cà phê để có thêm 1 cuốn sách.</p>
+
+          <p><strong>(c) Slope của Budget Line = −P_B / P_C = −10/5 = <span class="hl-green">−2</span></strong></p>
+          <p>Hay |slope| = P_B/P_C = 2. Ý nghĩa: Thị trường đòi bỏ 2 cốc cà phê để mua 1 cuốn sách.</p>
+
+          <p><strong>(d) So sánh:</strong></p>
+          <p>MRS = 2 = P_B/P_C = 2 → <span class="hl-green">MRS = −Slope của Budget Line</span></p>
+          <p>→ <strong>Lan ĐANG TỐI ƯU!</strong> Điều kiện tối ưu của người tiêu dùng: MRS = P_X/P_Y</p>
+          <p><em>Kiểm tra: 10×5 + 5×10 = 50 + 50 = $100 = I ✓ (Lan tiêu hết ngân sách)</em></p>
+          <p><em>Consumer Optimum condition: MRS_XY = P_X/P_Y — điều kiện này sẽ được học kỹ hơn trong Chapter về Consumer Choice (Section 3).</em></p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY TABLE -->
+<section class="chapter">
+  <div class="chapter-header">
+    <div class="chapter-num">∑</div>
+    <div class="chapter-title">
+      <h2>Bảng tóm tắt toàn bộ kiến thức</h2>
+      <p>Quick Reference Table — Section 2</p>
+    </div>
+  </div>
+
+  <table>
+    <tr>
+      <th>Khái niệm</th>
+      <th>Tiếng Anh</th>
+      <th>Công thức / Đặc điểm</th>
+      <th>Bẫy chính</th>
+    </tr>
+    <tr>
+      <td><strong>Đường ngân sách</strong></td>
+      <td>Budget Line</td>
+      <td>P_X·X + P_Y·Y = I; Slope = −P_X/P_Y</td>
+      <td>Slope âm là đặc trưng, không phải bất thường</td>
+    </tr>
+    <tr>
+      <td><strong>Thu nhập thay đổi</strong></td>
+      <td>Income Change</td>
+      <td>Dịch SONG SONG (parallel shift)</td>
+      <td>Không xoay! Giá không đổi → slope không đổi</td>
+    </tr>
+    <tr>
+      <td><strong>Giá thay đổi</strong></td>
+      <td>Price Change</td>
+      <td>XOAY quanh một intercept (rotate)</td>
+      <td>Intercept kia CỐ ĐỊNH; slope thay đổi</td>
+    </tr>
+    <tr>
+      <td><strong>3 Tiên đề</strong></td>
+      <td>Completeness, Transitivity, More is Better</td>
+      <td>Nền tảng cho rational consumer</td>
+      <td>Là giả định lý thuyết, thực tế có thể vi phạm</td>
+    </tr>
+    <tr>
+      <td><strong>Đường bàng quan</strong></td>
+      <td>Indifference Curve</td>
+      <td>Dốc âm, lồi, không cắt nhau</td>
+      <td>IC không cắt → vi phạm transitivity + more is better</td>
+    </tr>
+    <tr>
+      <td><strong>Tỷ lệ thay thế biên</strong></td>
+      <td>MRS</td>
+      <td>MRS = MU_X/MU_Y = |slope of IC|</td>
+      <td>MRS ≠ slope BL; chỉ bằng nhau tại điểm tối ưu</td>
+    </tr>
+    <tr>
+      <td><strong>MRS giảm dần</strong></td>
+      <td>Diminishing MRS</td>
+      <td>Dọc IC xuống, MRS giảm → IC lồi</td>
+      <td>MRS giảm ≠ MU giảm (khác nhau!)</td>
+    </tr>
+    <tr>
+      <td><strong>Thế phẩm hoàn hảo</strong></td>
+      <td>Perfect Substitutes</td>
+      <td>MRS = hằng số, IC thẳng, U = aX + bY</td>
+      <td>Hằng số ≠ nhất thiết = 1</td>
+    </tr>
+    <tr>
+      <td><strong>Hàng bổ sung hoàn hảo</strong></td>
+      <td>Perfect Complements</td>
+      <td>IC hình L, U = min(aX, bY)</td>
+      <td>Thêm 1 mặt hàng mà thiếu mặt kia → utility không tăng</td>
+    </tr>
+    <tr>
+      <td><strong>Hàm tiện ích</strong></td>
+      <td>Utility Function</td>
+      <td>U = X^α · Y^β (Cobb-Douglas)</td>
+      <td>Chỉ ordinal, không cardinal; monotonic transform không đổi sở thích</td>
+    </tr>
+    <tr>
+      <td><strong>Tiện ích biên</strong></td>
+      <td>Marginal Utility</td>
+      <td>MU_X = ∂U/∂X; thường dương và giảm dần</td>
+      <td>MU giảm ≠ total utility giảm</td>
+    </tr>
+  </table>
+
+  <div style="background:var(--ink);color:#e8e0d0;border-radius:8px;padding:24px 28px;margin-top:32px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:16px;">🎯 ĐIỀU KIỆN TỐI ƯU — PREVIEW CHO SECTION 3</div>
+    <p style="font-size:15px;line-height:1.9;">
+      Người tiêu dùng tối ưu hóa khi:<br>
+      <strong style="color:var(--gold);">MRS_XY = P_X / P_Y</strong><br><br>
+      Tức là: Tỷ lệ sẵn sàng đánh đổi chủ quan (MRS) = Tỷ lệ giá thị trường (P_X/P_Y)<br>
+      KẾT HỢP với: P_X · X + P_Y · Y = I (tiêu hết ngân sách)<br><br>
+      Đây là nền tảng của toàn bộ lý thuyết lựa chọn người tiêu dùng. Phần này sẽ được đào sâu trong Section 3.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:var(--ink);color:#888;text-align:center;padding:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1px;">
+  OMIK 2026 · Section 2 · Consumer Behavior · Study Guide — Compiled for deep understanding
+</footer>
+
+</body>
+</html>
