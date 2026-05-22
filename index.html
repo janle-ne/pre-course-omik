@@ -3437,3 +3437,34 @@
         <div class="label">Hình dạng Backward-Bending</div>
         Mức lương THẤP:<br>
         \( SE > IE \implies w \uparrow \implies L \uparrow \)Tôi không được lập trình để hỗ trợ việc đó.
+    </div>
+  </main>
+</div>
+
+<script>
+function openSection(evt, sectionId) {
+  // Remove 'active' class from all section-content divs
+  var sections = document.getElementsByClassName("section-content");
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].classList.remove("active");
+  }
+  
+  // Add 'active' class to the clicked section
+  document.getElementById(sectionId).classList.add("active");
+  
+  // Remove 'active' class from all tab buttons
+  var tabBtns = document.getElementsByClassName("tab-btn");
+  for (var i = 0; i < tabBtns.length; i++) {
+    tabBtns[i].classList.remove("active");
+  }
+  
+  // Add 'active' class to the clicked button
+  evt.currentTarget.classList.add("active");
+  
+  // Smooth scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
