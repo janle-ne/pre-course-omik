@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Microeconomics Study Guide – OMIK</title>
-
 <script>
   MathJax = {
     tex: {
@@ -279,6 +278,7 @@
   <button class="tab-btn active" onclick="openSection(event, 'section1')">Section 1: Cung Cầu & Độ co giãn</button>
   <button class="tab-btn" onclick="openSection(event, 'section2')">Section 2: Hành vi người tiêu dùng</button>
   <button class="tab-btn" onclick="openSection(event, 'section3')">Section 3: Lựa chọn & Tối ưu</button>
+  <button class="tab-btn" onclick="openSection(event, 'section4')">Section 4: Market & Time</button>
 </div>
 
 <!-- ========================================== -->
@@ -1327,7 +1327,7 @@
 
         <div class="formula">
           <div class="label">Budget Line Equation</div>
-          \[ P_F \cdot F + P_C \cdot C = I \]
+          \[ P_F \cdot F + P_C \cdot C = I \]<br>
           Ví dụ cụ thể từ slide:<br>
           \( \$1 \cdot F + \$2 \cdot C = \$80 \)<br>
           \( \rightarrow F + 2C = 80 \)<br><br>
@@ -1347,7 +1347,7 @@
 
         <div class="formula">
           <div class="label">Slope of Budget Line</div>
-          \[ \text{Slope} = -\frac{P_F}{P_C} = -\frac{1}{2} \]
+          \[ \text{Slope} = -\frac{P_F}{P_C} = -\frac{1}{2} \]<br>
           Ý nghĩa kinh tế: Để mua thêm 1 đơn vị Food, phải từ bỏ 1/2 đơn vị Clothing.<br>
           → Đây chính là "chi phí cơ hội" (opportunity cost) của Food tính bằng Clothing.
         </div>
@@ -1678,9 +1678,9 @@
 
         <div class="formula">
           <div class="label">MRS Formula &amp; Relationship to Marginal Utility</div>
-          \[ \text{MRS}_{XY} = -\frac{\Delta Y}{\Delta X} = |\text{slope of IC}| \]
+          \[ \text{MRS}_{XY} = -\frac{\Delta Y}{\Delta X} = |\text{slope of IC}| \]<br>
           Liên hệ với Marginal Utility:<br>
-          \[ \text{MRS}_{XY} = \frac{MU_X}{MU_Y} \]
+          \[ \text{MRS}_{XY} = \frac{MU_X}{MU_Y} \]<br>
           Tại sao? Dọc theo IC, tổng thay đổi utility = 0:<br>
           \( MU_X \cdot \Delta X + MU_Y \cdot \Delta Y = 0 \)<br>
           → \( -\frac{\Delta Y}{\Delta X} = \frac{MU_X}{MU_Y} = \text{MRS}_{XY} \) ✓<br><br>
@@ -1831,7 +1831,7 @@
           <div class="label">Cobb-Douglas Utility Function (Quan trọng nhất)</div>
           \( U(F, C) = F \cdot C \) (ví dụ đơn giản từ slide)<br><br>
           Dạng tổng quát:<br>
-          \[ U(X, Y) = X^\alpha \cdot Y^\beta \quad (\alpha, \beta > 0) \]
+          \[ U(X, Y) = X^\alpha \cdot Y^\beta \quad (\alpha, \beta > 0) \]<br>
           Đây là hàm utility phổ biến nhất trong kinh tế vi mô vì:<br>
           • Tạo ra IC cong lồi (thực tế)<br>
           • Dễ tính MRS: \( \text{MRS}_{XY} = \frac{\alpha}{\beta} \cdot \frac{Y}{X} \)<br>
@@ -1882,7 +1882,7 @@
 
         <div class="formula">
           <div class="label">Marginal Utility Formula</div>
-          \[ MU_X = \frac{\Delta U}{\Delta X} = \frac{\partial U}{\partial X} \]
+          \[ MU_X = \frac{\Delta U}{\Delta X} = \frac{\partial U}{\partial X} \]<br>
           Ví dụ với \( U = X \cdot Y \):<br>
           \( MU_X = \frac{\partial(XY)}{\partial X} = Y \)<br>
           \( MU_Y = \frac{\partial(XY)}{\partial Y} = X \)<br><br>
@@ -1899,10 +1899,10 @@
         <div class="formula">
           <div class="label">MRS = MU_X / MU_Y — Chứng minh</div>
           Dọc theo IC, utility không đổi: \( dU = 0 \)<br>
-          \[ dU = MU_X \cdot dX + MU_Y \cdot dY = 0 \]
-          \[ MU_X \cdot dX = -MU_Y \cdot dY \]
-          \[ -\frac{dY}{dX} = \frac{MU_X}{MU_Y} \]
-          \[ \text{MRS}_{XY} = \frac{MU_X}{MU_Y} \text{ ✓} \]
+          \[ dU = MU_X \cdot dX + MU_Y \cdot dY = 0 \]<br>
+          \[ MU_X \cdot dX = -MU_Y \cdot dY \]<br>
+          \[ -\frac{dY}{dX} = \frac{MU_X}{MU_Y} \]<br>
+          \[ \text{MRS}_{XY} = \frac{MU_X}{MU_Y} \text{ ✓} \]<br>
           Ý nghĩa: MRS phản ánh tỷ lệ giá trị biên của hai hàng hóa theo đánh giá chủ quan của người tiêu dùng.
         </div>
 
@@ -3040,29 +3040,400 @@
   </main>
 </div>
 
-<footer style="background:var(--ink);color:#888;text-align:center;padding:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1px;margin-top: 40px;">
-  OMIK 2026 · Microeconomics Comprehensive Guide — VGU
-</footer>
+<!-- ========================================== -->
+<!-- SECTION 4 -->
+<!-- ========================================== -->
+<div id="section4" class="section-content">
+  <nav class="toc">
+    <a href="#market">Market Demand</a>
+    <a href="#horizontal">Horizontal Sum</a>
+    <a href="#elasticity">Price Elasticity</a>
+    <a href="#cs">Consumer Surplus</a>
+    <a href="#ps4">Problem Set 4</a>
+    <a href="#worklei">Work-Leisure</a>
+    <a href="#backward">Backward-Bending</a>
+    <a href="#inter">Intertemporal</a>
+    <a href="#inter-opt">Intertemporal Optimum</a>
+    <a href="#summary-s4">Summary</a>
+  </nav>
+  
+  <main>
+  
+  <!-- ═══ CHAPTER 1: MARKET DEMAND ═══ -->
+  <section class="chapter" id="market">
+    <div class="chapter-header">
+      <div class="chapter-num">01</div>
+      <div class="chapter-title">
+        <h2>Market Demand — Cầu thị trường</h2>
+        <p>From Individual to Market Demand · Horizontal Summation · Elasticity · Consumer Surplus</p>
+      </div>
+    </div>
+  
+    <div class="concept" id="horizontal">
+      <div class="concept-title">Market Demand Curve &amp; Horizontal Summation</div>
+      <div class="concept-en">ĐƯỜNG CẦU THỊ TRƯỜNG VÀ PHƯƠNG PHÁP CỘNG NGANG</div>
 
-<script>
-  function openSection(evt, sectionName) {
-    var i, sectionContent, tabLinks;
-    sectionContent = document.getElementsByClassName("section-content");
-    for (i = 0; i < sectionContent.length; i++) {
-      sectionContent[i].classList.remove("active");
-    }
+      <!-- ĐỒ THỊ 1: HORIZONTAL SUMMATION -->
+      <svg class="svg-chart" viewBox="0 0 400 250" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="40" y1="210" x2="380" y2="210" stroke="#7f8c8d" stroke-width="2"/>
+        <line x1="40" y1="20" x2="40" y2="210" stroke="#7f8c8d" stroke-width="2"/>
+        <text x="360" y="225" class="axis-label">Quantity</text>
+        <text x="10" y="15" class="axis-label">Price</text>
 
-    tabLinks = document.getElementsByClassName("tab-btn");
-    for (i = 0; i < tabLinks.length; i++) {
-      tabLinks[i].classList.remove("active");
-    }
+        <!-- Labels -->
+        <text x="25" y="55" class="axis-label">$5</text>
+        <text x="25" y="85" class="axis-label">$4</text>
+        <line x1="35" y1="50" x2="45" y2="50" stroke="#7f8c8d"/>
+        <line x1="35" y1="80" x2="45" y2="80" stroke="#7f8c8d"/>
 
-    document.getElementById(sectionName).classList.add("active");
-    evt.currentTarget.classList.add("active");
-    
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
+        <!-- D_Nam (P=4 to Q=12) -->
+        <line x1="40" y1="80" x2="160" y2="210" stroke="#2471a3" stroke-width="2" stroke-dasharray="5"/>
+        <text x="145" y="225" fill="#2471a3" font-size="11px">Nam</text>
 
-</body>
-</html>
+        <!-- D_Lan (P=5 to Q=20) -->
+        <line x1="40" y1="50" x2="240" y2="210" stroke="#1a7a4a" stroke-width="2" stroke-dasharray="5"/>
+        <text x="230" y="225" fill="#1a7a4a" font-size="11px">Lan</text>
+
+        <!-- Market Demand (Kinked) -->
+        <path d="M 40,50 L 80,80 L 360,210" fill="none" stroke="#c0392b" stroke-width="3"/>
+        <text x="330" y="225" fill="#c0392b" font-weight="bold" font-size="11px">Market</text>
+
+        <!-- Kink Point indicator -->
+        <circle cx="80" cy="80" r="5" fill="#1a1a2e"/>
+        <text x="90" y="75" font-weight="bold" font-size="11px">Kink Point</text>
+        <line x1="40" y1="80" x2="80" y2="80" stroke="#1a1a2e" stroke-dasharray="3"/>
+      </svg>
+
+      <div class="concept-body">
+        <p><strong>Market Demand Curve:</strong> Curve relating the quantity of a good that <em>all consumers</em> in a market will buy to its price.</p>
+        <p>Đường cầu thị trường là đường biểu diễn tổng lượng hàng hóa mà <em>tất cả người tiêu dùng</em> trên thị trường muốn mua ở mỗi mức giá. Đây là tổng hợp (aggregation) của tất cả các đường cầu cá nhân.</p>
+        <p><strong>Horizontal Summation (Cộng ngang):</strong> Tại mỗi mức giá, cộng lượng cầu của tất cả người tiêu dùng lại. <em>Lưu ý: cộng theo chiều ngang (lượng Q), không phải chiều dọc (giá P).</em></p>
+      </div>
+      <div class="formula">
+        <div class="label">Horizontal Summation — Công thức tổng quát</div>
+        \[ Q_{\text{market}}(P) = Q_A(P) + Q_B(P) + Q_C(P) + \dots + Q_n(P) \]<br>
+        Ví dụ từ slide (3 người tiêu dùng A, B, C):<br>
+        Tại P = $1: \( Q_{\text{market}} = 6 + 10 + 16 = 32 \)<br>
+        Tại P = $2: \( Q_{\text{market}} = 4 + 8  + 13 = 25 \)<br>
+        Tại P = $3: \( Q_{\text{market}} = 2 + 6  + 10 = 18 \)<br>
+        Tại P = $4: \( Q_{\text{market}} = 0 + 4  + 7  = 11 \)<br>
+        Tại P = $5: \( Q_{\text{market}} = 0 + 2  + 4  = 6 \)<br><br>
+        Chú ý: Khi \( P > P_{\text{choke}} \) của A (P > $3), A rời thị trường → \( Q_A = 0 \).
+      </div>
+      <div class="concept-body">
+        <p><strong>Quan trọng — "Kink" trong đường cầu thị trường:</strong> Khi giá tăng vượt qua "choke price" của một số người tiêu dùng (giá mà tại đó Q cá nhân = 0), đường cầu thị trường sẽ có điểm <strong>gãy khúc (kink)</strong>. Ở giá thấp, nhiều người tham gia → đường cầu thoải hơn. Ở giá cao, ít người tham gia → đường cầu dốc hơn.</p>
+        <p><strong>Hai đặc điểm quan trọng của Market Demand (từ slide):</strong></p>
+        <p>① Đường cầu thị trường dịch sang phải khi có thêm người tiêu dùng vào thị trường.</p>
+        <p>② Các yếu tố ảnh hưởng đến nhiều người tiêu dùng cùng lúc sẽ ảnh hưởng đến cầu thị trường (thu nhập, giá hàng liên quan, thị hiếu xã hội, kỳ vọng...).</p>
+      </div>
+      <div class="formula">
+        <div class="label">Cách viết Market Demand từ các hàm cầu cá nhân</div>
+        Ví dụ: \( D_A: Q_A = 10 - 2P \) (choke price \( P_A = 5 \))<br>
+        \( D_B: Q_B = 14 - 2P \) (choke price \( P_B = 7 \))<br><br>
+        Khi \( P \le 5 \): Cả A và B tham gia:<br>
+        \[ Q_{\text{market}} = Q_A + Q_B = (10 - 2P) + (14 - 2P) = 24 - 4P \]<br>
+        Khi \( 5 < P \le 7 \): Chỉ B tham gia (A rời thị trường):<br>
+        \[ Q_{\text{market}} = Q_B = 14 - 2P \]<br>
+        Khi \( P > 7 \): Không ai mua → \( Q_{\text{market}} = 0 \)<br><br>
+        → Đường cầu thị trường có KINK tại P = 5
+      </div>
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords</div>
+        <div class="kw-list">
+          <span class="kw">horizontal summation</span>
+          <span class="kw">sum quantities at each price</span>
+          <span class="kw">choke price</span>
+          <span class="kw">kink in demand</span>
+          <span class="kw">market entry/exit</span>
+          <span class="kw">aggregate demand</span>
+          <span class="kw">shift vs movement</span>
+        </div>
+      </div>
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy &amp; Nhầm lẫn</div>
+        <ul>
+          <li><strong>Cộng ngang ≠ cộng dọc:</strong> Market demand = cộng LƯỢNG (Q) tại cùng một giá. KHÔNG cộng giá. Ví dụ: tại P=$3, \( Q_{\text{market}} = Q_A + Q_B + Q_C = 2+6+10 = 18 \).</li>
+          <li><strong>Khi P > choke price của ai đó: Q của người đó = 0, không âm:</strong> Lượng cầu không thể âm. Khi viết hàm tổng, phải kiểm tra phạm vi giá.</li>
+          <li><strong>Dịch chuyển đường cầu (shift) ≠ di chuyển dọc đường cầu (movement along):</strong> Thay đổi giá → movement along. Thay đổi thu nhập → shift. Thêm người → shift phải.</li>
+          <li><strong>Market demand curve slope phụ thuộc vào số người tham gia:</strong> Slope thay đổi ở chỗ kink — không phải đường thẳng hoàn toàn nếu người tiêu dùng có choke prices khác nhau.</li>
+        </ul>
+      </div>
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập 1 — Tổng hợp Market Demand</div>
+        <div class="ex-q">Hai người tiêu dùng Nam và Lan có hàm cầu:<br>
+        Nam: \( Q_N = 12 - 3P \) (khi \( P \le 4 \), nếu không \( Q_N = 0 \))<br>
+        Lan: \( Q_L = 20 - 4P \) (khi \( P \le 5 \), nếu không \( Q_L = 0 \))<br>
+        (a) Viết hàm Market Demand theo từng đoạn giá. (b) Tính \( Q_{\text{market}} \) tại \( P = \$3 \). (c) Vẽ mô tả hình dạng đường cầu thị trường.</div>
+        <details><summary>Xem đáp án chi tiết</summary>
+          <div class="answer">
+            <div class="answer-title">Đáp án</div>
+            <p><strong>(a) Market Demand theo từng đoạn:</strong></p>
+            <p>Choke price Nam: \( Q_N = 0 \implies 12 - 3P = 0 \implies \) <span class="hl-blue">\( P_N = 4 \)</span></p>
+            <p>Choke price Lan: \( Q_L = 0 \implies 20 - 4P = 0 \implies \) <span class="hl-blue">\( P_L = 5 \)</span></p>
+            <p>Khi \( P \le 4 \): Cả hai tham gia → \( Q = Q_N + Q_L = (12-3P) + (20-4P) = \) <span class="hl-red">\( 32 - 7P \)</span></p>
+            <p>Khi \( 4 < P \le 5 \): Chỉ Lan → \( Q = \) <span class="hl-red">\( 20 - 4P \)</span></p>
+            <p>Khi \( P > 5 \): \( Q = 0 \)</p>
+            <p><strong>(b) Q tại P = $3:</strong> \( P = 3 \le 4 \implies Q = 32 - 7(3) = \) <span class="hl-green">11 đơn vị</span></p>
+            <p><strong>(c) Hình dạng:</strong> Đường cầu gồm 2 đoạn thẳng với kink tại P=4. Đoạn P≤4 có độ dốc thoải hơn so với đoạn 4&lt;P≤5. Tại kink P=4, cả 2 phương trình đều cho Q = 4.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  
+    <!-- ELASTICITY -->
+    <div class="concept" id="elasticity">
+      <div class="concept-title">Price Elasticity of Demand — Độ co giãn của cầu theo giá</div>
+      <div class="concept-en">E_P: ĐO LƯỜNG SỰ NHẠY CẢM CỦA LƯỢNG CẦU VỚI THAY ĐỔI GIÁ</div>
+      <div class="concept-body">
+        <p><strong>Price Elasticity of Demand (\( E_p \) hay \( \eta \)):</strong> The percentage change in quantity demanded resulting from a 1% change in price.</p>
+        <p>Độ co giãn của cầu theo giá đo lường mức độ phản ứng (% thay đổi) của lượng cầu khi giá thay đổi 1%. Là chỉ số quan trọng nhất để doanh nghiệp ra quyết định định giá.</p>
+      </div>
+      <div class="formula">
+        <div class="label">Price Elasticity Formulas</div>
+        Công thức chung:<br>
+        \[ E_p = \frac{\%\Delta Q}{\%\Delta P} = \frac{\Delta Q / Q}{\Delta P / P} = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} \]<br><br>
+        Với đường cầu tuyến tính \( Q = a - bP \):<br>
+        \( \frac{\Delta Q}{\Delta P} = -b \) (hệ số góc)<br>
+        \[ E_p = -b \times \frac{P}{Q} \]<br><br>
+        Ví dụ từ Problem Set 4 — \( Q = 500 - 5P \) tại \( P=35, Q=325 \):<br>
+        \[ E_p = (-5) \times \left(\frac{35}{325}\right) = -0.538 \]
+      </div>
+      
+      <table>
+        <tr><th>\( |E_p| \)</th><th>Loại</th><th>Tiếng Việt</th><th>Ý nghĩa</th><th>Ví dụ</th></tr>
+        <tr><td>\( |E_p| > 1 \)</td><td>Elastic</td><td>Co giãn mạnh</td><td>\( \%\Delta Q > \%\Delta P \) — cầu nhạy cảm</td><td>Hàng xa xỉ</td></tr>
+        <tr><td>\( |E_p| = 1 \)</td><td>Unit elastic</td><td>Co giãn đơn vị</td><td>\( \%\Delta Q = \%\Delta P \)</td><td>Điểm giữa đường cầu</td></tr>
+        <tr><td>\( |E_p| < 1 \)</td><td>Inelastic</td><td>Kém co giãn</td><td>\( \%\Delta Q < \%\Delta P \) — cầu ít nhạy</td><td>Hàng thiết yếu</td></tr>
+        <tr><td>\( |E_p| = 0 \)</td><td>Perfectly inelastic</td><td>Hoàn toàn không co giãn</td><td>\( \Delta Q = 0 \) dù giá đổi</td><td>Insulin</td></tr>
+        <tr><td>\( |E_p| = \infty \)</td><td>Perfectly elastic</td><td>Hoàn toàn co giãn</td><td>\( \Delta P \) nhỏ → \( Q = 0 \)</td><td>Thị trường CT Hoàn Hảo</td></tr>
+      </table>
+
+      <div class="formula">
+        <div class="label">Elasticity — Revenue &amp; Pricing Rules (Cực kỳ quan trọng)</div>
+        Total Revenue (TR) = \( P \times Q \)<br><br>
+        Khi giá tăng:<br>
+        \( |E_p| > 1 \) (elastic):    TR GIẢM  (\( P \uparrow \implies Q \downarrow \) mạnh)<br>
+        \( |E_p| = 1 \) (unit):        TR KHÔNG ĐỔI<br>
+        \( |E_p| < 1 \) (inelastic):  TR TĂNG  (\( P \uparrow \implies Q \downarrow \) ít)<br><br>
+        Để tối đa hóa TR: đặt giá tại điểm \( |E_p| = 1 \) (\( MR = 0 \)).<br><br>
+        Với \( Q = a - bP \implies TR = P(a-bP) = aP - bP^2 \)<br>
+        \[ \frac{dTR}{dP} = a - 2bP = 0 \implies P^* = \frac{a}{2b} \implies Q^* = \frac{a}{2} \]
+      </div>
+      <div class="formula">
+        <div class="label">Marginal Revenue (MR) — Doanh thu biên</div>
+        \[ MR = \frac{dTR}{dQ} = P\left(1 + \frac{1}{E_p}\right) = P\left(1 - \frac{1}{|E_p|}\right) \]<br><br>
+        Khi \( |E_p| > 1 \): \( MR > 0 \) → Tăng Q (giảm P) làm TR tăng<br>
+        Khi \( |E_p| = 1 \): \( MR = 0 \) → TR cực đại<br>
+        Khi \( |E_p| < 1 \): \( MR < 0 \) → Tăng Q (giảm P) làm TR giảm
+      </div>
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy về Elasticity</div>
+        <ul>
+          <li><strong>Slope ≠ Elasticity:</strong> Hai đường cầu song song có thể có elasticity khác nhau. Trên đường cầu tuyến tính: \( E_p \) thay đổi từ 0 đến \( -\infty \).</li>
+          <li><strong>\( E_p \) luôn âm cho goods thông thường</strong>, nhưng ta thường dùng giá trị tuyệt đối \( |E_p| \) để so sánh.</li>
+          <li><strong>"Maximizing revenue" ≠ "Maximizing profit":</strong> TR max tại \( |E_p| = 1 \). Profit max tại \( MR = MC \).</li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- CONSUMER SURPLUS -->
+    <div class="concept" id="cs">
+      <div class="concept-title">Consumer Surplus — Thặng dư người tiêu dùng</div>
+      <div class="concept-en">CS: LỢI ÍCH VƯỢT TRỘI MÀ NGƯỜI TIÊU DÙNG NHẬN ĐƯỢC</div>
+
+      <!-- ĐỒ THỊ 2: CONSUMER SURPLUS -->
+      <svg class="svg-chart" viewBox="0 0 350 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="40" y1="180" x2="320" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+        <line x1="40" y1="20" x2="40" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+        <text x="300" y="195" class="axis-label">Quantity</text>
+        <text x="10" y="15" class="axis-label">Price</text>
+
+        <!-- Demand -->
+        <line x1="40" y1="40" x2="280" y2="180" stroke="#2471a3" stroke-width="3"/>
+        <text x="290" y="180" fill="#2471a3" font-weight="bold">D</text>
+        <text x="5" y="45" font-weight="bold">P_max</text>
+
+        <!-- Price Line & Intersection -->
+        <line x1="40" y1="110" x2="160" y2="110" stroke="#1a1a2e" stroke-dasharray="4" stroke-width="2"/>
+        <line x1="160" y1="110" x2="160" y2="180" stroke="#1a1a2e" stroke-dasharray="4" stroke-width="2"/>
+        <text x="10" y="115" font-weight="bold">P*</text>
+        <text x="155" y="195" font-weight="bold">Q*</text>
+
+        <!-- Shaded Area (Consumer Surplus) -->
+        <path d="M 40,40 L 160,110 L 40,110 Z" fill="rgba(36, 113, 163, 0.2)" stroke="none"/>
+        <text x="65" y="90" fill="#2471a3" font-weight="bold" font-size="14px">CS Area</text>
+      </svg>
+
+      <div class="concept-body">
+        <p><strong>Consumer Surplus (CS):</strong> The difference between what a consumer is <em>willing to pay</em> for a good and what they <em>actually pay</em>.</p>
+        <p>Thặng dư người tiêu dùng là chênh lệch giữa mức giá tối đa người tiêu dùng <em>sẵn sàng trả</em> (willingness to pay) và giá họ <em>thực sự trả</em> trên thị trường.</p>
+        <p><strong>Về mặt đồ thị:</strong> CS = diện tích tam giác nằm dưới đường cầu (D) và trên đường giá (P).</p>
+      </div>
+      <div class="formula">
+        <div class="label">Consumer Surplus Formulas</div>
+        Với đường cầu tuyến tính \( Q = a - bP \) (hay \( P = \frac{a}{b} - \frac{1}{b}Q \)):<br>
+        Choke price (\( P_{\text{max}} \)) = \( \frac{a}{b} \) (khi \( Q = 0 \))<br><br>
+        \[ CS = \frac{1}{2} \times Q \times (P_{\text{max}} - P_{\text{market}}) \]<br>
+        Ví dụ — Cầu: \( P = 15 - \frac{Q}{2} \):<br>
+        Choke price = $15<br>
+        Tại P = $5: \( Q = 2(15-5) = 20 \)<br>
+        \[ CS = \frac{1}{2} \times 20 \times (15 - 5) = \$100 \]
+      </div>
+      <div class="formula">
+        <div class="label">Loss of Consumer Surplus — Diện tích hình thang</div>
+        Khi giá tăng từ \( P_1 \to P_2 \) (\( P_2 > P_1 \)):<br>
+        \[ \text{Loss CS} = \frac{1}{2} (Q_1 + Q_2)(P_2 - P_1) \]<br>
+        Hoặc tính trực tiếp:<br>
+        \[ \text{Loss CS} = CS(P_1) - CS(P_2) \]
+      </div>
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy về Consumer Surplus</div>
+        <ul>
+          <li><strong>CS là diện tích tam giác, không phải hình chữ nhật:</strong> Nhớ nhân với hệ số \( \frac{1}{2} \).</li>
+          <li><strong>Loss of CS khi giá tăng = hình thang, không phải tam giác.</strong> Công thức: \( \frac{1}{2}(Q_1+Q_2)(P_2-P_1) \).</li>
+          <li><strong>Khi Q=0 (miễn phí, toll=0):</strong> CS = toàn bộ tam giác dưới đường cầu.</li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- PROBLEM SET 4 SOLUTIONS -->
+    <div class="concept" id="ps4">
+      <div class="concept-title">Problem Set 4 — Giải đầy đủ và chi tiết</div>
+      <div class="concept-en">THEATER TICKETS + TOLL BRIDGE — ELASTICITY &amp; CONSUMER SURPLUS</div>
+  
+      <!-- Q1 Theater -->
+      <div class="important" style="border-color:var(--accent);">
+        <div class="imp-label" style="color:var(--accent)">📋 PROBLEM SET 4 — Question 1: Theater Tickets</div>
+        <p><strong>Đề bài:</strong> \( Q_{gp} = 500 - 5P \) (general public), \( Q_s = 200 - 4P \) (students), giá hiện tại \( P = \$35 \).</p>
+        
+        <div class="exercise">
+          <div class="exercise-title">✏️ Phần (a) — Lượng cầu tại P = $35</div>
+          <div class="ex-q">Tìm lượng cầu của mỗi nhóm tại P = $35.</div>
+          <details><summary>Xem đáp án</summary>
+            <div class="answer">
+              <p><em>General public:</em> \( Q_{gp} = 500 - 5(35) = 500 - 175 = \) <span class="hl-red">325 vé</span></p>
+              <p><em>Students:</em> \( Q_s = 200 - 4(35) = 200 - 140 = \) <span class="hl-red">60 vé</span></p>
+            </div>
+          </details>
+        </div>
+  
+        <div class="exercise">
+          <div class="exercise-title">✏️ Phần (b) — Price Elasticity tại P = $35</div>
+          <div class="ex-q">Tính độ co giãn cầu theo giá cho mỗi nhóm tại P = $35.</div>
+          <details><summary>Xem đáp án</summary>
+            <div class="answer">
+              <p><strong>Công thức: \( E_p = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} \)</strong></p>
+              <p><em>General public tại P=35, Q=325:</em></p>
+              <p>\[ E_{gp} = -5 \times \frac{35}{325} = -0.538 \]</p>
+              <p>→ \( |E_{gp}| < 1 \implies \) <span class="hl-blue">Inelastic (kém co giãn)</span></p>
+              <p><em>Students tại P=35, Q=60:</em></p>
+              <p>\[ E_s = -4 \times \frac{35}{60} = -2.333 \]</p>
+              <p>→ \( |E_s| > 1 \implies \) <span class="hl-green">Elastic (co giãn mạnh)</span></p>
+            </div>
+          </details>
+        </div>
+  
+        <div class="exercise">
+          <div class="exercise-title">✏️ Phần (c) & (d) — Giá tối ưu tối đa hóa Revenue</div>
+          <div class="ex-q">Giám đốc có đang tối ưu doanh thu không? Giá nào cho mỗi nhóm để tối đa hóa TR?</div>
+          <details><summary>Xem đáp án</summary>
+            <div class="answer">
+              <p><strong>Chưa tối ưu.</strong> Nhóm Public inelastic → nên TĂNG GIÁ. Nhóm Students elastic → nên GIẢM GIÁ.</p>
+              <p><strong>Tìm giá tối ưu (TR max tại MR=0):</strong></p>
+              <p><em>Public:</em> \( P = 100 - Q/5 \implies MR = 100 - 2Q/5 = 0 \implies Q^* = 250, \) <span class="hl-red">\( P^* = \$50 \)</span></p>
+              <p><em>Students:</em> \( P = 50 - Q/4 \implies MR = 50 - Q/2 = 0 \implies Q^* = 100, \) <span class="hl-red">\( P^* = \$25 \)</span></p>
+              <p>Tổng TR tối đa = $12,500 + $2,500 = <span class="hl-green">$15,000</span> (tăng so với $13,475 hiện tại).</p>
+            </div>
+          </details>
+        </div>
+      </div>
+  
+      <!-- Q2 Toll Bridge -->
+      <div class="important" style="border-color:var(--blue);">
+        <div class="imp-label" style="color:var(--blue)">📋 PROBLEM SET 4 — Question 2: Toll Bridge</div>
+        <p><strong>Đề bài:</strong> \( P = 15 - 0.5Q \) (demand for bridge crossings). Chi phí vận hành = 0.</p>
+  
+        <div class="exercise">
+          <div class="exercise-title">✏️ Loss of CS khi toll = $5</div>
+          <div class="ex-q">Tính Consumer Surplus khi P=$0 và khi P=$5. Tính Loss of CS.</div>
+          <details><summary>Xem đáp án</summary>
+            <div class="answer">
+              <p><strong>Tại P = $0:</strong> \( Q = 30 \implies CS = \frac{1}{2} \times 30 \times 15 = \) <span class="hl-green">$225</span></p>
+              <p><strong>Tại P = $5:</strong> \( Q = 20 \implies CS = \frac{1}{2} \times 20 \times 10 = \) <span class="hl-green">$100</span></p>
+              <p><strong>Loss of CS</strong> = 225 - 100 = <span class="hl-red">$125</span></p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ═══ CHAPTER 2: WORK-LEISURE ═══ -->
+  <section class="chapter" id="worklei">
+    <div class="chapter-header">
+      <div class="chapter-num">02</div>
+      <div class="chapter-title">
+        <h2>Work-Leisure Decisions — Quyết định làm việc và nghỉ ngơi</h2>
+        <p>Labor Supply Theory · Time Allocation · Backward-Bending Labor Supply Curve</p>
+      </div>
+    </div>
+  
+    <div class="concept" id="budget-wl">
+      <div class="concept-title">The Work-Leisure Model — Framework</div>
+      <div class="concept-en">MÔ HÌNH LÀM VIỆC - NGHỈ NGƠI: CẤU TRÚC CƠ BẢN</div>
+
+      <!-- ĐỒ THỊ 3: BACKWARD BENDING LABOR SUPPLY -->
+      <svg class="svg-chart" viewBox="0 0 350 250" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="40" y1="220" x2="320" y2="220" stroke="#7f8c8d" stroke-width="2"/>
+        <line x1="40" y1="20" x2="40" y2="220" stroke="#7f8c8d" stroke-width="2"/>
+        <text x="270" y="235" class="axis-label">Hours of Labor (L)</text>
+        <text x="5" y="15" class="axis-label">Wage (w)</text>
+
+        <!-- Curve -->
+        <path d="M 60,200 Q 250,140 180,40" fill="none" stroke="#2471a3" stroke-width="3"/>
+        
+        <!-- Annotations -->
+        <text x="180" y="200" fill="#c0392b" font-weight="bold" font-size="11px">Upward-sloping (SE > IE)</text>
+        <text x="45" y="80" fill="#1a7a4a" font-weight="bold" font-size="11px">Backward-bending (IE > SE)</text>
+        
+        <!-- Turning Point -->
+        <line x1="40" y1="125" x2="215" y2="125" stroke="#1a1a2e" stroke-dasharray="3"/>
+        <circle cx="215" cy="125" r="4" fill="#1a1a2e"/>
+        <text x="225" y="129" font-weight="bold" font-size="11px">L_max (SE = IE)</text>
+      </svg>
+
+      <div class="concept-body">
+        <p><strong>Labor Supply Decision:</strong> Quyết định cung lao động thực chất là bài toán phân bổ thời gian (time allocation) giữa:</p>
+        <p>• <strong>Labor time (L)</strong>: thời gian làm việc → tạo thu nhập</p>
+        <p>• <strong>Leisure time (F)</strong>: thời gian nghỉ ngơi → tiêu dùng trực tiếp (leisure is a good!)</p>
+      </div>
+      <div class="formula">
+        <div class="label">Hai ràng buộc của Work-Leisure Model</div>
+        ① Time Constraint:<br>
+        \[ L + F = T \implies L = T - F \]<br>
+        ② Budget Constraint:<br>
+        \[ p \cdot C = w \cdot L + M \]<br>
+        Kết hợp: \( p \cdot C = w(T - F) + M \)<br>
+        \[ p \cdot C + w \cdot F = wT + M \quad \text{(Full Income Constraint)} \]<br>
+        Slope của đường ngân sách = \( -\frac{w}{p} \)
+      </div>
+      <div class="concept-body">
+        <p><strong>Điểm tối ưu:</strong> Xảy ra khi \( \text{MRS}_{FC} = \frac{w}{p} \). Tại đây, người tiêu dùng cân bằng giữa giá trị biên của sự nghỉ ngơi và mức lương thị trường.</p>
+      </div>
+    </div>
+  
+    <div class="concept" id="backward">
+      <div class="concept-title">Backward-Bending Labor Supply Curve</div>
+      <div class="concept-en">ĐƯỜNG CUNG LAO ĐỘNG BẺ NGƯỢC</div>
+      <div class="concept-body">
+        <p><strong>Backward-Bending Labor Supply Curve:</strong> Khi lương tăng (w↑), xảy ra hai hiệu ứng:</p>
+        <p>• <strong>Substitution Effect (SE):</strong> Nghỉ ngơi đắt đỏ hơn → làm việc nhiều hơn (L↑). (Luôn dương)</p>
+        <p>• <strong>Income Effect (IE):</strong> Giàu hơn → muốn mua thêm "nghỉ ngơi" (leisure là normal good) → làm việc ít hơn (L↓).</p>
+      </div>
+      <div class="formula">
+        <div class="label">Hình dạng Backward-Bending</div>
+        Mức lương THẤP:<br>
+        \( SE > IE \implies w \uparrow \implies L \uparrow \)Tôi không được lập trình để hỗ trợ việc đó.
