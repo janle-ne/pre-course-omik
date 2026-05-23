@@ -3434,10 +3434,279 @@
         <p>• <strong>Income Effect (IE):</strong> Giàu hơn → muốn mua thêm "nghỉ ngơi" (leisure là normal good) → làm việc ít hơn (L↓).</p>
       </div>
       <div class="formula">
-        <div class="label">Hình dạng Backward-Bending</div>
-        Mức lương THẤP:<br>
-        \( SE > IE \implies w \uparrow \implies L \uparrow \)Tôi không được lập trình để hỗ trợ việc đó.
+      <div class="flabel">Hình dạng Backward-Bending Labor Supply Curve</div>
+      Ở mức lương THẤP (w thấp):<br>
+      SE &gt; IE → w↑ → L↑ → Đường LS dốc LÊN bình thường (upward sloping)<br><br>
+      Ở mức lương CAO (w cao):<br>
+      IE &gt; SE → w↑ → L↓ → Đường LS bẻ NGƯỢC sang trái (backward bending)<br><br>
+      Điểm ngoặt: wage tại đó SE = IE → L đạt cực đại<br><br>
+      Ví dụ thực tế: Bác sĩ chuyên khoa mức lương rất cao thường làm ít giờ hơn bác sĩ trẻ (do IE &gt; SE) — họ "mua" thêm thời gian cho gia đình và sở thích.
     </div>
+    <div class="kw-box">
+      <div class="kw-label">🔑 Keywords</div>
+      <div class="kws">
+        <span class="kw">backward-bending LS curve</span>
+        <span class="kw">SE &gt; IE → upward slope</span>
+        <span class="kw">IE &gt; SE → backward bend</span>
+        <span class="kw">leisure is normal good</span>
+        <span class="kw">turning point: SE = IE</span>
+        <span class="kw">w ↑ → L could ↓ at high w</span>
+        <span class="kw">time allocation</span>
+      </div>
+    </div>
+    <div class="trap">
+      <div class="trap-label">⚠️ Bẫy về Backward-Bending LS</div>
+      <ul>
+        <li><strong>Không phải mọi mức lương đều tạo backward bending:</strong> Chỉ ở mức lương đủ cao. Ở mức lương thấp, đường cung lao động vẫn dốc lên bình thường.</li>
+        <li><strong>IE âm trong Work-Leisure ≠ IE âm trong consumer theory thông thường:</strong> Ở đây, khi w tăng làm IE → L giảm KHÔNG có nghĩa leisure là inferior good. Ngược lại, leisure là normal good (IE dương đối với leisure), nhưng điều đó làm L giảm (vì L = T − F).</li>
+        <li><strong>SE và IE được phân tích khác chiều so với consumer theory:</strong> Trong consumer theory: giá giảm → SE dương (tiêu dùng hàng đó tăng). Ở đây: w tăng (giá leisure tăng) → SE dương với L (làm nhiều hơn), âm với F (nghỉ ít hơn).</li>
+      </ul>
+    </div>
+    <div class="exercise">
+      <div class="ex-label">✏️ Bài tập 2 — Work-Leisure Optimum</div>
+      <div class="ex-q">Minh có T = 80 giờ/tuần, M = 0, giá tiêu dùng p = $1. Tiền lương w = $10/giờ. Hàm utility U(C, F) = C × F. Tìm L* (giờ làm việc tối ưu) và C* (tiêu dùng tối ưu).</div>
+      <details><summary></summary>
+        <div class="ans">
+          <div class="ans-label">Đáp án</div>
+          <p><strong>Bước 1: Full income constraint</strong></p>
+          <p>p·C + w·F = wT + M → 1·C + 10·F = 10×80 + 0 = 800</p>
+          <p>→ C + 10F = 800</p>
+          <p><strong>Bước 2: Điều kiện tối ưu MRS = w/p</strong></p>
+          <p>MU_C = F, MU_F = C (từ U = C×F)</p>
+          <p>MRS_FC = MU_F/MU_C = C/F</p>
+          <p>Điều kiện: C/F = w/p = 10/1 = 10 → <span class="hl-b">C = 10F</span> ... (1)</p>
+          <p><strong>Bước 3: Thay vào budget constraint</strong></p>
+          <p>10F + 10F = 800 → 20F = 800 → <span class="hl-r">F* = 40 giờ</span></p>
+          <p><span class="hl-r">C* = 10×40 = $400</span></p>
+          <p><strong>L* = T − F* = 80 − 40 = <span class="hl-g">40 giờ làm việc/tuần</span></strong></p>
+          <p>Kiểm tra: Thu nhập = w×L* = 10×40 = $400 = C* ✓ (M=0)</p>
+          <p><em>Insight: Với U = C×F (Cobb-Douglas với α=β=1), tại điểm tối ưu Minh chia đều thời gian: 50% làm việc (40h), 50% nghỉ ngơi (40h). Điều này phản ánh tính chất của Cobb-Douglas: chi tiêu/thời gian được chia đều cho hai "hàng hóa".</em></p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+ 
+<!-- ═══ CHAPTER 3: INTERTEMPORAL ═══ -->
+<section class="chapter" id="inter">
+  <div class="ch-header">
+    <div class="ch-num">03</div>
+    <div class="ch-info">
+      <h2>Intertemporal Decisions — Quyết định liên thời gian</h2>
+      <p>Two-Period Model · Present Value · Saving vs Borrowing · Time Preference</p>
+    </div>
+  </div>
+ 
+  <div class="concept" id="pv">
+    <div class="concept-h">The Two-Period Intertemporal Model</div>
+    <div class="concept-sub">MÔ HÌNH HAI THỜI KỲ: TIÊU DÙNG HÔM NAY VÀ NGÀY MAI</div>
+    <div class="body">
+      <p><strong>Intertemporal Decisions:</strong> How do households distribute their income across time (periods)?</p>
+      <p>Quyết định liên thời gian là cách hộ gia đình phân bổ thu nhập qua các kỳ. Mô hình hai kỳ (two-period model) là đơn giản nhất: kỳ 0 (hiện tại) và kỳ 1 (tương lai). Hai quyết định:</p>
+      <p>• <strong>Saving (tiết kiệm):</strong> Tiêu dùng kỳ 0 ít hơn thu nhập → dành dư cho kỳ 1</p>
+      <p>• <strong>Borrowing (vay mượn):</strong> Tiêu dùng kỳ 0 nhiều hơn thu nhập → vay trả lại kỳ 1</p>
+    </div>
+    <div class="formula">
+      <div class="flabel">Trường hợp 1: Interest Rate = 0 (r = 0)</div>
+      C₀ = tiêu dùng kỳ 0, C₁ = tiêu dùng kỳ 1<br>
+      M₀ = thu nhập kỳ 0, M₁ = thu nhập kỳ 1<br>
+      p₁ = giá tương đối kỳ 1 so với kỳ 0 (bỏ qua lạm phát: p₁ = 1)<br><br>
+      Budget constraint (r=0):<br>
+      C₀ + C₁ = M₀ + M₁<br><br>
+      Diễn giải: Tổng tiêu dùng hai kỳ = Tổng thu nhập hai kỳ<br>
+      Không có lãi suất → $1 tiết kiệm hôm nay = $1 chi tiêu ngày mai (1:1)
+    </div>
+    <div class="formula">
+      <div class="flabel">Trường hợp 2: Interest Rate &gt; 0 (r &gt; 0) — QUAN TRỌNG NHẤT</div>
+      S₀ = tiết kiệm kỳ 0 (S₀ &gt; 0: tiết kiệm; S₀ &lt; 0: vay mượn)<br><br>
+      Ràng buộc kỳ 0: C₀ + S₀ = M₀  → S₀ = M₀ − C₀<br>
+      Ràng buộc kỳ 1: C₁ = M₁ + S₀(1+r)  (tiết kiệm + lãi)<br><br>
+      Thay S₀ = M₀ − C₀ vào kỳ 1:<br>
+      C₁ = M₁ + (M₀ − C₀)(1+r)<br>
+      C₁ = M₁ + M₀(1+r) − C₀(1+r)<br>
+      C₀(1+r) + C₁ = M₀(1+r) + M₁<br><br>
+      Chia cả hai vế cho (1+r):<br>
+      C₀ + C₁/(1+r) = M₀ + M₁/(1+r)<br><br>
+      ← INTERTEMPORAL BUDGET CONSTRAINT (Present Value Form)<br><br>
+      PV(C₀) + PV(C₁) = PV(M₀) + PV(M₁)<br>
+      Giá trị hiện tại của tiêu dùng = Giá trị hiện tại của thu nhập
+    </div>
+    <div class="body">
+      <p><strong>Giải thích Present Value Constraint:</strong></p>
+      <p>• <span class="hl-r">1/(1+r)</span> là hệ số chiết khấu (discount factor): $1 nhận được ở kỳ 1 chỉ tương đương $1/(1+r) ở kỳ 0.</p>
+      <p>• <strong>Slope của intertemporal budget line = −(1+r):</strong> Để tiêu dùng thêm $1 ở kỳ 0, phải bỏ bớt $(1+r) ở kỳ 1 (vì vay $1 phải trả cả gốc lẫn lãi).</p>
+      <p>• <strong>Endowment point (M₀, M₁):</strong> Điểm "ăn vào thu nhập" — không tiết kiệm, không vay, tiêu dùng đúng bằng thu nhập mỗi kỳ. Đây là điểm mà budget line luôn đi qua.</p>
+    </div>
+    <div class="formula">
+      <div class="flabel">Đặc điểm đường ngân sách liên thời gian</div>
+      Intertemporal Budget Line: C₀ + C₁/(1+r) = M₀ + M₁/(1+r)<br><br>
+      Viết lại dạng tường minh:<br>
+      C₁ = M₁ + (1+r)M₀ − (1+r)C₀<br>
+      C₁ = [M₁ + (1+r)M₀] − (1+r)·C₀<br><br>
+      Intercept trục C₁: M₁ + (1+r)M₀  [tiêu dùng max ở kỳ 1: C₀=0, tiết kiệm tất cả]<br>
+      Intercept trục C₀: M₀ + M₁/(1+r) [tiêu dùng max ở kỳ 0: C₁=0, vay tất cả]<br>
+      Slope: −(1+r)<br><br>
+      Khi r tăng: Slope tăng (dốc hơn) → xoay quanh endowment point (M₀, M₁)<br>
+      Khi M thay đổi: dịch song song (outward nếu tăng)
+    </div>
+  </div>
+ 
+  <div class="concept" id="inter-opt">
+    <div class="concept-h">Intertemporal Optimisation &amp; Time Preference</div>
+    <div class="concept-sub">TỐI ƯU HÓA LIÊN THỜI KỲ VÀ TỶ LỆ THỜI GIAN ƯA THÍCH</div>
+    <div class="body">
+      <p><strong>Utility Function:</strong> U(C₀, C₁) — tiện ích phụ thuộc vào tiêu dùng cả hai kỳ.</p>
+      <p><strong>Time Preference Rate (ρ):</strong> Hộ gia đình ưa thích tiêu dùng hiện tại hơn tương lai — "positive time preference" (ρ &gt; 0). $1 hôm nay có giá trị hơn $1 ngày mai trong nhận thức chủ quan.</p>
+    </div>
+    <div class="formula">
+      <div class="flabel">Utility Function với Time Preference (Cobb-Douglas Intertemporal)</div>
+      U(C₀, C₁) = ln(C₀) + [1/(1+ρ)]·ln(C₁)<br><br>
+      ρ = time preference rate (tỷ lệ ưa thích hiện tại)<br>
+      ρ &gt; 0: Ưa thích tiêu dùng hiện tại (phổ biến)<br>
+      ρ = 0: Bàng quan giữa tiêu dùng hai kỳ<br>
+      ρ &lt; 0: Ưa thích tiêu dùng tương lai (hiếm)<br><br>
+      Discount factor: δ = 1/(1+ρ) ∈ (0,1) khi ρ &gt; 0
+    </div>
+    <div class="formula">
+      <div class="flabel">Điều kiện tối ưu — Intertemporal Optimum</div>
+      Lagrange function:<br>
+      L = ln(C₀) + δ·ln(C₁) + λ[M₀ + M₁/(1+r) − C₀ − C₁/(1+r)]<br><br>
+      FOCs:<br>
+      ∂L/∂C₀ = 1/C₀ − λ = 0       → λ = 1/C₀<br>
+      ∂L/∂C₁ = δ/C₁ − λ/(1+r) = 0 → λ = δ(1+r)/C₁<br><br>
+      Từ hai phương trình: 1/C₀ = δ(1+r)/C₁<br>
+      → C₁/C₀ = δ(1+r) = (1+r)/(1+ρ)<br><br>
+      Điều kiện tối ưu:<br>
+      MRS_C₀C₁ = (1+r)<br><br>
+      Tức là: MRS giữa tiêu dùng hiện tại và tương lai = giá tương đối (1+r)<br>
+      Khi r &gt; ρ: C₁/C₀ &gt; 1 → tiêu dùng kỳ 1 &gt; kỳ 0 (tích lũy theo thời gian)<br>
+      Khi r &lt; ρ: C₁/C₀ &lt; 1 → tiêu dùng kỳ 0 &gt; kỳ 1 (tiêu trước, tiết kiệm ít)
+    </div>
+    <div class="body">
+      <p><strong>Saving vs Borrowing Decision:</strong></p>
+      <p>• Nếu C₀* &lt; M₀: Hộ gia đình <span class="hl-g">tiết kiệm (saves)</span> ở kỳ 0, tiêu dùng nhiều hơn ở kỳ 1</p>
+      <p>• Nếu C₀* &gt; M₀: Hộ gia đình <span class="hl-r">vay mượn (borrows)</span> ở kỳ 0, tiêu dùng ít hơn ở kỳ 1</p>
+      <p>• Nếu C₀* = M₀: Hộ gia đình không tiết kiệm/vay (ở endowment point)</p>
+    </div>
+    <div class="formula">
+      <div class="flabel">Tác động của Interest Rate thay đổi</div>
+      Khi r tăng → Budget line xoay quanh endowment (M₀, M₁):<br><br>
+      Với người TIẾT KIỆM (C₀ &lt; M₀, S₀ &gt; 0):<br>
+      SE: r↑ → tiêu dùng C₀ đắt hơn tương đối → C₀↓ (tiết kiệm nhiều hơn)<br>
+      IE: r↑ → thu nhập thực tế tăng (saver benefited) → C₀↑ và C₁↑<br>
+      TE: không chắc chắn (SE và IE ngược chiều đối với C₀)<br><br>
+      Với người VAY MƯỢN (C₀ &gt; M₀, S₀ &lt; 0):<br>
+      SE: r↑ → C₀↓ (vay đắt hơn)<br>
+      IE: r↑ → thu nhập thực tế giảm (borrower hurt) → C₀↓<br>
+      TE: C₀ chắc chắn GIẢM (cả SE và IE cùng chiều)
+    </div>
+    <div class="kw-box">
+      <div class="kw-label">🔑 Keywords Intertemporal</div>
+      <div class="kws">
+        <span class="kw">PV = C₀ + C₁/(1+r)</span>
+        <span class="kw">slope = −(1+r)</span>
+        <span class="kw">endowment point (M₀,M₁)</span>
+        <span class="kw">discount factor δ=1/(1+ρ)</span>
+        <span class="kw">time preference ρ</span>
+        <span class="kw">MRS = (1+r) at optimum</span>
+        <span class="kw">saver vs borrower</span>
+        <span class="kw">rotate around endowment</span>
+      </div>
+    </div>
+    <div class="trap">
+      <div class="trap-label">⚠️ Bẫy về Intertemporal Decisions</div>
+      <ul>
+        <li><strong>Slope = −(1+r), không phải −r:</strong> Vì vay $1 phải trả $1 gốc + r lãi = $(1+r) tổng. Nhầm thành −r là sai.</li>
+        <li><strong>Budget line xoay quanh endowment point (M₀, M₁), không phải gốc tọa độ:</strong> Điểm endowment luôn là điểm có thể đạt được bất kể r là bao nhiêu (chỉ cần tiêu đúng thu nhập mỗi kỳ). Khi r tăng, đường xoay quanh đây.</li>
+        <li><strong>Tác động của r với saver và borrower KHÁC NHAU:</strong> Saver được lợi khi r tăng (income effect dương), borrower bị thiệt (income effect âm).</li>
+        <li><strong>ρ ≠ r:</strong> ρ là rate of time preference (chủ quan, tâm lý), r là interest rate thị trường (khách quan). Tối ưu xảy ra khi MRS = 1+r, không phải 1+ρ. Tuy nhiên khi C₁/C₀ = (1+r)/(1+ρ), nếu r = ρ thì C₀ = C₁ (consumption smoothing).</li>
+        <li><strong>Saving không phải lúc nào cũng tốt hơn borrowing:</strong> Quyết định tối ưu phụ thuộc vào thu nhập hai kỳ, lãi suất, và sở thích thời gian. Không có giải pháp "một chiều" nào đúng tuyệt đối.</li>
+      </ul>
+    </div>
+    <div class="exercise">
+      <div class="ex-label">✏️ Bài tập 3 — Intertemporal Optimum</div>
+      <div class="ex-q">Hoa có M₀ = $100, M₁ = $110. Lãi suất r = 10%. Hàm utility U = ln(C₀) + ln(C₁) (ρ = 0). (a) Viết Intertemporal Budget Constraint. (b) Tìm C₀*, C₁* tối ưu. (c) Hoa tiết kiệm hay vay mượn?</div>
+      <details><summary></summary>
+        <div class="ans">
+          <div class="ans-label">Đáp án</div>
+          <p><strong>(a) Budget Constraint:</strong></p>
+          <p>C₀ + C₁/(1+r) = M₀ + M₁/(1+r)</p>
+          <p>C₀ + C₁/1.1 = 100 + 110/1.1 = 100 + 100 = <span class="hl-b">$200</span></p>
+          <p>→ C₀ + C₁/1.1 = 200</p>
+          <p><strong>(b) Điều kiện tối ưu:</strong></p>
+          <p>MU_C₀ = 1/C₀, MU_C₁ = 1/C₁ (từ U = lnC₀ + lnC₁)</p>
+          <p>MRS = (MU_C₀/MU_C₁) = C₁/C₀</p>
+          <p>Điều kiện: MRS = 1+r → C₁/C₀ = 1.1 → <span class="hl-b">C₁ = 1.1·C₀</span> ...(1)</p>
+          <p>Thay vào BC: C₀ + 1.1C₀/1.1 = 200 → C₀ + C₀ = 200 → <span class="hl-r">C₀* = $100</span></p>
+          <p><span class="hl-r">C₁* = 1.1 × 100 = $110</span></p>
+          <p><strong>(c) Tiết kiệm hay vay?</strong></p>
+          <p>C₀* = $100 = M₀ = $100 → Hoa tiêu dùng đúng bằng thu nhập kỳ 0</p>
+          <p>→ <span class="hl-g">Hoa không tiết kiệm cũng không vay (ở endowment point)</span></p>
+          <p><em>Insight: Với U = lnC₀ + lnC₁ (ρ=0) và r=10%, ta có C₁/C₀ = 1+r = 1.1. Hoa cũng có M₁/M₀ = 110/100 = 1.1. Vì tỷ lệ thu nhập đúng bằng 1+r, điểm tối ưu trùng với endowment point — không cần vay hay tiết kiệm!</em></p>
+        </div>
+      </details>
+    </div>
+    <div class="exercise">
+      <div class="ex-label">✏️ Bài tập 4 — Tác động của lãi suất</div>
+      <div class="ex-q">Dùng bài trên nhưng M₀ = $150, M₁ = $55. Lãi suất r = 10%, U = lnC₀ + lnC₁. (a) Tìm C₀*, S₀. (b) Nếu r tăng lên 20%, C₀* thay đổi như thế nào? Giải thích SE và IE.</div>
+      <details><summary></summary>
+        <div class="ans">
+          <div class="ans-label">Đáp án</div>
+          <p><strong>(a) r = 10%:</strong></p>
+          <p>PV income = 150 + 55/1.1 = 150 + 50 = $200</p>
+          <p>BC: C₀ + C₁/1.1 = 200</p>
+          <p>Điều kiện: C₁ = 1.1·C₀</p>
+          <p>2C₀ = 200 → <span class="hl-r">C₀* = $100, C₁* = $110</span></p>
+          <p>S₀ = M₀ − C₀* = 150 − 100 = <span class="hl-g">$50 (tiết kiệm)</span></p>
+          <p><strong>(b) r = 20%:</strong></p>
+          <p>PV income = 150 + 55/1.2 = 150 + 45.83 = $195.83</p>
+          <p>BC: C₀ + C₁/1.2 = 195.83</p>
+          <p>Điều kiện: C₁ = 1.2·C₀</p>
+          <p>C₀ + 1.2C₀/1.2 = 195.83 → 2C₀ = 195.83 → <span class="hl-r">C₀* = $97.92</span></p>
+          <p>C₀ giảm từ $100 → $97.92 khi r tăng.</p>
+          <p><strong>Phân tích SE và IE (Hoa là saver vì S₀&gt;0):</strong></p>
+          <p>SE: r↑ → C₀ đắt hơn tương đối → <span class="hl-b">C₀ giảm</span></p>
+          <p>IE: r↑ → saver được lợi (earn more on savings) → PV income giảm nhẹ (vì M₁&gt;0) → <span class="hl-r">C₀ giảm nhẹ thêm</span></p>
+          <p>Ở đây PV income giảm (từ $200 → $195.83) vì r↑ làm giảm PV(M₁). Cả SE và IE đều hướng làm C₀ giảm → C₀* giảm rõ ràng.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+ 
+<!-- SUMMARY -->
+<section class="chapter" id="summary">
+  <div class="ch-header">
+    <div class="ch-num">∑</div>
+    <div class="ch-info">
+      <h2>Bảng tổng hợp toàn bộ Section 4</h2>
+      <p>Master Reference — All Concepts, Formulas &amp; Traps</p>
+    </div>
+  </div>
+  <table>
+    <tr><th>Khái niệm</th><th>Công thức/Đặc điểm</th><th>Bẫy chính</th></tr>
+    <tr><td><strong>Market Demand</strong></td><td>Q_M = ΣQ_i(P); horizontal sum</td><td>Cộng Q tại cùng P, không cộng P; kink tại choke price</td></tr>
+    <tr><td><strong>Price Elasticity E_p</strong></td><td>(ΔQ/ΔP)×(P/Q); âm cho normal goods</td><td>Slope ≠ Elasticity; E thay đổi dọc đường tuyến tính</td></tr>
+    <tr><td><strong>TR max</strong></td><td>|E_p| = 1; P* = P_choke/2</td><td>TR max ≠ Profit max; TR max tại MR = 0</td></tr>
+    <tr><td><strong>Consumer Surplus</strong></td><td>CS = ½×Q×(P_max−P); tam giác</td><td>Thiếu ½; Loss CS là hình thang: ½(Q1+Q2)(P2−P1)</td></tr>
+    <tr><td><strong>Work-Leisure Budget</strong></td><td>pC + wF = wT + M; slope = −w/p</td><td>Giá của leisure = w; khi w↑: xoay, không dịch song song</td></tr>
+    <tr><td><strong>W-L Optimum</strong></td><td>MRS_FC = w/p; MU_F/MU_C = w/p</td><td>Tương tự consumer theory nhưng F và C thay vì X và Y</td></tr>
+    <tr><td><strong>Backward-Bending LS</strong></td><td>Low w: SE&gt;IE → L↑; High w: IE&gt;SE → L↓</td><td>IE âm với L không có nghĩa leisure là inferior good</td></tr>
+    <tr><td><strong>Intertemporal Budget</strong></td><td>C₀ + C₁/(1+r) = M₀ + M₁/(1+r)</td><td>Slope = −(1+r) không phải −r; xoay quanh endowment</td></tr>
+    <tr><td><strong>Intertemporal Optimum</strong></td><td>MRS = 1+r; C₁/C₀ = δ(1+r)</td><td>ρ ≠ r; r=ρ → consumption smoothing (C₀=C₁ nếu M đều)</td></tr>
+    <tr><td><strong>Saver vs Borrower</strong></td><td>C₀&lt;M₀: saves; C₀&gt;M₀: borrows</td><td>r↑ và Saver: IE dương (PV of future income tăng)</td></tr>
+  </table>
+ 
+  <div class="important" style="margin-top:32px">
+    <div class="imp-label">🗺️ Liên kết 3 chủ đề Section 4 với nhau</div>
+    <p><strong>Market Demand</strong> = aggregation của individual demand; elasticity quyết định pricing strategy và welfare (CS).</p>
+    <br>
+    <p><strong>Work-Leisure</strong> = Consumer theory áp dụng cho quyết định thời gian: thay vì X và Y là hai hàng hóa, giờ là Consumption (C) và Leisure (F). Budget constraint bao gồm cả time constraint. Kết quả: Labor Supply Curve — đặc biệt là backward-bending khi IE &gt; SE ở mức lương cao.</p>
+    <br>
+    <p><strong>Intertemporal</strong> = Consumer theory áp dụng cho quyết định qua thời gian: thay vì X và Y là hai hàng hóa, là C₀ và C₁. Giá tương đối = (1+r). Kết quả: Saving/Borrowing decision, quyết định phân bổ thu nhập qua các kỳ.</p>
+    <br>
+    <p><strong>Common thread:</strong> Cả ba chủ đề đều dùng cùng framework: Budget Constraint + Indifference Curves → Optimal Choice → Comparative Statics (phân tích SE &amp; IE khi có thay đổi). Chỉ là cách diễn giải các "hàng hóa" khác nhau!</p>
+  </div>
   </main>
 </div>
 
