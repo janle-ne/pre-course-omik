@@ -2917,6 +2917,420 @@
         </details>
       </div>
     </div>
+
+<!-- ======== NEW S3 EXERCISES FROM PPTX + DOCX ======== -->
+
+  <!-- ═══ NEW EXERCISES FROM PPTX SLIDE 15 + DOCX FILES ═══ -->
+  <section class="chapter" id="s3-exercises-new">
+    <div class="chapter-header">
+      <div class="chapter-num">Ex</div>
+      <div class="chapter-title">
+        <h2>Bài tập bổ sung Section 3 — Từ Slide &amp; Docx</h2>
+        <p>Exercises from Section 3 PPTX (Slide 15) · Section 3 Docx · Section 2 Answer Docx</p>
+      </div>
+    </div>
+
+    <!-- Exercise from Slide 15 -->
+    <div class="concept">
+      <div class="concept-title">Bài tập từ Slide 15 — Cobb-Douglas U = x⁰·⁵y⁰·⁵</div>
+      <div class="concept-en">SLIDE 15 EXERCISE: OPTIMAL BUNDLE WITH COBB-DOUGLAS</div>
+
+      <!-- SVG: Indifference Curve + Budget Line Tangency -->
+      <svg class="svg-chart" viewBox="0 0 420 300" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="50" y1="260" x2="400" y2="260" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arr)"/>
+        <line x1="50" y1="260" x2="50" y2="20" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arr)"/>
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#7f8c8d"/>
+          </marker>
+        </defs>
+        <text x="385" y="275" class="axis-label" font-size="12">x (Good X)</text>
+        <text x="5" y="18" class="axis-label" font-size="12">y (Good Y)</text>
+        <text x="220" y="290" class="axis-label" font-size="11" text-anchor="middle">Lượng hàng X (tính bằng 100 units)</text>
+
+        <!-- Budget Line: 10000x + 20000y = 10,000,000 → x/1000 + y/500 = 1 → intercept x=1000, y=500 -->
+        <!-- Scale: x-axis 0..1000 → 50..380 (330px), y-axis 0..500 → 260..30 (230px) -->
+        <!-- x_intercept (1000 units) at px=380, y_intercept (500 units) at py=30 -->
+        <line x1="380" y1="260" x2="50" y2="30" stroke="#2471a3" stroke-width="2.5" stroke-dasharray="6,3"/>
+        <text x="368" y="256" font-size="10" fill="#2471a3" font-weight="bold">I/P_x</text>
+        <text x="52" y="28" font-size="10" fill="#2471a3" font-weight="bold">I/P_y</text>
+        <text x="145" y="90" font-size="11" fill="#2471a3" font-weight="bold">Budget Line</text>
+        <text x="145" y="103" font-size="10" fill="#2471a3">10,000x + 20,000y = 10M</text>
+
+        <!-- Optimal point: x*=500, y*=250 → px=50+500*0.33=215, py=260-250*0.46=145 -->
+        <!-- x*=500 → px = 50 + (500/1000)*330 = 215 -->
+        <!-- y*=250 → py = 260 - (250/500)*230 = 145 -->
+        <circle cx="215" cy="145" r="6" fill="#c0392b"/>
+        <text x="222" y="140" font-size="11" fill="#c0392b" font-weight="bold">(x*=500, y*=250)</text>
+
+        <!-- IC through (500,250): xy=125000, y=125000/x -->
+        <!-- points: x=100→y=1250(off), x=200→y=625(py=260-625*0.46<0 off), x=250→y=500(py=30) ok -->
+        <!-- x=250→px=50+250*0.33=132.5, y=500→py=30 -->
+        <!-- x=300→y=416→py=260-416*0.46=69 -->
+        <!-- x=400→y=312.5→py=260-312.5*0.46=116 -->
+        <!-- x=500→y=250→py=145 -->
+        <!-- x=700→y=178→py=178 -->
+        <!-- x=900→y=138→py=197 -->
+        <path d="M133,30 C155,50 180,80 215,145 C255,210 310,240 390,255" fill="none" stroke="#1a7a4a" stroke-width="2.5"/>
+        <text x="300" y="228" font-size="11" fill="#1a7a4a" font-weight="bold">U* (IC tối ưu)</text>
+
+        <!-- Lower IC -->
+        <path d="M80,30 C100,55 130,100 165,155 C200,210 260,245 350,258" fill="none" stroke="#1a7a4a" stroke-width="1.5" opacity="0.4"/>
+        <text x="355" y="256" font-size="10" fill="#1a7a4a" opacity="0.6">U₁ (thấp)</text>
+
+        <!-- MRS = slope annotation -->
+        <line x1="175" y1="165" x2="255" y2="125" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="258" y="122" font-size="10" fill="#c0392b">slope IC = -MRS</text>
+        <text x="258" y="133" font-size="10" fill="#c0392b">= slope BL = -P_x/P_y</text>
+
+        <!-- Labels for intercepts -->
+        <text x="372" y="272" font-size="10" fill="#7f8c8d">1000</text>
+        <text x="40" y="272" font-size="10" fill="#7f8c8d">0</text>
+        <text x="28" y="33" font-size="10" fill="#7f8c8d">500</text>
+        <text x="28" y="148" font-size="10" fill="#7f8c8d">250</text>
+        <line x1="45" y1="145" x2="215" y2="145" stroke="#7f8c8d" stroke-width="0.8" stroke-dasharray="3"/>
+        <line x1="215" y1="145" x2="215" y2="260" stroke="#7f8c8d" stroke-width="0.8" stroke-dasharray="3"/>
+        <text x="210" y="272" font-size="10" fill="#7f8c8d">500</text>
+      </svg>
+
+      <div class="exercise">
+        <div class="exercise-title">✏️ Slide 15 — Utility function \( u = x^{0.5} y^{0.5} \), income = 10,000,000 VND</div>
+        <div class="ex-q">Thu nhập I = 10,000,000 VND. Giá hàng X: \( P_x = 10{,}000 \) VND, giá hàng Y: \( P_y = 20{,}000 \) VND. Hàm utility \( u = x^{0.5} y^{0.5} \). Tìm số đơn vị hàng X mà hộ gia đình cầu. (Kết quả: 500 đơn vị)</div>
+        <details>
+          <summary>Xem đáp án đầy đủ</summary>
+          <div class="answer">
+            <p><strong>Bước 1: Viết điều kiện tối ưu MRS = P_x / P_y</strong></p>
+            <p>\[ MU_x = \frac{\partial u}{\partial x} = \frac{1}{2} x^{-0.5} y^{0.5} = \frac{y^{0.5}}{2x^{0.5}} \]</p>
+            <p>\[ MU_y = \frac{\partial u}{\partial y} = \frac{1}{2} x^{0.5} y^{-0.5} = \frac{x^{0.5}}{2y^{0.5}} \]</p>
+            <p>\[ MRS_{xy} = \frac{MU_x}{MU_y} = \frac{y^{0.5}/2x^{0.5}}{x^{0.5}/2y^{0.5}} = \frac{y}{x} \]</p>
+            <p>Điều kiện tối ưu: \( \frac{y}{x} = \frac{P_x}{P_y} = \frac{10{,}000}{20{,}000} = \frac{1}{2} \)</p>
+            <p>\[ y = \frac{x}{2} \quad \cdots (1) \]</p>
+
+            <p><strong>Bước 2: Thay vào ràng buộc ngân sách</strong></p>
+            <p>\[ P_x \cdot x + P_y \cdot y = I \implies 10{,}000x + 20{,}000y = 10{,}000{,}000 \]</p>
+            <p>Thay \( y = x/2 \): \( 10{,}000x + 20{,}000 \cdot \frac{x}{2} = 10{,}000{,}000 \)</p>
+            <p>\[ 10{,}000x + 10{,}000x = 10{,}000{,}000 \implies 20{,}000x = 10{,}000{,}000 \]</p>
+            <p>\[ \boxed{x^* = 500 \text{ units}} \]</p>
+            <p>\( y^* = 500/2 = 250 \) units</p>
+
+            <p><strong>Kiểm tra:</strong> \( 10{,}000 \times 500 + 20{,}000 \times 250 = 5{,}000{,}000 + 5{,}000{,}000 = 10{,}000{,}000 \) ✓</p>
+            <p><em>Insight: Với Cobb-Douglas \( u = x^\alpha y^\beta \) (\(\alpha = \beta = 0.5\)), chi tiêu chia đều: 50% cho X = 5,000,000 VND → x* = 5,000,000 / 10,000 = 500 units. Đây là shortcut quan trọng!</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Maurice Exercise from Docx -->
+    <div class="concept">
+      <div class="concept-title">Bài tập Docx 1 — Maurice: CDs và Movie Videos</div>
+      <div class="concept-en">DOCX EXERCISE: U = 2X + Y (PERFECT SUBSTITUTES CASE) — CORNER SOLUTION</div>
+
+      <!-- SVG: Maurice's budget line with IC (perfect substitutes) -->
+      <svg class="svg-chart" viewBox="0 0 420 280" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#7f8c8d"/>
+          </marker>
+        </defs>
+        <line x1="50" y1="245" x2="400" y2="245" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arr2)"/>
+        <line x1="50" y1="245" x2="50" y2="20" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arr2)"/>
+        <text x="385" y="260" font-size="11" fill="#7f8c8d">X (CDs, $1)</text>
+        <text x="5" y="18" font-size="11" fill="#7f8c8d">Y (Videos, $2)</text>
+
+        <!-- Budget line: X + 2Y = 41 → X-int=41, Y-int=20.5 -->
+        <!-- Scale: X 0..45 → 50..390 (340px/45), Y 0..22 → 245..25 (220px/22) -->
+        <!-- X-int 41 → 50+41*(340/45)=50+309.8=360 -->
+        <!-- Y-int 20.5 → 245-20.5*(220/22)=245-205=40 -->
+        <line x1="360" y1="245" x2="50" y2="40" stroke="#2471a3" stroke-width="2.5"/>
+        <text x="355" y="258" font-size="10" fill="#2471a3">X=41</text>
+        <text x="52" y="38" font-size="10" fill="#2471a3">Y≈20.5</text>
+        <text x="160" y="120" font-size="11" fill="#2471a3" font-weight="bold">Budget Line</text>
+        <text x="160" y="133" font-size="10" fill="#2471a3">X + 2Y = 41</text>
+        <text x="160" y="146" font-size="10" fill="#2471a3">Slope = −P_X/P_Y = −½</text>
+
+        <!-- IC for perfect substitutes (linear) U = 2X + Y -->
+        <!-- IC slope = -MU_X/MU_Y = -2/1 = -2 (steeper than BL) -->
+        <!-- IC through (41,0): U = 2(41)+0 = 82 → Y-int = 82 (way off chart) -->
+        <!-- Just show one IC line with slope -2 passing near budget line -->
+        <!-- At U=82: 2X+Y=82. X=0→Y=82(off). Y=0→X=41 → same x-int! -->
+        <!-- IC U=82 passes through (41,0) with slope -2 -->
+        <!-- At Y=20: X=(82-20)/2=31, px=50+31*(340/45)=50+234=284, py=245-20*(220/22)=245-200=45 -->
+        <line x1="360" y1="245" x2="284" y2="45" stroke="#1a7a4a" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="270" y="42" font-size="10" fill="#1a7a4a">IC: U=82, slope=−2</text>
+        
+        <!-- Lower IC with same slope -->
+        <line x1="290" y1="245" x2="220" y2="45" stroke="#1a7a4a" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,3"/>
+        <text x="170" y="52" font-size="10" fill="#1a7a4a" opacity="0.6">IC thấp hơn</text>
+
+        <!-- CORNER SOLUTION at (41, 0) -->
+        <circle cx="360" cy="245" r="7" fill="#c0392b"/>
+        <text x="340" y="240" font-size="11" fill="#c0392b" font-weight="bold">CORNER</text>
+        <text x="340" y="254" font-size="10" fill="#c0392b">(X*=41, Y*=0)</text>
+
+        <!-- Arrow showing IC steeper than BL -->
+        <text x="60" y="190" font-size="10" fill="#c0392b">IC dốc hơn BL</text>
+        <text x="60" y="202" font-size="10" fill="#c0392b">|slope IC|=2 > |slope BL|=0.5</text>
+        <text x="60" y="214" font-size="10" fill="#c0392b">→ Chọn toàn bộ X (Corner!)</text>
+      </svg>
+
+      <div class="exercise">
+        <div class="exercise-title">✏️ Maurice — \( U(X, Y) = 2X + Y \), ngân sách $41</div>
+        <div class="ex-q">Maurice có thu nhập $41. Giá CD: \( P_X = \$1 \), giá video rental: \( P_Y = \$2 \). Hàm utility \( U(X, Y) = 2X + Y \). Tìm số CD và video để tối đa hóa utility.</div>
+        <details>
+          <summary>Xem đáp án đầy đủ</summary>
+          <div class="answer">
+            <p><strong>Bước 1: Nhận diện loại hàng hóa</strong></p>
+            <p>Hàm utility \( U = 2X + Y \) là dạng tuyến tính → X và Y là <strong>Perfect Substitutes</strong>.</p>
+            <p>IC của Perfect Substitutes là đường thẳng với slope = \( -MU_X/MU_Y = -2/1 = -2 \).</p>
+
+            <p><strong>Bước 2: So sánh slope IC và slope Budget Line</strong></p>
+            <p>Slope của Budget Line: \( -P_X/P_Y = -1/2 \)</p>
+            <p>Slope của IC: \( -MRS = -MU_X/MU_Y = -2/1 = -2 \)</p>
+            <p>\[ |{-2}| > |{-1/2}| \implies \text{IC dốc hơn Budget Line} \]</p>
+
+            <p><strong>Bước 3: Xác định Corner Solution</strong></p>
+            <p>Vì IC dốc hơn BL, người tiêu dùng sẽ chọn <strong>Corner Solution tại trục X</strong> (mua toàn bộ X):</p>
+            <p>\[ X^* = \frac{I}{P_X} = \frac{41}{1} = \boxed{41 \text{ CDs}}, \quad Y^* = 0 \text{ video} \]</p>
+            <p>\( U^* = 2(41) + 0 = 82 \)</p>
+
+            <p><strong>Kiểm tra:</strong> Nếu mua 0 CD và tất cả video: \( Y = 41/2 = 20.5 \), \( U = 0 + 20.5 = 20.5 < 82 \). Rõ ràng corner solution tại X=41 tốt hơn.</p>
+
+            <p><em>Quy tắc Perfect Substitutes: So sánh MRS và P_X/P_Y. Nếu MRS > P_X/P_Y (IC dốc hơn BL) → mua toàn bộ X. Nếu MRS &lt; P_X/P_Y → mua toàn bộ Y. Nếu bằng nhau → vô số nghiệm tối ưu.</em></p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Docx Exercise 2: Identical Demand Functions -->
+      <div class="exercise">
+        <div class="exercise-title">✏️ Docx Exercise 2 — Hai hàm utility cho kết quả cầu giống nhau</div>
+        <div class="ex-q">Chứng minh rằng hai hàm utility sau tạo ra hàm cầu giống hệt nhau cho X và Y:<br>
+        (a) \( U(X,Y) = \log(X) + \log(Y) \)<br>
+        (b) \( U(X,Y) = (XY)^{0.5} \)</div>
+        <details>
+          <summary>Xem chứng minh đầy đủ</summary>
+          <div class="answer">
+            <p><strong>Khái niệm nền: Monotonic Transformation</strong></p>
+            <p>\( U_b = (XY)^{0.5} = \sqrt{XY} \). Đặt \( f(u) = \ln(u^2) = 2\ln(u) \) — đây là hàm đơn điệu tăng.</p>
+            <p>\( f(U_b) = \ln[(XY)^{0.5}]^2 = \ln(XY) = \ln X + \ln Y = U_a \)</p>
+            <p>Vậy \( U_a \) là biến đổi đơn điệu (monotonic transformation) của \( U_b \) → cùng ordering sở thích → cùng hàm cầu.</p>
+
+            <p><strong>Chứng minh trực tiếp — Giải cả hai bài toán tối ưu:</strong></p>
+
+            <p><strong>(a) \( U = \ln X + \ln Y \):</strong></p>
+            <p>\( MU_X = 1/X, \quad MU_Y = 1/Y \)</p>
+            <p>\( MRS = MU_X/MU_Y = Y/X \)</p>
+            <p>Điều kiện tối ưu: \( Y/X = P_X/P_Y \implies Y = \frac{P_X}{P_Y} X \)</p>
+            <p>Thay vào BC: \( P_X X + P_Y \cdot \frac{P_X}{P_Y} X = I \implies 2P_X X = I \)</p>
+            <p>\[ \boxed{X^* = \frac{I}{2P_X}}, \quad Y^* = \frac{I}{2P_Y} \]</p>
+
+            <p><strong>(b) \( U = (XY)^{0.5} = X^{0.5}Y^{0.5} \):</strong></p>
+            <p>\( MU_X = 0.5 X^{-0.5} Y^{0.5}, \quad MU_Y = 0.5 X^{0.5} Y^{-0.5} \)</p>
+            <p>\( MRS = MU_X/MU_Y = Y/X \) (giống hệt case (a)!)</p>
+            <p>Điều kiện tối ưu: \( Y/X = P_X/P_Y \implies \) cùng kết quả:</p>
+            <p>\[ \boxed{X^* = \frac{I}{2P_X}}, \quad Y^* = \frac{I}{2P_Y} \]</p>
+
+            <p><strong>Kết luận:</strong> Hai hàm utility cho đúng cùng hàm cầu vì chúng là monotonic transformation của nhau. <em>Utility chỉ có ý nghĩa ordinal — mọi biến đổi đơn điệu tăng đều giữ nguyên sở thích và hàm cầu.</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Section 2 Docx Exercises -->
+    <div class="concept">
+      <div class="concept-title">Bài tập từ Section 2 Answer Docx — Antonio &amp; Connie</div>
+      <div class="concept-en">DOCX EXERCISES: BUDGET LINE CHANGES &amp; PERFECT SUBSTITUTES</div>
+
+      <div class="exercise">
+        <div class="exercise-title">✏️ Antonio — Sách mới vs sách cũ, giá tăng + thêm thu nhập</div>
+        <div class="ex-q">Antonio mua 5 sách mới ($80 mỗi cuốn) năm đầu. Có thể mua sách cũ giá $50. Khi sách mới tăng 10% (lên $88), sách cũ tăng 5% (lên $52.50), cha cho thêm $40. (a) Đường ngân sách thay đổi như thế nào? (b) Antonio có bị thiệt không?</div>
+        <details>
+          <summary>Xem đáp án</summary>
+          <div class="answer">
+            <p><strong>(a) Phân tích đường ngân sách:</strong></p>
+            <p><em>Ban đầu:</em> \( 80N + 50U = 400 \) (N = sách mới, U = sách cũ)</p>
+            <p>N-intercept: \( N = 5 \); U-intercept: \( U = 8 \); Slope = \( -80/50 = -8/5 \)</p>
+            <p><em>Sau thay đổi:</em> Thu nhập = $400 + $40 = $440; \( 88N + 52.5U = 440 \)</p>
+            <p>N-intercept: \( 440/88 = 5 \) (không đổi!); U-intercept: \( 440/52.5 \approx 8.4 \) (tăng); Slope = \( -88/52.5 = -1.676 \) (thoải hơn một chút)</p>
+            <p>→ Đường ngân sách <strong>xoay ra ngoài nhẹ quanh điểm N=5</strong> (N-intercept không đổi, U-intercept tăng từ 8 lên 8.4).</p>
+
+            <p><strong>(b) Antonio có bị thiệt không?</strong></p>
+            <p>Không bị thiệt. Antonio vẫn có thể mua đúng 5 cuốn sách mới (vì N-intercept = 5 không đổi). Thực tế còn có thể <em>tốt hơn</em> nếu anh chuyển sang mua một số sách cũ thay vì mua toàn bộ sách mới — đường ngân sách mới nằm trên đường cũ trong vùng có U > 0.</p>
+            <p><em>Tuy nhiên, nếu Antonio có góc nghiệm (corner solution) tại N=5 (chỉ mua sách mới), thì anh có thể vẫn tối ưu ở điểm cũ với utility không đổi — không thiệt, không lợi hơn.</em></p>
+          </div>
+        </details>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">✏️ Connie — Perfect Substitutes &amp; Special Promotions</div>
+        <div class="ex-q">Connie có I = $200. Giá thịt (M) = $4/lb, khoai tây (P) = $2/lb. Utility: \( U(M,P) = 2M + P \). (a) Vẽ đường ngân sách. (b) Tìm optimal bundle. (c) Siêu thị khuyến mãi: mua 20 lbs P đầu thì được tặng thêm 10 lbs tiếp theo miễn phí (chỉ áp dụng cho 20 lbs đầu). Mô tả đường ngân sách mới. (d) Giá P tăng lên $4, chương trình khuyến mãi kết thúc — Connie chọn gì?</div>
+        <details>
+          <summary>Xem đáp án đầy đủ</summary>
+          <div class="answer">
+            <p><strong>(a) Budget Constraint ban đầu:</strong></p>
+            <p>\( 4M + 2P = 200 \implies M = 50 - 0.5P \)</p>
+            <p>M-intercept: M=50; P-intercept: P=100; Slope: -1/2 (trục M tung, trục P hoành)</p>
+
+            <p><strong>(b) Optimal Bundle — Perfect Substitutes:</strong></p>
+            <p>\( U = 2M + P \implies MU_M = 2, MU_P = 1 \implies MRS_{MP} = MU_M/MU_P = 2 \)</p>
+            <p>So sánh với \( P_M/P_P = 4/2 = 2 \)</p>
+            <p>Vì \( MRS = P_M/P_P = 2 \) → IC và Budget Line có cùng slope!</p>
+            <p>→ <strong>Vô số nghiệm tối ưu</strong>: mọi điểm trên đường ngân sách đều tối ưu (IC trùng với BL).</p>
+            <p>\( U^* = 100 \) tại bất kỳ điểm nào trên đường ngân sách (ví dụ: M=50, P=0 hoặc M=0, P=100).</p>
+
+            <p><strong>(c) Đường ngân sách với khuyến mãi:</strong></p>
+            <p>Khi P ≤ 20 lbs: đường bình thường (slope = -1/2).</p>
+            <p>Khi P từ 20→30 lbs: 10 lbs miễn phí → đường ngân sách <strong>phẳng ngang</strong> (M không giảm khi P tăng từ 20→30).</p>
+            <p>Khi P > 30 lbs: đường trở lại slope = -1/2.</p>
+            <p>→ Đường ngân sách có dạng "gãy khúc" (kinked) với đoạn phẳng từ P=20 đến P=30. P-intercept mới = 110 (tăng thêm 10 lbs).</p>
+
+            <p><strong>(d) P tăng lên $4, không còn khuyến mãi:</strong></p>
+            <p>Budget line mới: \( 4M + 4P = 200 \implies M = 50 - P \)</p>
+            <p>M-intercept = 50; P-intercept = 50; Slope = -1.</p>
+            <p>Bây giờ \( P_M/P_P = 4/4 = 1 < MRS = 2 \)</p>
+            <p>→ IC dốc hơn BL → <strong>Corner Solution: M* = 50, P* = 0</strong></p>
+            <p>Connie chỉ mua thịt, không mua khoai tây (vì thịt mang lại utility/dollar cao hơn).</p>
+            <p>\( U^* = 2(50) + 0 = 100 \)</p>
+            <p><em>Insight: Khi giá P tăng từ $2 lên $4, Connie chuyển từ indifferent (mua cả hai) sang corner solution (chỉ mua thịt). Đây là ví dụ hoàn hảo về cách giá thay đổi ảnh hưởng đến loại nghiệm tối ưu.</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Slutsky Quantitative Approach from Slides 60-67 -->
+    <div class="concept" id="slutsky-quantitative">
+      <div class="concept-title">Slutsky's Quantitative Approach — Phân tích định lượng</div>
+      <div class="concept-en">SLIDES 58–67: HICKS VS SLUTSKY · QUANTITATIVE DECOMPOSITION</div>
+
+      <!-- SVG: Slutsky vs Hicks decomposition -->
+      <svg class="svg-chart" viewBox="0 0 480 320" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#7f8c8d"/>
+          </marker>
+        </defs>
+        <!-- Axes -->
+        <line x1="50" y1="280" x2="460" y2="280" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arr3)"/>
+        <line x1="50" y1="280" x2="50" y2="20" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arr3)"/>
+        <text x="440" y="295" font-size="12" fill="#7f8c8d">Food (Q_F)</text>
+        <text x="5" y="18" font-size="12" fill="#7f8c8d">Clothing (C)</text>
+
+        <!-- Original BL (steep, high P_F) -->
+        <line x1="340" y1="280" x2="50" y2="60" stroke="#7f8c8d" stroke-width="2"/>
+        <text x="345" y="278" font-size="10" fill="#7f8c8d">BL old (R)</text>
+        <text x="30" y="58" font-size="10" fill="#7f8c8d">S</text>
+
+        <!-- New BL (shallower, lower P_F) -->
+        <line x1="440" y1="280" x2="50" y2="60" stroke="#2471a3" stroke-width="2.5"/>
+        <text x="443" y="278" font-size="10" fill="#2471a3">BL new</text>
+
+        <!-- Hicks compensated BL (same slope as new, tangent to old IC) -->
+        <line x1="380" y1="280" x2="50" y2="100" stroke="#c0392b" stroke-width="2" stroke-dasharray="6,3"/>
+        <text x="383" y="278" font-size="10" fill="#c0392b">BL Hicks</text>
+        <text x="383" y="290" font-size="10" fill="#c0392b">(compensated)</text>
+
+        <!-- IC1 (original) -->
+        <path d="M95,60 C130,100 200,170 320,250 C350,265 370,272 390,278" fill="none" stroke="#1a7a4a" stroke-width="2"/>
+        <text x="335" y="248" font-size="10" fill="#1a7a4a">U₁</text>
+
+        <!-- IC2 (higher, new equilibrium) -->
+        <path d="M130,45 C170,85 250,155 380,230 C410,248 430,260 448,270" fill="none" stroke="#1a7a4a" stroke-width="2"/>
+        <text x="398" y="228" font-size="10" fill="#1a7a4a">U₂</text>
+
+        <!-- Points A, D (Hicks), B -->
+        <!-- A: on old BL and IC1 ~(180, 170) -->
+        <circle cx="185" cy="170" r="5" fill="#c0392b"/>
+        <text x="160" y="165" font-size="11" fill="#c0392b" font-weight="bold">A</text>
+
+        <!-- D (Hicks): on compensated BL and IC1 ~(280, 148) -->
+        <circle cx="285" cy="150" r="5" fill="#c0392b"/>
+        <text x="290" y="147" font-size="11" fill="#c0392b" font-weight="bold">D (Hicks)</text>
+
+        <!-- B: on new BL and IC2 ~(355, 120) -->
+        <circle cx="355" cy="120" r="5" fill="#2471a3"/>
+        <text x="360" y="117" font-size="11" fill="#2471a3" font-weight="bold">B</text>
+
+        <!-- F1, E, F2 on x-axis -->
+        <line x1="185" y1="280" x2="185" y2="170" stroke="#c0392b" stroke-width="1" stroke-dasharray="3"/>
+        <line x1="285" y1="280" x2="285" y2="150" stroke="#c0392b" stroke-width="1" stroke-dasharray="3"/>
+        <line x1="355" y1="280" x2="355" y2="120" stroke="#2471a3" stroke-width="1" stroke-dasharray="3"/>
+
+        <text x="180" y="295" font-size="10" fill="#c0392b" font-weight="bold">F₁</text>
+        <text x="278" y="295" font-size="10" fill="#c0392b" font-weight="bold">E</text>
+        <text x="349" y="295" font-size="10" fill="#2471a3" font-weight="bold">F₂</text>
+
+        <!-- Brackets -->
+        <line x1="185" y1="298" x2="285" y2="298" stroke="#c0392b" stroke-width="2"/>
+        <text x="225" y="310" font-size="10" fill="#c0392b" font-weight="bold">SE = F₁E</text>
+        <line x1="285" y1="303" x2="355" y2="303" stroke="#2471a3" stroke-width="2"/>
+        <text x="305" y="315" font-size="10" fill="#2471a3" font-weight="bold">IE = EF₂</text>
+        <line x1="185" y1="308" x2="355" y2="308" stroke="#1a7a4a" stroke-width="1.5" stroke-dasharray="3"/>
+        <text x="255" y="320" font-size="10" fill="#1a7a4a" font-weight="bold">TE = F₁F₂</text>
+      </svg>
+
+      <div class="formula">
+        <div class="label">Slutsky Quantitative Approach — So sánh Hicks vs Slutsky</div>
+        <strong>Phương pháp Hicks</strong> (slides dùng): Đường bù trợ (compensated BL) tiếp xúc với IC CŨ (giữ utility cố định = U₁).<br>
+        \[ \Delta Q_{SE}^{Hicks} = Q_D - Q_A \quad \text{(cùng utility U₁, giá mới)} \]<br><br>
+        <strong>Phương pháp Slutsky</strong>: Đường bù trợ giữ cho người tiêu dùng có thể mua đúng rổ hàng CŨ (giữ purchasing power cố định).<br>
+        \[ \Delta Q_{SE}^{Slutsky} = Q_{D'} - Q_A \quad \text{(có thể mua rổ cũ, giá mới)} \]<br><br>
+        Trong cả hai phương pháp: TE = SE + IE và kết quả định tính giống nhau.<br>
+        Khi \( \Delta P \to 0 \): Hai phương pháp cho cùng kết quả (converge).
+      </div>
+
+      <div class="formula">
+        <div class="label">Quantitative Formula — Slides 60–67</div>
+        Với hàm cầu \( Q_X = f(P_X, P_Y, I) \):<br><br>
+        <strong>Total Effect (TE)</strong>: Tính Q tại \( P_X \) mới và I cũ:<br>
+        \[ \Delta Q_{TE} = Q(P_X^{new}, I) - Q(P_X^{old}, I) \]<br><br>
+        <strong>Substitution Effect (SE — Hicks)</strong>: Tính Q tại \( P_X \) mới và I* (thu nhập bù trợ để utility = U₁):<br>
+        \[ \Delta Q_{SE} = Q(P_X^{new}, I^*) - Q(P_X^{old}, I) \]<br>
+        Tìm I* bằng cách giải: \( V(P_X^{new}, P_Y, I^*) = U_1 \) (indirect utility = hằng số)<br><br>
+        <strong>Income Effect (IE)</strong>: \( \Delta Q_{IE} = \Delta Q_{TE} - \Delta Q_{SE} \)<br><br>
+        <em>Slide 67 — Khi income thay đổi từ I sang I':</em><br>
+        \[ \Delta Q_{income} = Q(P_X, I') - Q(P_X, I) \]<br>
+        Nếu \( \Delta Q_{income} < 0 \) khi \( I' > I \) → Inferior Good.
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập SE &amp; IE Định lượng — Slides 62–67</div>
+        <div class="ex-q">Cho hàm utility \( U = X \cdot Y \). Thu nhập \( I = 120 \), giá ban đầu \( P_X = 2, P_Y = 3 \). Giá X giảm xuống \( P_X' = 1 \). (1) Tìm điểm tối ưu ban đầu A. (2) Tìm điểm tối ưu mới B. (3) Tính SE và IE theo phương pháp Hicks.</div>
+        <details>
+          <summary>Xem đáp án đầy đủ</summary>
+          <div class="answer">
+            <p><strong>Bước 1: Điểm tối ưu ban đầu A (P_X=2, P_Y=3, I=120)</strong></p>
+            <p>\( MRS = Y/X = P_X/P_Y = 2/3 \implies Y = (2/3)X \)</p>
+            <p>Thay BC: \( 2X + 3 \cdot \frac{2}{3}X = 120 \implies 4X = 120 \implies X_A = 30, Y_A = 20 \)</p>
+            <p>\( U_1 = X_A \cdot Y_A = 30 \times 20 = 600 \)</p>
+
+            <p><strong>Bước 2: Điểm tối ưu mới B (P_X'=1, P_Y=3, I=120)</strong></p>
+            <p>\( MRS = Y/X = P_X'/P_Y = 1/3 \implies Y = (1/3)X \)</p>
+            <p>Thay BC: \( 1 \cdot X + 3 \cdot \frac{1}{3}X = 120 \implies 2X = 120 \implies X_B = 60, Y_B = 20 \)</p>
+            <p><strong>TE = X_B - X_A = 60 - 30 = +30 đơn vị</strong></p>
+
+            <p><strong>Bước 3: Tính SE (Hicks) — Tìm D trên IC₁ với giá mới</strong></p>
+            <p>D nằm trên IC₁: \( X_D \cdot Y_D = 600 \)</p>
+            <p>D tiếp xúc với compensated BL (slope = -P_X'/P_Y = -1/3):</p>
+            <p>\( MRS = Y_D/X_D = 1/3 \implies Y_D = X_D/3 \)</p>
+            <p>Thay vào IC₁: \( X_D \cdot (X_D/3) = 600 \implies X_D^2 = 1800 \implies X_D = \sqrt{1800} \approx 42.43 \)</p>
+            <p>\( Y_D = 42.43/3 \approx 14.14 \)</p>
+            <p><strong>SE = X_D - X_A = 42.43 - 30 = +12.43 đơn vị</strong></p>
+
+            <p><strong>Tính IE:</strong></p>
+            <p><strong>IE = TE - SE = 30 - 12.43 = +17.57 đơn vị</strong></p>
+            <p>IE > 0 → X là <strong>Normal Good</strong> ✓</p>
+
+            <p><em>Compensated income: \( I^* = P_X' \cdot X_D + P_Y \cdot Y_D = 1 \times 42.43 + 3 \times 14.14 = 42.43 + 42.43 = 84.86 \). So với I=120, cần giảm income 35.14 để giữ utility tại U₁=600 khi giá giảm.</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+<!-- ========================================== -->
+<!-- SECTION 4 — COMPLETE -->
+<!-- ========================================== -->
+
   </section>
   
   <!-- ══════════════════════════════════════════════ -->
@@ -3040,9 +3454,7 @@
   </main>
 </div>
 
-<!-- ========================================== -->
-<!-- SECTION 4 -->
-<!-- ========================================== -->
+<!-- ======== SECTION 4 — COMPLETE ======== -->
 <div id="section4" class="section-content">
   <nav class="toc">
     <a href="#market">Market Demand</a>
@@ -3053,12 +3465,11 @@
     <a href="#worklei">Work-Leisure</a>
     <a href="#backward">Backward-Bending</a>
     <a href="#inter">Intertemporal</a>
-    <a href="#inter-opt">Intertemporal Optimum</a>
-    <a href="#summary-s4">Summary</a>
+    <a href="#inter-opt">Optimum</a>
+    <a href="#summary-s4">Summary S4</a>
   </nav>
-  
   <main>
-  
+
   <!-- ═══ CHAPTER 1: MARKET DEMAND ═══ -->
   <section class="chapter" id="market">
     <div class="chapter-header">
@@ -3068,672 +3479,820 @@
         <p>From Individual to Market Demand · Horizontal Summation · Elasticity · Consumer Surplus</p>
       </div>
     </div>
-  
+
     <div class="concept" id="horizontal">
       <div class="concept-title">Market Demand Curve &amp; Horizontal Summation</div>
       <div class="concept-en">ĐƯỜNG CẦU THỊ TRƯỜNG VÀ PHƯƠNG PHÁP CỘNG NGANG</div>
 
-      <!-- ĐỒ THỊ 1: HORIZONTAL SUMMATION -->
-      <svg class="svg-chart" viewBox="0 0 400 250" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-        <!-- Axes -->
-        <line x1="40" y1="210" x2="380" y2="210" stroke="#7f8c8d" stroke-width="2"/>
-        <line x1="40" y1="20" x2="40" y2="210" stroke="#7f8c8d" stroke-width="2"/>
-        <text x="360" y="225" class="axis-label">Quantity</text>
-        <text x="10" y="15" class="axis-label">Price</text>
+      <!-- SVG: Horizontal Summation of 3 Demand Curves -->
+      <svg class="svg-chart" viewBox="0 0 480 300" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrM" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#7f8c8d"/>
+          </marker>
+        </defs>
+        <line x1="40" y1="260" x2="460" y2="260" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrM)"/>
+        <line x1="40" y1="260" x2="40" y2="20" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrM)"/>
+        <text x="440" y="275" font-size="12" fill="#7f8c8d">Quantity</text>
+        <text x="8" y="18" font-size="12" fill="#7f8c8d">Price ($)</text>
 
-        <!-- Labels -->
-        <text x="25" y="55" class="axis-label">$5</text>
-        <text x="25" y="85" class="axis-label">$4</text>
-        <line x1="35" y1="50" x2="45" y2="50" stroke="#7f8c8d"/>
-        <line x1="35" y1="80" x2="45" y2="80" stroke="#7f8c8d"/>
+        <!-- Grid lines -->
+        <line x1="40" y1="76" x2="455" y2="76" stroke="#d5c9b5" stroke-width="0.8" stroke-dasharray="3"/>
+        <line x1="40" y1="122" x2="455" y2="122" stroke="#d5c9b5" stroke-width="0.8" stroke-dasharray="3"/>
+        <line x1="40" y1="168" x2="455" y2="168" stroke="#d5c9b5" stroke-width="0.8" stroke-dasharray="3"/>
+        <line x1="40" y1="214" x2="455" y2="214" stroke="#d5c9b5" stroke-width="0.8" stroke-dasharray="3"/>
 
-        <!-- D_Nam (P=4 to Q=12) -->
-        <line x1="40" y1="80" x2="160" y2="210" stroke="#2471a3" stroke-width="2" stroke-dasharray="5"/>
-        <text x="145" y="225" fill="#2471a3" font-size="11px">Nam</text>
+        <!-- Price labels: P=5(76),4(122),3(168),2(214),1(260) 
+             Scale: P 1..5 → px 260..76, each unit=46px -->
+        <text x="28" y="79" font-size="10" fill="#7f8c8d" text-anchor="end">$5</text>
+        <text x="28" y="125" font-size="10" fill="#7f8c8d" text-anchor="end">$4</text>
+        <text x="28" y="171" font-size="10" fill="#7f8c8d" text-anchor="end">$3</text>
+        <text x="28" y="217" font-size="10" fill="#7f8c8d" text-anchor="end">$2</text>
+        <text x="28" y="263" font-size="10" fill="#7f8c8d" text-anchor="end">$1</text>
 
-        <!-- D_Lan (P=5 to Q=20) -->
-        <line x1="40" y1="50" x2="240" y2="210" stroke="#1a7a4a" stroke-width="2" stroke-dasharray="5"/>
-        <text x="230" y="225" fill="#1a7a4a" font-size="11px">Lan</text>
+        <!-- Q labels: 0,6,10,16,25,32 → x = 40+Q*8 -->
+        <text x="40" y="275" font-size="9" fill="#7f8c8d" text-anchor="middle">0</text>
+        <text x="88" y="275" font-size="9" fill="#7f8c8d" text-anchor="middle">6</text>
+        <text x="120" y="275" font-size="9" fill="#7f8c8d" text-anchor="middle">10</text>
+        <text x="168" y="275" font-size="9" fill="#7f8c8d" text-anchor="middle">16</text>
+        <text x="240" y="275" font-size="9" fill="#7f8c8d" text-anchor="middle">25</text>
+        <text x="296" y="275" font-size="9" fill="#7f8c8d" text-anchor="middle">32</text>
 
-        <!-- Market Demand (Kinked) -->
-        <path d="M 40,50 L 80,80 L 360,210" fill="none" stroke="#c0392b" stroke-width="3"/>
-        <text x="330" y="225" fill="#c0392b" font-weight="bold" font-size="11px">Market</text>
+        <!-- D_A: at P=5→Q=0, P=4→Q=0, P=3→Q=2, P=2→Q=4, P=1→Q=6 
+             choke price $3 → enters at P=3 
+             px=40+Q*8 at each price level py-->
+        <!-- P=3 Q=2: (56,168), P=2 Q=4: (72,214), P=1 Q=6: (88,260) -->
+        <polyline points="40,122 40,168 56,168 72,214 88,260" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+        <text x="42" y="140" font-size="11" fill="#c0392b" font-weight="bold">D_A</text>
 
-        <!-- Kink Point indicator -->
-        <circle cx="80" cy="80" r="5" fill="#1a1a2e"/>
-        <text x="90" y="75" font-weight="bold" font-size="11px">Kink Point</text>
-        <line x1="40" y1="80" x2="80" y2="80" stroke="#1a1a2e" stroke-dasharray="3"/>
+        <!-- D_B: P=5→2, P=4→4, P=3→6, P=2→8, P=1→10 -->
+        <!-- (56,76),(72,122),(88,168),(104,214),(120,260) -->
+        <polyline points="56,76 72,122 88,168 104,214 120,260" fill="none" stroke="#1a7a4a" stroke-width="2.5"/>
+        <text x="105" y="90" font-size="11" fill="#1a7a4a" font-weight="bold">D_B</text>
+
+        <!-- D_C: P=5→4, P=4→7, P=3→10, P=2→13, P=1→16 -->
+        <!-- (72,76),(96,122),(120,168),(144,214),(168,260) -->
+        <polyline points="72,76 96,122 120,168 144,214 168,260" fill="none" stroke="#2471a3" stroke-width="2.5"/>
+        <text x="150" y="95" font-size="11" fill="#2471a3" font-weight="bold">D_C</text>
+
+        <!-- Market Demand (bold): P=5→6, P=4→11, P=3→18, P=2→25, P=1→32 -->
+        <!-- (88,76),(128,122),(184,168),(240,214),(296,260) -->
+        <!-- Note: At P≥4, A is not in market but B and C are -->
+        <polyline points="88,76 128,122 184,168 240,214 296,260" fill="none" stroke="#1a1a2e" stroke-width="3.5"/>
+        <text x="300" y="255" font-size="12" fill="#1a1a2e" font-weight="bold">D_Market</text>
+
+        <!-- KINK annotation at P=3 (where A enters) -->
+        <circle cx="184" cy="168" r="5" fill="none" stroke="#c0392b" stroke-width="2"/>
+        <text x="188" y="162" font-size="10" fill="#c0392b">Kink (P=$3, Q=18)</text>
+        <text x="188" y="174" font-size="10" fill="#c0392b">A enters market</text>
+
+        <!-- Point at P=4 annotation -->
+        <circle cx="128" cy="122" r="4" fill="#1a1a2e"/>
+        <text x="132" y="118" font-size="10" fill="#1a1a2e">P=$4: Q=0+4+7=11</text>
+
+        <!-- Legend -->
+        <rect x="310" y="80" width="140" height="90" fill="white" stroke="#d5c9b5" rx="4"/>
+        <line x1="318" y1="95" x2="340" y2="95" stroke="#c0392b" stroke-width="2.5"/>
+        <text x="344" y="99" font-size="10" fill="#c0392b">D_A (choke=$3)</text>
+        <line x1="318" y1="112" x2="340" y2="112" stroke="#1a7a4a" stroke-width="2.5"/>
+        <text x="344" y="116" font-size="10" fill="#1a7a4a">D_B (choke=$6)</text>
+        <line x1="318" y1="129" x2="340" y2="129" stroke="#2471a3" stroke-width="2.5"/>
+        <text x="344" y="133" font-size="10" fill="#2471a3">D_C (choke=$8)</text>
+        <line x1="318" y1="146" x2="340" y2="146" stroke="#1a1a2e" stroke-width="3.5"/>
+        <text x="344" y="150" font-size="10" fill="#1a1a2e" font-weight="bold">D_Market</text>
+        <text x="318" y="164" font-size="9" fill="#7f8c8d">(horizontal sum)</text>
       </svg>
 
       <div class="concept-body">
-        <p><strong>Market Demand Curve:</strong> Curve relating the quantity of a good that <em>all consumers</em> in a market will buy to its price.</p>
-        <p>Đường cầu thị trường là đường biểu diễn tổng lượng hàng hóa mà <em>tất cả người tiêu dùng</em> trên thị trường muốn mua ở mỗi mức giá. Đây là tổng hợp (aggregation) của tất cả các đường cầu cá nhân.</p>
-        <p><strong>Horizontal Summation (Cộng ngang):</strong> Tại mỗi mức giá, cộng lượng cầu của tất cả người tiêu dùng lại. <em>Lưu ý: cộng theo chiều ngang (lượng Q), không phải chiều dọc (giá P).</em></p>
+        <p><strong>Market Demand Curve:</strong> Curve relating the quantity of a good that <em>all consumers</em> in a market will buy to its price. Được tạo ra bằng cách <strong>cộng ngang (horizontal summation)</strong> các đường cầu cá nhân.</p>
+        <p><strong>Kink (Điểm gãy):</strong> Khi giá vượt qua "choke price" của một người tiêu dùng, họ rời thị trường, tạo ra điểm gãy trên đường cầu thị trường. Ở giá cao (ít người tham gia) → dốc hơn. Ở giá thấp (nhiều người) → thoải hơn.</p>
       </div>
+
       <div class="formula">
-        <div class="label">Horizontal Summation — Công thức tổng quát</div>
-        \[ Q_{\text{market}}(P) = Q_A(P) + Q_B(P) + Q_C(P) + \dots + Q_n(P) \]<br>
-        Ví dụ từ slide (3 người tiêu dùng A, B, C):<br>
-        Tại P = $1: \( Q_{\text{market}} = 6 + 10 + 16 = 32 \)<br>
-        Tại P = $2: \( Q_{\text{market}} = 4 + 8  + 13 = 25 \)<br>
-        Tại P = $3: \( Q_{\text{market}} = 2 + 6  + 10 = 18 \)<br>
-        Tại P = $4: \( Q_{\text{market}} = 0 + 4  + 7  = 11 \)<br>
-        Tại P = $5: \( Q_{\text{market}} = 0 + 2  + 4  = 6 \)<br><br>
-        Chú ý: Khi \( P > P_{\text{choke}} \) của A (P > $3), A rời thị trường → \( Q_A = 0 \).
+        <div class="label">Horizontal Summation — Công thức</div>
+        \[ Q_{market}(P) = Q_A(P) + Q_B(P) + Q_C(P) + \cdots + Q_n(P) \]
+        Từ slide — Tại P = $1: \( Q = 6 + 10 + 16 = 32 \)<br>
+        Tại P = $4: \( Q = 0 + 4 + 7 = 11 \) (A đã rời thị trường khi P &gt; $3)<br><br>
+        Khi viết dạng hàm, phải chia theo khoảng giá:<br>
+        \[ Q_M = \begin{cases} Q_A + Q_B + Q_C & \text{nếu } P \leq P_A^{choke} \\ Q_B + Q_C & \text{nếu } P_A^{choke} < P \leq P_B^{choke} \\ Q_C & \text{nếu } P_B^{choke} < P \leq P_C^{choke} \\ 0 & \text{nếu } P > P_C^{choke} \end{cases} \]
       </div>
-      <div class="concept-body">
-        <p><strong>Quan trọng — "Kink" trong đường cầu thị trường:</strong> Khi giá tăng vượt qua "choke price" của một số người tiêu dùng (giá mà tại đó Q cá nhân = 0), đường cầu thị trường sẽ có điểm <strong>gãy khúc (kink)</strong>. Ở giá thấp, nhiều người tham gia → đường cầu thoải hơn. Ở giá cao, ít người tham gia → đường cầu dốc hơn.</p>
-        <p><strong>Hai đặc điểm quan trọng của Market Demand (từ slide):</strong></p>
-        <p>① Đường cầu thị trường dịch sang phải khi có thêm người tiêu dùng vào thị trường.</p>
-        <p>② Các yếu tố ảnh hưởng đến nhiều người tiêu dùng cùng lúc sẽ ảnh hưởng đến cầu thị trường (thu nhập, giá hàng liên quan, thị hiếu xã hội, kỳ vọng...).</p>
-      </div>
-      <div class="formula">
-        <div class="label">Cách viết Market Demand từ các hàm cầu cá nhân</div>
-        Ví dụ: \( D_A: Q_A = 10 - 2P \) (choke price \( P_A = 5 \))<br>
-        \( D_B: Q_B = 14 - 2P \) (choke price \( P_B = 7 \))<br><br>
-        Khi \( P \le 5 \): Cả A và B tham gia:<br>
-        \[ Q_{\text{market}} = Q_A + Q_B = (10 - 2P) + (14 - 2P) = 24 - 4P \]<br>
-        Khi \( 5 < P \le 7 \): Chỉ B tham gia (A rời thị trường):<br>
-        \[ Q_{\text{market}} = Q_B = 14 - 2P \]<br>
-        Khi \( P > 7 \): Không ai mua → \( Q_{\text{market}} = 0 \)<br><br>
-        → Đường cầu thị trường có KINK tại P = 5
-      </div>
+
       <div class="keywords">
         <div class="keywords-title">🔑 Keywords</div>
         <div class="kw-list">
           <span class="kw">horizontal summation</span>
-          <span class="kw">sum quantities at each price</span>
-          <span class="kw">choke price</span>
-          <span class="kw">kink in demand</span>
+          <span class="kw">sum Q at each P</span>
+          <span class="kw">choke price → kink</span>
           <span class="kw">market entry/exit</span>
-          <span class="kw">aggregate demand</span>
           <span class="kw">shift vs movement</span>
         </div>
       </div>
+
       <div class="trap">
-        <div class="trap-title">⚠️ Bẫy &amp; Nhầm lẫn</div>
+        <div class="trap-title">⚠️ Bẫy về Market Demand</div>
         <ul>
-          <li><strong>Cộng ngang ≠ cộng dọc:</strong> Market demand = cộng LƯỢNG (Q) tại cùng một giá. KHÔNG cộng giá. Ví dụ: tại P=$3, \( Q_{\text{market}} = Q_A + Q_B + Q_C = 2+6+10 = 18 \).</li>
-          <li><strong>Khi P > choke price của ai đó: Q của người đó = 0, không âm:</strong> Lượng cầu không thể âm. Khi viết hàm tổng, phải kiểm tra phạm vi giá.</li>
-          <li><strong>Dịch chuyển đường cầu (shift) ≠ di chuyển dọc đường cầu (movement along):</strong> Thay đổi giá → movement along. Thay đổi thu nhập → shift. Thêm người → shift phải.</li>
-          <li><strong>Market demand curve slope phụ thuộc vào số người tham gia:</strong> Slope thay đổi ở chỗ kink — không phải đường thẳng hoàn toàn nếu người tiêu dùng có choke prices khác nhau.</li>
+          <li><strong>Cộng ngang ≠ cộng dọc:</strong> Market demand = cộng LƯỢNG (Q) tại cùng một giá, KHÔNG cộng giá.</li>
+          <li><strong>Q cá nhân không thể âm:</strong> Khi P &gt; choke price, đặt Q = 0, không phải số âm.</li>
+          <li><strong>Shift ≠ Movement:</strong> Thay đổi giá → di chuyển DỌC đường cầu. Thay đổi thu nhập/thị hiếu/giá khác → dịch NGANG đường cầu.</li>
         </ul>
       </div>
+
       <div class="exercise">
-        <div class="exercise-title">✏️ Bài tập 1 — Tổng hợp Market Demand</div>
-        <div class="ex-q">Hai người tiêu dùng Nam và Lan có hàm cầu:<br>
-        Nam: \( Q_N = 12 - 3P \) (khi \( P \le 4 \), nếu không \( Q_N = 0 \))<br>
-        Lan: \( Q_L = 20 - 4P \) (khi \( P \le 5 \), nếu không \( Q_L = 0 \))<br>
-        (a) Viết hàm Market Demand theo từng đoạn giá. (b) Tính \( Q_{\text{market}} \) tại \( P = \$3 \). (c) Vẽ mô tả hình dạng đường cầu thị trường.</div>
-        <details><summary>Xem đáp án chi tiết</summary>
+        <div class="exercise-title">✏️ Bài tập — Market Demand với Kink</div>
+        <div class="ex-q">Nam: \( Q_N = 12 - 3P \) (khi \( P \leq 4 \)); Lan: \( Q_L = 20 - 4P \) (khi \( P \leq 5 \)). Viết hàm Market Demand và tính Q tại P=$3.</div>
+        <details>
+          <summary>Xem đáp án</summary>
           <div class="answer">
-            <div class="answer-title">Đáp án</div>
-            <p><strong>(a) Market Demand theo từng đoạn:</strong></p>
-            <p>Choke price Nam: \( Q_N = 0 \implies 12 - 3P = 0 \implies \) <span class="hl-blue">\( P_N = 4 \)</span></p>
-            <p>Choke price Lan: \( Q_L = 0 \implies 20 - 4P = 0 \implies \) <span class="hl-blue">\( P_L = 5 \)</span></p>
-            <p>Khi \( P \le 4 \): Cả hai tham gia → \( Q = Q_N + Q_L = (12-3P) + (20-4P) = \) <span class="hl-red">\( 32 - 7P \)</span></p>
-            <p>Khi \( 4 < P \le 5 \): Chỉ Lan → \( Q = \) <span class="hl-red">\( 20 - 4P \)</span></p>
-            <p>Khi \( P > 5 \): \( Q = 0 \)</p>
-            <p><strong>(b) Q tại P = $3:</strong> \( P = 3 \le 4 \implies Q = 32 - 7(3) = \) <span class="hl-green">11 đơn vị</span></p>
-            <p><strong>(c) Hình dạng:</strong> Đường cầu gồm 2 đoạn thẳng với kink tại P=4. Đoạn P≤4 có độ dốc thoải hơn so với đoạn 4&lt;P≤5. Tại kink P=4, cả 2 phương trình đều cho Q = 4.</p>
+            <p>Choke prices: Nam: P_N=4, Lan: P_L=5</p>
+            <p>Khi \( P \leq 4 \): \( Q = (12-3P)+(20-4P) = 32-7P \)</p>
+            <p>Khi \( 4 &lt; P \leq 5 \): \( Q = 20-4P \) (chỉ Lan)</p>
+            <p>Khi P &gt; 5: Q = 0</p>
+            <p>Tại P=3: \( Q = 32-21 = \mathbf{11} \) đơn vị. Kink tại P=4: \( Q = 4 \) (từ cả hai đoạn → liên tục ✓)</p>
           </div>
         </details>
       </div>
     </div>
-  
+
     <!-- ELASTICITY -->
     <div class="concept" id="elasticity">
-      <div class="concept-title">Price Elasticity of Demand — Độ co giãn của cầu theo giá</div>
-      <div class="concept-en">E_P: ĐO LƯỜNG SỰ NHẠY CẢM CỦA LƯỢNG CẦU VỚI THAY ĐỔI GIÁ</div>
-      <div class="concept-body">
-        <p><strong>Price Elasticity of Demand (\( E_p \) hay \( \eta \)):</strong> The percentage change in quantity demanded resulting from a 1% change in price.</p>
-        <p>Độ co giãn của cầu theo giá đo lường mức độ phản ứng (% thay đổi) của lượng cầu khi giá thay đổi 1%. Là chỉ số quan trọng nhất để doanh nghiệp ra quyết định định giá.</p>
-      </div>
-      <div class="formula">
-        <div class="label">Price Elasticity Formulas</div>
-        Công thức chung:<br>
-        \[ E_p = \frac{\%\Delta Q}{\%\Delta P} = \frac{\Delta Q / Q}{\Delta P / P} = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} \]<br><br>
-        Với đường cầu tuyến tính \( Q = a - bP \):<br>
-        \( \frac{\Delta Q}{\Delta P} = -b \) (hệ số góc)<br>
-        \[ E_p = -b \times \frac{P}{Q} \]<br><br>
-        Ví dụ từ Problem Set 4 — \( Q = 500 - 5P \) tại \( P=35, Q=325 \):<br>
-        \[ E_p = (-5) \times \left(\frac{35}{325}\right) = -0.538 \]
-      </div>
-      
-      <table>
-        <tr><th>\( |E_p| \)</th><th>Loại</th><th>Tiếng Việt</th><th>Ý nghĩa</th><th>Ví dụ</th></tr>
-        <tr><td>\( |E_p| > 1 \)</td><td>Elastic</td><td>Co giãn mạnh</td><td>\( \%\Delta Q > \%\Delta P \) — cầu nhạy cảm</td><td>Hàng xa xỉ</td></tr>
-        <tr><td>\( |E_p| = 1 \)</td><td>Unit elastic</td><td>Co giãn đơn vị</td><td>\( \%\Delta Q = \%\Delta P \)</td><td>Điểm giữa đường cầu</td></tr>
-        <tr><td>\( |E_p| < 1 \)</td><td>Inelastic</td><td>Kém co giãn</td><td>\( \%\Delta Q < \%\Delta P \) — cầu ít nhạy</td><td>Hàng thiết yếu</td></tr>
-        <tr><td>\( |E_p| = 0 \)</td><td>Perfectly inelastic</td><td>Hoàn toàn không co giãn</td><td>\( \Delta Q = 0 \) dù giá đổi</td><td>Insulin</td></tr>
-        <tr><td>\( |E_p| = \infty \)</td><td>Perfectly elastic</td><td>Hoàn toàn co giãn</td><td>\( \Delta P \) nhỏ → \( Q = 0 \)</td><td>Thị trường CT Hoàn Hảo</td></tr>
-      </table>
+      <div class="concept-title">Price Elasticity of Demand — Độ co giãn theo giá</div>
+      <div class="concept-en">E_P — ĐO LƯỜNG PHẢN ỨNG CỦA LƯỢNG CẦU VỚI GIÁ</div>
+
+      <!-- SVG: Elasticity along linear demand -->
+      <svg class="svg-chart" viewBox="0 0 420 280" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrE" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#7f8c8d"/>
+          </marker>
+        </defs>
+        <line x1="40" y1="250" x2="400" y2="250" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrE)"/>
+        <line x1="40" y1="250" x2="40" y2="20" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrE)"/>
+        <text x="380" y="265" font-size="12" fill="#7f8c8d">Q</text>
+        <text x="8" y="18" font-size="12" fill="#7f8c8d">P</text>
+
+        <!-- Demand line: P-int=100 (y=30), Q-int=500 (x=390) -->
+        <!-- Theater example: Q_gp = 500-5P, P=0→Q=500, Q=0→P=100 -->
+        <!-- Scale: P 0..100 → y 250..30 (220px); Q 0..500 → x 40..390 (350px) -->
+        <line x1="40" y1="30" x2="390" y2="250" stroke="#2471a3" stroke-width="2.5"/>
+        <text x="380" y="244" font-size="11" fill="#2471a3">D: Q=500-5P</text>
+
+        <!-- P=100 (choke) at y=30 -->
+        <text x="28" y="33" font-size="10" fill="#7f8c8d" text-anchor="end">100</text>
+        <!-- P=50 (midpoint) at y=140 -->
+        <line x1="35" y1="140" x2="215" y2="140" stroke="#1a7a4a" stroke-width="1.5" stroke-dasharray="4"/>
+        <text x="28" y="143" font-size="10" fill="#1a7a4a" text-anchor="end">50</text>
+        <!-- P=35 at y=30+35*220/100=30+77=107... wait 250-35*(220/100)=250-77=173 -->
+        <line x1="35" y1="173" x2="215" y2="173" stroke="#c0392b" stroke-width="1" stroke-dasharray="3"/>
+        <text x="28" y="176" font-size="10" fill="#c0392b" text-anchor="end">35</text>
+
+        <!-- Q=250 (midpoint) at x=40+250*350/500=40+175=215 -->
+        <line x1="215" y1="250" x2="215" y2="135" stroke="#1a7a4a" stroke-width="1.5" stroke-dasharray="4"/>
+        <text x="212" y="262" font-size="10" fill="#1a7a4a" text-anchor="middle">250</text>
+        <!-- Q=325 at x=40+325*350/500=40+227.5=267.5 -->
+        <line x1="268" y1="250" x2="268" y2="168" stroke="#c0392b" stroke-width="1" stroke-dasharray="3"/>
+        <text x="265" y="262" font-size="10" fill="#c0392b" text-anchor="middle">325</text>
+
+        <!-- Zone labels -->
+        <rect x="42" y="35" width="100" height="20" fill="#fdf2f2" rx="3"/>
+        <text x="92" y="49" font-size="10" fill="#c0392b" text-anchor="middle" font-weight="bold">|E| &gt; 1 ELASTIC</text>
+        <rect x="200" y="220" width="110" height="20" fill="#f0f8f0" rx="3"/>
+        <text x="255" y="234" font-size="10" fill="#1a7a4a" text-anchor="middle" font-weight="bold">|E| &lt; 1 INELASTIC</text>
+
+        <!-- Midpoint dot (unit elastic) -->
+        <circle cx="215" cy="140" r="6" fill="#1a7a4a"/>
+        <text x="220" y="128" font-size="10" fill="#1a7a4a" font-weight="bold">|E|=1 (Unit elastic)</text>
+        <text x="220" y="140" font-size="10" fill="#1a7a4a">TR max ở đây</text>
+        <text x="220" y="152" font-size="10" fill="#1a7a4a">P=50, Q=250</text>
+
+        <!-- Point at P=35, Q=325 -->
+        <circle cx="268" cy="173" r="5" fill="#c0392b"/>
+        <text x="272" y="168" font-size="10" fill="#c0392b">P=$35, Q=325</text>
+        <text x="272" y="180" font-size="10" fill="#c0392b">|E|=0.54 (Inelastic)</text>
+
+        <!-- TR curve region hint -->
+        <text x="42" y="200" font-size="10" fill="#7f8c8d">P↑ → TR↓ (elastic zone)</text>
+        <text x="230" y="235" font-size="10" fill="#7f8c8d">P↑ → TR↑</text>
+      </svg>
 
       <div class="formula">
-        <div class="label">Elasticity — Revenue &amp; Pricing Rules (Cực kỳ quan trọng)</div>
-        Total Revenue (TR) = \( P \times Q \)<br><br>
-        Khi giá tăng:<br>
-        \( |E_p| > 1 \) (elastic):    TR GIẢM  (\( P \uparrow \implies Q \downarrow \) mạnh)<br>
-        \( |E_p| = 1 \) (unit):        TR KHÔNG ĐỔI<br>
-        \( |E_p| < 1 \) (inelastic):  TR TĂNG  (\( P \uparrow \implies Q \downarrow \) ít)<br><br>
-        Để tối đa hóa TR: đặt giá tại điểm \( |E_p| = 1 \) (\( MR = 0 \)).<br><br>
-        Với \( Q = a - bP \implies TR = P(a-bP) = aP - bP^2 \)<br>
-        \[ \frac{dTR}{dP} = a - 2bP = 0 \implies P^* = \frac{a}{2b} \implies Q^* = \frac{a}{2} \]
+        <div class="label">Price Elasticity — Công thức và phân loại</div>
+        \[ E_p = \frac{\%\Delta Q}{\%\Delta P} = \frac{\Delta Q}{\Delta P} \cdot \frac{P}{Q} \]
+        Với đường cầu tuyến tính \( Q = a - bP \): \( \frac{\Delta Q}{\Delta P} = -b \implies E_p = -b \cdot \frac{P}{Q} \)<br><br>
+        \[ \text{TR max khi } |E_p| = 1 \implies P^* = \frac{P_{choke}}{2}, \quad Q^* = \frac{a}{2} \]<br>
+        \[ MR = \frac{dTR}{dQ} = P\left(1 + \frac{1}{E_p}\right) \]
+        Khi \( |E_p| &gt; 1 \): MR &gt; 0, giảm P → TR↑ &nbsp;|&nbsp; Khi \( |E_p| &lt; 1 \): MR &lt; 0, tăng P → TR↑
       </div>
-      <div class="formula">
-        <div class="label">Marginal Revenue (MR) — Doanh thu biên</div>
-        \[ MR = \frac{dTR}{dQ} = P\left(1 + \frac{1}{E_p}\right) = P\left(1 - \frac{1}{|E_p|}\right) \]<br><br>
-        Khi \( |E_p| > 1 \): \( MR > 0 \) → Tăng Q (giảm P) làm TR tăng<br>
-        Khi \( |E_p| = 1 \): \( MR = 0 \) → TR cực đại<br>
-        Khi \( |E_p| < 1 \): \( MR < 0 \) → Tăng Q (giảm P) làm TR giảm
+
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords</div>
+        <div class="kw-list">
+          <span class="kw">E_p = (ΔQ/ΔP)·(P/Q)</span>
+          <span class="kw">|E|&gt;1: elastic → TR↓ khi P↑</span>
+          <span class="kw">|E|&lt;1: inelastic → TR↑ khi P↑</span>
+          <span class="kw">TR max at |E|=1</span>
+          <span class="kw">MR = P(1+1/E_p)</span>
+          <span class="kw">slope ≠ elasticity</span>
+        </div>
       </div>
       <div class="trap">
         <div class="trap-title">⚠️ Bẫy về Elasticity</div>
         <ul>
-          <li><strong>Slope ≠ Elasticity:</strong> Hai đường cầu song song có thể có elasticity khác nhau. Trên đường cầu tuyến tính: \( E_p \) thay đổi từ 0 đến \( -\infty \).</li>
-          <li><strong>\( E_p \) luôn âm cho goods thông thường</strong>, nhưng ta thường dùng giá trị tuyệt đối \( |E_p| \) để so sánh.</li>
-          <li><strong>"Maximizing revenue" ≠ "Maximizing profit":</strong> TR max tại \( |E_p| = 1 \). Profit max tại \( MR = MC \).</li>
+          <li><strong>Slope ≠ Elasticity:</strong> Trên đường cầu thẳng, slope không đổi nhưng \( E_p \) thay đổi từ \( -\infty \) (P-intercept) đến 0 (Q-intercept). Điểm giữa có \( |E_p| = 1 \).</li>
+          <li><strong>"Maximizing revenue" ≠ "Maximizing profit":</strong> TR max tại \( |E_p| = 1 \) (MR=0). Profit max tại MR=MC, thường ở \( |E_p| > 1 \).</li>
+          <li><strong>Inelastic ≠ hoàn toàn không phản ứng:</strong> Q vẫn giảm khi P tăng, chỉ ít hơn tỷ lệ phần trăm.</li>
         </ul>
       </div>
     </div>
-  
+
     <!-- CONSUMER SURPLUS -->
     <div class="concept" id="cs">
       <div class="concept-title">Consumer Surplus — Thặng dư người tiêu dùng</div>
-      <div class="concept-en">CS: LỢI ÍCH VƯỢT TRỘI MÀ NGƯỜI TIÊU DÙNG NHẬN ĐƯỢC</div>
+      <div class="concept-en">CS = DIỆN TÍCH TAM GIÁC DƯỚI ĐƯỜNG CẦU VÀ TRÊN GIÁ</div>
 
-      <!-- ĐỒ THỊ 2: CONSUMER SURPLUS -->
-      <svg class="svg-chart" viewBox="0 0 350 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-        <!-- Axes -->
-        <line x1="40" y1="180" x2="320" y2="180" stroke="#7f8c8d" stroke-width="2"/>
-        <line x1="40" y1="20" x2="40" y2="180" stroke="#7f8c8d" stroke-width="2"/>
-        <text x="300" y="195" class="axis-label">Quantity</text>
-        <text x="10" y="15" class="axis-label">Price</text>
+      <!-- SVG: Consumer Surplus visualization -->
+      <svg class="svg-chart" viewBox="0 0 420 280" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrCS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#7f8c8d"/>
+          </marker>
+        </defs>
+        <line x1="40" y1="250" x2="400" y2="250" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrCS)"/>
+        <line x1="40" y1="250" x2="40" y2="20" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrCS)"/>
+        <text x="380" y="265" font-size="12" fill="#7f8c8d">Q</text>
+        <text x="8" y="18" font-size="12" fill="#7f8c8d">P ($)</text>
 
-        <!-- Demand -->
-        <line x1="40" y1="40" x2="280" y2="180" stroke="#2471a3" stroke-width="3"/>
-        <text x="290" y="180" fill="#2471a3" font-weight="bold">D</text>
-        <text x="5" y="45" font-weight="bold">P_max</text>
+        <!-- Demand: P = 15 - Q/2, P-int=15(y=30), Q-int=30(x=40+30*12=400) -->
+        <!-- Scale: P 0..15 → y 250..30 (220px/15=14.67); Q 0..30 → x 40..400 (360px/30=12) -->
+        <line x1="40" y1="30" x2="400" y2="250" stroke="#2471a3" stroke-width="2.5"/>
+        <text x="390" y="244" font-size="11" fill="#2471a3">D: P=15−Q/2</text>
 
-        <!-- Price Line & Intersection -->
-        <line x1="40" y1="110" x2="160" y2="110" stroke="#1a1a2e" stroke-dasharray="4" stroke-width="2"/>
-        <line x1="160" y1="110" x2="160" y2="180" stroke="#1a1a2e" stroke-dasharray="4" stroke-width="2"/>
-        <text x="10" y="115" font-weight="bold">P*</text>
-        <text x="155" y="195" font-weight="bold">Q*</text>
+        <!-- Price labels -->
+        <text x="28" y="33" font-size="10" fill="#7f8c8d" text-anchor="end">15</text>
+        <!-- P=5: y=250-5*14.67=250-73.3=176.7≈177 -->
+        <text x="28" y="180" font-size="10" fill="#c0392b" text-anchor="end">5</text>
+        <!-- P=7: y=250-7*14.67=250-102.7=147.3≈147 -->
+        <text x="28" y="150" font-size="10" fill="#1a7a4a" text-anchor="end">7</text>
 
-        <!-- Shaded Area (Consumer Surplus) -->
-        <path d="M 40,40 L 160,110 L 40,110 Z" fill="rgba(36, 113, 163, 0.2)" stroke="none"/>
-        <text x="65" y="90" fill="#2471a3" font-weight="bold" font-size="14px">CS Area</text>
+        <!-- Q labels -->
+        <!-- Q=20: x=40+20*12=280 -->
+        <text x="280" y="263" font-size="10" fill="#c0392b" text-anchor="middle">20</text>
+        <!-- Q=16: x=40+16*12=232 -->
+        <text x="232" y="263" font-size="10" fill="#1a7a4a" text-anchor="middle">16</text>
+        <!-- Q=30: x=400 -->
+        <text x="400" y="263" font-size="10" fill="#7f8c8d" text-anchor="middle">30</text>
+
+        <!-- CS at P=5 (large triangle, red) -->
+        <!-- Triangle: (40,30)-(40,177)-(280,177) -->
+        <polygon points="40,30 40,177 280,177" fill="#c0392b" opacity="0.15"/>
+        <text x="90" y="120" font-size="12" fill="#c0392b" font-weight="bold">CS(P=$5) = $100</text>
+        <text x="90" y="134" font-size="10" fill="#c0392b">= ½×20×(15-5)</text>
+
+        <!-- Price line P=5 -->
+        <line x1="40" y1="177" x2="280" y2="177" stroke="#c0392b" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="283" y="180" font-size="10" fill="#c0392b" font-weight="bold">P=$5</text>
+
+        <!-- Price line P=7 and trapezoid loss (green) -->
+        <line x1="40" y1="147" x2="232" y2="147" stroke="#1a7a4a" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="235" y="150" font-size="10" fill="#1a7a4a" font-weight="bold">P=$7</text>
+
+        <!-- Loss of CS trapezoid between P=5 and P=7 -->
+        <!-- (40,147)-(40,177)-(280,177)-(232,147) -->
+        <polygon points="40,147 40,177 280,177 232,147" fill="#1a7a4a" opacity="0.2"/>
+        <text x="110" y="167" font-size="11" fill="#1a7a4a" font-weight="bold">Loss CS = $36</text>
+        <text x="110" y="179" font-size="9" fill="#1a7a4a">(trapezoid area)</text>
+
+        <!-- DWL triangle -->
+        <polygon points="232,147 280,177 280,147" fill="#c0392b" opacity="0.35"/>
+        <text x="245" y="165" font-size="9" fill="#c0392b" font-weight="bold">DWL</text>
+        <text x="242" y="177" font-size="8" fill="#c0392b">=$4</text>
+
+        <!-- Toll Revenue rectangle -->
+        <polygon points="40,147 40,177 232,177 232,147" fill="#2471a3" opacity="0.2"/>
+        <text x="115" y="160" font-size="9" fill="#2471a3" font-weight="bold">Revenue $32</text>
+
+        <!-- Q projections -->
+        <line x1="280" y1="250" x2="280" y2="177" stroke="#c0392b" stroke-width="1" stroke-dasharray="3"/>
+        <line x1="232" y1="250" x2="232" y2="147" stroke="#1a7a4a" stroke-width="1" stroke-dasharray="3"/>
       </svg>
 
-      <div class="concept-body">
-        <p><strong>Consumer Surplus (CS):</strong> The difference between what a consumer is <em>willing to pay</em> for a good and what they <em>actually pay</em>.</p>
-        <p>Thặng dư người tiêu dùng là chênh lệch giữa mức giá tối đa người tiêu dùng <em>sẵn sàng trả</em> (willingness to pay) và giá họ <em>thực sự trả</em> trên thị trường.</p>
-        <p><strong>Về mặt đồ thị:</strong> CS = diện tích tam giác nằm dưới đường cầu (D) và trên đường giá (P).</p>
-      </div>
       <div class="formula">
-        <div class="label">Consumer Surplus Formulas</div>
-        Với đường cầu tuyến tính \( Q = a - bP \) (hay \( P = \frac{a}{b} - \frac{1}{b}Q \)):<br>
-        Choke price (\( P_{\text{max}} \)) = \( \frac{a}{b} \) (khi \( Q = 0 \))<br><br>
-        \[ CS = \frac{1}{2} \times Q \times (P_{\text{max}} - P_{\text{market}}) \]<br>
-        Ví dụ — Cầu: \( P = 15 - \frac{Q}{2} \):<br>
-        Choke price = $15<br>
-        Tại P = $5: \( Q = 2(15-5) = 20 \)<br>
-        \[ CS = \frac{1}{2} \times 20 \times (15 - 5) = \$100 \]
+        <div class="label">Consumer Surplus &amp; Loss of CS</div>
+        \[ CS = \frac{1}{2} \times Q \times (P_{max} - P_{market}) \quad \text{(tam giác)} \]<br>
+        \[ \text{Loss CS} = CS(P_1) - CS(P_2) = \frac{1}{2}(Q_1 + Q_2)(P_2 - P_1) \quad \text{(hình thang)} \]<br>
+        Ví dụ — \( P = 15 - Q/2 \):<br>
+        \[ CS(P=5) = \tfrac{1}{2} \times 20 \times 10 = \$100 \]
+        \[ CS(P=7) = \tfrac{1}{2} \times 16 \times 8 = \$64 \]
+        \[ \text{Loss CS} = 100 - 64 = \$36 = \tfrac{1}{2}(20+16)(2) \checkmark \]
       </div>
-      <div class="formula">
-        <div class="label">Loss of Consumer Surplus — Diện tích hình thang</div>
-        Khi giá tăng từ \( P_1 \to P_2 \) (\( P_2 > P_1 \)):<br>
-        \[ \text{Loss CS} = \frac{1}{2} (Q_1 + Q_2)(P_2 - P_1) \]<br>
-        Hoặc tính trực tiếp:<br>
-        \[ \text{Loss CS} = CS(P_1) - CS(P_2) \]
-      </div>
+
       <div class="trap">
-        <div class="trap-title">⚠️ Bẫy về Consumer Surplus</div>
+        <div class="trap-title">⚠️ Bẫy Consumer Surplus</div>
         <ul>
-          <li><strong>CS là diện tích tam giác, không phải hình chữ nhật:</strong> Nhớ nhân với hệ số \( \frac{1}{2} \).</li>
-          <li><strong>Loss of CS khi giá tăng = hình thang, không phải tam giác.</strong> Công thức: \( \frac{1}{2}(Q_1+Q_2)(P_2-P_1) \).</li>
-          <li><strong>Khi Q=0 (miễn phí, toll=0):</strong> CS = toàn bộ tam giác dưới đường cầu.</li>
+          <li><strong>CS là tam giác (nhân ½)</strong>, không phải hình chữ nhật.</li>
+          <li><strong>Loss CS khi giá tăng P1→P2 = hình thang</strong>: \( \frac{1}{2}(Q_1+Q_2)(P_2-P_1) \), vì Q1≠Q2.</li>
+          <li><strong>Deadweight loss</strong> = phần mất trắng = tam giác nhỏ trong hình thang loss CS.</li>
         </ul>
       </div>
     </div>
-  
-    <!-- PROBLEM SET 4 SOLUTIONS -->
+
+    <!-- PROBLEM SET 4 -->
     <div class="concept" id="ps4">
-      <div class="concept-title">Problem Set 4 — Giải đầy đủ và chi tiết</div>
-      <div class="concept-en">THEATER TICKETS + TOLL BRIDGE — ELASTICITY &amp; CONSUMER SURPLUS</div>
-  
-      <!-- Q1 Theater -->
-      <div class="important" style="border-color:var(--accent);">
-        <div class="imp-label" style="color:var(--accent)">📋 PROBLEM SET 4 — Question 1: Theater Tickets</div>
-        <p><strong>Đề bài:</strong> \( Q_{gp} = 500 - 5P \) (general public), \( Q_s = 200 - 4P \) (students), giá hiện tại \( P = \$35 \).</p>
-        
+      <div class="concept-title">Problem Set 4 — Giải đầy đủ</div>
+      <div class="concept-en">THEATER TICKETS + TOLL BRIDGE</div>
+
+      <div class="important" style="border-left:4px solid var(--accent);">
+        <div class="imp-label" style="color:var(--accent)">📋 Q1 Theater: \( Q_{gp}=500-5P \), \( Q_s=200-4P \), P=$35</div>
+
+        <!-- Theater demand curves SVG -->
+        <svg class="svg-chart" viewBox="0 0 420 240" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+          <line x1="40" y1="210" x2="400" y2="210" stroke="#7f8c8d" stroke-width="1.5"/>
+          <line x1="40" y1="210" x2="40" y2="20" stroke="#7f8c8d" stroke-width="1.5"/>
+          <text x="385" y="222" font-size="10" fill="#7f8c8d">Q (tickets)</text>
+          <text x="5" y="18" font-size="10" fill="#7f8c8d">P ($)</text>
+          <!-- Scale: P 0..100 → y 210..20 (190px); Q 0..500 → x 40..390 (350px/500=0.7) -->
+          <!-- D_gp: P=100→Q=0(x=40,y=20), P=0→Q=500(x=390,y=210) -->
+          <line x1="40" y1="20" x2="390" y2="210" stroke="#c0392b" stroke-width="2.5"/>
+          <text x="382" y="204" font-size="10" fill="#c0392b" font-weight="bold">D_gp</text>
+          <text x="382" y="214" font-size="9" fill="#c0392b">P=100</text>
+          <!-- D_s: P=50→Q=0, P=0→Q=200 → x=40+200*0.7=180 -->
+          <!-- P=50: y=20+50*(190/100)=20+95=115; Q=0: x=40 -->
+          <!-- P=0: Q=200: x=40+200*0.7=180, y=210 -->
+          <line x1="40" y1="115" x2="180" y2="210" stroke="#2471a3" stroke-width="2.5"/>
+          <text x="183" y="205" font-size="10" fill="#2471a3" font-weight="bold">D_s</text>
+          <text x="183" y="215" font-size="9" fill="#2471a3">P=50</text>
+          <!-- P=35 line: y=20+35*1.9=20+66.5=86.5≈87 -->
+          <line x1="40" y1="87" x2="390" y2="87" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="4"/>
+          <text x="25" y="90" font-size="9" fill="#7f8c8d" text-anchor="end">$35</text>
+          <!-- Q_gp=325: x=40+325*0.7=267.5 -->
+          <circle cx="268" cy="87" r="4" fill="#c0392b"/>
+          <text x="272" y="83" font-size="9" fill="#c0392b">Q=325</text>
+          <!-- Q_s=60: x=40+60*0.7=82 -->
+          <circle cx="82" cy="87" r="4" fill="#2471a3"/>
+          <text x="55" y="83" font-size="9" fill="#2471a3">Q=60</text>
+          <!-- TR max points -->
+          <!-- gp: P*=50 (y=115), Q*=250 (x=215) -->
+          <circle cx="215" cy="115" r="5" fill="none" stroke="#c0392b" stroke-width="2"/>
+          <text x="220" y="112" font-size="9" fill="#c0392b">TR* gp: P=$50, Q=250</text>
+          <!-- s: P*=25 (y=20+25*1.9=67.5), Q*=100 (x=40+100*0.7=110) -->
+          <circle cx="110" cy="163" r="5" fill="none" stroke="#2471a3" stroke-width="2"/>
+          <text x="80" y="179" font-size="9" fill="#2471a3">TR* s: P=$25</text>
+          <!-- y=20+25*1.9=67.5... wait P=25 → y=20+(100-25)*1.9... 
+               P 0..100, y 210..20: y=210-P*1.9. P=25→y=210-47.5=162.5 
+               Q=100→x=40+100*0.7=110 -->
+        </svg>
+
         <div class="exercise">
-          <div class="exercise-title">✏️ Phần (a) — Lượng cầu tại P = $35</div>
-          <div class="ex-q">Tìm lượng cầu của mỗi nhóm tại P = $35.</div>
+          <div class="exercise-title">✏️ Phần (a) – Q tại P=$35</div>
+          <div class="ex-q">Tìm lượng cầu của mỗi nhóm.</div>
           <details><summary>Xem đáp án</summary>
             <div class="answer">
-              <p><em>General public:</em> \( Q_{gp} = 500 - 5(35) = 500 - 175 = \) <span class="hl-red">325 vé</span></p>
-              <p><em>Students:</em> \( Q_s = 200 - 4(35) = 200 - 140 = \) <span class="hl-red">60 vé</span></p>
+              <p>\( Q_{gp} = 500 - 5(35) = \mathbf{325} \) vé &nbsp;|&nbsp; \( Q_s = 200 - 4(35) = \mathbf{60} \) vé</p>
             </div>
           </details>
         </div>
-  
+
         <div class="exercise">
-          <div class="exercise-title">✏️ Phần (b) — Price Elasticity tại P = $35</div>
-          <div class="ex-q">Tính độ co giãn cầu theo giá cho mỗi nhóm tại P = $35.</div>
+          <div class="exercise-title">✏️ Phần (b) – Price Elasticity tại P=$35</div>
           <details><summary>Xem đáp án</summary>
             <div class="answer">
-              <p><strong>Công thức: \( E_p = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} \)</strong></p>
-              <p><em>General public tại P=35, Q=325:</em></p>
-              <p>\[ E_{gp} = -5 \times \frac{35}{325} = -0.538 \]</p>
-              <p>→ \( |E_{gp}| < 1 \implies \) <span class="hl-blue">Inelastic (kém co giãn)</span></p>
-              <p><em>Students tại P=35, Q=60:</em></p>
-              <p>\[ E_s = -4 \times \frac{35}{60} = -2.333 \]</p>
-              <p>→ \( |E_s| > 1 \implies \) <span class="hl-green">Elastic (co giãn mạnh)</span></p>
+              <p><em>General public:</em> \( E_{gp} = -5 \times \dfrac{35}{325} = \mathbf{-0.538} \) → \( |E| &lt; 1 \) → Inelastic</p>
+              <p><em>Students:</em> \( E_s = -4 \times \dfrac{35}{60} = \mathbf{-2.333} \) → \( |E| &gt; 1 \) → Elastic</p>
             </div>
           </details>
         </div>
-  
+
         <div class="exercise">
-          <div class="exercise-title">✏️ Phần (c) & (d) — Giá tối ưu tối đa hóa Revenue</div>
-          <div class="ex-q">Giám đốc có đang tối ưu doanh thu không? Giá nào cho mỗi nhóm để tối đa hóa TR?</div>
-          <details><summary>Xem đáp án</summary>
+          <div class="exercise-title">✏️ Phần (c) &amp; (d) – Có tối đa hóa TR? Giá tối ưu?</div>
+          <details><summary>Xem đáp án đầy đủ</summary>
             <div class="answer">
-              <p><strong>Chưa tối ưu.</strong> Nhóm Public inelastic → nên TĂNG GIÁ. Nhóm Students elastic → nên GIẢM GIÁ.</p>
-              <p><strong>Tìm giá tối ưu (TR max tại MR=0):</strong></p>
-              <p><em>Public:</em> \( P = 100 - Q/5 \implies MR = 100 - 2Q/5 = 0 \implies Q^* = 250, \) <span class="hl-red">\( P^* = \$50 \)</span></p>
-              <p><em>Students:</em> \( P = 50 - Q/4 \implies MR = 50 - Q/2 = 0 \implies Q^* = 100, \) <span class="hl-red">\( P^* = \$25 \)</span></p>
-              <p>Tổng TR tối đa = $12,500 + $2,500 = <span class="hl-green">$15,000</span> (tăng so với $13,475 hiện tại).</p>
+              <p><strong>Chưa tối đa hóa.</strong> Public: inelastic → nên TĂNG GIÁ. Students: elastic → nên GIẢM GIÁ.</p>
+              <p><strong>General public:</strong> \( P = 100 - Q/5 \implies MR = 100 - 2Q/5 = 0 \implies Q^* = 250, P^* = \mathbf{\$50} \)</p>
+              <p>\( TR^*_{gp} = 50 \times 250 = \mathbf{\$12{,}500} \). Check: \( E_p = -5 \times \frac{50}{250} = -1 \checkmark \)</p>
+              <p><strong>Students:</strong> \( P = 50 - Q/4 \implies MR = 50 - Q/2 = 0 \implies Q^* = 100, P^* = \mathbf{\$25} \)</p>
+              <p>\( TR^*_s = 25 \times 100 = \mathbf{\$2{,}500} \). Check: \( E_p = -4 \times \frac{25}{100} = -1 \checkmark \)</p>
+              <p>Tổng TR max = \$12,500 + \$2,500 = <strong>\$15,000</strong> (tăng từ \$13,475 hiện tại = +11.3%)</p>
+              <p><em>Price Discrimination: Charge the inelastic group more (\$50) and the elastic group less (\$25).</em></p>
             </div>
           </details>
         </div>
       </div>
-  
-      <!-- Q2 Toll Bridge -->
-      <div class="important" style="border-color:var(--blue);">
-        <div class="imp-label" style="color:var(--blue)">📋 PROBLEM SET 4 — Question 2: Toll Bridge</div>
-        <p><strong>Đề bài:</strong> \( P = 15 - 0.5Q \) (demand for bridge crossings). Chi phí vận hành = 0.</p>
-  
+
+      <div class="important" style="border-left:4px solid var(--blue);">
+        <div class="imp-label" style="color:var(--blue)">📋 Q2 Toll Bridge: \( P = 15 - \tfrac{1}{2}Q \), zero operating cost</div>
         <div class="exercise">
-          <div class="exercise-title">✏️ Loss of CS khi toll = $5</div>
-          <div class="ex-q">Tính Consumer Surplus khi P=$0 và khi P=$5. Tính Loss of CS.</div>
-          <details><summary>Xem đáp án</summary>
+          <div class="exercise-title">✏️ Q khi toll=0, Loss CS khi toll=$5, $7</div>
+          <details><summary>Xem đáp án đầy đủ</summary>
             <div class="answer">
-              <p><strong>Tại P = $0:</strong> \( Q = 30 \implies CS = \frac{1}{2} \times 30 \times 15 = \) <span class="hl-green">$225</span></p>
-              <p><strong>Tại P = $5:</strong> \( Q = 20 \implies CS = \frac{1}{2} \times 20 \times 10 = \) <span class="hl-green">$100</span></p>
-              <p><strong>Loss of CS</strong> = 225 - 100 = <span class="hl-red">$125</span></p>
+              <p><strong>(a)(b) Khi P=0:</strong> \( Q = 30 \) lượt. \( CS = \frac{1}{2} \times 30 \times 15 = \$225 \)</p>
+              <p><strong>(c) Khi P=$5:</strong> \( Q = 20 \implies CS = \frac{1}{2} \times 20 \times 10 = \$100 \)</p>
+              <p>Loss CS = 225 - 100 = <strong>\$125</strong> (trong đó Revenue=\$100, DWL=\$25)</p>
+              <p><strong>Toll $5→$7:</strong> Q giảm từ 20→16. TR: $100→$112 (tăng) → cầu INELASTIC tại P=$5</p>
+              <p>Check: \( E_p = -2 \times \frac{5}{20} = -0.5 \implies |E| = 0.5 &lt; 1 \checkmark \)</p>
+              <p>Loss CS ($5→$7) = $100 - $64 = <strong>\$36</strong> = \(\frac{1}{2}(20+16)(2)\) ✓</p>
+              <p>Trong đó: Revenue tăng thêm = $(7-5) \times 16 = \$32$; DWL thêm = $\frac{1}{2}(4)(2) = \$4$</p>
             </div>
           </details>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- ═══ CHAPTER 2: WORK-LEISURE ═══ -->
   <section class="chapter" id="worklei">
     <div class="chapter-header">
       <div class="chapter-num">02</div>
       <div class="chapter-title">
         <h2>Work-Leisure Decisions — Quyết định làm việc và nghỉ ngơi</h2>
-        <p>Labor Supply Theory · Time Allocation · Backward-Bending Labor Supply Curve</p>
+        <p>Labor Supply · Time Allocation · Backward-Bending Supply Curve</p>
       </div>
     </div>
-  
+
     <div class="concept" id="budget-wl">
-      <div class="concept-title">The Work-Leisure Model — Framework</div>
-      <div class="concept-en">MÔ HÌNH LÀM VIỆC - NGHỈ NGƠI: CẤU TRÚC CƠ BẢN</div>
+      <div class="concept-title">Work-Leisure Budget Constraint &amp; Optimum</div>
+      <div class="concept-en">MÔ HÌNH PHÂN BỔ THỜI GIAN — RÀNG BUỘC VÀ TỐI ƯU</div>
 
-      <!-- ĐỒ THỊ 3: BACKWARD BENDING LABOR SUPPLY -->
-      <svg class="svg-chart" viewBox="0 0 350 250" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-        <!-- Axes -->
-        <line x1="40" y1="220" x2="320" y2="220" stroke="#7f8c8d" stroke-width="2"/>
-        <line x1="40" y1="20" x2="40" y2="220" stroke="#7f8c8d" stroke-width="2"/>
-        <text x="270" y="235" class="axis-label">Hours of Labor (L)</text>
-        <text x="5" y="15" class="axis-label">Wage (w)</text>
+      <!-- SVG: Work-Leisure budget line -->
+      <svg class="svg-chart" viewBox="0 0 420 280" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrWL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#7f8c8d"/>
+          </marker>
+        </defs>
+        <line x1="40" y1="250" x2="400" y2="250" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrWL)"/>
+        <line x1="40" y1="250" x2="40" y2="20" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrWL)"/>
+        <text x="370" y="265" font-size="12" fill="#7f8c8d">Leisure (F)</text>
+        <text x="2" y="18" font-size="12" fill="#7f8c8d">Consumption (C)</text>
 
-        <!-- Curve -->
-        <path d="M 60,200 Q 250,140 180,40" fill="none" stroke="#2471a3" stroke-width="3"/>
-        
-        <!-- Annotations -->
-        <text x="180" y="200" fill="#c0392b" font-weight="bold" font-size="11px">Upward-sloping (SE > IE)</text>
-        <text x="45" y="80" fill="#1a7a4a" font-weight="bold" font-size="11px">Backward-bending (IE > SE)</text>
-        
-        <!-- Turning Point -->
-        <line x1="40" y1="125" x2="215" y2="125" stroke="#1a1a2e" stroke-dasharray="3"/>
-        <circle cx="215" cy="125" r="4" fill="#1a1a2e"/>
-        <text x="225" y="129" font-weight="bold" font-size="11px">L_max (SE = IE)</text>
+        <!-- Budget: T=80h, w=$10, p=$1, M=0 → C+10F=800 → C-int=800, F-int=80 -->
+        <!-- Scale: F 0..80 → x 40..380 (340/80=4.25); C 0..800 → y 250..30 (220/800=0.275) -->
+        <!-- F=80: x=380; C=800: y=30 -->
+        <!-- Low wage w=5: C+5F=400, C-int=400(y=140), F-int=80(x=380) — same F-int! -->
+        <!-- High wage w=15: C+15F=1200, C-int=1200(off chart), F-int=80 -->
+
+        <!-- Low wage BL (w=5): C-int=400 (y=250-400*0.275=140), F-int=80 -->
+        <line x1="380" y1="250" x2="40" y2="140" stroke="#7f8c8d" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="30" y="138" font-size="9" fill="#7f8c8d" text-anchor="end">400</text>
+        <text x="115" y="175" font-size="9" fill="#7f8c8d">w=$5 (low)</text>
+
+        <!-- Main BL (w=10): C-int=800 (y=30), F-int=80 -->
+        <line x1="380" y1="250" x2="40" y2="30" stroke="#2471a3" stroke-width="2.5"/>
+        <text x="30" y="28" font-size="9" fill="#2471a3" text-anchor="end">800</text>
+        <text x="150" y="105" font-size="10" fill="#2471a3" font-weight="bold">BL (w=$10)</text>
+        <text x="150" y="118" font-size="9" fill="#2471a3">slope = −w/p = −10</text>
+
+        <!-- High wage BL (w=20): C-int=1600, off chart → show partial -->
+        <line x1="380" y1="250" x2="40" y2="30" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.5"/>
+        <!-- Actually draw w=20: C-int would be 1600, off chart, so just show steeper slope -->
+        <!-- At F=40: C=20*(80-40)=800, so at F=40(x=210), C=800(y=30) -->
+        <line x1="380" y1="250" x2="195" y2="30" stroke="#c0392b" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="180" y="28" font-size="9" fill="#c0392b">w=$20 (high)</text>
+        <text x="180" y="40" font-size="9" fill="#c0392b">steeper slope</text>
+
+        <!-- F-int = T = 80 -->
+        <circle cx="380" cy="250" r="6" fill="#1a7a4a"/>
+        <text x="375" y="265" font-size="9" fill="#1a7a4a" text-anchor="middle">T=80</text>
+        <text x="375" y="274" font-size="9" fill="#1a7a4a" text-anchor="middle">(pivot)</text>
+
+        <!-- Optimal point (w=10): F*=40, C*=400 -->
+        <!-- F=40: x=40+40*4.25=210; C=400: y=250-400*0.275=140 -->
+        <circle cx="210" cy="140" r="6" fill="#c0392b"/>
+        <text x="215" y="135" font-size="10" fill="#c0392b" font-weight="bold">Optimal A</text>
+        <text x="215" y="147" font-size="9" fill="#c0392b">F*=40h, C*=$400</text>
+        <text x="215" y="159" font-size="9" fill="#c0392b">L*=T-F*=40h work</text>
+
+        <!-- IC through optimal -->
+        <path d="M42,35 C80,90 130,130 210,140 C280,150 340,195 370,248" fill="none" stroke="#1a7a4a" stroke-width="2.5"/>
+        <text x="335" y="190" font-size="10" fill="#1a7a4a" font-weight="bold">U*</text>
+
+        <!-- Projections -->
+        <line x1="210" y1="250" x2="210" y2="140" stroke="#c0392b" stroke-width="1" stroke-dasharray="3"/>
+        <line x1="40" y1="140" x2="210" y2="140" stroke="#c0392b" stroke-width="1" stroke-dasharray="3"/>
+        <text x="207" y="262" font-size="9" fill="#c0392b">40h</text>
+        <text x="28" y="143" font-size="9" fill="#c0392b" text-anchor="end">400</text>
+
+        <!-- MRS = w/p label -->
+        <text x="250" y="230" font-size="10" fill="#1a7a4a">MRS_FC = w/p at optimum</text>
       </svg>
 
-      <div class="concept-body">
-        <p><strong>Labor Supply Decision:</strong> Quyết định cung lao động thực chất là bài toán phân bổ thời gian (time allocation) giữa:</p>
-        <p>• <strong>Labor time (L)</strong>: thời gian làm việc → tạo thu nhập</p>
-        <p>• <strong>Leisure time (F)</strong>: thời gian nghỉ ngơi → tiêu dùng trực tiếp (leisure is a good!)</p>
-      </div>
       <div class="formula">
-        <div class="label">Hai ràng buộc của Work-Leisure Model</div>
-        ① Time Constraint:<br>
-        \[ L + F = T \implies L = T - F \]<br>
-        ② Budget Constraint:<br>
-        \[ p \cdot C = w \cdot L + M \]<br>
-        Kết hợp: \( p \cdot C = w(T - F) + M \)<br>
-        \[ p \cdot C + w \cdot F = wT + M \quad \text{(Full Income Constraint)} \]<br>
-        Slope của đường ngân sách = \( -\frac{w}{p} \)
+        <div class="label">Work-Leisure Constraints &amp; Optimum</div>
+        ① Time: \( L + F = T \implies L = T - F \)<br>
+        ② Budget: \( p \cdot C = w \cdot L + M \)<br>
+        Kết hợp: \[ p \cdot C + w \cdot F = wT + M \quad \text{(Full Income Constraint)} \]
+        Slope \( = -w/p \) &nbsp;|&nbsp; C-intercept \( = (wT+M)/p \) &nbsp;|&nbsp; F-intercept \( = T + M/w \)<br><br>
+        Điều kiện tối ưu: \[ MRS_{FC} = \frac{MU_F}{MU_C} = \frac{w}{p} \]
+        Khi w↑: đường ngân sách XOAY lên (rotate) quanh F-intercept (F=T khi M=0).
       </div>
-      <div class="concept-body">
-        <p><strong>Điểm tối ưu:</strong> Xảy ra khi \( \text{MRS}_{FC} = \frac{w}{p} \). Tại đây, người tiêu dùng cân bằng giữa giá trị biên của sự nghỉ ngơi và mức lương thị trường.</p>
+
+      <div class="formula">
+        <div class="label">SE &amp; IE khi Wage tăng (w↑)</div>
+        SE: Leisure đắt hơn → F↓ → L↑ &nbsp;(luôn dương với L)<br>
+        IE: Sức mua tăng → "giàu hơn" → muốn thêm Leisure (normal) → F↑ → L↓<br><br>
+        \( |SE| > |IE| \implies w \uparrow \implies L \uparrow \) → đường LS dốc lên (upward)<br>
+        \( |IE| > |SE| \implies w \uparrow \implies L \downarrow \) → đường LS bẻ ngược (backward-bending)
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập — Minh: T=80h, w=$10, p=$1, U=C×F</div>
+        <details><summary>Xem đáp án</summary>
+          <div class="answer">
+            <p>Full income: \( C + 10F = 800 \)</p>
+            <p>MRS: \( C/F = w/p = 10 \implies C = 10F \)</p>
+            <p>Thay vào: \( 10F + 10F = 800 \implies F^* = 40h, \; C^* = \$400 \)</p>
+            <p>\( L^* = 80 - 40 = \mathbf{40} \) giờ làm việc/tuần.</p>
+          </div>
+        </details>
       </div>
     </div>
-  
+
     <div class="concept" id="backward">
       <div class="concept-title">Backward-Bending Labor Supply Curve</div>
       <div class="concept-en">ĐƯỜNG CUNG LAO ĐỘNG BẺ NGƯỢC</div>
-      <div class="concept-body">
-        <p><strong>Backward-Bending Labor Supply Curve:</strong> Khi lương tăng (w↑), xảy ra hai hiệu ứng:</p>
-        <p>• <strong>Substitution Effect (SE):</strong> Nghỉ ngơi đắt đỏ hơn → làm việc nhiều hơn (L↑). (Luôn dương)</p>
-        <p>• <strong>Income Effect (IE):</strong> Giàu hơn → muốn mua thêm "nghỉ ngơi" (leisure là normal good) → làm việc ít hơn (L↓).</p>
+
+      <!-- SVG: Backward-Bending Labor Supply -->
+      <svg class="svg-chart" viewBox="0 0 380 300" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrBB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#7f8c8d"/>
+          </marker>
+        </defs>
+        <line x1="40" y1="270" x2="350" y2="270" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrBB)"/>
+        <line x1="40" y1="270" x2="40" y2="20" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrBB)"/>
+        <text x="320" y="285" font-size="12" fill="#7f8c8d">Hours of Labor (L)</text>
+        <text x="5" y="18" font-size="12" fill="#7f8c8d">Wage (w)</text>
+
+        <!-- Backward-bending curve -->
+        <!-- Low wage: (80,250)→(180,160)→(240,110) upward portion -->
+        <!-- High wage: (240,110)→(200,60)→(160,30) backward portion -->
+        <path d="M60,270 C100,240 160,170 230,100 C260,70 270,50 250,30" 
+              fill="none" stroke="#2471a3" stroke-width="3"/>
+        
+        <!-- Arrow on upward portion -->
+        <path d="M140,185 L150,178" stroke="#2471a3" stroke-width="2" marker-end="url(#arrBB)"/>
+        <!-- Arrow on backward portion -->
+        <path d="M258,65 L252,50" stroke="#c0392b" stroke-width="2" marker-end="url(#arrBB)"/>
+
+        <!-- Turning point -->
+        <circle cx="230" cy="100" r="6" fill="#c0392b"/>
+        <text x="235" y="96" font-size="10" fill="#c0392b" font-weight="bold">Turning point</text>
+        <text x="235" y="108" font-size="9" fill="#c0392b">L_max (SE=IE)</text>
+        <line x1="40" y1="100" x2="230" y2="100" stroke="#c0392b" stroke-width="1" stroke-dasharray="3"/>
+        <text x="28" y="103" font-size="9" fill="#c0392b" text-anchor="end">w*</text>
+
+        <!-- Zone labels -->
+        <text x="60" y="200" font-size="11" fill="#1a7a4a" font-weight="bold">SE &gt; IE</text>
+        <text x="60" y="213" font-size="10" fill="#1a7a4a">w↑ → L↑</text>
+        <text x="60" y="226" font-size="10" fill="#1a7a4a">(upward sloping)</text>
+        
+        <text x="255" y="60" font-size="11" fill="#c0392b" font-weight="bold">IE &gt; SE</text>
+        <text x="255" y="73" font-size="10" fill="#c0392b">w↑ → L↓</text>
+        <text x="242" y="86" font-size="10" fill="#c0392b">(backward)</text>
+
+        <!-- Labor hours axis labels -->
+        <text x="230" y="283" font-size="9" fill="#7f8c8d" text-anchor="middle">L_max</text>
+
+        <!-- Example points -->
+        <circle cx="120" cy="193" r="4" fill="#1a7a4a"/>
+        <text x="124" y="190" font-size="9" fill="#1a7a4a">Low wage: work more</text>
+        <circle cx="200" cy="140" r="4" fill="#2471a3"/>
+        <text x="204" y="137" font-size="9" fill="#2471a3">Medium wage</text>
+        <circle cx="245" cy="75" r="4" fill="#c0392b"/>
+        <text x="250" y="113" font-size="9" fill="#c0392b">High wage:</text>
+        <text x="250" y="124" font-size="9" fill="#c0392b">work less!</text>
+      </svg>
+
+      <div class="kw-box">
+        <div class="keywords-title">🔑 Keywords Work-Leisure</div>
+        <div class="kw-list">
+          <span class="kw">L + F = T</span>
+          <span class="kw">pC + wF = wT + M</span>
+          <span class="kw">MRS_FC = w/p</span>
+          <span class="kw">SE &gt; IE → upward LS</span>
+          <span class="kw">IE &gt; SE → backward bend</span>
+          <span class="kw">leisure is normal good</span>
+          <span class="kw">w↑ = rotate BL (not shift)</span>
+        </div>
       </div>
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy Work-Leisure</div>
+        <ul>
+          <li><strong>Giá của leisure = w (opportunity cost)</strong>, không phải 0. 1 giờ nghỉ tốn w đồng thu nhập.</li>
+          <li><strong>Khi w↑: BL XOAY (rotate) quanh F=T</strong>, không dịch song song (vì giá leisure thay đổi).</li>
+          <li><strong>IE âm với L ≠ leisure là inferior good:</strong> Leisure là normal (IE dương với F), nhưng làm L = T−F giảm.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CHAPTER 3: INTERTEMPORAL ═══ -->
+  <section class="chapter" id="inter">
+    <div class="chapter-header">
+      <div class="chapter-num">03</div>
+      <div class="chapter-title">
+        <h2>Intertemporal Decisions — Quyết định liên thời gian</h2>
+        <p>Two-Period Model · Present Value · Saving vs Borrowing · Time Preference</p>
+      </div>
+    </div>
+
+    <div class="concept" id="pv">
+      <div class="concept-title">Intertemporal Budget Constraint</div>
+      <div class="concept-en">MÔ HÌNH HAI KỲ — RÀNG BUỘC NGÂN SÁCH LIÊN THỜI KỲ</div>
+
+      <!-- SVG: Intertemporal budget line with endowment point -->
+      <svg class="svg-chart" viewBox="0 0 420 300" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrIT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#7f8c8d"/>
+          </marker>
+        </defs>
+        <line x1="40" y1="260" x2="400" y2="260" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrIT)"/>
+        <line x1="40" y1="260" x2="40" y2="20" stroke="#7f8c8d" stroke-width="2" marker-end="url(#arrIT)"/>
+        <text x="370" y="275" font-size="12" fill="#7f8c8d">C₀ (Period 0)</text>
+        <text x="2" y="18" font-size="12" fill="#7f8c8d">C₁ (Period 1)</text>
+
+        <!-- M0=150, M1=110, r=10%: 
+             C0-int = M0 + M1/(1+r) = 150+100 = 250
+             C1-int = M1+(1+r)M0 = 110+165 = 275
+             Endowment = (150, 110)
+             Scale: C0 0..250 → x 40..380 (340/250=1.36); C1 0..275 → y 260..30 (230/275=0.836) -->
+        <!-- C0-int (250): x=40+250*1.36=380 -->
+        <!-- C1-int (275): y=260-275*0.836=260-229.9=30.1≈30 -->
+        <!-- Endowment (150,110): x=40+150*1.36=244; y=260-110*0.836=260-91.96=168 -->
+
+        <!-- Budget line r=10% -->
+        <line x1="380" y1="260" x2="40" y2="30" stroke="#2471a3" stroke-width="2.5"/>
+        <text x="350" y="255" font-size="10" fill="#2471a3">r=10% BL</text>
+        <text x="42" y="28" font-size="10" fill="#2471a3">C₁-int=275</text>
+        <text x="355" y="273" font-size="10" fill="#2471a3">C₀-int=250</text>
+
+        <!-- Higher r=20% BL (steeper, same endowment point) -->
+        <!-- r=20%: C0-int=150+110/1.2=150+91.67=241.67, C1-int=110+180=290 -->
+        <!-- C0-int x=40+241.67*1.36=369; C1-int y=260-290*0.836=17.6≈18 -->
+        <line x1="369" y1="260" x2="40" y2="18" stroke="#c0392b" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="340" y="243" font-size="9" fill="#c0392b">r=20% (steeper)</text>
+
+        <!-- Endowment point (150, 110) -->
+        <circle cx="244" cy="168" r="7" fill="#c0392b"/>
+        <text x="250" y="163" font-size="11" fill="#c0392b" font-weight="bold">E (M₀,M₁)</text>
+        <text x="250" y="175" font-size="9" fill="#c0392b">(150, 110)</text>
+        <text x="250" y="187" font-size="9" fill="#c0392b">Endowment point</text>
+
+        <!-- Both BL pass through endowment point -->
+        <text x="100" y="200" font-size="9" fill="#7f8c8d" font-style="italic">Both BLs pass through E</text>
+        <text x="100" y="212" font-size="9" fill="#7f8c8d" font-style="italic">(rotate around endowment when r changes)</text>
+
+        <!-- Optimal point (saver): C0*=100, C1*=165 (r=10%) 
+             x=40+100*1.36=176; y=260-165*0.836=122 -->
+        <circle cx="176" cy="122" r="5" fill="#1a7a4a"/>
+        <text x="180" y="117" font-size="10" fill="#1a7a4a" font-weight="bold">Optimal B</text>
+        <text x="180" y="129" font-size="9" fill="#1a7a4a">(C₀=100, C₁=165)</text>
+        <text x="180" y="141" font-size="9" fill="#1a7a4a">Saver: S₀=M₀−C₀=50</text>
+
+        <!-- IC through optimal -->
+        <path d="M42,80 C90,100 130,112 176,122 C230,134 290,180 360,255" fill="none" stroke="#1a7a4a" stroke-width="2"/>
+        <text x="320" y="235" font-size="10" fill="#1a7a4a">U*</text>
+
+        <!-- Labels -->
+        <text x="28" y="30" font-size="9" fill="#2471a3" text-anchor="end">275</text>
+        <text x="28" y="171" font-size="9" fill="#c0392b" text-anchor="end">110</text>
+
+        <!-- Region labels -->
+        <text x="55" y="245" font-size="9" fill="#7f8c8d">←Borrower region (C₀&gt;M₀)</text>
+        <text x="255" y="55" font-size="9" fill="#7f8c8d">↑Saver region</text>
+        <text x="255" y="65" font-size="9" fill="#7f8c8d">(C₀&lt;M₀)</text>
+
+        <!-- Slope label -->
+        <text x="60" y="130" font-size="10" fill="#2471a3">slope = −(1+r)</text>
+        <text x="60" y="142" font-size="10" fill="#2471a3">= −1.1 (at r=10%)</text>
+      </svg>
+
       <div class="formula">
-      <div class="flabel">Hình dạng Backward-Bending Labor Supply Curve</div>
-      Ở mức lương THẤP (w thấp):<br>
-      SE &gt; IE → w↑ → L↑ → Đường LS dốc LÊN bình thường (upward sloping)<br><br>
-      Ở mức lương CAO (w cao):<br>
-      IE &gt; SE → w↑ → L↓ → Đường LS bẻ NGƯỢC sang trái (backward bending)<br><br>
-      Điểm ngoặt: wage tại đó SE = IE → L đạt cực đại<br><br>
-      Ví dụ thực tế: Bác sĩ chuyên khoa mức lương rất cao thường làm ít giờ hơn bác sĩ trẻ (do IE &gt; SE) — họ "mua" thêm thời gian cho gia đình và sở thích.
-    </div>
-    <div class="kw-box">
-      <div class="kw-label">🔑 Keywords</div>
-      <div class="kws">
-        <span class="kw">backward-bending LS curve</span>
-        <span class="kw">SE &gt; IE → upward slope</span>
-        <span class="kw">IE &gt; SE → backward bend</span>
-        <span class="kw">leisure is normal good</span>
-        <span class="kw">turning point: SE = IE</span>
-        <span class="kw">w ↑ → L could ↓ at high w</span>
-        <span class="kw">time allocation</span>
+        <div class="label">Intertemporal Budget Constraint (Present Value Form)</div>
+        Ràng buộc kỳ 0: \( C_0 + S_0 = M_0 \)<br>
+        Ràng buộc kỳ 1: \( C_1 = M_1 + S_0(1+r) \)<br>
+        Kết hợp:<br>
+        \[ C_0 + \frac{C_1}{1+r} = M_0 + \frac{M_1}{1+r} \quad \text{(PV Budget Constraint)} \]<br>
+        Slope \( = -(1+r) \) &nbsp;|&nbsp; C₀-intercept \( = M_0 + M_1/(1+r) \) &nbsp;|&nbsp; C₁-intercept \( = M_1 + (1+r)M_0 \)<br><br>
+        Khi r↑: slope tăng → BL XOAY quanh endowment point \( (M_0, M_1) \)
       </div>
     </div>
-    <div class="trap">
-      <div class="trap-label">⚠️ Bẫy về Backward-Bending LS</div>
-      <ul>
-        <li><strong>Không phải mọi mức lương đều tạo backward bending:</strong> Chỉ ở mức lương đủ cao. Ở mức lương thấp, đường cung lao động vẫn dốc lên bình thường.</li>
-        <li><strong>IE âm trong Work-Leisure ≠ IE âm trong consumer theory thông thường:</strong> Ở đây, khi w tăng làm IE → L giảm KHÔNG có nghĩa leisure là inferior good. Ngược lại, leisure là normal good (IE dương đối với leisure), nhưng điều đó làm L giảm (vì L = T − F).</li>
-        <li><strong>SE và IE được phân tích khác chiều so với consumer theory:</strong> Trong consumer theory: giá giảm → SE dương (tiêu dùng hàng đó tăng). Ở đây: w tăng (giá leisure tăng) → SE dương với L (làm nhiều hơn), âm với F (nghỉ ít hơn).</li>
-      </ul>
-    </div>
-    <div class="exercise">
-      <div class="ex-label">✏️ Bài tập 2 — Work-Leisure Optimum</div>
-      <div class="ex-q">Minh có T = 80 giờ/tuần, M = 0, giá tiêu dùng p = $1. Tiền lương w = $10/giờ. Hàm utility U(C, F) = C × F. Tìm L* (giờ làm việc tối ưu) và C* (tiêu dùng tối ưu).</div>
-      <details><summary></summary>
-        <div class="ans">
-          <div class="ans-label">Đáp án</div>
-          <p><strong>Bước 1: Full income constraint</strong></p>
-          <p>p·C + w·F = wT + M → 1·C + 10·F = 10×80 + 0 = 800</p>
-          <p>→ C + 10F = 800</p>
-          <p><strong>Bước 2: Điều kiện tối ưu MRS = w/p</strong></p>
-          <p>MU_C = F, MU_F = C (từ U = C×F)</p>
-          <p>MRS_FC = MU_F/MU_C = C/F</p>
-          <p>Điều kiện: C/F = w/p = 10/1 = 10 → <span class="hl-b">C = 10F</span> ... (1)</p>
-          <p><strong>Bước 3: Thay vào budget constraint</strong></p>
-          <p>10F + 10F = 800 → 20F = 800 → <span class="hl-r">F* = 40 giờ</span></p>
-          <p><span class="hl-r">C* = 10×40 = $400</span></p>
-          <p><strong>L* = T − F* = 80 − 40 = <span class="hl-g">40 giờ làm việc/tuần</span></strong></p>
-          <p>Kiểm tra: Thu nhập = w×L* = 10×40 = $400 = C* ✓ (M=0)</p>
-          <p><em>Insight: Với U = C×F (Cobb-Douglas với α=β=1), tại điểm tối ưu Minh chia đều thời gian: 50% làm việc (40h), 50% nghỉ ngơi (40h). Điều này phản ánh tính chất của Cobb-Douglas: chi tiêu/thời gian được chia đều cho hai "hàng hóa".</em></p>
+
+    <div class="concept" id="inter-opt">
+      <div class="concept-title">Intertemporal Optimum &amp; Time Preference</div>
+      <div class="concept-en">TỐI ƯU HÓA LIÊN THỜI KỲ VÀ TỶ LỆ CHIẾT KHẤU</div>
+
+      <div class="formula">
+        <div class="label">Utility &amp; Optimum Condition</div>
+        \[ U(C_0, C_1) = \ln(C_0) + \frac{1}{1+\rho} \ln(C_1) \]
+        \( \rho \) = time preference rate (\( \rho > 0 \): ưa thích tiêu dùng hiện tại)<br><br>
+        Điều kiện tối ưu: \[ MRS_{C_0 C_1} = 1 + r \]
+        Suy ra: \[ \frac{C_1}{C_0} = \frac{1+r}{1+\rho} \]
+        Khi \( r > \rho \): \( C_1/C_0 > 1 \) → tích lũy, tiêu dùng tương lai nhiều hơn hiện tại.<br>
+        Khi \( r = \rho \): \( C_1 = C_0 \) (consumption smoothing)
+      </div>
+
+      <div class="formula">
+        <div class="label">Tác động của r thay đổi — SE &amp; IE</div>
+        Khi r↑, BL xoay quanh endowment (M₀, M₁):<br><br>
+        <strong>Người tiết kiệm (Saver: C₀ &lt; M₀)</strong>:<br>
+        SE: r↑ → C₀ đắt tương đối → C₀↓ (tiết kiệm nhiều hơn)<br>
+        IE: r↑ → saver được lợi, PV income có thể tăng → C₀↑<br>
+        TE: Không chắc (SE và IE ngược chiều)<br><br>
+        <strong>Người vay (Borrower: C₀ &gt; M₀)</strong>:<br>
+        SE: r↑ → C₀↓ (vay đắt hơn)<br>
+        IE: r↑ → borrower bị thiệt → C₀↓<br>
+        TE: C₀ chắc chắn GIẢM (cùng chiều)
+      </div>
+
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords Intertemporal</div>
+        <div class="kw-list">
+          <span class="kw">PV: C₀+C₁/(1+r) = M₀+M₁/(1+r)</span>
+          <span class="kw">slope = −(1+r)</span>
+          <span class="kw">endowment point</span>
+          <span class="kw">time preference ρ</span>
+          <span class="kw">MRS = 1+r at optimum</span>
+          <span class="kw">saver vs borrower</span>
+          <span class="kw">r↑ → rotate around endowment</span>
         </div>
-      </details>
-    </div>
-  </div>
-</section>
- 
-<!-- ═══ CHAPTER 3: INTERTEMPORAL ═══ -->
-<section class="chapter" id="inter">
-  <div class="ch-header">
-    <div class="ch-num">03</div>
-    <div class="ch-info">
-      <h2>Intertemporal Decisions — Quyết định liên thời gian</h2>
-      <p>Two-Period Model · Present Value · Saving vs Borrowing · Time Preference</p>
-    </div>
-  </div>
- 
-  <div class="concept" id="pv">
-    <div class="concept-h">The Two-Period Intertemporal Model</div>
-    <div class="concept-sub">MÔ HÌNH HAI THỜI KỲ: TIÊU DÙNG HÔM NAY VÀ NGÀY MAI</div>
-    <div class="body">
-      <p><strong>Intertemporal Decisions:</strong> How do households distribute their income across time (periods)?</p>
-      <p>Quyết định liên thời gian là cách hộ gia đình phân bổ thu nhập qua các kỳ. Mô hình hai kỳ (two-period model) là đơn giản nhất: kỳ 0 (hiện tại) và kỳ 1 (tương lai). Hai quyết định:</p>
-      <p>• <strong>Saving (tiết kiệm):</strong> Tiêu dùng kỳ 0 ít hơn thu nhập → dành dư cho kỳ 1</p>
-      <p>• <strong>Borrowing (vay mượn):</strong> Tiêu dùng kỳ 0 nhiều hơn thu nhập → vay trả lại kỳ 1</p>
-    </div>
-    <div class="formula">
-      <div class="flabel">Trường hợp 1: Interest Rate = 0 (r = 0)</div>
-      C₀ = tiêu dùng kỳ 0, C₁ = tiêu dùng kỳ 1<br>
-      M₀ = thu nhập kỳ 0, M₁ = thu nhập kỳ 1<br>
-      p₁ = giá tương đối kỳ 1 so với kỳ 0 (bỏ qua lạm phát: p₁ = 1)<br><br>
-      Budget constraint (r=0):<br>
-      C₀ + C₁ = M₀ + M₁<br><br>
-      Diễn giải: Tổng tiêu dùng hai kỳ = Tổng thu nhập hai kỳ<br>
-      Không có lãi suất → $1 tiết kiệm hôm nay = $1 chi tiêu ngày mai (1:1)
-    </div>
-    <div class="formula">
-      <div class="flabel">Trường hợp 2: Interest Rate &gt; 0 (r &gt; 0) — QUAN TRỌNG NHẤT</div>
-      S₀ = tiết kiệm kỳ 0 (S₀ &gt; 0: tiết kiệm; S₀ &lt; 0: vay mượn)<br><br>
-      Ràng buộc kỳ 0: C₀ + S₀ = M₀  → S₀ = M₀ − C₀<br>
-      Ràng buộc kỳ 1: C₁ = M₁ + S₀(1+r)  (tiết kiệm + lãi)<br><br>
-      Thay S₀ = M₀ − C₀ vào kỳ 1:<br>
-      C₁ = M₁ + (M₀ − C₀)(1+r)<br>
-      C₁ = M₁ + M₀(1+r) − C₀(1+r)<br>
-      C₀(1+r) + C₁ = M₀(1+r) + M₁<br><br>
-      Chia cả hai vế cho (1+r):<br>
-      C₀ + C₁/(1+r) = M₀ + M₁/(1+r)<br><br>
-      ← INTERTEMPORAL BUDGET CONSTRAINT (Present Value Form)<br><br>
-      PV(C₀) + PV(C₁) = PV(M₀) + PV(M₁)<br>
-      Giá trị hiện tại của tiêu dùng = Giá trị hiện tại của thu nhập
-    </div>
-    <div class="body">
-      <p><strong>Giải thích Present Value Constraint:</strong></p>
-      <p>• <span class="hl-r">1/(1+r)</span> là hệ số chiết khấu (discount factor): $1 nhận được ở kỳ 1 chỉ tương đương $1/(1+r) ở kỳ 0.</p>
-      <p>• <strong>Slope của intertemporal budget line = −(1+r):</strong> Để tiêu dùng thêm $1 ở kỳ 0, phải bỏ bớt $(1+r) ở kỳ 1 (vì vay $1 phải trả cả gốc lẫn lãi).</p>
-      <p>• <strong>Endowment point (M₀, M₁):</strong> Điểm "ăn vào thu nhập" — không tiết kiệm, không vay, tiêu dùng đúng bằng thu nhập mỗi kỳ. Đây là điểm mà budget line luôn đi qua.</p>
-    </div>
-    <div class="formula">
-      <div class="flabel">Đặc điểm đường ngân sách liên thời gian</div>
-      Intertemporal Budget Line: C₀ + C₁/(1+r) = M₀ + M₁/(1+r)<br><br>
-      Viết lại dạng tường minh:<br>
-      C₁ = M₁ + (1+r)M₀ − (1+r)C₀<br>
-      C₁ = [M₁ + (1+r)M₀] − (1+r)·C₀<br><br>
-      Intercept trục C₁: M₁ + (1+r)M₀  [tiêu dùng max ở kỳ 1: C₀=0, tiết kiệm tất cả]<br>
-      Intercept trục C₀: M₀ + M₁/(1+r) [tiêu dùng max ở kỳ 0: C₁=0, vay tất cả]<br>
-      Slope: −(1+r)<br><br>
-      Khi r tăng: Slope tăng (dốc hơn) → xoay quanh endowment point (M₀, M₁)<br>
-      Khi M thay đổi: dịch song song (outward nếu tăng)
-    </div>
-  </div>
- 
-  <div class="concept" id="inter-opt">
-    <div class="concept-h">Intertemporal Optimisation &amp; Time Preference</div>
-    <div class="concept-sub">TỐI ƯU HÓA LIÊN THỜI KỲ VÀ TỶ LỆ THỜI GIAN ƯA THÍCH</div>
-    <div class="body">
-      <p><strong>Utility Function:</strong> U(C₀, C₁) — tiện ích phụ thuộc vào tiêu dùng cả hai kỳ.</p>
-      <p><strong>Time Preference Rate (ρ):</strong> Hộ gia đình ưa thích tiêu dùng hiện tại hơn tương lai — "positive time preference" (ρ &gt; 0). $1 hôm nay có giá trị hơn $1 ngày mai trong nhận thức chủ quan.</p>
-    </div>
-    <div class="formula">
-      <div class="flabel">Utility Function với Time Preference (Cobb-Douglas Intertemporal)</div>
-      U(C₀, C₁) = ln(C₀) + [1/(1+ρ)]·ln(C₁)<br><br>
-      ρ = time preference rate (tỷ lệ ưa thích hiện tại)<br>
-      ρ &gt; 0: Ưa thích tiêu dùng hiện tại (phổ biến)<br>
-      ρ = 0: Bàng quan giữa tiêu dùng hai kỳ<br>
-      ρ &lt; 0: Ưa thích tiêu dùng tương lai (hiếm)<br><br>
-      Discount factor: δ = 1/(1+ρ) ∈ (0,1) khi ρ &gt; 0
-    </div>
-    <div class="formula">
-      <div class="flabel">Điều kiện tối ưu — Intertemporal Optimum</div>
-      Lagrange function:<br>
-      L = ln(C₀) + δ·ln(C₁) + λ[M₀ + M₁/(1+r) − C₀ − C₁/(1+r)]<br><br>
-      FOCs:<br>
-      ∂L/∂C₀ = 1/C₀ − λ = 0       → λ = 1/C₀<br>
-      ∂L/∂C₁ = δ/C₁ − λ/(1+r) = 0 → λ = δ(1+r)/C₁<br><br>
-      Từ hai phương trình: 1/C₀ = δ(1+r)/C₁<br>
-      → C₁/C₀ = δ(1+r) = (1+r)/(1+ρ)<br><br>
-      Điều kiện tối ưu:<br>
-      MRS_C₀C₁ = (1+r)<br><br>
-      Tức là: MRS giữa tiêu dùng hiện tại và tương lai = giá tương đối (1+r)<br>
-      Khi r &gt; ρ: C₁/C₀ &gt; 1 → tiêu dùng kỳ 1 &gt; kỳ 0 (tích lũy theo thời gian)<br>
-      Khi r &lt; ρ: C₁/C₀ &lt; 1 → tiêu dùng kỳ 0 &gt; kỳ 1 (tiêu trước, tiết kiệm ít)
-    </div>
-    <div class="body">
-      <p><strong>Saving vs Borrowing Decision:</strong></p>
-      <p>• Nếu C₀* &lt; M₀: Hộ gia đình <span class="hl-g">tiết kiệm (saves)</span> ở kỳ 0, tiêu dùng nhiều hơn ở kỳ 1</p>
-      <p>• Nếu C₀* &gt; M₀: Hộ gia đình <span class="hl-r">vay mượn (borrows)</span> ở kỳ 0, tiêu dùng ít hơn ở kỳ 1</p>
-      <p>• Nếu C₀* = M₀: Hộ gia đình không tiết kiệm/vay (ở endowment point)</p>
-    </div>
-    <div class="formula">
-      <div class="flabel">Tác động của Interest Rate thay đổi</div>
-      Khi r tăng → Budget line xoay quanh endowment (M₀, M₁):<br><br>
-      Với người TIẾT KIỆM (C₀ &lt; M₀, S₀ &gt; 0):<br>
-      SE: r↑ → tiêu dùng C₀ đắt hơn tương đối → C₀↓ (tiết kiệm nhiều hơn)<br>
-      IE: r↑ → thu nhập thực tế tăng (saver benefited) → C₀↑ và C₁↑<br>
-      TE: không chắc chắn (SE và IE ngược chiều đối với C₀)<br><br>
-      Với người VAY MƯỢN (C₀ &gt; M₀, S₀ &lt; 0):<br>
-      SE: r↑ → C₀↓ (vay đắt hơn)<br>
-      IE: r↑ → thu nhập thực tế giảm (borrower hurt) → C₀↓<br>
-      TE: C₀ chắc chắn GIẢM (cả SE và IE cùng chiều)
-    </div>
-    <div class="kw-box">
-      <div class="kw-label">🔑 Keywords Intertemporal</div>
-      <div class="kws">
-        <span class="kw">PV = C₀ + C₁/(1+r)</span>
-        <span class="kw">slope = −(1+r)</span>
-        <span class="kw">endowment point (M₀,M₁)</span>
-        <span class="kw">discount factor δ=1/(1+ρ)</span>
-        <span class="kw">time preference ρ</span>
-        <span class="kw">MRS = (1+r) at optimum</span>
-        <span class="kw">saver vs borrower</span>
-        <span class="kw">rotate around endowment</span>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy Intertemporal</div>
+        <ul>
+          <li><strong>Slope = −(1+r), không phải −r:</strong> Vay $1 phải trả $1 gốc + lãi = $(1+r).</li>
+          <li><strong>BL xoay quanh ENDOWMENT (M₀,M₁), không phải gốc tọa độ:</strong> Endowment là điểm đạt được khi không vay/tiết kiệm, bất kể r.</li>
+          <li><strong>ρ ≠ r:</strong> ρ là thị hiếu thời gian (chủ quan), r là lãi suất thị trường (khách quan). Tối ưu khi MRS = 1+r.</li>
+        </ul>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập — Hoa: M₀=$100, M₁=$110, r=10%, U=lnC₀+lnC₁</div>
+        <details><summary>Xem đáp án</summary>
+          <div class="answer">
+            <p>BC: \( C_0 + C_1/1.1 = 100+100 = 200 \)</p>
+            <p>MRS: \( C_1/C_0 = 1+r = 1.1 \implies C_1 = 1.1C_0 \)</p>
+            <p>Thay: \( 2C_0 = 200 \implies C_0^* = \$100, C_1^* = \$110 \)</p>
+            <p>S₀ = M₀−C₀* = 0 → <strong>Ở endowment point, không vay/tiết kiệm</strong></p>
+            <p><em>Vì M₁/M₀ = 1.1 = 1+r, tỷ lệ thu nhập đúng bằng 1+r → optimal ở endowment point!</em></p>
+          </div>
+        </details>
       </div>
     </div>
-    <div class="trap">
-      <div class="trap-label">⚠️ Bẫy về Intertemporal Decisions</div>
-      <ul>
-        <li><strong>Slope = −(1+r), không phải −r:</strong> Vì vay $1 phải trả $1 gốc + r lãi = $(1+r) tổng. Nhầm thành −r là sai.</li>
-        <li><strong>Budget line xoay quanh endowment point (M₀, M₁), không phải gốc tọa độ:</strong> Điểm endowment luôn là điểm có thể đạt được bất kể r là bao nhiêu (chỉ cần tiêu đúng thu nhập mỗi kỳ). Khi r tăng, đường xoay quanh đây.</li>
-        <li><strong>Tác động của r với saver và borrower KHÁC NHAU:</strong> Saver được lợi khi r tăng (income effect dương), borrower bị thiệt (income effect âm).</li>
-        <li><strong>ρ ≠ r:</strong> ρ là rate of time preference (chủ quan, tâm lý), r là interest rate thị trường (khách quan). Tối ưu xảy ra khi MRS = 1+r, không phải 1+ρ. Tuy nhiên khi C₁/C₀ = (1+r)/(1+ρ), nếu r = ρ thì C₀ = C₁ (consumption smoothing).</li>
-        <li><strong>Saving không phải lúc nào cũng tốt hơn borrowing:</strong> Quyết định tối ưu phụ thuộc vào thu nhập hai kỳ, lãi suất, và sở thích thời gian. Không có giải pháp "một chiều" nào đúng tuyệt đối.</li>
-      </ul>
+  </section>
+
+  <!-- SUMMARY S4 -->
+  <section class="chapter" id="summary-s4">
+    <div class="chapter-header">
+      <div class="chapter-num">∑</div>
+      <div class="chapter-title">
+        <h2>Bảng tổng hợp Section 4</h2>
+        <p>Master Reference — All Concepts, Formulas &amp; Traps</p>
+      </div>
     </div>
-    <div class="exercise">
-      <div class="ex-label">✏️ Bài tập 3 — Intertemporal Optimum</div>
-      <div class="ex-q">Hoa có M₀ = $100, M₁ = $110. Lãi suất r = 10%. Hàm utility U = ln(C₀) + ln(C₁) (ρ = 0). (a) Viết Intertemporal Budget Constraint. (b) Tìm C₀*, C₁* tối ưu. (c) Hoa tiết kiệm hay vay mượn?</div>
-      <details><summary></summary>
-        <div class="ans">
-          <div class="ans-label">Đáp án</div>
-          <p><strong>(a) Budget Constraint:</strong></p>
-          <p>C₀ + C₁/(1+r) = M₀ + M₁/(1+r)</p>
-          <p>C₀ + C₁/1.1 = 100 + 110/1.1 = 100 + 100 = <span class="hl-b">$200</span></p>
-          <p>→ C₀ + C₁/1.1 = 200</p>
-          <p><strong>(b) Điều kiện tối ưu:</strong></p>
-          <p>MU_C₀ = 1/C₀, MU_C₁ = 1/C₁ (từ U = lnC₀ + lnC₁)</p>
-          <p>MRS = (MU_C₀/MU_C₁) = C₁/C₀</p>
-          <p>Điều kiện: MRS = 1+r → C₁/C₀ = 1.1 → <span class="hl-b">C₁ = 1.1·C₀</span> ...(1)</p>
-          <p>Thay vào BC: C₀ + 1.1C₀/1.1 = 200 → C₀ + C₀ = 200 → <span class="hl-r">C₀* = $100</span></p>
-          <p><span class="hl-r">C₁* = 1.1 × 100 = $110</span></p>
-          <p><strong>(c) Tiết kiệm hay vay?</strong></p>
-          <p>C₀* = $100 = M₀ = $100 → Hoa tiêu dùng đúng bằng thu nhập kỳ 0</p>
-          <p>→ <span class="hl-g">Hoa không tiết kiệm cũng không vay (ở endowment point)</span></p>
-          <p><em>Insight: Với U = lnC₀ + lnC₁ (ρ=0) và r=10%, ta có C₁/C₀ = 1+r = 1.1. Hoa cũng có M₁/M₀ = 110/100 = 1.1. Vì tỷ lệ thu nhập đúng bằng 1+r, điểm tối ưu trùng với endowment point — không cần vay hay tiết kiệm!</em></p>
-        </div>
-      </details>
+
+    <table>
+      <tr><th>Khái niệm</th><th>Công thức/Đặc điểm</th><th>Bẫy chính</th></tr>
+      <tr><td><strong>Market Demand</strong></td><td>\( Q_M = \sum Q_i(P) \); horizontal sum</td><td>Cộng Q tại cùng P; kink tại choke price</td></tr>
+      <tr><td><strong>Price Elasticity</strong></td><td>\( E_p = \frac{\Delta Q}{\Delta P} \cdot \frac{P}{Q} \)</td><td>Slope ≠ Elasticity; E thay đổi dọc đường thẳng</td></tr>
+      <tr><td><strong>TR max</strong></td><td>\( |E_p|=1 \); \( P^* = P_{choke}/2 \)</td><td>TR max ≠ Profit max; TR max tại MR=0</td></tr>
+      <tr><td><strong>Consumer Surplus</strong></td><td>\( CS = \frac{1}{2}Q(P_{max}-P) \); tam giác</td><td>Thiếu ½; Loss CS là hình thang</td></tr>
+      <tr><td><strong>W-L Budget</strong></td><td>\( pC+wF=wT+M \); slope=−w/p</td><td>w↑: xoay BL; giá leisure = w</td></tr>
+      <tr><td><strong>W-L Optimum</strong></td><td>\( MRS_{FC}=w/p \)</td><td>IE âm với L ≠ leisure là inferior</td></tr>
+      <tr><td><strong>Backward-Bending LS</strong></td><td>Low w: SE&gt;IE; High w: IE&gt;SE</td><td>Chỉ xảy ra ở mức lương cao</td></tr>
+      <tr><td><strong>Intertemporal BC</strong></td><td>\( C_0+C_1/(1+r)=M_0+M_1/(1+r) \)</td><td>Slope=−(1+r) không phải −r</td></tr>
+      <tr><td><strong>Intertemporal Optimum</strong></td><td>\( MRS=1+r \); \( C_1/C_0=(1+r)/(1+\rho) \)</td><td>ρ≠r; xoay quanh endowment point</td></tr>
+      <tr><td><strong>Saver vs Borrower</strong></td><td>\( C_0^* &lt; M_0 \): saves; \( C_0^* > M_0 \): borrows</td><td>r↑ &amp; Borrower: cả SE và IE làm C₀↓</td></tr>
+    </table>
+
+    <div class="important" style="margin-top:24px;">
+      <div class="imp-label">🗺️ Common Thread — Ba chủ đề Section 4</div>
+      <p><strong>Market Demand</strong>: Aggregation of individual demands → elasticity governs pricing &amp; welfare (CS).</p>
+      <p style="margin-top:8px"><strong>Work-Leisure</strong>: Consumer theory with C and F (leisure) as the two goods. Time budget replaces income budget. Slope = w/p. Results: Labor Supply Curve, backward-bending at high wages.</p>
+      <p style="margin-top:8px"><strong>Intertemporal</strong>: Consumer theory across time: C₀ and C₁ as two goods. Relative price = (1+r). Results: Saving/Borrowing decision, consumption smoothing.</p>
+      <p style="margin-top:8px"><strong>All share the same framework</strong>: Budget Constraint + IC → Optimum → SE &amp; IE analysis under parameter changes.</p>
     </div>
-    <div class="exercise">
-      <div class="ex-label">✏️ Bài tập 4 — Tác động của lãi suất</div>
-      <div class="ex-q">Dùng bài trên nhưng M₀ = $150, M₁ = $55. Lãi suất r = 10%, U = lnC₀ + lnC₁. (a) Tìm C₀*, S₀. (b) Nếu r tăng lên 20%, C₀* thay đổi như thế nào? Giải thích SE và IE.</div>
-      <details><summary></summary>
-        <div class="ans">
-          <div class="ans-label">Đáp án</div>
-          <p><strong>(a) r = 10%:</strong></p>
-          <p>PV income = 150 + 55/1.1 = 150 + 50 = $200</p>
-          <p>BC: C₀ + C₁/1.1 = 200</p>
-          <p>Điều kiện: C₁ = 1.1·C₀</p>
-          <p>2C₀ = 200 → <span class="hl-r">C₀* = $100, C₁* = $110</span></p>
-          <p>S₀ = M₀ − C₀* = 150 − 100 = <span class="hl-g">$50 (tiết kiệm)</span></p>
-          <p><strong>(b) r = 20%:</strong></p>
-          <p>PV income = 150 + 55/1.2 = 150 + 45.83 = $195.83</p>
-          <p>BC: C₀ + C₁/1.2 = 195.83</p>
-          <p>Điều kiện: C₁ = 1.2·C₀</p>
-          <p>C₀ + 1.2C₀/1.2 = 195.83 → 2C₀ = 195.83 → <span class="hl-r">C₀* = $97.92</span></p>
-          <p>C₀ giảm từ $100 → $97.92 khi r tăng.</p>
-          <p><strong>Phân tích SE và IE (Hoa là saver vì S₀&gt;0):</strong></p>
-          <p>SE: r↑ → C₀ đắt hơn tương đối → <span class="hl-b">C₀ giảm</span></p>
-          <p>IE: r↑ → saver được lợi (earn more on savings) → PV income giảm nhẹ (vì M₁&gt;0) → <span class="hl-r">C₀ giảm nhẹ thêm</span></p>
-          <p>Ở đây PV income giảm (từ $200 → $195.83) vì r↑ làm giảm PV(M₁). Cả SE và IE đều hướng làm C₀ giảm → C₀* giảm rõ ràng.</p>
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
- 
-<!-- SUMMARY -->
-<section class="chapter" id="summary">
-  <div class="ch-header">
-    <div class="ch-num">∑</div>
-    <div class="ch-info">
-      <h2>Bảng tổng hợp toàn bộ Section 4</h2>
-      <p>Master Reference — All Concepts, Formulas &amp; Traps</p>
-    </div>
-  </div>
-  <table>
-    <tr><th>Khái niệm</th><th>Công thức/Đặc điểm</th><th>Bẫy chính</th></tr>
-    <tr><td><strong>Market Demand</strong></td><td>Q_M = ΣQ_i(P); horizontal sum</td><td>Cộng Q tại cùng P, không cộng P; kink tại choke price</td></tr>
-    <tr><td><strong>Price Elasticity E_p</strong></td><td>(ΔQ/ΔP)×(P/Q); âm cho normal goods</td><td>Slope ≠ Elasticity; E thay đổi dọc đường tuyến tính</td></tr>
-    <tr><td><strong>TR max</strong></td><td>|E_p| = 1; P* = P_choke/2</td><td>TR max ≠ Profit max; TR max tại MR = 0</td></tr>
-    <tr><td><strong>Consumer Surplus</strong></td><td>CS = ½×Q×(P_max−P); tam giác</td><td>Thiếu ½; Loss CS là hình thang: ½(Q1+Q2)(P2−P1)</td></tr>
-    <tr><td><strong>Work-Leisure Budget</strong></td><td>pC + wF = wT + M; slope = −w/p</td><td>Giá của leisure = w; khi w↑: xoay, không dịch song song</td></tr>
-    <tr><td><strong>W-L Optimum</strong></td><td>MRS_FC = w/p; MU_F/MU_C = w/p</td><td>Tương tự consumer theory nhưng F và C thay vì X và Y</td></tr>
-    <tr><td><strong>Backward-Bending LS</strong></td><td>Low w: SE&gt;IE → L↑; High w: IE&gt;SE → L↓</td><td>IE âm với L không có nghĩa leisure là inferior good</td></tr>
-    <tr><td><strong>Intertemporal Budget</strong></td><td>C₀ + C₁/(1+r) = M₀ + M₁/(1+r)</td><td>Slope = −(1+r) không phải −r; xoay quanh endowment</td></tr>
-    <tr><td><strong>Intertemporal Optimum</strong></td><td>MRS = 1+r; C₁/C₀ = δ(1+r)</td><td>ρ ≠ r; r=ρ → consumption smoothing (C₀=C₁ nếu M đều)</td></tr>
-    <tr><td><strong>Saver vs Borrower</strong></td><td>C₀&lt;M₀: saves; C₀&gt;M₀: borrows</td><td>r↑ và Saver: IE dương (PV of future income tăng)</td></tr>
-  </table>
- 
-  <div class="important" style="margin-top:32px">
-    <div class="imp-label">🗺️ Liên kết 3 chủ đề Section 4 với nhau</div>
-    <p><strong>Market Demand</strong> = aggregation của individual demand; elasticity quyết định pricing strategy và welfare (CS).</p>
-    <br>
-    <p><strong>Work-Leisure</strong> = Consumer theory áp dụng cho quyết định thời gian: thay vì X và Y là hai hàng hóa, giờ là Consumption (C) và Leisure (F). Budget constraint bao gồm cả time constraint. Kết quả: Labor Supply Curve — đặc biệt là backward-bending khi IE &gt; SE ở mức lương cao.</p>
-    <br>
-    <p><strong>Intertemporal</strong> = Consumer theory áp dụng cho quyết định qua thời gian: thay vì X và Y là hai hàng hóa, là C₀ và C₁. Giá tương đối = (1+r). Kết quả: Saving/Borrowing decision, quyết định phân bổ thu nhập qua các kỳ.</p>
-    <br>
-    <p><strong>Common thread:</strong> Cả ba chủ đề đều dùng cùng framework: Budget Constraint + Indifference Curves → Optimal Choice → Comparative Statics (phân tích SE &amp; IE khi có thay đổi). Chỉ là cách diễn giải các "hàng hóa" khác nhau!</p>
-  </div>
+  </section>
+
   </main>
 </div>
 
 <script>
 function openSection(evt, sectionId) {
-  // Remove 'active' class from all section-content divs
   var sections = document.getElementsByClassName("section-content");
   for (var i = 0; i < sections.length; i++) {
     sections[i].classList.remove("active");
   }
-  
-  // Add 'active' class to the clicked section
   document.getElementById(sectionId).classList.add("active");
-  
-  // Remove 'active' class from all tab buttons
   var tabBtns = document.getElementsByClassName("tab-btn");
   for (var i = 0; i < tabBtns.length; i++) {
     tabBtns[i].classList.remove("active");
   }
-  
-  // Add 'active' class to the clicked button
   evt.currentTarget.classList.add("active");
-  
-  // Smooth scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+
 
 </body>
 </html>
