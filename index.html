@@ -1,3 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microeconomics Study Guide – OMIK</title>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --accent: #c0392b;
+    --gold: #d4a017;
+    --cream: #fdf6ec;
+    --soft: #f0e8d8;
+    --blue: #2471a3;
+    --green: #1a7a4a;
+    --muted: #7f8c8d;
+    --border: #d5c9b5;
+    --card-bg: #ffffff;
+    --keyword-bg: #fef9e7;
+    --trap-bg: #fdf2f2;
+    --exercise-bg: #f0f8f0;
+    --answer-bg: #eaf4fb;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 64px 48px 48px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 80px);
+  }
+  .hero-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.15;
+    position: relative;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    margin-top: 20px;
+    color: #c8c8d8;
+    font-style: italic;
+    font-size: 15px;
+    position: relative;
+  }
+
+  /* SECTION TABS MENU */
+  .section-tabs {
+    background: var(--ink);
+    padding: 0 48px 24px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .tab-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    background: transparent;
+    color: #c8c8d8;
+    border: 1.5px solid #c8c8d8;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .tab-btn:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+  .tab-btn.active {
+    background: var(--gold);
+    color: var(--ink);
+    border-color: var(--gold);
+  }
+
+  /* HIDE CONTENT BY DEFAULT */
+  .section-content { display: none; animation: fadeIn 0.4s ease; }
+  .section-content.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* NAV */
+  .toc {
+    background: var(--soft);
+    border-bottom: 2px solid var(--border);
+    padding: 24px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .toc a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .toc a:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+  /* MAIN LAYOUT */
+  main { max-width: 960px; margin: 0 auto; padding: 48px 32px 80px; }
+
+  /* CHAPTER */
+  .chapter { margin-bottom: 72px; }
+  .chapter-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 32px; padding-bottom: 16px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .chapter-num {
+    font-family: 'Playfair Display', serif; font-size: 56px;
+    font-weight: 900; color: var(--accent);
+    line-height: 1; min-width: 80px;
+  }
+  .chapter-title h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; }
+  .chapter-title p { font-size: 14px; color: var(--muted); font-style: italic; margin-top: 4px; }
+
+  /* COMPONENTS */
+  .concept { margin-bottom: 48px; }
+  .concept-title {
+    font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--blue);
+    margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+  }
+  .concept-title::before {
+    content: ''; display: inline-block; width: 6px; height: 6px;
+    background: var(--accent); border-radius: 50%; flex-shrink: 0;
+  }
+  .concept-en { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 1px; margin-bottom: 14px; text-transform: uppercase; }
+  .concept-body { margin-bottom: 16px; }
+  .concept-body p { margin-bottom: 10px; }
+  .concept-body ul { padding-left: 24px; margin-bottom: 16px; }
+  .concept-body li { margin-bottom: 8px; }
+  .concept-body strong { color: var(--accent); }
+
+  .formula {
+    background: var(--ink); color: #e8e0d0; font-family: 'JetBrains Mono', monospace;
+    font-size: 15px; padding: 16px 20px; border-radius: 6px; margin: 16px 0;
+    border-left: 4px solid var(--gold); line-height: 2;
+  }
+  .formula .label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-weight: 600; }
+
+  .keywords { background: var(--keyword-bg); border: 1.5px solid var(--gold); border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .keywords-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
+  .kw-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .kw { background: var(--ink); color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+
+  .trap { background: var(--trap-bg); border: 1.5px solid var(--accent); border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .trap-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+  .trap ul { padding-left: 20px; }
+  .trap li { margin-bottom: 8px; font-size: 15px; }
+
+  .important { background: #eaf4fb; border: 1.5px solid var(--blue); border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .imp-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; font-weight: 600; }
+  
+  .steps { margin: 16px 0; padding-left: 16px; border-left: 2px solid var(--border); }
+  .step { position: relative; margin-bottom: 16px; padding-left: 16px; }
+  .step::before { content: ''; position: absolute; left: -21px; top: 4px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; border: 4px solid var(--cream); }
+  .step-content h4 { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 4px; color: var(--blue); }
+
+  .exercise { background: var(--exercise-bg); border: 1.5px solid var(--green); border-radius: 8px; padding: 20px 24px; margin: 20px 0; }
+  .exercise-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; font-weight: 600; }
+  .ex-q { font-weight: 600; margin-bottom: 12px; font-size: 15px; }
+  .ex-en { color: var(--ink); margin-bottom: 8px; font-size: 15px;}
+  .ex-en p { margin-bottom: 4px; }
+
+  .answer { background: var(--answer-bg); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-top: 12px; }
+  .answer-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; font-weight: 600; }
+  .answer p { margin-bottom: 8px; font-size: 15px; }
+
+  details > summary { cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; color: var(--blue); user-select: none; padding: 8px 0; list-style: none; outline: none; font-weight: 600;}
+  details > summary::before { content: '▶ '; font-size: 10px; }
+  details[open] > summary::before { content: '▼ '; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th { background: var(--ink); color: #fff; padding: 10px 14px; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: var(--soft); }
+
+  .hl-gold { color: var(--gold); font-weight: 600; }
+  .hl-red { color: var(--accent); font-weight: 600; }
+  .hl-blue { color: var(--blue); font-weight: 600; }
+  .hl-green { color: var(--green); font-weight: 600; }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .compare-card { background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 8px; padding: 16px; }
+  .compare-card h4 { font-family: 'Playfair Display', serif; font-size: 15px; margin-bottom: 8px; color: var(--accent); }
+  .compare-card p { font-size: 14px; }
+
+  .svg-chart {
+    display: block;
+    margin: 32px auto;
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  .svg-chart text { font-family: 'Source Serif 4', serif; font-size: 12px; }
+  .axis-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; fill: var(--muted); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 40px 24px 32px; }
+    .section-tabs { padding: 0 24px 24px; flex-direction: column; }
+    .toc { padding: 16px 24px; }
+    main { padding: 32px 20px 60px; }
+    .compare { grid-template-columns: 1fr; }
+    .chapter-num { font-size: 40px; min-width: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-label">OMIK 2026</div>
+  <h1>Microeconomics<br><span>Study Guide</span></h1>
+  <p class="hero-sub">Tài liệu học tập chuyên sâu — Kiến thức Tiếng Anh · Giải thích Tiếng Việt</p>
+</header>
+
+<div class="section-tabs">
+  <button class="tab-btn active" onclick="openSection(event, 'section1')">Section 1: Cung Cầu & Độ co giãn</button>
+  <button class="tab-btn" onclick="openSection(event, 'section2')">Section 2: Hành vi người tiêu dùng</button>
+  <button class="tab-btn" onclick="openSection(event, 'section3')">Section 3: Lựa chọn & Tối ưu</button>
+  <button class="tab-btn" onclick="openSection(event, 'section4')">Section 4: Market & Time</button>
+</div>
+
+<div id="section1" class="section-content active">
+  <nav class="toc">
+    <a href="#overview-1">1. Tổng quan & 7 Nguyên lý</a>
+    <a href="#supply-demand">2. Cung và Cầu</a>
+    <a href="#market">3. Cơ chế thị trường</a>
+    <a href="#elasticity-time">4. Độ co giãn & Thời gian</a>
+    <a href="#price-controls">5. Kiểm soát giá</a>
+    <a href="#elasticity-deep">6. Đi sâu Độ co giãn</a>
+    <a href="#mcqs">7. MCQs Giải thích</a>
+  </nav>
+  <main id="section1-main"></main>
+</div>
+
+<div id="section2" class="section-content">
+  <nav class="toc">
+    <a href="#overview-2">Tổng quan</a>
+    <a href="#budget">Budget Constraints</a>
+    <a href="#budget-line">Budget Line</a>
+    <a href="#income-change">Income Changes</a>
+    <a href="#price-change">Price Changes</a>
+    <a href="#preferences">Preferences</a>
+    <a href="#axioms">3 Axioms</a>
+    <a href="#ic">Indifference Curves</a>
+    <a href="#mrs">MRS</a>
+    <a href="#types">Perfect Sub/Comp</a>
+    <a href="#utility">Utility</a>
+    <a href="#mu">Marginal Utility</a>
+  </nav>
+  <main id="section2-main"></main>
+</div>
+
+<div id="section3" class="section-content">
+  <nav class="toc">
+    <a href="#optimum">Consumer Optimum</a>
+    <a href="#interior">Interior Solution</a>
+    <a href="#corner">Corner Solution</a>
+    <a href="#manager">Managerial Strategy</a>
+    <a href="#income-demand">Income & Demand</a>
+    <a href="#normal-inferior">Normal vs Inferior</a>
+    <a href="#engel">Engel Curve</a>
+    <a href="#price-demand">Price & Demand</a>
+    <a href="#sub-income">Sub & Income Effect</a>
+    <a href="#giffen">Giffen Good</a>
+    <a href="#summary">Summary Table</a>
+  </nav>
+  <main id="section3-main"></main>
+</div>
+
+<div id="section4" class="section-content">
+  <nav class="toc">
+    <a href="#market">Market Demand</a>
+    <a href="#horizontal">Horizontal Sum</a>
+    <a href="#elasticity">Price Elasticity</a>
+    <a href="#cs">Consumer Surplus</a>
+    <a href="#ps4">Problem Set 4</a>
+    <a href="#worklei">Work-Leisure</a>
+    <a href="#backward">Backward-Bending</a>
+    <a href="#inter">Intertemporal</a>
+    <a href="#inter-opt">Optimum</a>
+    <a href="#summary-s4">Summary S4</a>
+  </nav>
+  <main id="section4-main"></main>
+</div>
+
 <script src="data.js"></script>
 <script>
     function renderSection(dataArray, containerId) {
@@ -60,7 +406,20 @@
         container.innerHTML = htmlOutput;
     }
 
-    // Tự động gọi render cho cả 4 Section khi trang tải xong
+    function openSection(evt, sectionId) {
+        var sections = document.getElementsByClassName("section-content");
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].classList.remove("active");
+        }
+        document.getElementById(sectionId).classList.add("active");
+        var tabBtns = document.getElementsByClassName("tab-btn");
+        for (var i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].classList.remove("active");
+        }
+        evt.currentTarget.classList.add("active");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
         renderSection(section1Data, 'section1-main');
         renderSection(section2Data, 'section2-main');
@@ -72,3 +431,5 @@
         }
     });
 </script>
+</body>
+</html>
