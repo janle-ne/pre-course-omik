@@ -7,35 +7,506 @@ const section1Data = [
     chapterSub: "Chapter 1: Microeconomics vs Macroeconomics & Seven Principles",
     blocks: [
       {
-        type: "concept",
-        title: "1. Microeconomics vs. Macroeconomics (Vi mô và Vĩ mô)",
-        content: `
-          <div class="compare">
-            <div class="compare-card">
-              <h4>Microeconomics (Kinh tế Vi mô)</h4>
-              <p>Là nhánh của kinh tế học đối phó với hành vi của các đơn vị kinh tế cá nhân...</p>
-              <p style="margin-top:8px;"><strong>Trọng tâm:</strong> Là lý thuyết ra quyết định dưới sự khan hiếm kinh tế.</p>
+        type: "raw",
+        content: String.raw`
+          <div class="concept">
+            <div class="concept-title">1. Microeconomics vs. Macroeconomics (Vi mô và Vĩ mô)</div>
+            <div class="compare">
+              <div class="compare-card">
+                <h4>Microeconomics (Kinh tế Vi mô)</h4>
+                <p>Là nhánh của kinh tế học đối phó với hành vi của các đơn vị kinh tế cá nhân người tiêu dùng, công ty, người lao động và nhà đầu tư cũng như các thị trường mà các đơn vị này cấu thành.</p>
+                <p style="margin-top:8px;"><strong>Trọng tâm:</strong> Là lý thuyết ra quyết định dưới sự khan hiếm kinh tế. (decision making)</p>
+              </div>
+              <div class="compare-card">
+                <h4>Macroeconomics (Kinh tế Vĩ mô)</h4>
+                <p>Nhánh kinh tế học giải quyết các biến số kinh tế tổng hợp, chẳng hạn như mức độ và tốc độ tăng trưởng của sản lượng quốc gia, lãi suất, thất nghiệp và lạm phát. (aggregate)</p>
+              </div>
             </div>
-            <div class="compare-card">
-              <h4>Macroeconomics (Kinh tế Vĩ mô)</h4>
-              <p>Nhánh kinh tế học giải quyết các biến số kinh tế tổng hợp...</p>
+          </div>
+
+          <div class="concept">
+            <div class="concept-title">2. The Themes of Microeconomics (Chủ đề cốt lõi)</div>
+            <div class="concept-body">
+              <p>Mọi quyết định đều xoay quanh <strong>Trade-offs (Sự đánh đổi)</strong> vì nguồn lực là có hạn.</p>
+              <ul>
+                <li><strong>Consumers (Người tiêu dùng):</strong> Đánh đổi giữa việc mua nhiều hàng hóa này thì phải mua ít hàng hóa khác, hoặc đánh đổi giữa tiêu dùng hiện tại và tương lai.</li>
+                <li><strong>Workers (Người lao động):</strong> Đánh đổi trong việc chọn việc làm, hoặc giữa thời gian lao động và thời gian nghỉ ngơi (leisure).</li>
+                <li><strong>Firms (Công ty):</strong> Đánh đổi xem nên sản xuất cái gì và sử dụng nguồn lực nào trong sản xuất.</li>
+              </ul>
+              <p>Sự đánh đổi này được quyết định bởi <strong>Prices and Markets (Giá cả và Thị trường)</strong>.</p>
+              <ul>
+                <li>In a centrally planned economy, prices are set by the government. (Trong nền kinh tế kế hoạch hóa tập trung, chính phủ định giá.)</li>
+                <li>In a market economy, prices are determined by the interactions of consumers, workers, and firms in markets-collections of buyers and sellers that together determine the price of a good. (Trong nền kinh tế thị trường, giá được xác định bởi sự tương tác của người tiêu dùng, người lao động và công ty trong thị trường.)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="concept">
+            <div class="concept-title">3. Seven Principles of Microeconomics (7 Nguyên lý cơ bản)</div>
+            <div class="concept-body">
+              <p><strong>Principle 1: People face trade-offs (Con người đối mặt với sự đánh đổi).</strong><br>
+              Bản chất: "To get something that we like, we have to give up something else that we also like" Để có một thứ, ta phải từ bỏ một thứ khác. Ví dụ: Sinh viên đi dự tiệc đêm trước ngày thi sẽ có ít thời gian học hơn. Ở cấp độ xã hội: Đánh đổi giữa <strong>Efficiency (Hiệu quả)</strong> - xã hội tối đa hóa lợi ích từ nguồn lực khan hiếm, và <strong>Equality (Bình đẳng)</strong> - lợi ích được chia đều. Việc phân phối lại thu nhập từ người giàu sang người nghèo làm tăng bình đẳng nhưng giảm động lực làm việc, thu hẹp "chiếc bánh" kinh tế.</p>
+
+              <p><strong>Principle 2: The cost of something is what you give up to get it (Chi phí cơ hội).</strong><br>
+              Bản chất: Chi phí cơ hội (Opportunity Cost) là bất cứ thứ gì phải từ bỏ để đạt được một món đồ. Ví dụ: Chi phí đi học đại học không chỉ là học phí và tiền sách vở, mà còn CỘNG THÊM khoản tiền lương bị mất do không đi làm.</p>
+
+              <p><strong>Principle 3: Rational people think at the margin (Người duy lý suy nghĩ tại điểm cận biên).</strong><br>
+              Bản chất: Con người đưa ra quyết định bằng cách đánh giá chi phí và lợi ích của những thay đổi cận biên (những điều chỉnh nhỏ bé). "Make decisions by evaluating costs and benefits of marginal changes"</p>
+
+              <p><strong>Principle 4: People respond to incentives (Con người phản ứng với các động lực/khuyến khích).</strong><br>
+              Bản chất: Khuyến khích là thứ xúi giục một người hành động. Khi giá xăng tăng, người tiêu dùng mua nhiều xe hybrid hơn.</p>
+
+              <p><strong>Principle 5: Trade can make everyone better off (Thương mại làm cho mọi người tốt hơn).</strong><br>
+              Bản chất: Thương mại cho phép các cá nhân/quốc gia chuyên môn hóa, mua được hàng hóa đa dạng với giá rẻ hơn so với việc tự sản xuất.</p>
+
+              <p><strong>Principle 6: Markets are usually a good way to organize economic activity (Thị trường thường là cách tốt để tổ chức hoạt động kinh tế).</strong><br>
+              Bản chất: Nền kinh tế thị trường phân bổ nguồn lực thông qua các quyết định phi tập trung. Adam Smith gọi đây là "Bàn tay vô hình" (Invisible hand), nơi giá cả dẫn dắt các cá nhân tư lợi đưa ra quyết định tối đa hóa phúc lợi kinh tế chung.</p>
+
+              <p><strong>Principle 7: Governments can sometimes improve market outcomes (Chính phủ đôi khi có thể cải thiện kết quả thị trường).</strong><br>
+              Bản chất: Chính phủ cần bảo vệ quyền tài sản. Ngoài ra, chính phủ can thiệp để thúc đẩy hiệu quả (tránh Market failures - Thất bại thị trường) do Externality (Ngoại tác - ví dụ: ô nhiễm) hoặc Market power (Quyền lực thị trường - ví dụ: độc quyền) gây ra.</p>
+            </div>
+
+            <div class="trap">
+              <div class="trap-title">⚠️ Bẫy kinh điển (Red Flags)</div>
+              <ul>
+                <li><strong>Chi phí cơ hội:</strong> Rất nhiều người quên tính chi phí ẩn (như thời gian hoặc tiền lương bị bỏ lỡ). Nhớ nguyên tắc: \( \text{Opportunity Cost} = \text{Explicit Cost} \) (Chi phí rõ ràng) + \( \text{Implicit Cost} \) (Chi phí ẩn).</li>
+                <li><strong>Efficiency (Hiệu quả) vs. Equality (Bình đẳng):</strong> Không có chính sách nào thỏa mãn tối đa cả hai. Đánh thuế người giàu chia cho người nghèo làm tăng Equality nhưng luôn làm giảm Efficiency.</li>
+              </ul>
             </div>
           </div>
         `
-      },
+      }
+    ]
+  },
+  {
+    id: "supply-demand",
+    chapterNum: "02",
+    chapterTitle: "Cung và Cầu (Supply and Demand)",
+    chapterSub: "Chapter 2: Đây là công cụ cốt lõi để dự đoán giá cả và tác động của các chính sách.",
+    blocks: [
       {
-        type: "trap",
-        title: "⚠️ Bẫy kinh điển (Red Flags)",
-        content: `
-          <ul>
-            <li><strong>Chi phí cơ hội:</strong> Rất nhiều người quên tính chi phí ẩn.</li>
-            <li><strong>Efficiency vs. Equality:</strong> Không có chính sách nào thỏa mãn tối đa cả hai.</li>
-          </ul>
+        type: "raw",
+        content: String.raw`
+          <svg class="svg-chart" viewBox="0 0 350 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="180" x2="320" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+            <line x1="40" y1="20" x2="40" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+            <text x="300" y="195" class="axis-label">Quantity</text>
+            <text x="10" y="15" class="axis-label">Price</text>
+            <line x1="60" y1="40" x2="260" y2="160" stroke="#2471a3" stroke-width="3"/>
+            <text x="270" y="165" fill="#2471a3" font-weight="bold">D</text>
+            <line x1="90" y1="40" x2="290" y2="160" stroke="#2471a3" stroke-width="2" stroke-dasharray="5"/>
+            <text x="300" y="165" fill="#2471a3" font-weight="bold">D'</text>
+            <line x1="60" y1="160" x2="260" y2="40" stroke="#c0392b" stroke-width="3"/>
+            <text x="270" y="45" fill="#c0392b" font-weight="bold">S</text>
+            <line x1="90" y1="160" x2="290" y2="40" stroke="#c0392b" stroke-width="2" stroke-dasharray="5"/>
+            <text x="300" y="45" fill="#c0392b" font-weight="bold">S'</text>
+          </svg>
+
+          <div class="concept">
+            <div class="concept-title">1. The Supply Curve (Đường Cung - S)</div>
+            <div class="concept-body">
+              <p><strong>Định nghĩa:</strong> Mối quan hệ giữa lượng hàng hóa mà nhà sản xuất sẵn sàng bán và giá của hàng hóa đó.</p>
+              <p><strong>Đặc điểm:</strong> Dốc lên (Upward sloping). Giá càng cao, công ty càng muốn sản xuất và bán nhiều hơn.</p>
+              <p><strong>Các biến số ảnh hưởng:</strong> Chi phí sản xuất (tiền lương, lãi vay, nguyên vật liệu thô). Nếu chi phí sản xuất giảm, công ty có thể sản xuất cùng một số lượng với giá thấp hơn, đường cung dịch chuyển sang phải (từ \( S \) sang \( S' \)).</p>
+            </div>
+          </div>
+
+          <div class="concept">
+            <div class="concept-title">2. The Demand Curve (Đường Cầu - D)</div>
+            <div class="concept-body">
+              <p><strong>Định nghĩa:</strong> Mối quan hệ giữa số lượng hàng hóa mà người tiêu dùng sẵn sàng mua và giá của hàng hóa đó.</p>
+              <p><strong>Đặc điểm:</strong> Dốc xuống (Downward sloping). Giá càng giảm, người tiêu dùng càng muốn mua nhiều.</p>
+              <p><strong>Các biến số ảnh hưởng:</strong> Thu nhập, thời tiết, giá của các hàng hóa khác. Thu nhập cao hơn làm dịch chuyển đường cầu sang phải (từ \( D \) sang \( D' \)).</p>
+              
+              <p><strong>Hàng hóa liên quan:</strong></p>
+              <ul>
+                <li><strong>Substitutes (Hàng thay thế):</strong> Giá của hàng hóa này TĂNG dẫn đến lượng cầu của hàng hóa kia TĂNG.</li>
+                <li><strong>Complements (Hàng bổ sung):</strong> Giá của hàng hóa này TĂNG dẫn đến lượng cầu của hàng hóa kia GIẢM.</li>
+              </ul>
+            </div>
+
+            <div class="trap">
+              <div class="trap-title">⚠️ BẪY TỬ THẦN TRONG BÀI THI (Phải nhớ!)</div>
+              <ul>
+                <li><strong>Change in quantity supplied/demanded (Thay đổi LƯỢNG cung/cầu):</strong> Chỉ xảy ra khi GIÁ của chính hàng hóa đó thay đổi \(\Rightarrow\) <strong>Trượt dọc (Movement)</strong> trên chính đường cong đó.</li>
+                <li><strong>Change in supply/demand (Thay đổi Cung/Cầu):</strong> Xảy ra khi các YẾU TỐ KHÁC NGOÀI GIÁ (chi phí, thu nhập, sở thích...) thay đổi \(\Rightarrow\) <strong>Dịch chuyển (Shift)</strong> toàn bộ đường cong sang trái hoặc phải.</li>
+              </ul>
+            </div>
+          </div>
+        `
+      }
+    ]
+  },
+  {
+    id: "market",
+    chapterNum: "03",
+    chapterTitle: "Cơ chế thị trường (Market Mechanism)",
+    chapterSub: "Mô hình này chỉ dùng được cho thị trường cạnh tranh.",
+    blocks: [
+      {
+        type: "raw",
+        content: String.raw`
+          <svg class="svg-chart" viewBox="0 0 350 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="180" x2="320" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+            <line x1="40" y1="20" x2="40" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+            <text x="300" y="195" class="axis-label">Quantity</text>
+            <text x="10" y="15" class="axis-label">Price</text>
+            <line x1="60" y1="40" x2="260" y2="160" stroke="#2471a3" stroke-width="3"/>
+            <text x="270" y="165" fill="#2471a3" font-weight="bold">D</text>
+            <line x1="60" y1="160" x2="260" y2="40" stroke="#c0392b" stroke-width="3"/>
+            <text x="270" y="45" fill="#c0392b" font-weight="bold">S</text>
+            <circle cx="160" cy="100" r="5" fill="#1a1a2e"/>
+            <line x1="40" y1="100" x2="160" y2="100" stroke="#1a1a2e" stroke-dasharray="4"/>
+            <line x1="160" y1="180" x2="160" y2="100" stroke="#1a1a2e" stroke-dasharray="4"/>
+            <text x="15" y="104" font-weight="bold" fill="#1a1a2e">P₀</text>
+            <text x="152" y="195" font-weight="bold" fill="#1a1a2e">Q₀</text>
+            <line x1="40" y1="60" x2="226" y2="60" stroke="#1a7a4a" stroke-dasharray="2"/>
+            <text x="15" y="64" font-weight="bold" fill="#1a7a4a">P₁</text>
+            <text x="140" y="55" fill="#1a7a4a" font-weight="bold">Surplus</text>
+            <line x1="40" y1="140" x2="226" y2="140" stroke="#d35400" stroke-dasharray="2"/>
+            <text x="15" y="144" font-weight="bold" fill="#d35400">P₂</text>
+            <text x="135" y="135" fill="#d35400" font-weight="bold">Shortage</text>
+          </svg>
+
+          <div class="concept">
+            <div class="concept-title">3. Market Mechanism (Cơ chế thị trường)</div>
+            <div class="concept-body">
+              <ul>
+                <li><strong>Equilibrium (Cân bằng/Market clearing):</strong> Điểm mà Lượng cung = Lượng cầu \( (Q_s = Q_d) \) tại mức giá \( P_0 \).</li>
+                <li><strong>Surplus (Thặng dư/Dư thừa):</strong> Khi \( P > P_0 \), Lượng cung > Lượng cầu. Áp lực thị trường sẽ đẩy giá giảm xuống.</li>
+                <li><strong>Shortage (Thiếu hụt):</strong> Khi \( P < P_0 \), Lượng cầu > Lượng cung. Áp lực thị trường sẽ đẩy giá tăng lên.</li>
+              </ul>
+              <p><strong>Bản chất của "Đường Cung / Đường Cầu"</strong><br>
+              Khi các nhà kinh tế học vẽ một đường Cung hoặc Cầu trên đồ thị 2D, họ đang sử dụng một giả định tối quan trọng gọi là <strong>Ceteris Paribus (Các yếu tố khác không đổi)</strong>. Nghĩa là, đường Cầu chỉ cho bạn thấy: "Nếu CHỈ DUY NHẤT mức giá thay đổi, còn thu nhập của khách hàng, thời tiết, xu hướng... tất cả đều giữ nguyên y xì đúc, thì lượng người mua sẽ thay đổi thế nào?"</p>
+              <p>Chính vì thế:<br>
+              1. <strong>Thay đổi LƯỢNG cầu/cung (Movement along the curve - Trượt dọc):</strong> Chỉ xảy ra khi GIÁ của bản thân món hàng đó thay đổi.<br>
+              2. <strong>Thay đổi CẦU/CUNG (Shift in the curve - Dịch chuyển):</strong> Xảy ra khi cái giả định Ceteris Paribus bị phá vỡ.</p>
+            </div>
+
+            <div class="exercise">
+              <div class="exercise-title">✏️ BÀI TẬP TÌNH HUỐNG (Case Study)</div>
+              <div class="ex-q">Giả sử bạn đang vận hành một dự án kinh doanh nước ép và đồ uống tốt cho sức khỏe tên là Freshy Juicy.</div>
+              <p><strong>Tình huống 1:</strong> Giá trái cây tươi (nguyên liệu đầu vào) bất ngờ tăng vọt.<br>
+              <em>Phân tích:</em> Chi phí sản xuất tăng làm giảm lợi nhuận trên mỗi đơn vị. Do đó, đường Cung (Supply) dịch chuyển sang Trái. Kết quả: Giá cân bằng tăng lên, số lượng tiêu thụ giảm xuống.</p>
+              
+              <p><strong>Tình huống 2:</strong> Trà sữa (Hàng thay thế - Substitute) vừa bị phanh phui chứa nhiều hóa chất độc hại.<br>
+              <em>Phân tích:</em> Sở thích thay đổi hướng tới đồ uống sức khỏe. Đường Cầu (Demand) dịch chuyển sang Phải. Kết quả: Giá và sản lượng bán ra của Freshy Juicy đều tăng!</p>
+            </div>
+          </div>
+
+          <div class="concept">
+            <div class="concept-title">4. Các ví dụ thực tế về Dịch chuyển Cân bằng trong Slide</div>
+            <div class="concept-body">
+              <ul>
+                <li><strong>Trứng (Eggs):</strong> Năm 1970-2010, giá trứng giảm 55%. Cơ giới hóa làm giảm chi phí sản xuất. Đồng thời người dân sợ cholesterol nên bớt ăn trứng.</li>
+                <li><strong>Giáo dục Đại học (College):</strong> Chi phí cơ sở vật chất tăng. Nhu cầu học đại học cũng tăng mạnh. Kết quả: Giá học phí và lượng nhập học đều tăng vọt.</li>
+                <li><strong>Khoáng sản (Đồng - Copper):</strong> Nhu cầu tăng cả trăm lần. Tuy nhiên, công nghệ khai thác cũng phát triển làm giảm chi phí triệt để. Giá Đồng trong dài hạn gần như đi ngang.</li>
+              </ul>
+            </div>
+          </div>
+        `
+      }
+    ]
+  },
+  {
+    id: "elasticity-time",
+    chapterNum: "04",
+    chapterTitle: "Độ co giãn (Elasticity) và Thời gian",
+    chapterSub: "Đo lường tỷ lệ phần trăm thay đổi của một biến khi biến khác tăng 1%.",
+    blocks: [
+      {
+        type: "raw",
+        content: String.raw`
+          <div class="concept">
+            <div class="concept-title">1. Các loại độ co giãn cơ bản</div>
+            <div class="concept-body">
+              <p><strong>Price Elasticity of Demand (\( E_p \)):</strong> % thay đổi của lượng cầu khi giá tăng 1%.</p>
+              <div class="formula">
+                \[ E_p = \frac{\%\Delta Q}{\%\Delta P} \]
+                <p style="font-size: 13px;">Note: \( \%\Delta Q = \frac{\text{end value} - \text{start value}}{\text{start value}} \times 100\% \)</p>
+              </div>
+              <p><strong>Income elasticity of demand:</strong> % thay đổi của lượng cầu khi thu nhập tăng 1%.</p>
+              <p><strong>Cross-price elasticity of demand:</strong> % thay đổi lượng cầu hàng hóa A khi giá hàng hóa B tăng 1%.</p>
+              <ul>
+                <li><strong>Trường hợp 1: Hàng hóa thay thế (Substitute) → Kết quả DƯƠNG (>0)</strong><br>
+                Giá A tăng mang dấu +, Lượng B tăng mang dấu +. Cộng chia Cộng ra Cộng. Sự dịch chuyển diễn ra cùng chiều.</li>
+                <li><strong>Trường hợp 2: Hàng hóa bổ sung (Complementary) → Kết quả ÂM (<0)</strong><br>
+                Giá A tăng mang dấu +, Lượng B giảm mang dấu -. Trừ chia Cộng ra Trừ. Sự dịch chuyển diễn ra ngược chiều.</li>
+              </ul>
+              <p><strong>Price elasticity of supply:</strong> % thay đổi của lượng cung khi giá tăng 1%.</p>
+            </div>
+          </div>
+
+          <div class="concept">
+            <div class="concept-title">2. Đường Cầu Tuyến Tính (Linear Demand Curve)</div>
+            <div class="concept-body">
+              <ul>
+                <li>Đặc tính: Trên một đường cầu thẳng \( (Q = a - bP) \) độ dốc (slope) là không đổi, nhưng độ co giãn \( (E_p) \) thì thay đổi liên tục.</li>
+                <li>Ở mức giá rất cao (gần trục tung): Số lượng nhỏ, độ co giãn lớn (về mặt độ lớn, tiến tới \( -\infty \)).</li>
+                <li>Khi di chuyển xuống dưới dọc theo đường cầu, độ co giãn nhỏ dần.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="concept">
+            <div class="concept-title">3. Ngắn hạn (Short-Run) vs. Dài hạn (Long-Run)</div>
+            <div class="concept-body">
+              <p><strong>Đối với Cầu (Demand):</strong></p>
+              <ul>
+                <li><strong>Hàng hóa thông thường (Xăng):</strong> Ngắn hạn ít co giãn. Dài hạn co giãn nhiều hơn.</li>
+                <li><strong>Hàng hóa lâu bền (Durable goods - Ô tô):</strong> Ngược lại! Ngắn hạn cầu rất co giãn. Dài hạn ít co giãn hơn.</li>
+                <li><strong>Co giãn theo Thu nhập (Income Elasticity):</strong> Hàng hóa bình thường thì \( LR > SR \). Hàng lâu bền thì \( SR > LR \).</li>
+              </ul>
+              
+              <p><strong>Đối với Cung (Supply):</strong></p>
+              <ul>
+                <li><strong>Đồng nguyên sinh (Primary Copper):</strong> Dài hạn co giãn lớn hơn (có thời gian mở rộng nhà máy).</li>
+                <li><strong>Đồng thứ cấp/Tái chế (Secondary Copper):</strong> Ngược lại! Ngắn hạn co giãn mạnh. Dài hạn ít co giãn hơn (vì nguồn cung phế liệu cạn kiệt).</li>
+              </ul>
+            </div>
+          </div>
+        `
+      }
+    ]
+  },
+  {
+    id: "price-controls",
+    chapterNum: "05",
+    chapterTitle: "Sự can thiệp của chính phủ - Kiểm soát giá",
+    chapterSub: "Giá trần (Price Ceiling) và tác động.",
+    blocks: [
+      {
+        type: "raw",
+        content: String.raw`
+          <div class="concept">
+            <div class="concept-body">
+              <p><strong>Trần giá (Price Ceiling - \( P_{max} \)):</strong> Chính phủ quy định mức giá tối đa thấp hơn mức giá cân bằng của thị trường \( (P_{max} < P_0) \).</p>
+              <ul>
+                <li>Hậu quả: Lượng cung giảm, lượng cầu tăng. Kết quả dẫn đến Shortage (Sự thiếu hụt trầm trọng / Excess Demand).</li>
+              </ul>
+            </div>
+
+            <div class="exercise">
+              <div class="exercise-title">✏️ BÀI TẬP MẪU ĐẶC TRƯNG (Wheat Market)</div>
+              <div class="ex-q">Phương trình cung: \( Q_S = 1800 + 240P \) | Cầu: \( Q_D = 3550 - 266P \). Tìm giá trị cân bằng.</div>
+              <details>
+                <summary>Giải thích & Lời giải (Answer & Explanation)</summary>
+                <div class="answer">
+                  <p>Đặt \( Q_S = Q_D \).</p>
+                  \[ 1800 + 240P = 3550 - 266P \]
+                  \[ 506P = 1750 \implies P = \$3.46/\text{bushel} \]
+                  <p>\( Q_S = 1800 + 240(3.46) = 2630 \text{ millions of bushels} \)</p>
+                  <p><strong>Elasticity Demand:</strong> \( \epsilon_D = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} = -266 \times \frac{3.46}{2630} = -0.35\% \)</p>
+                </div>
+              </details>
+            </div>
+
+            <div class="trap">
+              <div class="trap-title">⚠️ BẪY CHẾT NGƯỜI (The Inverse Demand Trap)</div>
+              <p>Giáo viên thường cho Hàm cầu ngược: \( P = 13.35 - 0.00376Q \).</p>
+              <p>Con số -0.00376 thực chất là \( \frac{\Delta P}{\Delta Q} \). Để tìm đúng hệ số \( (\frac{\Delta Q}{\Delta P}) \):</p>
+              <ol>
+                <li><strong>Cách 1:</strong> Cô lập biến Q: \( Q = \frac{13.35}{0.00376} - \frac{1}{0.00376}P \approx 3550 - 266P \).</li>
+                <li><strong>Cách 2:</strong> Dùng \( \frac{\Delta Q}{\Delta P} = \frac{1}{-0.00376} \approx -266 \).</li>
+              </ol>
+            </div>
+          </div>
+        `
+      }
+    ]
+  },
+  {
+    id: "elasticity-deep",
+    chapterNum: "06",
+    chapterTitle: "Đi sâu vào Độ co giãn (Elasticity Review)",
+    chapterSub: "Phân tích sâu PED, PES và các bẫy thường gặp",
+    blocks: [
+      {
+        type: "raw",
+        content: String.raw`
+          <div class="concept">
+            <div class="concept-title">1. Độ co giãn của Cầu theo giá (PED)</div>
+            <div class="concept-body">
+              <p><strong>A. Hàng hóa tiêu dùng thông thường / Không lâu bền</strong></p>
+              <ul>
+                <li>Ngắn hạn (Short-run): Cầu kém co giãn (Inelastic). Đường cầu dốc (steep).</li>
+                <li>Dài hạn (Long-run): Cầu co giãn nhiều hơn (Elastic). Đường cầu thoải (flat).</li>
+              </ul>
+              <p><strong>B. Hàng hóa lâu bền (Durable Goods) - BẪY KINH ĐIỂN</strong></p>
+              <ul>
+                <li>Ngắn hạn (Short-run): Cầu co giãn nhiều (Elastic).</li>
+                <li>Dài hạn (Long-run): Cầu kém co giãn (Inelastic).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="concept">
+            <div class="concept-title">2. Độ co giãn của Cung theo giá (PES)</div>
+            <div class="concept-body">
+              <p><strong>Quy luật chung:</strong> Cung trong dài hạn LUÔN LUÔN co giãn nhiều hơn so với ngắn hạn do doanh nghiệp có thời gian mở rộng nhà máy và có thêm sự tham gia của đối thủ mới.</p>
+            </div>
+
+            <div class="exercise">
+              <div class="exercise-title">✏️ 3. Bài tập Tình huống (Case Study)</div>
+              <div class="ex-q">Giá Xe máy và Bánh mì cùng tăng 15%. So sánh sự sụt giảm \( Q_D \) trong 1 tháng (Ngắn hạn) và 5 năm (Dài hạn).</div>
+              <details>
+                <summary>Trả lời và Giải thích</summary>
+                <div class="answer">
+                  <p><strong>Với Bánh mì:</strong> 1 tháng giảm nhẹ. 5 năm giảm mạnh.</p>
+                  <p><strong>Với Xe máy:</strong> 1 tháng giảm cực mạnh (người dân hoãn mua). 5 năm giảm ít hơn (xe đã hỏng bắt buộc phải mua).</p>
+                </div>
+              </details>
+            </div>
+
+            <div class="keywords">
+              <div class="keywords-title">🔑 4. Tổng hợp Keywords</div>
+              <div class="kw-list" style="display:block;">
+                <ul style="color:var(--gold); font-family:'JetBrains Mono', monospace; font-size:13px;">
+                  <li>1. <strong>CUNG (Supply)</strong>? → Dài hạn luôn co giãn HƠN ngắn hạn.</li>
+                  <li>2. <strong>CẦU (Demand)</strong>?
+                    <ul>
+                      <li>Dùng 1 lần → Dài hạn co giãn HƠN.</li>
+                      <li>Xài chục năm → Ngắn hạn co giãn HƠN.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `
+      }
+    ]
+  },
+  {
+    id: "mcqs",
+    chapterNum: "07",
+    chapterTitle: "MCQs: Trọn bộ 29 câu hỏi trắc nghiệm",
+    chapterSub: "Tất cả câu hỏi từ tài liệu gốc được giữ nguyên và giải thích chi tiết",
+    blocks: [
+      {
+        type: "raw",
+        content: String.raw`
+          <div class="concept">
+            <div class="exercise"><div class="ex-q">1. In a market economy, supply and demand determine</div>
+            <div class="ex-en">a. both the quantity of each good produced and the price at which it is sold.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong> - Cung cầu tương tác tạo ra điểm cân bằng xác định cả Giá và Lượng.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">2. In a market economy,</div>
+            <div class="ex-en">d. supply and demand determine prices and prices, in turn, allocate the economy's scarce resources.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong> - Giá đóng vai trò là tín hiệu phân bổ nguồn lực.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">3. In a competitive market, the price of a product</div>
+            <div class="ex-en">d. None of the above is correct.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong> - Giá quyết định bởi sự tương tác của CẢ người mua và người bán, không riêng ai.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">4. A competitive market is a market in which</div>
+            <div class="ex-en">d. no individual buyer or seller has any significant impact on the market price.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong> - Không ai có đủ quyền lực thao túng giá.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">5. Assume Diana buys computers in a competitive market. It follows that</div>
+            <div class="ex-en">d. None of the above is correct.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">6. An increase in quantity demanded</div>
+            <div class="ex-en">a. results in a movement downward and to the right along a demand curve.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong> - "Quantity demanded" tăng chỉ khi giá giảm → Trượt (movement) dọc xuống dưới.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">7. When the price of a good or service changes,</div>
+            <div class="ex-en">d. there is a movement along a given demand curve.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">8. The law of demand states that, other things equal, an increase in</div>
+            <div class="ex-en">b. price causes quantity demanded to decrease.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: B</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">9. The demand curve for a good is a line that relates</div>
+            <div class="ex-en">a. price and quantity demanded.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">10. When quantity demanded increases at every possible price, the demand curve has</div>
+            <div class="ex-en">b. shifted to the right.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: B</strong> - Tăng ở "mọi mức giá" nghĩa là dịch chuyển toàn bộ đường cầu (Shift).</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">11. The market demand curve</div>
+            <div class="ex-en">a. is the sum of all individual demand curves.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong> - Cộng gộp theo chiều ngang.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">12. The quantity supplied of a good is the amount that</div>
+            <div class="ex-en">d. sellers are willing and able to sell.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">13. Which of the following would cause a movement along the supply curve for cupcakes?</div>
+            <div class="ex-en">b. a decrease in the price of cupcakes</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: B</strong> - Movement chỉ xảy ra khi giá món hàng đó thay đổi.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">14. Which of these statements best represents the law of supply?</div>
+            <div class="ex-en">c. When the price of a good decreases, sellers produce less of the good.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: C</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">15. A improvement in production technology will shift the</div>
+            <div class="ex-en">a. supply curve to the right.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">16. If car manufacturers begin using new technology, we would not expect</div>
+            <div class="ex-en">d. individual car manufacturers to move up and to the right along their supply curves.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong> - Vì công nghệ làm SHIFT cung, không làm MOVEMENT.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">17. At the equilibrium price, the quantity that buyers are willing to buy</div>
+            <div class="ex-en">b. exactly equals the quantity that sellers are willing and able to sell.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: B</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">18. Buyers are able to buy all they want and sellers sell all they want at</div>
+            <div class="ex-en">d. the equilibrium price but not above or below the equilibrium price.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">19. Which of the following events must cause equilibrium price to rise?</div>
+            <div class="ex-en">a. demand increases and supply decreases</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">20. Selling for $20, equilibrium price is $30. We would expect a</div>
+            <div class="ex-en">a. shortage to exist and the market price of roses to increase.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong> - Giá hiện tại thấp hơn giá cân bằng gây thiếu hụt.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">21. In general, elasticity is a measure of</div>
+            <div class="ex-en">d. how much buyers and sellers respond to changes in market conditions.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">22. Elasticity provides information on the</div>
+            <div class="ex-en">b. magnitude of the effect on the market.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: B</strong> - Thể hiện mức độ/quy mô phản ứng.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">23. The price elasticity of demand measures how much</div>
+            <div class="ex-en">a. quantity demanded responds to a change in price.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">24. Demand is said to be inelastic if</div>
+            <div class="ex-en">c. the quantity demanded changes only slightly when the price of the good changes.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: C</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">25. Demand is elastic if the price elasticity of demand is</div>
+            <div class="ex-en">d. greater than 1.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">26. Goods with many close substitutes tend to have</div>
+            <div class="ex-en">a. more elastic demands.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">27. For a good that is a necessity, demand</div>
+            <div class="ex-en">a. tends to be inelastic.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: A</strong></p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">28. Wheat farmers would realize an increase in total revenue if the</div>
+            <div class="ex-en">d. demand for wheat is elastic.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong> - Giá giảm mà cầu co giãn mạnh thì lượng mua vọt lên bù đắp dư phần giá.</p></div></details></div>
+
+            <div class="exercise"><div class="ex-q">29. The supply of oil is likely to be</div>
+            <div class="ex-en">d. inelastic in the short run and elastic in the long run.</div>
+            <details><summary>Xem Đáp Án</summary><div class="answer"><p><strong>Đáp án: D</strong></p></div></details></div>
+          </div>
         `
       }
     ]
   }
-  // Bạn sẽ dán Chapter 2, 3... do AI tạo vào bên dưới phần này
 ];
 // =========================================================================
 // SECTION 2 DATA
