@@ -922,8 +922,12 @@ const section1Data = [
               <div class="answer-title">Đáp án: D</div>
               <p><strong>Giải thích:</strong> Quy luật Cung: Mọi loại hàng hóa trong dài hạn luôn co giãn nhiều hơn ngắn hạn. Ngắn hạn nhà máy lọc dầu bị giới hạn công suất (inelastic). Dài hạn xây thêm nhà máy khai thác (elastic).</p>
             </div>
+            </details>
+        </div>
 
-            </section>
+      </div>
+    </section>
+
     `
   }
 ];
