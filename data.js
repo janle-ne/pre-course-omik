@@ -927,7 +927,6 @@ const section1Data = [
       </div>
     </section>
     `
-
   }
 ];
 
@@ -938,8 +937,7 @@ const section2Data = [
   {
     isRawHtml: true,
     content: String.raw`
-      <!-- COPY TOÀN BỘ NỘI DUNG TỪ BÊN TRONG THẺ <main> CỦA SECTION 2 TỪ FILE GỐC VÀ PASTE VÀO ĐÂY -->
-    `
+      `
   }
 ];
 
@@ -950,8 +948,7 @@ const section3Data = [
   {
     isRawHtml: true,
     content: String.raw`
-      <!-- COPY TOÀN BỘ NỘI DUNG TỪ BÊN TRONG THẺ <main> CỦA SECTION 3 TỪ FILE GỐC VÀ PASTE VÀO ĐÂY -->
-    `
+      `
   }
 ];
 
@@ -962,7 +959,6 @@ const section4Data = [
   {
     isRawHtml: true,
     content: String.raw`
-      <!-- COPY TOÀN BỘ NỘI DUNG TỪ BÊN TRONG THẺ <main> CỦA SECTION 4 TỪ FILE GỐC VÀ PASTE VÀO ĐÂY -->
-    `
+      `
   }
 ];
