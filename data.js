@@ -5,7 +5,6 @@ const section1Data = [
   {
     isRawHtml: true,
     content: String.raw`
-       <main>
     <section class="chapter" id="overview-1">
       <div class="chapter-header">
         <div class="chapter-num">01</div>
