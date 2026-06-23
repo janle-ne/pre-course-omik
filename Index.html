@@ -1,0 +1,3068 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microeconomics Study Guide – OMIK</title>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --ink: #1a1a2e;
+    --accent: #c0392b;
+    --gold: #d4a017;
+    --cream: #fdf6ec;
+    --soft: #f0e8d8;
+    --blue: #2471a3;
+    --green: #1a7a4a;
+    --muted: #7f8c8d;
+    --border: #d5c9b5;
+    --card-bg: #ffffff;
+    --keyword-bg: #fef9e7;
+    --trap-bg: #fdf2f2;
+    --exercise-bg: #f0f8f0;
+    --answer-bg: #eaf4fb;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 64px 48px 48px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 80px);
+  }
+  .hero-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    line-height: 1.15;
+    position: relative;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    margin-top: 20px;
+    color: #c8c8d8;
+    font-style: italic;
+    font-size: 15px;
+    position: relative;
+  }
+
+  /* SECTION TABS MENU */
+  .section-tabs {
+    background: var(--ink);
+    padding: 0 48px 24px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .tab-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    background: transparent;
+    color: #c8c8d8;
+    border: 1.5px solid #c8c8d8;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .tab-btn:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+  .tab-btn.active {
+    background: var(--gold);
+    color: var(--ink);
+    border-color: var(--gold);
+  }
+
+  /* HIDE CONTENT BY DEFAULT */
+  .section-content { display: none; animation: fadeIn 0.4s ease; }
+  .section-content.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* NAV */
+  .toc {
+    background: var(--soft);
+    border-bottom: 2px solid var(--border);
+    padding: 24px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .toc a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .toc a:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+  /* MAIN LAYOUT */
+  main { max-width: 960px; margin: 0 auto; padding: 48px 32px 80px; }
+
+  /* CHAPTER */
+  .chapter { margin-bottom: 72px; }
+  .chapter-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 32px; padding-bottom: 16px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .chapter-num {
+    font-family: 'Playfair Display', serif; font-size: 56px;
+    font-weight: 900; color: var(--accent);
+    line-height: 1; min-width: 80px;
+  }
+  .chapter-title h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; }
+  .chapter-title p { font-size: 14px; color: var(--muted); font-style: italic; margin-top: 4px; }
+
+  /* COMPONENTS */
+  .concept { margin-bottom: 48px; }
+  .concept-title {
+    font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--blue);
+    margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+  }
+  .concept-title::before {
+    content: ''; display: inline-block; width: 6px; height: 6px;
+    background: var(--accent); border-radius: 50%; flex-shrink: 0;
+  }
+  .concept-en { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 1px; margin-bottom: 14px; text-transform: uppercase; }
+  .concept-body { margin-bottom: 16px; }
+  .concept-body p { margin-bottom: 10px; }
+  .concept-body ul { padding-left: 24px; margin-bottom: 16px; }
+  .concept-body li { margin-bottom: 8px; }
+  .concept-body strong { color: var(--accent); }
+
+  .formula {
+    background: var(--ink); color: #e8e0d0; font-family: 'JetBrains Mono', monospace;
+    font-size: 15px; padding: 16px 20px; border-radius: 6px; margin: 16px 0;
+    border-left: 4px solid var(--gold); line-height: 2;
+  }
+  .formula .label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-weight: 600; }
+
+  .keywords { background: var(--keyword-bg); border: 1.5px solid var(--gold); border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .keywords-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
+  .kw-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .kw { background: var(--ink); color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+
+  .trap { background: var(--trap-bg); border: 1.5px solid var(--accent); border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .trap-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+  .trap ul { padding-left: 20px; }
+  .trap li { margin-bottom: 8px; font-size: 15px; }
+
+  .important { background: #eaf4fb; border: 1.5px solid var(--blue); border-radius: 8px; padding: 16px 20px; margin: 20px 0; }
+  .imp-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; font-weight: 600; }
+  
+  .steps { margin: 16px 0; padding-left: 16px; border-left: 2px solid var(--border); }
+  .step { position: relative; margin-bottom: 16px; padding-left: 16px; }
+  .step::before { content: ''; position: absolute; left: -21px; top: 4px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; border: 4px solid var(--cream); }
+  .step-content h4 { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 4px; color: var(--blue); }
+
+  .exercise { background: var(--exercise-bg); border: 1.5px solid var(--green); border-radius: 8px; padding: 20px 24px; margin: 20px 0; }
+  .exercise-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; font-weight: 600; }
+  .ex-q { font-weight: 600; margin-bottom: 12px; font-size: 15px; }
+  .ex-en { color: var(--ink); margin-bottom: 8px; font-size: 15px;}
+  .ex-en p { margin-bottom: 4px; }
+
+  .answer { background: var(--answer-bg); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-top: 12px; }
+  .answer-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; font-weight: 600; }
+  .answer p { margin-bottom: 8px; font-size: 15px; }
+
+  details > summary { cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; color: var(--blue); user-select: none; padding: 8px 0; list-style: none; outline: none; font-weight: 600;}
+  details > summary::before { content: '▶ '; font-size: 10px; }
+  details[open] > summary::before { content: '▼ '; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th { background: var(--ink); color: #fff; padding: 10px 14px; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: var(--soft); }
+
+  .hl-gold { color: var(--gold); font-weight: 600; }
+  .hl-red { color: var(--accent); font-weight: 600; }
+  .hl-blue { color: var(--blue); font-weight: 600; }
+  .hl-green { color: var(--green); font-weight: 600; }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .compare-card { background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 8px; padding: 16px; }
+  .compare-card h4 { font-family: 'Playfair Display', serif; font-size: 15px; margin-bottom: 8px; color: var(--accent); }
+  .compare-card p { font-size: 14px; }
+
+  /* ĐỊNH DẠNG ĐỒ THỊ SVG */
+  .svg-chart {
+    display: block;
+    margin: 32px auto;
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  .svg-chart text { font-family: 'Source Serif 4', serif; font-size: 12px; }
+  .axis-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; fill: var(--muted); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 40px 24px 32px; }
+    .section-tabs { padding: 0 24px 24px; flex-direction: column; }
+    .toc { padding: 16px 24px; }
+    main { padding: 32px 20px 60px; }
+    .compare { grid-template-columns: 1fr; }
+    .chapter-num { font-size: 40px; min-width: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-label">OMIK 2026</div>
+  <h1>Microeconomics<br><span>Study Guide</span></h1>
+  <p class="hero-sub">Tài liệu học tập chuyên sâu — Kiến thức Tiếng Anh · Giải thích Tiếng Việt</p>
+</header>
+
+<div class="section-tabs">
+  <button class="tab-btn active" onclick="openSection(event, 'section1')">Section 1: Cung Cầu & Độ co giãn</button>
+  <button class="tab-btn" onclick="openSection(event, 'section2')">Section 2: Hành vi người tiêu dùng</button>
+  <button class="tab-btn" onclick="openSection(event, 'section3')">Section 3: Lựa chọn & Tối ưu</button>
+</div>
+
+<!-- ========================================== -->
+<!-- SECTION 1 -->
+<!-- ========================================== -->
+<div id="section1" class="section-content active">
+  <nav class="toc">
+    <a href="#overview-1">1. Tổng quan & 7 Nguyên lý</a>
+    <a href="#supply-demand">2. Cung và Cầu</a>
+    <a href="#market">3. Cơ chế thị trường</a>
+    <a href="#elasticity-time">4. Độ co giãn & Thời gian</a>
+    <a href="#price-controls">5. Kiểm soát giá</a>
+    <a href="#elasticity-deep">6. Đi sâu Độ co giãn</a>
+    <a href="#mcqs">7. MCQs Giải thích</a>
+  </nav>
+
+  <main>
+    <section class="chapter" id="overview-1">
+      <div class="chapter-header">
+        <div class="chapter-num">01</div>
+        <div class="chapter-title">
+          <h2>Tổng quan &amp; 7 Nguyên lý Kinh tế Vi mô</h2>
+          <p>Chapter 1: Microeconomics vs Macroeconomics & Seven Principles</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">1. Microeconomics vs. Macroeconomics (Vi mô và Vĩ mô)</div>
+        <div class="compare">
+          <div class="compare-card">
+            <h4>Microeconomics (Kinh tế Vi mô)</h4>
+            <p>Là nhánh của kinh tế học đối phó với hành vi của các đơn vị kinh tế cá nhân người tiêu dùng, công ty, người lao động và nhà đầu tư cũng như các thị trường mà các đơn vị này cấu thành.</p>
+            <p style="margin-top:8px;"><strong>Trọng tâm:</strong> Là lý thuyết ra quyết định dưới sự khan hiếm kinh tế. (decision making)</p>
+          </div>
+          <div class="compare-card">
+            <h4>Macroeconomics (Kinh tế Vĩ mô)</h4>
+            <p>Nhánh kinh tế học giải quyết các biến số kinh tế tổng hợp, chẳng hạn như mức độ và tốc độ tăng trưởng của sản lượng quốc gia, lãi suất, thất nghiệp và lạm phát. (aggregate)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">2. The Themes of Microeconomics (Chủ đề cốt lõi)</div>
+        <div class="concept-body">
+          <p>Mọi quyết định đều xoay quanh <strong>Trade-offs (Sự đánh đổi)</strong> vì nguồn lực là có hạn.</p>
+          <ul>
+            <li><strong>Consumers (Người tiêu dùng):</strong> Đánh đổi giữa việc mua nhiều hàng hóa này thì phải mua ít hàng hóa khác, hoặc đánh đổi giữa tiêu dùng hiện tại và tương lai.</li>
+            <li><strong>Workers (Người lao động):</strong> Đánh đổi trong việc chọn việc làm, hoặc giữa thời gian lao động và thời gian nghỉ ngơi (leisure).</li>
+            <li><strong>Firms (Công ty):</strong> Đánh đổi xem nên sản xuất cái gì và sử dụng nguồn lực nào trong sản xuất.</li>
+          </ul>
+          <p>Sự đánh đổi này được quyết định bởi <strong>Prices and Markets (Giá cả và Thị trường)</strong>.</p>
+          <ul>
+            <li>In a centrally planned economy, prices are set by the government. (Trong nền kinh tế kế hoạch hóa tập trung, chính phủ định giá.)</li>
+            <li>In a market economy, prices are determined by the interactions of consumers, workers, and firms in markets-collections of buyers and sellers that together determine the price of a good. (Trong nền kinh tế thị trường, giá được xác định bởi sự tương tác của người tiêu dùng, người lao động và công ty trong thị trường.)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">3. Seven Principles of Microeconomics (7 Nguyên lý cơ bản)</div>
+        <div class="concept-body">
+          <p><strong>Principle 1: People face trade-offs (Con người đối mặt với sự đánh đổi).</strong><br>
+          Bản chất: "To get something that we like, we have to give up something else that we also like" Để có một thứ, ta phải từ bỏ một thứ khác. Ví dụ: Sinh viên đi dự tiệc đêm trước ngày thi sẽ có ít thời gian học hơn. Ở cấp độ xã hội: Đánh đổi giữa <strong>Efficiency (Hiệu quả)</strong> - xã hội tối đa hóa lợi ích từ nguồn lực khan hiếm, và <strong>Equality (Bình đẳng)</strong> - lợi ích được chia đều. Việc phân phối lại thu nhập từ người giàu sang người nghèo làm tăng bình đẳng nhưng giảm động lực làm việc, thu hẹp "chiếc bánh" kinh tế.</p>
+
+          <p><strong>Principle 2: The cost of something is what you give up to get it (Chi phí cơ hội).</strong><br>
+          Bản chất: Chi phí cơ hội (Opportunity Cost) là bất cứ thứ gì phải từ bỏ để đạt được một món đồ. Ví dụ: Chi phí đi học đại học không chỉ là học phí và tiền sách vở, mà còn CỘNG THÊM khoản tiền lương bị mất do không đi làm.</p>
+
+          <p><strong>Principle 3: Rational people think at the margin (Người duy lý suy nghĩ tại điểm cận biên).</strong><br>
+          Bản chất: Con người đưa ra quyết định bằng cách đánh giá chi phí và lợi ích của những thay đổi cận biên (những điều chỉnh nhỏ bé). "Make decisions by evaluating costs and benefits of marginal changes"</p>
+
+          <p><strong>Principle 4: People respond to incentives (Con người phản ứng với các động lực/khuyến khích).</strong><br>
+          Bản chất: Khuyến khích là thứ xúi giục một người hành động. Khi giá xăng tăng, người tiêu dùng mua nhiều xe hybrid hơn.</p>
+
+          <p><strong>Principle 5: Trade can make everyone better off (Thương mại làm cho mọi người tốt hơn).</strong><br>
+          Bản chất: Thương mại cho phép các cá nhân/quốc gia chuyên môn hóa, mua được hàng hóa đa dạng với giá rẻ hơn so với việc tự sản xuất.</p>
+
+          <p><strong>Principle 6: Markets are usually a good way to organize economic activity (Thị trường thường là cách tốt để tổ chức hoạt động kinh tế).</strong><br>
+          Bản chất: Nền kinh tế thị trường phân bổ nguồn lực thông qua các quyết định phi tập trung. Adam Smith gọi đây là "Bàn tay vô hình" (Invisible hand), nơi giá cả dẫn dắt các cá nhân tư lợi đưa ra quyết định tối đa hóa phúc lợi kinh tế chung.</p>
+
+          <p><strong>Principle 7: Governments can sometimes improve market outcomes (Chính phủ đôi khi có thể cải thiện kết quả thị trường).</strong><br>
+          Bản chất: Chính phủ cần bảo vệ quyền tài sản. Ngoài ra, chính phủ can thiệp để thúc đẩy hiệu quả (tránh Market failures - Thất bại thị trường) do Externality (Ngoại tác - ví dụ: ô nhiễm) hoặc Market power (Quyền lực thị trường - ví dụ: độc quyền) gây ra.</p>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Bẫy kinh điển (Red Flags)</div>
+          <ul>
+            <li><strong>Chi phí cơ hội:</strong> Rất nhiều người quên tính chi phí ẩn (như thời gian hoặc tiền lương bị bỏ lỡ). Nhớ nguyên tắc: \( \text{Opportunity Cost} = \text{Explicit Cost} \) (Chi phí rõ ràng) + \( \text{Implicit Cost} \) (Chi phí ẩn).</li>
+            <li><strong>Efficiency (Hiệu quả) vs. Equality (Bình đẳng):</strong> Không có chính sách nào thỏa mãn tối đa cả hai. Đánh thuế người giàu chia cho người nghèo làm tăng Equality nhưng luôn làm giảm Efficiency.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="supply-demand">
+      <div class="chapter-header">
+        <div class="chapter-num">02</div>
+        <div class="chapter-title">
+          <h2>Cung và Cầu (Supply and Demand)</h2>
+          <p>Chapter 2: Đây là công cụ cốt lõi để dự đoán giá cả và tác động của các chính sách.</p>
+        </div>
+      </div>
+
+      <svg class="svg-chart" viewBox="0 0 350 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="180" x2="320" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+        <line x1="40" y1="20" x2="40" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+        <text x="300" y="195" class="axis-label">Quantity</text>
+        <text x="10" y="15" class="axis-label">Price</text>
+        
+        <line x1="60" y1="40" x2="260" y2="160" stroke="#2471a3" stroke-width="3"/>
+        <text x="270" y="165" fill="#2471a3" font-weight="bold">D</text>
+        
+        <line x1="90" y1="40" x2="290" y2="160" stroke="#2471a3" stroke-width="2" stroke-dasharray="5"/>
+        <text x="300" y="165" fill="#2471a3" font-weight="bold">D'</text>
+
+        <line x1="60" y1="160" x2="260" y2="40" stroke="#c0392b" stroke-width="3"/>
+        <text x="270" y="45" fill="#c0392b" font-weight="bold">S</text>
+
+        <line x1="90" y1="160" x2="290" y2="40" stroke="#c0392b" stroke-width="2" stroke-dasharray="5"/>
+        <text x="300" y="45" fill="#c0392b" font-weight="bold">S'</text>
+      </svg>
+
+      <div class="concept">
+        <div class="concept-title">1. The Supply Curve (Đường Cung - S)</div>
+        <div class="concept-body">
+          <p><strong>Định nghĩa:</strong> Mối quan hệ giữa lượng hàng hóa mà nhà sản xuất sẵn sàng bán và giá của hàng hóa đó.</p>
+          <p><strong>Đặc điểm:</strong> Dốc lên (Upward sloping). Giá càng cao, công ty càng muốn sản xuất và bán nhiều hơn.</p>
+          <p><strong>Các biến số ảnh hưởng:</strong> Chi phí sản xuất (tiền lương, lãi vay, nguyên vật liệu thô). Nếu chi phí sản xuất giảm, công ty có thể sản xuất cùng một số lượng với giá thấp hơn, đường cung dịch chuyển sang phải (từ \( S \) sang \( S' \)).</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">2. The Demand Curve (Đường Cầu - D)</div>
+        <div class="concept-body">
+          <p><strong>Định nghĩa:</strong> Mối quan hệ giữa số lượng hàng hóa mà người tiêu dùng sẵn sàng mua và giá của hàng hóa đó.</p>
+          <p><strong>Đặc điểm:</strong> Dốc xuống (Downward sloping). Giá càng giảm, người tiêu dùng càng muốn mua nhiều.</p>
+          <p><strong>Các biến số ảnh hưởng:</strong> Thu nhập, thời tiết, giá của các hàng hóa khác. Thu nhập cao hơn làm dịch chuyển đường cầu sang phải (từ \( D \) sang \( D' \)).</p>
+          
+          <p><strong>Hàng hóa liên quan:</strong></p>
+          <ul>
+            <li><strong>Substitutes (Hàng thay thế):</strong> Giá của hàng hóa này TĂNG dẫn đến lượng cầu của hàng hóa kia TĂNG.</li>
+            <li><strong>Complements (Hàng bổ sung):</strong> Giá của hàng hóa này TĂNG dẫn đến lượng cầu của hàng hóa kia GIẢM.</li>
+          </ul>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ BẪY TỬ THẦN TRONG BÀI THI (Phải nhớ!)</div>
+          <ul>
+            <li><strong>Change in quantity supplied/demanded (Thay đổi LƯỢNG cung/cầu):</strong> Chỉ xảy ra khi GIÁ của chính hàng hóa đó thay đổi \(\Rightarrow\) <strong>Trượt dọc (Movement)</strong> trên chính đường cong đó.</li>
+            <li><strong>Change in supply/demand (Thay đổi Cung/Cầu):</strong> Xảy ra khi các YẾU TỐ KHÁC NGOÀI GIÁ (chi phí, thu nhập, sở thích...) thay đổi \(\Rightarrow\) <strong>Dịch chuyển (Shift)</strong> toàn bộ đường cong sang trái hoặc phải.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="market">
+      <div class="chapter-header">
+        <div class="chapter-num">03</div>
+        <div class="chapter-title">
+          <h2>Cơ chế thị trường (Market Mechanism)</h2>
+          <p>Mô hình này chỉ dùng được cho thị trường cạnh tranh (người mua/bán không có quyền lực ảnh hưởng lớn đến giá).</p>
+        </div>
+      </div>
+
+      <svg class="svg-chart" viewBox="0 0 350 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="180" x2="320" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+        <line x1="40" y1="20" x2="40" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+        <text x="300" y="195" class="axis-label">Quantity</text>
+        <text x="10" y="15" class="axis-label">Price</text>
+        
+        <line x1="60" y1="40" x2="260" y2="160" stroke="#2471a3" stroke-width="3"/>
+        <text x="270" y="165" fill="#2471a3" font-weight="bold">D</text>
+        
+        <line x1="60" y1="160" x2="260" y2="40" stroke="#c0392b" stroke-width="3"/>
+        <text x="270" y="45" fill="#c0392b" font-weight="bold">S</text>
+        
+        <circle cx="160" cy="100" r="5" fill="#1a1a2e"/>
+        <line x1="40" y1="100" x2="160" y2="100" stroke="#1a1a2e" stroke-dasharray="4"/>
+        <line x1="160" y1="180" x2="160" y2="100" stroke="#1a1a2e" stroke-dasharray="4"/>
+        <text x="15" y="104" font-weight="bold" fill="#1a1a2e">P₀</text>
+        <text x="152" y="195" font-weight="bold" fill="#1a1a2e">Q₀</text>
+
+        <line x1="40" y1="60" x2="226" y2="60" stroke="#1a7a4a" stroke-dasharray="2"/>
+        <text x="15" y="64" font-weight="bold" fill="#1a7a4a">P₁</text>
+        <text x="140" y="55" fill="#1a7a4a" font-weight="bold">Surplus</text>
+        
+        <line x1="40" y1="140" x2="226" y2="140" stroke="#d35400" stroke-dasharray="2"/>
+        <text x="15" y="144" font-weight="bold" fill="#d35400">P₂</text>
+        <text x="135" y="135" fill="#d35400" font-weight="bold">Shortage</text>
+      </svg>
+
+      <div class="concept">
+        <div class="concept-title">3. Market Mechanism (Cơ chế thị trường)</div>
+        <div class="concept-body">
+          <ul>
+            <li><strong>Equilibrium (Cân bằng/Market clearing):</strong> Điểm mà Lượng cung = Lượng cầu \( (Q_s = Q_d) \) tại mức giá \( P_0 \).</li>
+            <li><strong>Surplus (Thặng dư/Dư thừa):</strong> Khi \( P > P_0 \), Lượng cung > Lượng cầu. Áp lực thị trường sẽ đẩy giá giảm xuống.</li>
+            <li><strong>Shortage (Thiếu hụt):</strong> Khi \( P < P_0 \), Lượng cầu > Lượng cung. Áp lực thị trường sẽ đẩy giá tăng lên.</li>
+          </ul>
+
+          <p><strong>Bản chất của "Đường Cung / Đường Cầu"</strong><br>
+          Khi các nhà kinh tế học vẽ một đường Cung hoặc Cầu trên đồ thị 2D, họ đang sử dụng một giả định tối quan trọng gọi là <strong>Ceteris Paribus (Các yếu tố khác không đổi)</strong>. Nghĩa là, đường Cầu chỉ cho bạn thấy: "Nếu CHỈ DUY NHẤT mức giá thay đổi, còn thu nhập của khách hàng, thời tiết, xu hướng... tất cả đều giữ nguyên y xì đúc, thì lượng người mua sẽ thay đổi thế nào?"</p>
+          <p>Chính vì thế:<br>
+          1. <strong>Thay đổi LƯỢNG cầu/cung (Movement along the curve - Trượt dọc):</strong> Chỉ xảy ra khi GIÁ của bản thân món hàng đó thay đổi. Điểm cân bằng chạy lên chạy xuống trên chính cái đường cong đã vẽ.<br>
+          2. <strong>Thay đổi CẦU/CUNG (Shift in the curve - Dịch chuyển):</strong> Xảy ra khi cái giả định Ceteris Paribus bị phá vỡ. Một yếu tố bên ngoài (không phải giá) đột nhiên thay đổi, làm bẻ gãy toàn bộ cấu trúc ban đầu.</p>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ BÀI TẬP TÌNH HUỐNG (Case Study)</div>
+          <div class="ex-q">Giả sử bạn đang vận hành một dự án kinh doanh nước ép và đồ uống tốt cho sức khỏe tên là Freshy Juicy.</div>
+          <p><strong>Tình huống 1:</strong> Giá trái cây tươi (nguyên liệu đầu vào) bất ngờ tăng vọt.<br>
+          <em>Phân tích:</em> Chi phí sản xuất tăng làm giảm lợi nhuận trên mỗi đơn vị. Do đó, đường Cung (Supply) dịch chuyển sang Trái. Kết quả: Giá cân bằng trên thị trường đồ uống tăng lên, và số lượng tiêu thụ giảm xuống.</p>
+          
+          <p><strong>Tình huống 2:</strong> Trà sữa (Hàng thay thế - Substitute) vừa bị phanh phui chứa nhiều hóa chất độc hại, khiến người ta tẩy chay và giá trà sữa lao dốc, nhưng người tiêu dùng lại đổ xô đi tìm đồ uống thay thế.<br>
+          <em>Phân tích:</em> Sở thích thay đổi hướng tới đồ uống sức khỏe. Đường Cầu (Demand) của Freshy Juicy sẽ dịch chuyển sang Phải. Kết quả: Giá và sản lượng bán ra của Freshy Juicy đều tăng!</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">4. Các ví dụ thực tế về Dịch chuyển Cân bằng trong Slide</div>
+        <div class="concept-body">
+          <ul>
+            <li><strong>Trứng (Eggs):</strong> Năm 1970-2010, giá trứng giảm 55%. Tại sao? Cơ giới hóa làm giảm chi phí sản xuất (Đường cung dịch xuống/sang phải). Đồng thời người dân sợ cholesterol nên bớt ăn trứng (Đường cầu dịch sang trái). Kết quả: Giá giảm cực mạnh. (The supply curve shifted downward as production costs fell; the demand curve shifted to left as consumer preferences changed. => As a result, the real price of eggs fell sharply and egg consumption rose.)</li>
+            <li><strong>Giáo dục Đại học (College):</strong> Chi phí cơ sở vật chất và lương giảng viên tăng (Đường cung dịch lên/sang trái). Nhu cầu học đại học cũng tăng mạnh (Đường cầu dịch sang phải). Kết quả: Giá học phí và lượng nhập học đều tăng vọt.</li>
+            <li><strong>Khoáng sản (Đồng - Copper):</strong> Nhu cầu (Demand) trong thế kỷ qua tăng cả trăm lần. Đáng lẽ giá phải tăng phi mã. Tuy nhiên, công nghệ khai thác cũng phát triển làm giảm chi phí triệt để, đường Cung (Supply) cũng dịch phải với mức độ tương đương. Kết quả: Giá Đồng trong dài hạn gần như đi ngang.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="elasticity-time">
+      <div class="chapter-header">
+        <div class="chapter-num">04</div>
+        <div class="chapter-title">
+          <h2>Độ co giãn (Elasticity) và Thời gian</h2>
+          <p>Độ co giãn đo lường tỷ lệ phần trăm thay đổi của một biến khi một biến khác tăng 1%.</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">1. Các loại độ co giãn cơ bản</div>
+        <div class="concept-body">
+          <p><strong>Price Elasticity of Demand (\( E_p \)):</strong> % thay đổi của lượng cầu khi giá tăng 1%.</p>
+          <div class="formula">
+            \[ E_p = \frac{\%\Delta Q}{\%\Delta P} \]
+            <p style="font-size: 13px;">Note: \( \%\Delta Q = \frac{\text{end value} - \text{start value}}{\text{start value}} \times 100\% \)</p>
+          </div>
+          
+          <p><strong>Income elasticity of demand:</strong> % thay đổi của lượng cầu khi thu nhập tăng 1%.</p>
+          <p><strong>Cross-price elasticity of demand:</strong> % thay đổi của lượng cầu hàng hóa A khi giá hàng hóa B tăng 1%.</p>
+          <ul>
+            <li><strong>Trường hợp 1: Hàng hóa thay thế (Substitute Goods) → Kết quả DƯƠNG (>0)</strong><br>
+            Bản chất: Đây là hai mặt hàng có thể dùng thay cho nhau (vd: Coca và Pepsi, Xe máy Honda và Yamaha). Giải thích dấu Dương: Nếu giá vé xem phim tại rạp CGV bất ngờ tăng mạnh (Giá A tăng mang dấu +), người người ta sẽ xót tiền và quyết định ở nhà đăng ký Netflix. Lúc này, lượng người mua gói Netflix tăng lên (Lượng B tăng mang dấu +). Cộng chia Cộng ra Cộng. Sự dịch chuyển diễn ra cùng chiều.</li>
+            <li><strong>Trường hợp 2: Hàng hóa bổ sung (Complementary Goods) → Kết quả ÂM (<0)</strong><br>
+            Bản chất: Đây là những combo phải đi liền với nhau mới xài được (vd: Vợt cầu lông và Quả cầu lông, Vỏ ốp lưng và Điện thoại iPhone). Giải thích dấu Âm: Nếu giá xe ô tô tăng vọt (Giá A tăng mang dấu +), người ta sẽ mua ít ô tô đi. Vì không có xe, nên người ta cũng chẳng cần mua xăng làm gì nữa, lượng xăng bán ra sụt giảm (Lượng B giảm mang dấu -). Trừ chia Cộng ra Trừ. Sự dịch chuyển diễn ra ngược chiều.</li>
+          </ul>
+          <p><strong>Price elasticity of supply:</strong> % thay đổi của lượng cung khi giá tăng 1%.</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">2. Đường Cầu Tuyến Tính (Linear Demand Curve)</div>
+        <div class="concept-body">
+          <ul>
+            <li>Đặc tính: Trên một đường cầu thẳng \( (Q = a - bP) \) độ dốc (slope) là không đổi, nhưng độ co giãn \( (E_p) \) thì thay đổi liên tục.</li>
+            <li>Ở mức giá rất cao (gần trục tung): Số lượng nhỏ, độ co giãn lớn (về mặt độ lớn, tiến tới \( -\infty \)).</li>
+            <li>Khi di chuyển xuống dưới dọc theo đường cầu, độ co giãn nhỏ dần.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">3. Ngắn hạn (Short-Run - SR) vs. Dài hạn (Long-Run - LR)</div>
+        <div class="concept-body">
+          <p>Đây là phần cực kỳ ăn điểm trong các bài thi:</p>
+          <p><strong>Đối với Cầu (Demand):</strong></p>
+          <ul>
+            <li><strong>Hàng hóa thông thường (Xăng):</strong> Ngắn hạn ít co giãn (không thể đổi xe ô tô tốn xăng ngay lập tức). Dài hạn co giãn nhiều hơn (người ta chuyển sang mua xe nhỏ tiết kiệm nhiên liệu).</li>
+            <li><strong>Hàng hóa lâu bền (Durable goods - Ô tô):</strong> Ngược lại! Ngắn hạn cầu rất co giãn (giá tăng, người ta hoãn mua xe mới ngay lập tức). Dài hạn ít co giãn hơn (xe cũ hỏng thì kiểu gì cũng phải mua xe mới).</li>
+            <li><strong>Co giãn theo Thu nhập (Income Elasticity):</strong> Hàng hóa bình thường thì \( LR > SR \). Hàng lâu bền thì \( SR > LR \) (Ngắn hạn lớn hơn nhiều so với dài hạn).</li>
+          </ul>
+          
+          <p><strong>Đối với Cung (Supply):</strong></p>
+          <ul>
+            <li><strong>Đồng nguyên sinh (Primary Copper):</strong> Giống hầu hết hàng hóa, Dài hạn co giãn lớn hơn (có thời gian mở rộng nhà máy).</li>
+            <li><strong>Đồng thứ cấp/Tái chế (Secondary Copper):</strong> Ngược lại! Ngắn hạn co giãn mạnh (giá tăng thì người ta lập tức thu gom phế liệu đi bán). Dài hạn ít co giãn hơn (vì nguồn cung phế liệu cạn kiệt).</li>
+          </ul>
+
+          <p><strong>Cà phê:</strong> Hạn hán ở Brazil làm đường cung dịch trái. Trong ngắn hạn, Cung và Cầu đều hoàn toàn không co giãn (vô cùng cứng nhắc do thói quen uống và chu kỳ trồng trọt), khiến giá vọt lên đỉnh \( (P_1) \). Trong dài hạn, Cung và Cầu co giãn hơn, giá sẽ rơi trở lại điểm cân bằng ban đầu \( (P_0) \).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="price-controls">
+      <div class="chapter-header">
+        <div class="chapter-num">05</div>
+        <div class="chapter-title">
+          <h2>Sự can thiệp của chính phủ - Kiểm soát giá</h2>
+          <p>Nguyên lý 6 nói thị trường là cách tốt nhất, nhưng đôi khi chính phủ phải can thiệp.</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-body">
+          <p>Một trong những công cụ là Price Controls (Kiểm soát giá).</p>
+          <p><strong>Trần giá (Price Ceiling - \( P_{max} \)):</strong> Chính phủ quy định mức giá tối đa thấp hơn mức giá cân bằng của thị trường \( (P_{max} < P_0) \).</p>
+          <ul>
+            <li>Hậu quả: Tại mức giá thấp này, nhà sản xuất giảm cung (còn \( Q_1 \)), nhưng người tiêu dùng lại tăng cầu (lên \( Q_2 \)). Kết quả dẫn đến Shortage (Sự thiếu hụt trầm trọng / Excess Demand).</li>
+            <li>Ví dụ Khí tự nhiên (Natural gas): Giá thị trường tự do là $6.40/mcf. Sản lượng là 23 Tcf. Chính phủ áp đặt giá trần \( P_G = \$3.00 \). Lắp $3.00 vào phương trình, Cung chỉ còn 20.6 Tcf, nhưng Cầu vọt lên 29.1 Tcf. Thiếu hụt = 29.1 - 20.6 = 8.5 Tcf.</li>
+          </ul>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ BÀI TẬP MẪU ĐẶC TRƯNG (Trích từ case Lúa mì - Wheat Market)</div>
+          <div class="ex-q">Đề bài: Vào năm 1981, thị trường lúa mì có số liệu sau. Hãy tìm Giá cân bằng và Số lượng cân bằng.</div>
+          <p>Phương trình đường cung (Supply): \( Q_S = 1800 + 240P \)</p>
+          <p>Phương trình đường cầu (Demand): \( Q_D = 3550 - 266P \)</p>
+          <details>
+            <summary>Giải thích & Lời giải (Answer & Explanation)</summary>
+            <div class="answer">
+              <p>Để tìm trạng thái Market Clearing (Thị trường xóa sổ/Cân bằng), ta đặt Lượng Cung = Lượng Cầu \( (Q_S = Q_D) \).</p>
+              \[ 1800 + 240P = 3550 - 266P \]
+              \[ 506P = 1750 \]
+              \[ P = \$3.46/\text{bushel} \]
+              <p>Thay P ngược lại vào phương trình Cung (hoặc Cầu để kiểm tra chéo):</p>
+              \[ Q_S = 1800 + 240(3.46) = 2630 \text{ millions of bushels} \]
+              <p><strong>Elasticity:</strong> \( \epsilon = \frac{\Delta Q/Q}{\Delta P/P} = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} \)</p>
+              <p>Given: \( P = 3.46 \rightarrow Q_S = 2630, Q_D = 2630 \)</p>
+              <p><strong>Supply:</strong> \( Q_S = 1800 + 240P \rightarrow \frac{\Delta Q}{\Delta P} = 240 \)</p>
+              \[ \epsilon_S = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} = 240 \times \frac{3.46}{2630} = 0.32\% \]
+              <p><strong>Demand:</strong> \( Q_D = 3550 - 266P \rightarrow \frac{\Delta Q}{\Delta P} = -266 \)</p>
+              \[ \epsilon_D = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q} = -266 \times \frac{3.46}{2630} = -0.35\% \]
+            </div>
+          </details>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ BẪY CHẾT NGƯỜI TRONG ĐỀ THI (The Inverse Demand Trap)</div>
+          <p>Các giáo viên ra đề thi rất thích gài bẫy sinh viên ở điểm này. Họ sẽ KHÔNG cho phương trình dạng \( Q = a + bP \) nữa, mà họ sẽ đảo ngược lại thành Hàm cầu ngược (Inverse Demand Function) có dạng: \( P = c - dQ \)</p>
+          <p><strong>Ví dụ bẫy:</strong> Đề bài cho đường cầu lúa mì là \( P = 13.35 - 0.00376Q \). Nhiều sinh viên hấp tấp lấy ngay con số -0.00376 làm \( \frac{\Delta Q}{\Delta P} \) để tính độ co giãn. <strong>SAI HOÀN TOÀN!</strong></p>
+          <p><strong>Cách xử lý đúng:</strong> Con số -0.00376 thực chất là \( \frac{\Delta P}{\Delta Q} \) (độ dốc theo trục đứng). Để tìm đúng hệ số b \( (\frac{\Delta Q}{\Delta P}) \), bạn bắt buộc phải làm 1 trong 2 cách:</p>
+          <ol>
+            <li><strong>Cách 1:</strong> Biến đổi đại số để cô lập biến Q về một vế: \( Q = \frac{13.35}{0.00376} - \frac{1}{0.00376}P \approx 3550 - 266P \). Lúc này hệ số đứng trước P mới xuất hiện là -266.</li>
+            <li><strong>Cách 2 (Mẹo nhanh):</strong> Nhớ rằng \( \frac{\Delta Q}{\Delta P} = \frac{1}{\frac{\Delta P}{\Delta Q}} = \frac{1}{-0.00376} \approx -266 \).</li>
+          </ol>
+          <p>The Supply Curve: \( Q = a + bP \)<br>The Demand Curve: \( Q = a - bP \)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="elasticity-deep">
+      <div class="chapter-header">
+        <div class="chapter-num">06</div>
+        <div class="chapter-title">
+          <h2>Đi sâu vào Độ co giãn (Elasticity Review)</h2>
+          <p>Phân tích sâu PED, PES và các bẫy thường gặp</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">1. Độ co giãn của Cầu theo giá (Price Elasticity of Demand - PED)</div>
+        <div class="concept-body">
+          <p>Đối với phần Cầu, thời gian ảnh hưởng đến độ co giãn phụ thuộc hoàn toàn vào loại hàng hóa (bản chất của sản phẩm). Chúng ta chia làm 2 nhóm:</p>
+          <p><strong>A. Hàng hóa tiêu dùng thông thường / Không lâu bền (Non-durable Goods)</strong><br>
+          Ví dụ: Xăng dầu, cà phê, vé xem phim, điện, nước.</p>
+          <ul>
+            <li>Ngắn hạn (Short-run): Cầu kém co giãn (Inelastic). Đường cầu dốc (steep).</li>
+            <li>Dài hạn (Long-run): Cầu co giãn nhiều hơn (Elastic). Đường cầu thoải (flat).</li>
+            <li>Giải thích bản chất: Khi giá xăng đột ngột tăng vọt ngày hôm nay, ngày mai em vẫn phải đổ xăng để đi học/đi làm → lượng cầu giảm rất ít (kém co giãn). Tuy nhiên, nếu giá xăng giữ ở mức cao trong 3 năm, em sẽ có thời gian để thay đổi thói quen: chuyển sang đi xe bus, mua xe máy điện, hoặc chuyển phòng trọ đến gần trường hơn → lượng cầu giảm mạnh (co giãn nhiều).</li>
+            <li>Keyword: Habit formation (Hình thành thói quen), Time to find substitutes (Thời gian tìm hàng hóa thay thế).</li>
+          </ul>
+
+          <p><strong>B. Hàng hóa lâu bền (Durable Goods) - BẪY KINH ĐIỂN</strong><br>
+          Ví dụ: Ô tô, tủ lạnh, tivi, máy giặt.</p>
+          <ul>
+            <li>Ngắn hạn (Short-run): Cầu co giãn nhiều (Elastic).</li>
+            <li>Dài hạn (Long-run): Cầu kém co giãn (Inelastic).</li>
+            <li>Giải thích bản chất (Tại sao lại ngược đời?): Giả sử giá tủ lạnh tăng 20%. Trong ngắn hạn, nếu chiếc tủ lạnh ở nhà đang hơi cũ nhưng vẫn dùng được, em sẽ quyết định trì hoãn (postpone) việc mua mới → lượng cầu thị trường rớt thê thảm (co giãn nhiều). Nhưng trong dài hạn (ví dụ 5-10 năm), chiếc tủ lạnh cũ đó kiểu gì cũng sẽ hỏng hẳn. Dù giá có đang cao, em vẫn BẮT BUỘC phải mua cái mới để thay thế → lượng cầu phục hồi và ít bị ảnh hưởng bởi giá hơn (kém co giãn).</li>
+            <li>Keyword: Postponement of purchase (Sự trì hoãn mua sắm), Replacement cycle (Chu kỳ thay thế).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">2. Độ co giãn của Cung theo giá (Price Elasticity of Supply - PES)</div>
+        <div class="concept-body">
+          <p>Đối với phần Cung, quy luật lại nhất quán và dễ nhớ hơn rất nhiều.</p>
+          <ul>
+            <li><strong>Quy luật chung:</strong> Đối với hầu hết mọi loại hàng hóa, Cung trong dài hạn LUÔN LUÔN co giãn nhiều hơn (More Elastic) so với trong ngắn hạn.</li>
+            <li>Ngắn hạn (Short-run): Kém co giãn. Các doanh nghiệp bị giới hạn bởi công suất cố định (Fixed capacity). Dù giá thị trường có tăng vọt, nhà máy sản xuất giày của em cũng không thể ngay lập tức sản xuất gấp đôi vì thiếu máy móc và nhân công.</li>
+            <li>Dài hạn (Long-run): Co giãn nhiều. Các doanh nghiệp có đủ thời gian để mở rộng quy mô (xây thêm nhà máy mới) và đặc biệt là có sự gia nhập thị trường (Market Entry) của các đối thủ mới khi thấy ngành này đang có lợi nhuận cao.</li>
+            <li>Keyword: Capacity constraints (Giới hạn công suất), Capital expansion (Mở rộng vốn/quy mô), Market Entry/Exit (Gia nhập/Rút lui khỏi thị trường).</li>
+          </ul>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ 3. Bài tập Tình huống (Case Study)</div>
+          <div class="ex-q">Chính phủ đánh một mức thuế lớn làm giá Xe máy (Hàng lâu bền) và Bánh mì (Hàng không lâu bền) cùng tăng 15%. Hãy so sánh sự sụt giảm về số lượng bán ra (Quantity Demanded - \( Q_D \)) của hai mặt hàng này trong 1 tháng tới (Ngắn hạn) và 5 năm tới (Dài hạn).</div>
+          <details>
+            <summary>Trả lời và Giải thích</summary>
+            <div class="answer">
+              <p><strong>Với Bánh mì (Non-durable):</strong></p>
+              <ul>
+                <li>1 tháng tới: \( Q_D \) giảm nhẹ (Inelastic). Mọi người vẫn cần ăn sáng và chưa kịp tìm món thay thế rẻ hơn.</li>
+                <li>5 năm tới: \( Q_D \) giảm mạnh (Elastic). Người tiêu dùng đã quen chuyển sang ăn xôi, bún, phở.</li>
+              </ul>
+              <p><strong>Với Xe máy (Durable):</strong></p>
+              <ul>
+                <li>1 tháng tới: \( Q_D \) giảm cực mạnh (Elastic). Người dân thấy đắt nên tiếp tục đi xe cũ, chưa vội mua ngay.</li>
+                <li>5 năm tới: \( Q_D \) giảm ít hơn (Inelastic). Dù giá đắt nhưng xe cũ đã nát hỏng, người dân bắt buộc phải mua xe mới để có phương tiện đi lại.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 4. Tổng hợp Keywords & Cách nhận biết "Bẫy"</div>
+          <div class="kw-list" style="display:block;">
+            <p style="color:var(--gold); font-size:14px;">Để đi thi không bao giờ mất điểm phần này, em chỉ cần nhớ "thần chú" sau:</p>
+            <ul style="color:var(--gold); font-family:'JetBrains Mono', monospace; font-size:13px;">
+              <li>1. Hỏi về <strong>CUNG (Supply)</strong>? → Dài hạn luôn co giãn HƠN ngắn hạn (Nhờ thời gian mở rộng quy mô).</li>
+              <li>2. Hỏi về <strong>CẦU (Demand)</strong>? → Dừng lại 1 giây và tự hỏi: "Đây là hàng hóa dùng 1 lần (xăng, ăn uống) hay hàng hóa xài chục năm (xe, tivi)?"
+                <ul>
+                  <li>Dùng 1 lần → Dài hạn co giãn HƠN.</li>
+                  <li>Xài chục năm → Ngắn hạn co giãn HƠN (Bẫy thường xuyên xuất hiện trong các bài trắc nghiệm).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="mcqs">
+      <div class="chapter-header">
+        <div class="chapter-num">07</div>
+        <div class="chapter-title">
+          <h2>MCQs: Trọn bộ 29 câu hỏi trắc nghiệm</h2>
+          <p>Tất cả câu hỏi từ tài liệu gốc được giữ nguyên và giải thích chi tiết</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <p style="font-style:italic; color:var(--muted); margin-bottom: 24px;">Lưu ý: Click vào từng câu để xem đáp án đúng (Ans) và giải thích vì sao đáp án đó là đúng, các đáp án còn lại là sai.</p>
+        
+        <div class="exercise">
+          <div class="ex-q">1. In a market economy, supply and demand determine</div>
+          <div class="ex-en">
+            a. both the quantity of each good produced and the price at which it is sold.<br>
+            b. the quantity of each good produced but not the price at which it is sold.<br>
+            c. the price at which each good is sold but not the quantity of each good produced.<br>
+            d. neither the quantity of each good produced nor the price at which it is sold.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> Trong nền kinh tế thị trường (nguyên lý 6), cung và cầu tương tác với nhau để tạo ra điểm cân bằng (Equilibrium). Điểm cân bằng này xác định đồng thời cả Mức giá (Price) và Số lượng (Quantity).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">2. In a market economy,</div>
+          <div class="ex-en">
+            a. supply determines demand and demand, in turn, determines prices.<br>
+            b. demand determines supply and supply, in turn, determines prices.<br>
+            c. the allocation of scarce resources determines prices and prices, in turn, determine supply and demand.<br>
+            d. supply and demand determine prices and prices, in turn, allocate the economy's scarce resources.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Cung và cầu quyết định mức giá. Sau đó, chính mức giá này đóng vai trò là "tín hiệu" (như bàn tay vô hình) để phân bổ các nguồn lực khan hiếm của nền kinh tế (nguyên lý phân bổ nguồn lực).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">3. In a competitive market, the price of a product</div>
+          <div class="ex-en">
+            a. is determined by buyers, and the quantity of the product produced is determined by sellers.<br>
+            b. is determined by sellers, and the quantity of the product produced is determined by buyers.<br>
+            c. and the quantity of the product produced are both determined by sellers.<br>
+            d. None of the above is correct.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Trong thị trường cạnh tranh, giá không được quyết định bởi riêng người mua hay người bán, mà được quyết định bởi SỰ TƯƠNG TÁC của cả người mua và người bán. Do đó A, B, C đều sai.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">4. A competitive market is a market in which</div>
+          <div class="ex-en">
+            a. an auctioneer helps set prices and arrange sales.<br>
+            b. there are only a few sellers.<br>
+            c. the forces of supply and demand do not apply.<br>
+            d. no individual buyer or seller has any significant impact on the market price.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Định nghĩa thị trường cạnh tranh: có vô số người mua và người bán, sản phẩm đồng nhất, nên không một cá nhân nào (người mua hay người bán) có đủ quyền lực để tự ý thay đổi giá cả thị trường.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">5. Assume Diana buys computers in a competitive market. It follows that</div>
+          <div class="ex-en">
+            a. Diana has a limited number of sellers to turn to when she buys a computer.<br>
+            b. Diana will find herself negotiating with sellers whenever she buys a computer.<br>
+            c. if Diana buys a large number of computers, the price of computers will rise noticeably.<br>
+            d. None of the above is correct.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Trong thị trường cạnh tranh: có RẤT NHIỀU người bán (A sai), giá được thị trường ấn định nên không cần thương lượng (B sai), và một cá nhân như Diana không thể mua đủ nhiều để làm thay đổi giá trị trường rộng lớn (C sai).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">6. An increase in quantity demanded</div>
+          <div class="ex-en">
+            a. results in a movement downward and to the right along a demand curve.<br>
+            b. results in a movement upward and to the left along a demand curve.<br>
+            c. shifts the demand curve to the left.<br>
+            d. shifts the demand curve to the right.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> "Quantity demanded" (Lượng cầu) tăng chỉ xảy ra khi GIÁ GIẢM. Khi giá giảm, ta trượt (movement) dọc theo đường cầu xuống dưới và sang phải. Bẫy: C và D dùng "shifts" là sai hoàn toàn vì đây là thay đổi lượng, không phải thay đổi toàn bộ Cầu.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">7. When the price of a good or service changes,</div>
+          <div class="ex-en">
+            a. the supply curve shifts in the opposite direction.<br>
+            b. the demand curve shifts in the opposite direction.<br>
+            c. the demand curve shifts in the same direction.<br>
+            d. there is a movement along a given demand curve.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Nguyên tắc vàng: Giá của chính nó thay đổi → Trượt dọc (movement along the curve). Chỉ có yếu tố ngoài giá thay đổi mới gây ra Shift. Nên A, B, C đều sai.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">8. The law of demand states that, other things equal, an increase in</div>
+          <div class="ex-en">
+            a. price causes quantity demanded to increase.<br>
+            b. price causes quantity demanded to decrease.<br>
+            c. quantity demanded causes price to increase.<br>
+            d. quantity demanded causes price to decrease.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: B</div>
+              <p><strong>Giải thích:</strong> Định luật Cầu (Law of demand) mô tả mối quan hệ nghịch biến: Giá tăng → Lượng cầu giảm. Chú ý nhân quả: Giá thay đổi khiến lượng thay đổi, không phải ngược lại.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">9. The demand curve for a good is a line that relates</div>
+          <div class="ex-en">
+            a. price and quantity demanded.<br>
+            b. income and quantity demanded.<br>
+            c. quantity demanded and quantity supplied.<br>
+            d. price and income.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> Đồ thị đường cầu có trục tung là Giá (Price) và trục hoành là Lượng cầu (Quantity demanded).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">10. When quantity demanded increases at every possible price, the demand curve has</div>
+          <div class="ex-en">
+            a. shifted to the left.<br>
+            b. shifted to the right.<br>
+            c. not shifted; rather, we have moved along the demand curve to a new point on the same curve.<br>
+            d. not shifted; rather, the demand curve has become steeper.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: B</div>
+              <p><strong>Giải thích:</strong> Tăng ở "mọi mức giá" (at every possible price) có nghĩa là toàn bộ đường cầu đã dịch chuyển sang phải (increase in Demand).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">11. The market demand curve</div>
+          <div class="ex-en">
+            a. is the sum of all individual demand curves.<br>
+            b. is the demand curve for every product in an industry.<br>
+            c. shows the average quantity demanded by individual demanders at each price.<br>
+            d. is always flatter than an individual demand curve.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> Đường cầu thị trường (Market demand) được tạo ra bằng cách cộng gộp theo chiều ngang (sum horizontally) tất cả các đường cầu cá nhân.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">12. The quantity supplied of a good is the amount that</div>
+          <div class="ex-en">
+            a. buyers are willing and able to purchase.<br>
+            b. sellers are able to produce.<br>
+            c. buyers and sellers agree will be brought to market.<br>
+            d. sellers are willing and able to sell.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Lượng cung (Quantity supplied) là số lượng hàng hóa mà người bán vừa SẴN SÀNG (willing) vừa CÓ KHẢ NĂNG (able) bán ra thị trường tại một mức giá nhất định.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">13. Which of the following would cause a movement along the supply curve for cupcakes?</div>
+          <div class="ex-en">
+            a. an improvement in technology for commercial mixers<br>
+            b. a decrease in the price of cupcakes<br>
+            c. an increase in the price of cake flour<br>
+            d. All of the above are correct.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: B</div>
+              <p><strong>Giải thích:</strong> Lại là bẫy Movement/Shift. "Movement along" (trượt dọc) chỉ xảy ra khi giá của chính món hàng đó (giá cupcakes) thay đổi. A và C làm Shift đường cung.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">14. Which of these statements best represents the law of supply?</div>
+          <div class="ex-en">
+            a. When input prices increase, sellers produce less of the good.<br>
+            b. When production technology improves, sellers produce less of the good.<br>
+            c. When the price of a good decreases, sellers produce less of the good.<br>
+            d. When sellers' supplies of a good increase, the price of the good increases.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: C</div>
+              <p><strong>Giải thích:</strong> Định luật Cung thể hiện tương quan thuận giữa Giá và Lượng. Giá giảm → sản xuất ít đi. Câu A là shift cung. Câu D bị ngược nhân quả (cung tăng thì giá phải giảm).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">15. A improvement in production technology will shift the</div>
+          <div class="ex-en">
+            a. supply curve to the right.<br>
+            b. supply curve to the left.<br>
+            c. demand curve to the right.<br>
+            d. demand curve to the left.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> Công nghệ cải tiến làm giảm chi phí sản xuất, giúp nhà sản xuất làm ra được nhiều hàng hơn với cùng một chi phí → Đường cung dịch sang phải.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">16. If car manufacturers begin using new labor-saving technology on their assembly lines, we would not expect</div>
+          <div class="ex-en">
+            a. a smaller quantity of labor to be used.<br>
+            b. the supply of cars to increase.<br>
+            c. the firms' costs to fall.<br>
+            d. individual car manufacturers to move up and to the right along their individual supply curves.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Từ khóa "not expect". Công nghệ mới làm giảm lao động (A), tăng cung (B), giảm chi phí (C). Nhưng nó gây ra SHIFT (dịch chuyển) đường cung, chứ không gây ra MOVEMENT (trượt dọc) như đáp án D diễn tả.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">17. At the equilibrium price, the quantity of the good that buyers are willing and able to buy</div>
+          <div class="ex-en">
+            a. is greater than the quantity that sellers are willing and able to sell.<br>
+            b. exactly equals the quantity that sellers are willing and able to sell.<br>
+            c. is less than the quantity that sellers are willing and able to sell.<br>
+            d. Either a) or c) could be correct.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: B</div>
+              <p><strong>Giải thích:</strong> Giá cân bằng (Equilibrium price) chính là trạng thái Market clearing, nơi Lượng Cầu hoàn toàn bằng Lượng Cung.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">18. Buyers are able to buy all they want to buy and sellers are able to sell all they want to sell at</div>
+          <div class="ex-en">
+            a. prices at and above the equilibrium price.<br>
+            b. prices at and below the equilibrium price.<br>
+            c. prices above and below the equilibrium price, but not at the equilibrium price.<br>
+            d. the equilibrium price but not above or below the equilibrium price.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Chỉ duy nhất tại mức giá cân bằng thì thị trường mới "xóa sổ" hết hàng, không có dư thừa (surplus) hay thiếu hụt (shortage).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">19. Which of the following events must cause equilibrium price to rise?</div>
+          <div class="ex-en">
+            a. demand increases and supply decreases<br>
+            b. demand and supply both decrease<br>
+            c. demand decreases and supply increases<br>
+            d. demand and supply both increase
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> Cầu tăng (đẩy giá lên) VÀ cung giảm (hàng hiếm cũng đẩy giá lên). Hai tác động cùng chiều đẩy giá lên cao chắc chắn làm giá cân bằng tăng vọt.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">20. Suppose roses are currently selling for $20 per dozen, but the equilibrium price of roses is $30 per dozen. We would expect a</div>
+          <div class="ex-en">
+            a. shortage to exist and the market price of roses to increase.<br>
+            b. shortage to exist and the market price of roses to decrease.<br>
+            c. surplus to exist and the market price of roses to increase.<br>
+            d. surplus to exist and the market price of roses to decrease.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> Giá hiện tại (20) đang THẤP hơn giá cân bằng (30). Lúc này cầu lớn hơn cung gây ra Shortage (thiếu hụt). Áp lực thị trường sẽ tự động đẩy giá tăng dần lên 30.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">21. In general, elasticity is a measure of</div>
+          <div class="ex-en">
+            a. the extent to which advances in technology are adopted by producers.<br>
+            b. the extent to which a market is competitive.<br>
+            c. how firms' profits respond to changes in market prices.<br>
+            d. how much buyers and sellers respond to changes in market conditions.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Định nghĩa: Elasticity (Độ co giãn) đo lường mức độ phản ứng (respond) của người mua hoặc người bán trước những thay đổi của biến số kinh tế (như giá cả, thu nhập).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">22. When studying how some event or policy affects a market, elasticity provides information on the</div>
+          <div class="ex-en">
+            a. equity effects on the market by identifying the winners and losers.<br>
+            b. magnitude of the effect on the market.<br>
+            c. speed of adjustment of the market in response to the event or policy.<br>
+            d. number of market participants who are directly affected by the event or policy.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: B</div>
+              <p><strong>Giải thích:</strong> Đường Cung Cầu cho biết "chiều hướng" (tăng hay giảm), nhưng Elasticity cho biết "mức độ/quy mô" (magnitude) của sự thay đổi đó là mạnh hay nhẹ.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">23. The price elasticity of demand measures how much</div>
+          <div class="ex-en">
+            a. quantity demanded responds to a change in price.<br>
+            b. quantity demanded responds to a change in income.<br>
+            c. price responds to a change in demand.<br>
+            d. demand responds to a change in supply.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> Theo định nghĩa, độ co giãn của cầu theo giá đo lường % thay đổi của LƯỢNG cầu khi GIÁ thay đổi.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">24. Demand is said to be inelastic if</div>
+          <div class="ex-en">
+            a. buyers respond substantially to changes in the price of the good.<br>
+            b. demand shifts only slightly when the price of the good changes.<br>
+            c. the quantity demanded changes only slightly when the price of the good changes.<br>
+            d. the price of the good responds only slightly to changes in demand.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: C</div>
+              <p><strong>Giải thích:</strong> Inelastic = Kém co giãn = thay đổi lượng ít (slightly). Câu B sai từ "shifts", đường cầu không shift khi giá thay đổi.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">25. Demand is elastic if the price elasticity of demand is</div>
+          <div class="ex-en">
+            a. less than 1.<br>
+            b. equal to 1.<br>
+            c. equal to 0.<br>
+            d. greater than 1.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Khi \( |E_p| > 1 \), tức là % lượng đổi > % giá đổi, ta gọi đó là Cầu co giãn nhiều (Elastic).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">26. Goods with many close substitutes tend to have</div>
+          <div class="ex-en">
+            a. more elastic demands.<br>
+            b. less elastic demands.<br>
+            c. price elasticities of demand that are unit elastic.<br>
+            d. income elasticities of demand that are negative.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> Nếu một món hàng có nhiều hàng thay thế (vd: kem đánh răng), chỉ cần giá tăng nhẹ, người mua sẽ đổi ngay sang loại khác → Lượng sụt giảm mạnh → Cầu rất co giãn (More elastic).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">27. For a good that is a necessity, demand</div>
+          <div class="ex-en">
+            a. tends to be inelastic.<br>
+            b. tends to be elastic.<br>
+            c. has unit elasticity.<br>
+            d. cannot be represented by a demand curve in the usual way.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: A</div>
+              <p><strong>Giải thích:</strong> Hàng thiết yếu (necessity) như gạo, điện, nước tử tế... dù giá có tăng mạnh, người ta vẫn phải mua để sống. Do đó, lượng mua giảm rất ít → Kém co giãn (Inelastic).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">28. The discovery of a new hybrid wheat would increase the supply of wheat. As a result, wheat farmers would realize an increase in total revenue if the</div>
+          <div class="ex-en">
+            a. supply of wheat is elastic.<br>
+            b. supply of wheat is inelastic.<br>
+            c. demand for wheat is inelastic.<br>
+            d. demand for wheat is elastic.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Cung tăng làm giá giảm mạnh, lượng bán ra tăng. Nếu cầu co giãn (elastic), lượng bán tăng cực nhiều bù đắp dư sức cho phần giá giảm, khiến Tổng doanh thu (Total Revenue) tăng lên.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="exercise">
+          <div class="ex-q">29. The supply of oil is likely to be</div>
+          <div class="ex-en">
+            a. inelastic in both the short run and long run.<br>
+            b. elastic in both the short run and long run.<br>
+            c. elastic in the short run and inelastic in the long run.<br>
+            d. inelastic in the short run and elastic in the long run.
+          </div>
+          <details>
+            <summary>Xem Đáp Án & Giải Thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án: D</div>
+              <p><strong>Giải thích:</strong> Quy luật Cung: Mọi loại hàng hóa trong dài hạn luôn co giãn nhiều hơn ngắn hạn. Ngắn hạn nhà máy lọc dầu bị giới hạn công suất (inelastic). Dài hạn xây thêm nhà máy khai thác (elastic).</p>
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ========================================== -->
+<!-- SECTION 2 -->
+<!-- ========================================== -->
+<div id="section2" class="section-content">
+  <nav class="toc">
+    <a href="#overview-2">Tổng quan</a>
+    <a href="#budget">Budget Constraints</a>
+    <a href="#budget-line">Budget Line</a>
+    <a href="#income-change">Income Changes</a>
+    <a href="#price-change">Price Changes</a>
+    <a href="#preferences">Preferences</a>
+    <a href="#axioms">3 Axioms</a>
+    <a href="#ic">Indifference Curves</a>
+    <a href="#mrs">MRS</a>
+    <a href="#types">Perfect Sub/Comp</a>
+    <a href="#utility">Utility</a>
+    <a href="#mu">Marginal Utility</a>
+  </nav>
+
+  <main>
+    <section class="chapter" id="overview-2">
+      <div class="chapter-header">
+        <div class="chapter-num">00</div>
+        <div class="chapter-title">
+          <h2>Tổng quan: Theory of Consumer Behavior</h2>
+          <p>Lý thuyết hành vi người tiêu dùng — Khung phân tích 3 bước</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">Consumer Behavior Theory</div>
+        <div class="concept-en">DEFINITION IN ENGLISH</div>
+        <div class="concept-body">
+          <p><strong>Theory of consumer behavior</strong>: Description of how consumers allocate incomes among different goods and services to <strong>maximize their well-being</strong>.</p>
+          <p>Lý thuyết hành vi người tiêu dùng mô tả cách người tiêu dùng phân bổ thu nhập giữa các hàng hóa và dịch vụ khác nhau để <strong>tối đa hóa phúc lợi</strong> (sự thỏa mãn) của họ.</p>
+        </div>
+
+        <div class="formula">
+          <div class="label">3-Step Framework</div>
+          Step 1: Consumer Preferences  →  "Tôi thích cái gì?"<br>
+          Step 2: Budget Constraints    →  "Tôi có thể mua được gì?"<br>
+          Step 3: Consumer Choices      →  "Tôi sẽ chọn gì để tối ưu?"
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords cần nhớ</div>
+          <div class="kw-list">
+            <span class="kw">allocate income</span>
+            <span class="kw">maximize well-being</span>
+            <span class="kw">preferences</span>
+            <span class="kw">budget constraints</span>
+            <span class="kw">consumer choices</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Bẫy thường gặp</div>
+          <ul>
+            <li><strong>Nhầm thứ tự 3 bước:</strong> Preferences (sở thích) phân tích TRƯỚC budget (ngân sách). Sở thích là chủ quan, ngân sách mới là giới hạn khách quan. Tuy nhiên trong thực tế cả hai tương tác cùng lúc.</li>
+            <li><strong>"Maximize utility" ≠ "spend all money":</strong> Tối đa hóa tiện ích không có nghĩa là tiêu hết tiền (dù trong mô hình 1 kỳ thì thường vậy), mà là chọn rổ hàng tốt nhất trong giới hạn ngân sách.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="budget">
+      <div class="chapter-header">
+        <div class="chapter-num">01</div>
+        <div class="chapter-title">
+          <h2>Budget Constraints</h2>
+          <p>Ràng buộc ngân sách</p>
+        </div>
+      </div>
+
+      <div class="concept" id="budget-line">
+        <div class="concept-title">Budget Constraints &amp; The Budget Line</div>
+        <div class="concept-en">RÀNG BUỘC NGÂN SÁCH VÀ ĐƯỜNG NGÂN SÁCH</div>
+
+        <svg class="svg-chart" viewBox="0 0 350 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+          <line x1="40" y1="180" x2="320" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+          <line x1="40" y1="20" x2="40" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+          <text x="310" y="195" class="axis-label">Food (F)</text>
+          <text x="5" y="15" class="axis-label">Clothes (C)</text>
+          
+          <line x1="40" y1="50" x2="220" y2="180" stroke="#1a1a2e" stroke-width="3"/>
+          <text x="225" y="175" font-weight="bold" fill="#1a1a2e">L₁</text>
+          
+          <line x1="90" y1="50" x2="270" y2="180" stroke="#1a7a4a" stroke-width="2" stroke-dasharray="5"/>
+          <text x="275" y="175" font-weight="bold" fill="#1a7a4a">L₂ (I tăng)</text>
+          
+          <line x1="40" y1="50" x2="300" y2="180" stroke="#c0392b" stroke-width="2" stroke-dasharray="5"/>
+          <text x="305" y="175" font-weight="bold" fill="#c0392b">L₃ (PF giảm)</text>
+          
+          <circle cx="40" cy="50" r="4" fill="#1a1a2e"/>
+        </svg>
+
+        <div class="concept-body">
+          <p><strong>Budget Constraints:</strong> Constraints that consumers face as a result of <strong>limited incomes</strong>.</p>
+          <p>Ràng buộc ngân sách là giới hạn mà người tiêu dùng phải đối mặt vì thu nhập có hạn. Đây là thực tế hiển nhiên: bạn không thể mua mọi thứ bạn muốn vì túi tiền có giới hạn.</p>
+
+          <p><strong>The Budget Line:</strong> All combinations of goods for which the <strong>total amount of money spent equals income</strong>.</p>
+          <p>Đường ngân sách (budget line) là tập hợp tất cả các rổ hàng hóa mà người tiêu dùng có thể mua khi <strong>tiêu hết toàn bộ thu nhập</strong>. Đây là đường thẳng dốc xuống trên đồ thị.</p>
+        </div>
+
+        <div class="formula">
+          <div class="label">Budget Line Equation</div>
+          \[ P_F \cdot F + P_C \cdot C = I \]
+          Ví dụ cụ thể từ slide:<br>
+          \( \$1 \cdot F + \$2 \cdot C = \$80 \)<br>
+          \( \rightarrow F + 2C = 80 \)<br><br>
+          Intercepts (điểm chặn trục):<br>
+          F-axis: \( F = I/P_F = 80/1 = 80 \) (nếu chỉ mua Food)<br>
+          C-axis: \( C = I/P_C = 80/2 = 40 \) (nếu chỉ mua Clothing)
+        </div>
+
+        <table>
+          <tr><th>Market Basket</th><th>Food (F)</th><th>Clothing (C)</th><th>Total Spending</th></tr>
+          <tr><td>A</td><td>0</td><td>40</td><td>$80 ✓</td></tr>
+          <tr><td>B</td><td>20</td><td>30</td><td>$80 ✓</td></tr>
+          <tr><td>D</td><td>40</td><td>20</td><td>$80 ✓</td></tr>
+          <tr><td>E</td><td>60</td><td>10</td><td>$80 ✓</td></tr>
+          <tr><td>G</td><td>80</td><td>0</td><td>$80 ✓</td></tr>
+        </table>
+
+        <div class="formula">
+          <div class="label">Slope of Budget Line</div>
+          \[ \text{Slope} = -\frac{P_F}{P_C} = -\frac{1}{2} \]
+          Ý nghĩa kinh tế: Để mua thêm 1 đơn vị Food, phải từ bỏ 1/2 đơn vị Clothing.<br>
+          → Đây chính là "chi phí cơ hội" (opportunity cost) của Food tính bằng Clothing.
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords</div>
+          <div class="kw-list">
+            <span class="kw">P_F · F + P_C · C = I</span>
+            <span class="kw">slope = −P_F/P_C</span>
+            <span class="kw">intercept = I/P</span>
+            <span class="kw">opportunity cost</span>
+            <span class="kw">market basket</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Bẫy &amp; Nhầm lẫn thường gặp</div>
+          <ul>
+            <li><strong>Slope âm ≠ "xấu":</strong> Dốc âm phản ánh đánh đổi (trade-off) — để có thêm thứ này phải bỏ bớt thứ kia. Đây là quy luật kinh tế tự nhiên.</li>
+            <li><strong>Điểm DƯỚI đường ngân sách:</strong> Là "có thể mua được" nhưng chưa tiêu hết tiền. Trong mô hình tĩnh 1 kỳ, không tối ưu vì còn tiền dư. Điểm TRÊN đường ngân sách là "không thể mua được" (unattainable).</li>
+            <li><strong>Slope của budget line ≠ MRS:</strong> Slope của budget line = tỷ lệ giá (\( P_F/P_C \)), còn MRS là độ dốc của đường bàng quan (indifference curve) — hai khái niệm KHÁC NHAU, chỉ bằng nhau tại điểm tối ưu.</li>
+            <li><strong>Nhớ dấu âm:</strong> Slope = \( -P_F/P_C \) (không phải dương). Vì tăng F thì phải giảm C.</li>
+          </ul>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ Bài tập 1 — Budget Line</div>
+          <div class="ex-q">Thu nhập \( I = \$120 \). Giá Pizza \( P_P = \$3 \)/cái, giá Soda \( P_S = \$2 \)/lon. Hãy: (a) Viết phương trình đường ngân sách. (b) Tìm các điểm chặn trục. (c) Tính slope và giải thích ý nghĩa kinh tế.</div>
+          <div class="ex-en">Income I = $120. Price of Pizza P_P = $3, Price of Soda P_S = $2. (a) Write the budget line equation. (b) Find the intercepts. (c) Calculate slope and explain economic meaning.</div>
+          <details>
+            <summary>Xem đáp án & giải thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án</div>
+              <p><strong>(a) Phương trình:</strong> \( 3P + 2S = 120 \)</p>
+              <p><strong>(b) Điểm chặn:</strong></p>
+              <p>• Trục Pizza (S=0): \( P = 120/3 = \) <span class="hl-red">40 cái Pizza</span> (nếu chỉ mua Pizza)</p>
+              <p>• Trục Soda (P=0): \( S = 120/2 = \) <span class="hl-blue">60 lon Soda</span> (nếu chỉ mua Soda)</p>
+              <p><strong>(c) Slope:</strong> \( = -P_P/P_S = -3/2 = \) <span class="hl-red">-1.5</span></p>
+              <p><strong>Ý nghĩa kinh tế:</strong> Để mua thêm 1 cái Pizza, người tiêu dùng phải từ bỏ 1.5 lon Soda. Hay nói cách khác, chi phí cơ hội của 1 Pizza = 1.5 Soda. Đây phản ánh tỷ lệ giá trên thị trường — Pizza đắt hơn Soda 1.5 lần.</p>
+              <p><em>Economic insight: The slope doesn't reflect personal preferences — it's determined purely by market prices. Everyone faces the same budget line slope if facing the same prices.</em></p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="concept" id="income-change">
+        <div class="concept-title">Effects of Income Changes on Budget Line</div>
+        <div class="concept-en">TÁC ĐỘNG CỦA THAY ĐỔI THU NHẬP ĐẾN ĐƯỜNG NGÂN SÁCH</div>
+        <div class="concept-body">
+          <p>A change in income (with prices unchanged) causes the budget line to <strong>shift parallel</strong> to the original line.</p>
+          <p>Khi thu nhập thay đổi (giá cả không đổi), đường ngân sách <strong>dịch chuyển song song</strong>:</p>
+          <ul>
+            <li><strong>Thu nhập tăng</strong> → đường ngân sách dịch ra ngoài (outward shift) → người tiêu dùng có thể mua nhiều hơn</li>
+            <li><strong>Thu nhập giảm</strong> → đường ngân sách dịch vào trong (inward shift) → sức mua giảm</li>
+          </ul>
+          <p>Từ slide: I=$80 (L1) → I=$160 (L2, dịch ra) → I=$40 (L3, dịch vào)</p>
+        </div>
+
+        <div class="formula">
+          <div class="label">Tại sao song song?</div>
+          Slope = \( -P_F/P_C \) → Giá không đổi, nên slope không đổi<br>
+          Chỉ có intercepts thay đổi: \( I/P_F \) và \( I/P_C \) đều tăng/giảm cùng tỷ lệ<br>
+          → Đường mới song song với đường cũ ✓
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords</div>
+          <div class="kw-list">
+            <span class="kw">parallel shift</span>
+            <span class="kw">income increase → outward</span>
+            <span class="kw">income decrease → inward</span>
+            <span class="kw">slope unchanged</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Bẫy</div>
+          <ul>
+            <li><strong>Income thay đổi → PARALLEL shift (song song), không xoay.</strong> Ngược lại, giá thay đổi → ROTATE (xoay). Đây là câu hỏi trắc nghiệm rất hay bẫy!</li>
+            <li><strong>Proportional price change = income change:</strong> Nếu cả \( P_F \) và \( P_C \) đều tăng/giảm cùng tỷ lệ, tác động giống hệt thay đổi thu nhập theo chiều ngược lại — đường ngân sách dịch song song.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="concept" id="price-change">
+        <div class="concept-title">Effects of Price Changes on Budget Line</div>
+        <div class="concept-en">TÁC ĐỘNG CỦA THAY ĐỔI GIÁ ĐẾN ĐƯỜNG NGÂN SÁCH</div>
+        <div class="concept-body">
+          <p>A change in the price of one good (with income unchanged) causes the budget line to <strong>rotate</strong> about one intercept.</p>
+          <p>Khi giá của một hàng hóa thay đổi (thu nhập không đổi), đường ngân sách <strong>xoay quanh một điểm chặn trục</strong>:</p>
+          <ul>
+            <li><strong>Giá Food giảm (P_F ↓):</strong> Intercept trên trục F = \( I/P_F \) tăng → đường xoay ra ngoài quanh intercept trục C</li>
+            <li><strong>Giá Food tăng (P_F ↑):</strong> Intercept trên trục F = \( I/P_F \) giảm → đường xoay vào trong quanh intercept trục C</li>
+          </ul>
+          <p>Từ slide: \( P_F \) = $1 (L1), \( P_F \) giảm = $0.50 (L2 xoay ra), \( P_F \) tăng = $2 (L3 xoay vào)</p>
+        </div>
+
+        <div class="formula">
+          <div class="label">Tại sao xoay (ROTATE)?</div>
+          Intercept trục C = \( I/P_C \) → KHÔNG thay đổi (vì \( P_C \), I không đổi)<br>
+          Intercept trục F = \( I/P_F \) → THAY ĐỔI (vì \( P_F \) thay đổi)<br>
+          Slope = \( -P_F/P_C \) → THAY ĐỔI<br>
+          → Một đầu cố định, một đầu di chuyển → XoAY (rotate) ✓
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords</div>
+          <div class="kw-list">
+            <span class="kw">rotate about one intercept</span>
+            <span class="kw">price decrease → rotate outward</span>
+            <span class="kw">price increase → rotate inward</span>
+            <span class="kw">slope changes</span>
+            <span class="kw">one intercept fixed</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Bẫy cực quan trọng</div>
+          <ul>
+            <li><strong>Income change → SHIFT (song song) | Price change → ROTATE (xoay)</strong> — Đây là câu phân biệt kinh điển trong đề thi.</li>
+            <li><strong>Xoay quanh điểm NÀO?</strong> Nếu \( P_F \) thay đổi, thì intercept trục C không đổi (vì I và \( P_C \) không đổi) → xoay quanh intercept trục C. Nhiều sinh viên nhầm chiều xoay.</li>
+            <li><strong>Giá giảm ≠ đường ngân sách dịch ra hoàn toàn:</strong> Chỉ một phần của đường thay đổi, điểm chặn kia cố định.</li>
+          </ul>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ Bài tập 2 — Income vs Price Change</div>
+          <div class="ex-q">I = $60, P_X = $2, P_Y = $3. Xét hai tình huống: (A) Thu nhập tăng lên $90. (B) Giá X giảm xuống $1. Mô tả sự thay đổi đường ngân sách trong mỗi tình huống và cho biết sự khác biệt.</div>
+          <details>
+            <summary>Xem đáp án & giải thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án</div>
+              <p><strong>Đường ngân sách ban đầu:</strong> \( 2X + 3Y = 60 \)</p>
+              <p>• Intercept X: X = 30 &nbsp;|&nbsp; Intercept Y: Y = 20 &nbsp;|&nbsp; Slope = \( -2/3 \)</p>
+
+              <p><strong>(A) Thu nhập tăng I = $90:</strong></p>
+              <p>Đường mới: \( 2X + 3Y = 90 \)</p>
+              <p>• Intercept X = 45, Intercept Y = 30, Slope vẫn = \( -2/3 \)</p>
+              <p>→ <span class="hl-green">Đường dịch SONG SONG ra ngoài</span> (parallel shift outward)</p>
+
+              <p><strong>(B) Giá X giảm P_X = $1:</strong></p>
+              <p>Đường mới: \( 1X + 3Y = 60 \)</p>
+              <p>• Intercept X = 60 (tăng từ 30 lên 60)</p>
+              <p>• Intercept Y = 20 (không đổi!)</p>
+              <p>• Slope mới = \( -1/3 \) (thoải hơn)</p>
+              <p>→ <span class="hl-red">Đường XOAY ra ngoài quanh intercept Y = 20</span> (rotate outward about Y-intercept)</p>
+
+              <p><em>Key insight: In case (A), both intercepts increase proportionally. In case (B), only the X-intercept changes — the Y-intercept is "pinned" because nothing affecting the Y-axis changed.</em></p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="preferences">
+      <div class="chapter-header">
+        <div class="chapter-num">02</div>
+        <div class="chapter-title">
+          <h2>Consumer Preferences</h2>
+          <p>Sở thích người tiêu dùng</p>
+        </div>
+      </div>
+
+      <div class="concept" id="axioms">
+        <div class="concept-title">Three Basic Assumptions (Axioms) of Preferences</div>
+        <div class="concept-en">BA TIÊN ĐỀ CƠ BẢN CỦA SỞ THÍCH</div>
+        <div class="concept-body">
+          <p>Để xây dựng lý thuyết sở thích, kinh tế học giả định người tiêu dùng có sở thích thỏa mãn 3 tiên đề (axioms):</p>
+        </div>
+
+        <div style="background:var(--card-bg);border:1.5px solid var(--border);border-radius:8px;overflow:hidden;margin:16px 0;">
+          <div style="padding:16px 20px;border-bottom:1px solid var(--border);">
+            <h4 style="font-family:'Playfair Display',serif;color:var(--accent);margin-bottom:8px;">① Completeness (Tính đầy đủ)</h4>
+            <p style="font-size:15px;"><strong>EN:</strong> For any two market baskets A and B, a consumer will: prefer A to B, OR prefer B to A, OR be indifferent between the two.</p>
+            <p style="font-size:15px;margin-top:8px;"><strong>VI:</strong> Người tiêu dùng luôn có thể so sánh và xếp hạng MỌI cặp rổ hàng. Không có trường hợp "không biết chọn cái nào" trong mô hình này. Với bất kỳ A và B: hoặc A ≻ B, hoặc B ≻ A, hoặc A ~ B (bàng quan).</p>
+          </div>
+          <div style="padding:16px 20px;border-bottom:1px solid var(--border);">
+            <h4 style="font-family:'Playfair Display',serif;color:var(--accent);margin-bottom:8px;">② Transitivity (Tính bắc cầu)</h4>
+            <p style="font-size:15px;"><strong>EN:</strong> If a consumer prefers A to B and B to C, then the consumer also prefers A to C.</p>
+            <p style="font-size:15px;margin-top:8px;"><strong>VI:</strong> Nếu A ≻ B và B ≻ C thì A ≻ C. Đây là tính nhất quán trong sở thích — không có vòng lặp mâu thuẫn. Ví dụ: nếu thích Sushi hơn Phở, thích Phở hơn Cơm, thì phải thích Sushi hơn Cơm. Transitivity đảm bảo người tiêu dùng không đưa ra quyết định mâu thuẫn với bản thân.</p>
+          </div>
+          <div style="padding:16px 20px;">
+            <h4 style="font-family:'Playfair Display',serif;color:var(--accent);margin-bottom:8px;">③ More is Better (Không bão hòa / Tính phi bão hòa)</h4>
+            <p style="font-size:15px;"><strong>EN:</strong> Goods are desirable. Consumers always prefer more of any good to less. Consumers are never satiated.</p>
+            <p style="font-size:15px;margin-top:8px;"><strong>VI:</strong> Hàng hóa luôn là "tốt" (goods, không phải "bads"). Nhiều hơn luôn tốt hơn, dù chỉ tốt hơn một chút. Đây gọi là giả định "non-satiation". Trong thực tế có thể vi phạm (ví dụ: ăn quá nhiều gây khó chịu), nhưng trong mô hình cơ bản, giả định này được duy trì.</p>
+          </div>
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords</div>
+          <div class="kw-list">
+            <span class="kw">Completeness</span>
+            <span class="kw">Transitivity</span>
+            <span class="kw">Non-satiation</span>
+            <span class="kw">A ≻ B (A preferred to B)</span>
+            <span class="kw">A ~ B (indifferent)</span>
+            <span class="kw">rational consumer</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Bẫy về 3 Axioms</div>
+          <ul>
+            <li><strong>Completeness không có nghĩa là "thích tất cả mọi thứ như nhau":</strong> Chỉ có nghĩa là có thể so sánh và ra quyết định.</li>
+            <li><strong>Transitivity là điều kiện đủ cho sự nhất quán nhưng không phải điều kiện cần trong thực tế:</strong> Trong thực nghiệm (behavioral economics), con người đôi khi vi phạm transitivity — nhưng trong lý thuyết chuẩn tắc (normative theory), đây là giả định nền tảng.</li>
+            <li><strong>"More is better" áp dụng cho goods, không phải bads:</strong> "Bads" (như ô nhiễm, tiếng ồn) không áp dụng tiên đề này.</li>
+          </ul>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ Bài tập 3 — Kiểm tra Axioms</div>
+          <div class="ex-q">Cho biết sở thích của Nam: Bún bò ≻ Phở, Phở ~ Mì Quảng, Cơm ≻ Bún bò. Hỏi: (a) Sở thích có thỏa mãn Transitivity không? (b) Xếp hạng toàn bộ 4 món theo sở thích của Nam.</div>
+          <details>
+            <summary>Xem đáp án</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án</div>
+              <p><strong>(a) Kiểm tra Transitivity:</strong></p>
+              <p>• Bún bò ≻ Phở và Phở ~ Mì Quảng → Bún bò ≻ Mì Quảng ✓ (transitivity áp dụng cả với indifference)</p>
+              <p>• Cơm ≻ Bún bò và Bún bò ≻ Phở → Cơm ≻ Phở ✓</p>
+              <p>• Cơm ≻ Bún bò và Bún bò ≻ Mì Quảng → Cơm ≻ Mì Quảng ✓</p>
+              <p>→ <span class="hl-green">Có, thỏa mãn Transitivity.</span></p>
+
+              <p><strong>(b) Xếp hạng:</strong></p>
+              <p>Cơm ≻ Bún bò ≻ Phở ~ Mì Quảng</p>
+              <p><em>Note: Phở và Mì Quảng nằm cùng "indifference level" — trên cùng một đường bàng quan.</em></p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="concept" id="ic">
+        <div class="concept-title">Indifference Curves &amp; Indifference Maps</div>
+        <div class="concept-en">ĐƯỜNG BÀNG QUAN VÀ BẢN ĐỒ BÀNG QUAN</div>
+        
+        <svg class="svg-chart" viewBox="0 0 300 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+          <line x1="30" y1="180" x2="280" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+          <line x1="30" y1="20" x2="30" y2="180" stroke="#7f8c8d" stroke-width="2"/>
+          
+          <line x1="30" y1="40" x2="240" y2="180" stroke="#1a1a2e" stroke-width="2"/>
+          
+          <!-- Indifference Curves Adjusted for proper convexity -->
+          <path d="M 40 80 Q 70 140 160 160" fill="none" stroke="#2471a3" stroke-width="2" stroke-dasharray="3"/>
+          <text x="165" y="170" fill="#2471a3">U₁</text>
+          
+          <path d="M 70 60 Q 115 130 230 145" fill="none" stroke="#c0392b" stroke-width="3"/>
+          <text x="235" y="150" fill="#c0392b" font-weight="bold">U₂ (Optimum)</text>
+          
+          <path d="M 100 40 Q 160 100 260 120" fill="none" stroke="#2471a3" stroke-width="2" stroke-dasharray="3"/>
+          <text x="265" y="125" fill="#2471a3">U₃</text>
+          
+          <circle cx="135" cy="110" r="5" fill="#1a1a2e"/>
+          <text x="145" y="105" font-weight="bold">A (Tối ưu)</text>
+        </svg>
+
+        <div class="concept-body">
+          <p><strong>Indifference Curve:</strong> Curve representing all combinations of market baskets that provide a consumer with the <strong>same level of satisfaction</strong>.</p>
+          <p>Đường bàng quan là tập hợp tất cả các rổ hàng mang lại <strong>cùng mức độ thỏa mãn</strong> cho người tiêu dùng. Người tiêu dùng "bàng quan" (indifferent) giữa bất kỳ hai điểm nào trên cùng một đường bàng quan.</p>
+
+          <p><strong>Indifference Map:</strong> A set of indifference curves showing all market baskets among which a consumer is indifferent — each curve representing a different utility level.</p>
+          <p>Bản đồ bàng quan là TẬP HỢP các đường bàng quan. Đường càng xa gốc tọa độ → mức thỏa mãn càng cao (do axiom "more is better"): U3 &gt; U2 &gt; U1.</p>
+        </div>
+
+        <div style="background:var(--card-bg);border:1.5px solid var(--border);border-radius:8px;padding:16px 20px;margin:16px 0;">
+          <h4 style="font-family:'Playfair Display',serif;margin-bottom:12px;">4 Tính chất của Indifference Curves</h4>
+          <p style="margin-bottom:8px;font-size:15px;"><strong>① Dốc xuống (Downward sloping):</strong> Do axiom "more is better" — để duy trì cùng mức utility, giảm X thì phải tăng Y.</p>
+          <p style="margin-bottom:8px;font-size:15px;"><strong>② Các đường bàng quan KHÔNG cắt nhau (Cannot intersect):</strong> Nếu cắt nhau → mâu thuẫn logic (vi phạm transitivity). Xem ví dụ slide 18.</p>
+          <p style="margin-bottom:8px;font-size:15px;"><strong>③ Lồi về phía gốc tọa độ (Convex to origin):</strong> Phản ánh MRS giảm dần — càng có nhiều X, càng sẵn sàng từ bỏ ít Y hơn để có thêm X.</p>
+          <p style="font-size:15px;"><strong>④ Đường càng xa gốc tọa độ → utility càng cao</strong> (do non-satiation axiom).</p>
+        </div>
+
+        <div class="formula">
+          <div class="label">Tại sao IC không được cắt nhau? (Proof by contradiction)</div>
+          Giả sử U1 và U2 cắt nhau tại điểm A.<br>
+          Gọi B ∈ U1 (không phải A), D ∈ U2 (không phải A), và B có nhiều cả X lẫn Y hơn D.<br><br>
+          • A ∈ U1 và B ∈ U1 → A ~ B (bàng quan trên cùng đường U1)<br>
+          • A ∈ U2 và D ∈ U2 → A ~ D (bàng quan trên cùng đường U2)<br>
+          • Transitivity: A ~ B và A ~ D → B ~ D<br>
+          • Nhưng B có nhiều hơn D → B ≻ D (more is better) → MÂU THUẪN! ✗<br>
+          → IC không thể cắt nhau (Q.E.D.)
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords</div>
+          <div class="kw-list">
+            <span class="kw">same utility level</span>
+            <span class="kw">downward sloping</span>
+            <span class="kw">cannot intersect</span>
+            <span class="kw">convex to origin</span>
+            <span class="kw">higher IC = higher utility</span>
+            <span class="kw">indifference map</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Bẫy về Indifference Curves</div>
+          <ul>
+            <li><strong>IC dốc xuống ≠ IC phải là đường thẳng:</strong> IC thông thường là đường cong lồi (convex), không phải thẳng. Đường thẳng chỉ xảy ra khi là Perfect Substitutes.</li>
+            <li><strong>"Bàng quan" không có nghĩa là "không có sở thích":</strong> Indifferent có nghĩa là bằng nhau về mức thỏa mãn — người tiêu dùng vẫn có sở thích rõ ràng giữa các đường bàng quan khác nhau.</li>
+            <li><strong>Đường bàng quan không bao giờ cắt nhau</strong> — đây là câu hỏi lý thuyết KINH ĐIỂN. Phải nhớ cả lý do tại sao (vi phạm transitivity + more is better).</li>
+          </ul>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ Bài tập 4 — Indifference Curve Logic</div>
+          <div class="ex-q">Tại sao đường bàng quan không thể có dốc dương (upward sloping)? Giải thích bằng cách sử dụng các axioms của sở thích.</div>
+          <details>
+            <summary>Xem đáp án</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án</div>
+              <p>Nếu IC có dốc dương, nghĩa là đi từ điểm A đến điểm B trên cùng IC, cả X và Y đều tăng.</p>
+              <p>Tuy nhiên, theo axiom <strong>"More is Better"</strong>: nếu B có nhiều X hơn VÀ nhiều Y hơn A, thì B ≻ A (B được ưa thích hơn A).</p>
+              <p>Nhưng nếu A và B cùng nằm trên một IC, theo định nghĩa: A ~ B (bàng quan).</p>
+              <p>Đây là mâu thuẫn: B ≻ A và A ~ B không thể đồng thời đúng.</p>
+              <p>→ <span class="hl-green">IC không thể có dốc dương. IC phải có dốc âm.</span></p>
+              <p><em>English version: An upward-sloping IC would imply a consumer is indifferent between a basket with less of everything and one with more of everything — violating the non-satiation axiom.</em></p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="concept" id="mrs">
+        <div class="concept-title">Marginal Rate of Substitution (MRS)</div>
+        <div class="concept-en">TỶ LỆ THAY THẾ BIÊN</div>
+        <div class="concept-body">
+          <p><strong>MRS:</strong> The maximum amount of one good that a consumer is willing to give up in order to obtain one additional unit of another good, <strong>while maintaining the same utility level</strong>.</p>
+          <p>MRS là lượng tối đa của hàng hóa Y mà người tiêu dùng sẵn sàng từ bỏ để có thêm 1 đơn vị hàng hóa X, <strong>trong khi giữ nguyên mức thỏa mãn</strong>. MRS chính là độ dốc tuyệt đối (absolute value of slope) của đường bàng quan tại một điểm.</p>
+        </div>
+
+        <div class="formula">
+          <div class="label">MRS Formula &amp; Relationship to Marginal Utility</div>
+          \[ \text{MRS}_{XY} = -\frac{\Delta Y}{\Delta X} = |\text{slope of IC}| \]
+          Liên hệ với Marginal Utility:<br>
+          \[ \text{MRS}_{XY} = \frac{MU_X}{MU_Y} \]
+          Tại sao? Dọc theo IC, tổng thay đổi utility = 0:<br>
+          \( MU_X \cdot \Delta X + MU_Y \cdot \Delta Y = 0 \)<br>
+          → \( -\frac{\Delta Y}{\Delta X} = \frac{MU_X}{MU_Y} = \text{MRS}_{XY} \) ✓<br><br>
+          Từ slide: MRS = 6 (A→B), 4 (B→D), 2 (D→E), 1 (E→G) → giảm dần
+        </div>
+
+        <div class="concept-body">
+          <p><strong>Diminishing MRS (MRS giảm dần):</strong> As we move down along an IC (consuming more X, less Y), the MRS falls. This means the consumer is willing to give up less and less Y for each additional unit of X.</p>
+          <p>MRS giảm dần khi di chuyển xuống dọc theo đường bàng quan: Khi bạn có càng nhiều X, X trở nên ít khan hiếm hơn với bạn, nên bạn sẵn sàng đánh đổi ít Y hơn để có thêm X. Đây là cơ sở cho hình dạng <strong>lồi (convex)</strong> của đường bàng quan.</p>
+          <p><strong>Ví dụ trực quan:</strong> Nếu bạn có 1 cái áo và 10 cái quần, bạn sẵn sàng đổi nhiều quần để có thêm áo. Nhưng nếu bạn đã có 8 áo và 3 quần, bạn chỉ sẵn sàng đổi rất ít quần để có thêm áo nữa.</p>
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords</div>
+          <div class="kw-list">
+            <span class="kw">MRS = MU_X/MU_Y</span>
+            <span class="kw">|slope of IC|</span>
+            <span class="kw">same utility level</span>
+            <span class="kw">diminishing MRS</span>
+            <span class="kw">convex IC</span>
+            <span class="kw">willingness to trade</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Bẫy cực kỳ quan trọng về MRS</div>
+          <ul>
+            <li><strong>MRS ≠ Slope của budget line:</strong> MRS = \( MU_X/MU_Y \) (liên quan đến sở thích), còn slope của budget line = \( P_X/P_Y \) (liên quan đến giá thị trường). Chúng CHỈ bằng nhau tại điểm tối ưu của người tiêu dùng (consumer optimum).</li>
+            <li><strong>MRS_XY ≠ MRS_YX:</strong> MRS phụ thuộc vào thứ tự (directional). MRS_XY = \( MU_X/MU_Y \) là bạn từ bỏ Y để lấy X. MRS_YX = \( MU_Y/MU_X \) là nghịch đảo.</li>
+            <li><strong>MRS giảm dần → IC lồi:</strong> Đây là mối liên hệ nhân quả. Nếu MRS không giảm (hằng số), IC là đường thẳng (perfect substitutes).</li>
+            <li><strong>MRS chỉ đo tại một điểm trên IC</strong> — không phải toàn bộ đường. Dọc theo IC, MRS thay đổi liên tục.</li>
+          </ul>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ Bài tập 5 — Tính MRS</div>
+          <div class="ex-q">Cho hàm utility \( U = X \cdot Y \) (Cobb-Douglas). Tại giỏ hàng \( A = (4, 6) \): (a) Tính \( MU_X \) và \( MU_Y \). (b) Tính \( \text{MRS}_{XY} \). (c) Nếu người tiêu dùng đang ở điểm A và muốn mua thêm 1 đơn vị X trong khi vẫn giữ nguyên utility, họ phải từ bỏ bao nhiêu Y?</div>
+          <details>
+            <summary>Xem đáp án</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án</div>
+              <p><strong>(a) Marginal Utilities tại (X=4, Y=6):</strong></p>
+              <p>\( MU_X = \frac{\partial U}{\partial X} = Y = 6 \)</p>
+              <p>\( MU_Y = \frac{\partial U}{\partial Y} = X = 4 \)</p>
+
+              <p><strong>(b) \(\text{MRS}_{XY}\):</strong></p>
+              <p>\( \text{MRS}_{XY} = \frac{MU_X}{MU_Y} = \frac{6}{4} = \) <span class="hl-red">1.5</span></p>
+              <p>Ý nghĩa: Tại điểm (4, 6), người tiêu dùng sẵn sàng từ bỏ 1.5 đơn vị Y để có thêm 1 đơn vị X.</p>
+
+              <p><strong>(c) Từ bỏ bao nhiêu Y để lấy thêm 1 X?</strong></p>
+              <p>\( \text{MRS}_{XY} = 1.5 \) → từ bỏ <span class="hl-red">1.5 đơn vị Y</span> để có thêm 1 đơn vị X.</p>
+              <p>Kiểm tra: U ban đầu = 4 × 6 = 24. Sau khi thay đổi: (5) × (6 - 1.5) = 5 × 4.5 = 22.5 ≈ 24 (xấp xỉ vì MRS là biến thiên biên, chính xác hơn khi \( \Delta X \rightarrow 0 \))</p>
+              <p><em>Note for Cobb-Douglas \( U = X^\alpha \cdot Y^\beta \): \( \text{MRS}_{XY} = \frac{\alpha}{\beta} \cdot \frac{Y}{X} \). In this case α=β=1, so MRS = Y/X = 6/4 = 1.5. ✓</em></p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="concept" id="types">
+        <div class="concept-title">Perfect Substitutes &amp; Perfect Complements</div>
+        <div class="concept-en">THẾ PHẨM HOÀN HẢO VÀ HÀNG BỔ SUNG HOÀN HẢO</div>
+
+        <div class="compare">
+          <div class="compare-card">
+            <h4>Perfect Substitutes (Thế phẩm hoàn hảo)</h4>
+            <p><strong>Định nghĩa:</strong> Two goods for which the MRS is <em>constant</em> — the consumer is always willing to trade them at a fixed ratio.</p>
+            <p style="margin-top:8px;"><strong>Đặc điểm IC:</strong> Đường thẳng (straight lines), dốc âm hằng số.</p>
+            <p style="margin-top:8px;"><strong>Ví dụ (từ slide):</strong> Orange juice và Apple juice — Bob luôn bàng quan giữa 1 ly nước cam và 1 ly nước táo.</p>
+            <p style="margin-top:8px;"><strong>Ví dụ thực tế:</strong> Hai loại nước suối cùng nhãn hiệu, xăng RON 92 và RON 95 (với một số người).</p>
+          </div>
+          <div class="compare-card">
+            <h4>Perfect Complements (Hàng bổ sung hoàn hảo)</h4>
+            <p><strong>Định nghĩa:</strong> Two goods for which the MRS is 0 or infinite — they must be consumed together in fixed proportions.</p>
+            <p style="margin-top:8px;"><strong>Đặc điểm IC:</strong> Hình chữ L (right angles / L-shaped).</p>
+            <p style="margin-top:8px;"><strong>Ví dụ (từ slide):</strong> Giày trái và giày phải — thêm 1 giày trái khi đã có đủ cặp sẽ không tăng thêm utility.</p>
+            <p style="margin-top:8px;"><strong>Ví dụ thực tế:</strong> Bàn phím và chuột máy tính, cốc và đĩa cà phê.</p>
+          </div>
+        </div>
+
+        <div class="formula">
+          <div class="label">So sánh 3 loại Indifference Curves</div>
+          1. Perfect Substitutes:  IC là đường THẲNG, MRS = hằng số<br>
+             Utility: \( U = aX + bY \) (linear)<br><br>
+          2. Imperfect Substitutes (Normal case): IC là đường CONG LỒI, MRS giảm dần<br>
+             Utility: \( U = X^\alpha \cdot Y^\beta \) (Cobb-Douglas) — phổ biến nhất<br><br>
+          3. Perfect Complements: IC là hình CHỮ L, tiêu dùng theo tỷ lệ cố định<br>
+             Utility: \( U = \min(aX, bY) \)
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords</div>
+          <div class="kw-list">
+            <span class="kw">constant MRS → straight IC</span>
+            <span class="kw">zero/infinite MRS → L-shaped IC</span>
+            <span class="kw">U = aX + bY</span>
+            <span class="kw">U = min(aX, bY)</span>
+            <span class="kw">fixed proportion</span>
+            <span class="kw">U = X^a · Y^b (normal)</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Nhận biết &amp; Phân biệt</div>
+          <ul>
+            <li><strong>Hình dạng IC → nhận diện loại hàng hóa:</strong> Thẳng = Perfect Sub, L-shape = Perfect Comp, Cong lồi = Imperfect sub (normal case).</li>
+            <li><strong>Perfect complements không có nghĩa là "phải mua cùng nhau"</strong> về mặt vật lý — mà là về mặt thỏa mãn, chúng chỉ hữu ích khi đi kèm nhau đúng tỷ lệ.</li>
+            <li><strong>Perfect substitutes: MRS hằng số ≠ bằng 1:</strong> Có thể MRS = 2 (sẵn sàng đổi 2 đơn vị Y để lấy 1 đơn vị X, mãi mãi như vậy).</li>
+          </ul>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ Bài tập 6 — Phân loại hàng hóa</div>
+          <div class="ex-q">Xác định loại quan hệ (Perfect Substitute / Perfect Complement / Normal) và dạng đường IC cho các cặp hàng sau: (a) Xăng từ cây xăng A và cây xăng B cùng loại. (b) Xe đạp và mũ bảo hiểm xe đạp (theo tỷ lệ 1:1). (c) Cà phê và trà (người dùng thích một trong hai nhưng không hoàn toàn giống nhau).</div>
+          <details>
+            <summary>Xem đáp án</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án</div>
+              <p><strong>(a) Xăng từ 2 cây xăng cùng loại:</strong> <span class="hl-red">Perfect Substitutes</span> — IC là đường thẳng, MRS = 1 (hằng số). Chất lượng hoàn toàn như nhau, người tiêu dùng hoàn toàn bàng quan.</p>
+              <p><strong>(b) Xe đạp và mũ bảo hiểm (tỷ lệ 1:1):</strong> <span class="hl-blue">Perfect Complements</span> — IC hình chữ L. Có 2 xe đạp và 1 mũ = có 1 xe và 1 mũ (về mặt thỏa mãn thực tế của việc đi xe). Điểm góc (kink point) tại tỷ lệ 1 xe : 1 mũ.</p>
+              <p><strong>(c) Cà phê và trà:</strong> <span class="hl-green">Imperfect Substitutes (Normal case)</span> — IC cong lồi với MRS giảm dần. Người dùng có sự ưa thích khác nhau nhưng sẵn sàng đánh đổi ở mức độ phụ thuộc vào lượng đang có.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="utility">
+      <div class="chapter-header">
+        <div class="chapter-num">03</div>
+        <div class="chapter-title">
+          <h2>Utility &amp; Marginal Utility</h2>
+          <p>Hàm tiện ích và tiện ích biên</p>
+        </div>
+      </div>
+
+      <div class="concept">
+        <div class="concept-title">Utility &amp; Utility Functions</div>
+        <div class="concept-en">TIỆN ÍCH VÀ HÀM TIỆN ÍCH</div>
+        <div class="concept-body">
+          <p><strong>Utility:</strong> Numerical score representing the satisfaction that a consumer gets from a given market basket.</p>
+          <p>Tiện ích (utility) là con số đo mức độ thỏa mãn mà người tiêu dùng nhận được từ một rổ hàng hóa. Đây là công cụ toán học để biểu diễn sở thích.</p>
+
+          <p><strong>Utility Function:</strong> Formula that assigns a level of utility to individual market baskets.</p>
+          <p>Hàm tiện ích gán một số cho mỗi rổ hàng. Quan trọng: chỉ cần thứ hạng (ordinal), không cần giá trị tuyệt đối (cardinal). Rổ A có U=100 và rổ B có U=50 chỉ có nghĩa là A ≻ B, không phải A "gấp đôi tốt hơn" B.</p>
+        </div>
+
+        <div class="formula">
+          <div class="label">Cobb-Douglas Utility Function (Quan trọng nhất)</div>
+          \( U(F, C) = F \cdot C \) (ví dụ đơn giản từ slide)<br><br>
+          Dạng tổng quát:<br>
+          \[ U(X, Y) = X^\alpha \cdot Y^\beta \quad (\alpha, \beta > 0) \]
+          Đây là hàm utility phổ biến nhất trong kinh tế vi mô vì:<br>
+          • Tạo ra IC cong lồi (thực tế)<br>
+          • Dễ tính MRS: \( \text{MRS}_{XY} = \frac{\alpha}{\beta} \cdot \frac{Y}{X} \)<br>
+          • Dễ tối ưu hóa
+        </div>
+
+        <div class="concept-body">
+          <p><strong>Utility Functions và Indifference Curves:</strong> Mỗi giá trị U xác định một đường bàng quan. Ví dụ từ slide, U(F,C) = FC:</p>
+          <ul>
+            <li>U = 25: FC = 25 → đường IC thứ nhất</li>
+            <li>U = 50: FC = 50 → đường IC thứ hai (xa gốc hơn)</li>
+            <li>U = 100: FC = 100 → đường IC thứ ba (xa gốc nhất)</li>
+          </ul>
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords</div>
+          <div class="kw-list">
+            <span class="kw">ordinal utility</span>
+            <span class="kw">cardinal utility</span>
+            <span class="kw">U = X^α · Y^β</span>
+            <span class="kw">Cobb-Douglas</span>
+            <span class="kw">utility function</span>
+            <span class="kw">monotonic transformation</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Ordinal vs Cardinal — Bẫy kinh điển</div>
+          <ul>
+            <li><strong>Utility chỉ có ý nghĩa ORDINAL (thứ hạng), không phải CARDINAL (giá trị tuyệt đối):</strong> U(A) = 100 &gt; U(B) = 50 chỉ nghĩa là A ≻ B. Không có nghĩa "A gấp đôi tốt hơn B". Không thể so sánh utility giữa các cá nhân khác nhau.</li>
+            <li><strong>Hai hàm utility khác nhau có thể biểu diễn cùng sở thích:</strong> U = XY và V = ln(X) + ln(Y) biểu diễn CÙNG sở thích (monotonic transformation). IC của chúng giống hệt nhau.</li>
+            <li><strong>Utility không phải "hạnh phúc" theo nghĩa tâm lý</strong> — đây là khái niệm toán học/kinh tế để mô hình hóa sở thích.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="concept" id="mu">
+        <div class="concept-title">Marginal Utility (MU) &amp; Diminishing MU</div>
+        <div class="concept-en">TIỆN ÍCH BIÊN VÀ QUY LUẬT TIỆN ÍCH BIÊN GIẢM DẦN</div>
+        <div class="concept-body">
+          <p><strong>Marginal Utility:</strong> Additional satisfaction obtained from consuming <strong>one additional unit</strong> of a good.</p>
+          <p>Tiện ích biên là lượng thỏa mãn <strong>tăng thêm</strong> khi tiêu dùng thêm <strong>một đơn vị</strong> hàng hóa, trong khi giữ nguyên lượng tiêu dùng các hàng hóa khác.</p>
+
+          <p><strong>Diminishing Marginal Utility (Quy luật tiện ích biên giảm dần):</strong> As more of a good is consumed, the consumption of additional amounts will yield <strong>smaller and smaller additions to utility</strong>.</p>
+          <p>Khi tiêu dùng càng nhiều một hàng hóa, mỗi đơn vị thêm vào sẽ mang lại mức tăng thỏa mãn ngày càng ít hơn. Đây là quy luật tâm lý-kinh tế phổ quát.</p>
+        </div>
+
+        <div class="formula">
+          <div class="label">Marginal Utility Formula</div>
+          \[ MU_X = \frac{\Delta U}{\Delta X} = \frac{\partial U}{\partial X} \]
+          Ví dụ với \( U = X \cdot Y \):<br>
+          \( MU_X = \frac{\partial(XY)}{\partial X} = Y \)<br>
+          \( MU_Y = \frac{\partial(XY)}{\partial Y} = X \)<br><br>
+          Diminishing MU: Khi X tăng (Y cố định), \( MU_X = Y \) không đổi trong trường hợp này.<br>
+          Nhưng với \( U = X^{0.5} \cdot Y^{0.5} \):<br>
+          \( MU_X = 0.5 \cdot X^{-0.5} \cdot Y^{0.5} = 0.5\sqrt{\frac{Y}{X}} \) → giảm khi X tăng ✓
+        </div>
+
+        <div class="concept-body">
+          <p><strong>Ví dụ trực quan về Diminishing MU:</strong></p>
+          <p>Bạn đang rất khát. Ly nước đầu tiên: MU rất cao. Ly thứ hai: MU cao. Ly thứ ba: MU trung bình. Ly thứ tư: MU thấp. Ly thứ mười: MU gần bằng 0 (thậm chí âm nếu bị ép uống). Đây chính là quy luật tiện ích biên giảm dần trong thực tế.</p>
+        </div>
+
+        <div class="formula">
+          <div class="label">MRS = MU_X / MU_Y — Chứng minh</div>
+          Dọc theo IC, utility không đổi: \( dU = 0 \)<br>
+          \[ dU = MU_X \cdot dX + MU_Y \cdot dY = 0 \]
+          \[ MU_X \cdot dX = -MU_Y \cdot dY \]
+          \[ -\frac{dY}{dX} = \frac{MU_X}{MU_Y} \]
+          \[ \text{MRS}_{XY} = \frac{MU_X}{MU_Y} \text{ ✓} \]
+          Ý nghĩa: MRS phản ánh tỷ lệ giá trị biên của hai hàng hóa theo đánh giá chủ quan của người tiêu dùng.
+        </div>
+
+        <div class="keywords">
+          <div class="keywords-title">🔑 Keywords</div>
+          <div class="kw-list">
+            <span class="kw">MU = ∂U/∂X</span>
+            <span class="kw">diminishing MU</span>
+            <span class="kw">MRS = MU_X/MU_Y</span>
+            <span class="kw">additional unit</span>
+            <span class="kw">MU generally positive</span>
+            <span class="kw">MU decreases with consumption</span>
+          </div>
+        </div>
+
+        <div class="trap">
+          <div class="trap-title">⚠️ Bẫy về MU</div>
+          <ul>
+            <li><strong>MU giảm ≠ tổng utility giảm:</strong> Khi ăn thêm bánh, MU của mỗi cái bánh thêm giảm dần, nhưng tổng utility vẫn TĂNG (chỉ tăng chậm hơn). Tổng utility chỉ giảm khi MU âm.</li>
+            <li><strong>MU giảm dần ≠ MU âm:</strong> Trong mô hình cơ bản, MU luôn dương (goods, not bads). MU có thể tiến về 0 nhưng không âm.</li>
+            <li><strong>Diminishing MU ≠ Diminishing MRS:</strong> Đây là hai khái niệm khác nhau! Diminishing MRS (MRS giảm dọc IC) → IC convex. Diminishing MU là về mỗi hàng hóa riêng lẻ. MRS giảm dần không đòi hỏi MU của mỗi hàng phải giảm riêng lẻ.</li>
+          </ul>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-title">✏️ Bài tập 7 — Tổng hợp: MU, MRS, Budget Line</div>
+          <div class="ex-q">Lan có thu nhập I = $100. Giá sách \( P_B = \$10 \), giá cà phê \( P_C = \$5 \). Hàm utility \( U = B \cdot C \). Tại giỏ hàng hiện tại: B = 5, C = 10. (a) Tính \( MU_B \) và \( MU_C \). (b) Tính \( \text{MRS}_{BC} \). (c) Tính \( -P_B/P_C \) (slope budget line). (d) So sánh MRS và \( -P_B/P_C \). Lan có đang tối ưu không? Nếu không, Lan nên thay đổi như thế nào?</div>
+          <details>
+            <summary>Xem đáp án & giải thích</summary>
+            <div class="answer">
+              <div class="answer-title">Đáp án toàn diện</div>
+              <p><strong>(a) Marginal Utilities tại (B=5, C=10):</strong></p>
+              <p>\( MU_B = \frac{\partial(B \cdot C)}{\partial B} = C = \) <span class="hl-blue">10</span></p>
+              <p>\( MU_C = \frac{\partial(B \cdot C)}{\partial C} = B = \) <span class="hl-blue">5</span></p>
+
+              <p><strong>(b) \(\text{MRS}_{BC} = \frac{MU_B}{MU_C} = \frac{10}{5} = \) <span class="hl-red">2</span></strong></p>
+              <p>Ý nghĩa: Tại (5, 10), Lan sẵn sàng từ bỏ 2 cốc cà phê để có thêm 1 cuốn sách.</p>
+
+              <p><strong>(c) Slope của Budget Line = \( -P_B / P_C = -\frac{10}{5} = \) <span class="hl-green">-2</span></strong></p>
+              <p>Hay |slope| = \( P_B/P_C = 2 \). Ý nghĩa: Thị trường đòi bỏ 2 cốc cà phê để mua 1 cuốn sách.</p>
+
+              <p><strong>(d) So sánh:</strong></p>
+              <p>\( \text{MRS}_{BC} = 2 = P_B/P_C = 2 \rightarrow \) <span class="hl-green">MRS = |Slope của Budget Line|</span></p>
+              <p>→ <strong>Lan ĐANG TỐI ƯU!</strong> Điều kiện tối ưu của người tiêu dùng: \( \text{MRS}_{XY} = \frac{P_X}{P_Y} \)</p>
+              <p><em>Kiểm tra: 10×5 + 5×10 = 50 + 50 = $100 = I ✓ (Lan tiêu hết ngân sách)</em></p>
+              <p><em>Consumer Optimum condition: \( \text{MRS}_{XY} = P_X/P_Y \) — điều kiện này sẽ được học kỹ hơn trong Chapter về Consumer Choice (Section 3).</em></p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="chapter-header">
+        <div class="chapter-num">∑</div>
+        <div class="chapter-title">
+          <h2>Bảng tóm tắt toàn bộ kiến thức</h2>
+          <p>Quick Reference Table — Section 2</p>
+        </div>
+      </div>
+
+      <table>
+        <tr>
+          <th>Khái niệm</th>
+          <th>Tiếng Anh</th>
+          <th>Công thức / Đặc điểm</th>
+          <th>Bẫy chính</th>
+        </tr>
+        <tr>
+          <td><strong>Đường ngân sách</strong></td>
+          <td>Budget Line</td>
+          <td>\( P_X \cdot X + P_Y \cdot Y = I \); Slope = \( -P_X/P_Y \)</td>
+          <td>Slope âm là đặc trưng, không phải bất thường</td>
+        </tr>
+        <tr>
+          <td><strong>Thu nhập thay đổi</strong></td>
+          <td>Income Change</td>
+          <td>Dịch SONG SONG (parallel shift)</td>
+          <td>Không xoay! Giá không đổi → slope không đổi</td>
+        </tr>
+        <tr>
+          <td><strong>Giá thay đổi</strong></td>
+          <td>Price Change</td>
+          <td>XOAY quanh một intercept (rotate)</td>
+          <td>Intercept kia CỐ ĐỊNH; slope thay đổi</td>
+        </tr>
+        <tr>
+          <td><strong>3 Tiên đề</strong></td>
+          <td>Completeness, Transitivity, More is Better</td>
+          <td>Nền tảng cho rational consumer</td>
+          <td>Là giả định lý thuyết, thực tế có thể vi phạm</td>
+        </tr>
+        <tr>
+          <td><strong>Đường bàng quan</strong></td>
+          <td>Indifference Curve</td>
+          <td>Dốc âm, lồi, không cắt nhau</td>
+          <td>IC không cắt → vi phạm transitivity + more is better</td>
+        </tr>
+        <tr>
+          <td><strong>Tỷ lệ thay thế biên</strong></td>
+          <td>MRS</td>
+          <td>\( \text{MRS}_{XY} = \frac{MU_X}{MU_Y} = |\text{slope of IC}| \)</td>
+          <td>MRS ≠ slope BL; chỉ bằng nhau tại điểm tối ưu</td>
+        </tr>
+        <tr>
+          <td><strong>MRS giảm dần</strong></td>
+          <td>Diminishing MRS</td>
+          <td>Dọc IC xuống, MRS giảm → IC lồi</td>
+          <td>MRS giảm ≠ MU giảm (khác nhau!)</td>
+        </tr>
+        <tr>
+          <td><strong>Thế phẩm hoàn hảo</strong></td>
+          <td>Perfect Substitutes</td>
+          <td>MRS = hằng số, IC thẳng, \( U = aX + bY \)</td>
+          <td>Hằng số ≠ nhất thiết = 1</td>
+        </tr>
+        <tr>
+          <td><strong>Hàng bổ sung hoàn hảo</strong></td>
+          <td>Perfect Complements</td>
+          <td>IC hình L, \( U = \min(aX, bY) \)</td>
+          <td>Thêm 1 mặt hàng mà thiếu mặt kia → utility không tăng</td>
+        </tr>
+        <tr>
+          <td><strong>Hàm tiện ích</strong></td>
+          <td>Utility Function</td>
+          <td>\( U = X^\alpha \cdot Y^\beta \) (Cobb-Douglas)</td>
+          <td>Chỉ ordinal, không cardinal; monotonic transform không đổi sở thích</td>
+        </tr>
+        <tr>
+          <td><strong>Tiện ích biên</strong></td>
+          <td>Marginal Utility</td>
+          <td>\( MU_X = \frac{\partial U}{\partial X} \); thường dương và giảm dần</td>
+          <td>MU giảm ≠ total utility giảm</td>
+        </tr>
+      </table>
+
+      <div class="trap" style="border-color: var(--gold); background: var(--keyword-bg);">
+        <div class="trap-title" style="color: var(--gold);">🎯 KẾT LUẬN QUAN TRỌNG: ĐIỀU KIỆN TỐI ƯU</div>
+        <p style="font-size: 15px; margin-bottom: 8px;">Người tiêu dùng đạt tối đa hóa thỏa mãn (như điểm A trên đồ thị) khi IC tiếp xúc (tangent) với đường ngân sách:</p>
+        <div style="font-size: 18px; text-align: center; margin: 16px 0;">
+          \[ \text{MRS}_{XY} = \frac{P_X}{P_Y} \]
+        </div>
+        <p style="font-size: 14px;"><strong>Ý nghĩa:</strong> Tỷ lệ sẵn sàng đánh đổi (MRS) vừa đúng bằng tỷ lệ giá thị trường bắt buộc phải đánh đổi (\( P_X/P_Y \)). KẾT HỢP với phương trình đường ngân sách \( P_X \cdot X + P_Y \cdot Y = I \).</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ========================================== -->
+<!-- SECTION 3 -->
+<!-- ========================================== -->
+<div id="section3" class="section-content">
+  <nav class="toc">
+    <a href="#optimum">Consumer Optimum</a>
+    <a href="#interior">Interior Solution</a>
+    <a href="#corner">Corner Solution</a>
+    <a href="#manager">Managerial Strategy</a>
+    <a href="#income-demand">Income & Demand</a>
+    <a href="#normal-inferior">Normal vs Inferior</a>
+    <a href="#engel">Engel Curve</a>
+    <a href="#price-demand">Price & Demand</a>
+    <a href="#sub-income">Sub & Income Effect</a>
+    <a href="#giffen">Giffen Good</a>
+    <a href="#summary">Summary Table</a>
+  </nav>
+  
+  <main>
+  
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- CHAPTER 1: CONSUMER OPTIMUM -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="chapter" id="optimum">
+    <div class="chapter-header">
+      <div class="chapter-num">01</div>
+      <div class="chapter-title">
+        <h2>Consumer Optimum — Lựa chọn tối ưu người tiêu dùng</h2>
+        <p>General Optimisation Problem · Interior & Corner Solutions</p>
+      </div>
+    </div>
+  
+    <!-- GENERAL OPTIMISATION -->
+    <div class="concept" id="interior">
+      <div class="concept-title">General Optimisation Problem (Interior Solution)</div>
+      <div class="concept-en">BÀI TOÁN TỐI ƯU HÓA TỔNG QUÁT — NGHIỆM NỘI</div>
+  
+      <div class="concept-body">
+        <p>Mục tiêu của người tiêu dùng hợp lý là <strong>tối đa hóa utility</strong> trong khuôn khổ ràng buộc ngân sách. Đây là bài toán tối ưu hóa có ràng buộc (constrained optimization).</p>
+  
+        <p><strong>The maximizing market basket must satisfy two conditions:</strong></p>
+        <p>① <strong>It must be located on the budget line</strong> — phải nằm trên đường ngân sách (tiêu hết thu nhập).</p>
+        <p>② <strong>It must give the consumer the most preferred combination</strong> — phải mang lại rổ hàng ưa thích nhất trong tất cả các rổ hàng nằm trên đường ngân sách.</p>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Formal Optimisation Problem</div>
+        Maximize:  \( U(x, y) \)<br>
+        Subject to: \( P_x \cdot x + P_y \cdot y = I \)<br><br>
+        ─── Interior Solution (Nghiệm nội) ───<br>
+        Điều kiện bậc nhất (First-Order Condition):<br><br>
+        \[ MRS_{xy} = \frac{P_x}{P_y} \]<br>
+        Tương đương: \( \frac{MU_x}{MU_y} = \frac{P_x}{P_y} \)<br><br>
+        Hay: \( \frac{MU_x}{P_x} = \frac{MU_y}{P_y} \)  ← "Bang for the buck" condition
+      </div>
+  
+      <div class="concept-body">
+        <p><strong>Ý nghĩa kinh tế sâu của điều kiện tối ưu:</strong></p>
+        <p>• <span class="hl-red">\( MRS = \frac{P_x}{P_y} \)</span>: Tỷ lệ người tiêu dùng <em>sẵn sàng đánh đổi</em> (MRS, chủ quan) bằng đúng tỷ lệ <em>thị trường buộc phải đánh đổi</em> (\( P_x/P_y \), khách quan). Nếu hai tỷ lệ này khác nhau, người tiêu dùng chưa tối ưu.</p>
+        <p>• <span class="hl-blue">\( \frac{MU_x}{P_x} = \frac{MU_y}{P_y} \)</span>: Tiện ích biên trên mỗi đồng chi tiêu phải bằng nhau cho tất cả hàng hóa. Đây còn gọi là <strong>"equal bang for the buck"</strong> hay nguyên lý cân bằng biên (equimarginal principle).</p>
+        <p>• Hình học: Điểm tối ưu là điểm tiếp xúc (tangency point) giữa đường ngân sách và đường bàng quan cao nhất có thể đạt được. Tại đó, slope của IC = slope của budget line.</p>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Tại sao \( \frac{MU_x}{P_x} = \frac{MU_y}{P_y} \) là điều kiện tối ưu?</div>
+        Giả sử \( \frac{MU_x}{P_x} > \frac{MU_y}{P_y} \):<br>
+        → Mỗi đồng bỏ vào X mang lại utility cao hơn mỗi đồng bỏ vào Y<br>
+        → Nên chuyển chi tiêu từ Y sang X<br>
+        → Khi X tăng: \( MU_x \) giảm (diminishing MU)<br>
+        → Khi Y giảm: \( MU_y \) tăng<br>
+        → Quá trình tiếp tục cho đến khi \( \frac{MU_x}{P_x} = \frac{MU_y}{P_y} \) ✓<br><br>
+        Đây là cơ chế tự điều chỉnh dẫn đến cân bằng tối ưu.
+      </div>
+  
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords cần nhớ</div>
+        <div class="kw-list">
+          <span class="kw">MRS = P_x/P_y (tangency)</span>
+          <span class="kw">MU_x/P_x = MU_y/P_y</span>
+          <span class="kw">equal bang for the buck</span>
+          <span class="kw">equimarginal principle</span>
+          <span class="kw">on the budget line</span>
+          <span class="kw">constrained optimization</span>
+          <span class="kw">interior solution</span>
+        </div>
+      </div>
+  
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy &amp; Nhầm lẫn thường gặp</div>
+        <ul>
+          <li><strong>MRS = \( P_x/P_y \) KHÔNG phải lúc nào cũng là điều kiện đủ:</strong> Đây là điều kiện cần cho interior solution. Phải kiểm tra thêm ràng buộc ngân sách được thỏa mãn (on the budget line) và đây là điểm maximum (không phải minimum).</li>
+          <li><strong>Điểm tiếp xúc ≠ điểm tối ưu nếu IC lõm (concave):</strong> Nếu IC có hình dạng lõm (concave to origin — hiếm gặp), điểm tiếp xúc có thể là utility MINIMUM. Tuy nhiên trong mô hình chuẩn với convex IC, tangency = interior optimum.</li>
+          <li><strong>\( \frac{MU_x}{P_x} = \frac{MU_y}{P_y} \) là "equimarginal", không phải \( MU_x = MU_y \):</strong> Nhiều sinh viên nhầm nghĩ điều kiện tối ưu là hai MU bằng nhau — SAI. Phải chia cho giá tương ứng.</li>
+          <li><strong>Không phải mọi điểm trên IC đều tốt như nhau xét về mặt ngân sách:</strong> IC cao hơn có utility cao hơn, nhưng không phải mọi điểm trên IC cao hơn đều đạt được với ngân sách hiện tại.</li>
+        </ul>
+      </div>
+  
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập 1 — Tìm Consumer Optimum (Interior Solution)</div>
+        <div class="ex-q">Minh có thu nhập \( I = \$120 \). Giá gạo \( P_R = \$2 \), giá cá \( P_F = \$4 \). Hàm utility \( U(R, F) = R \cdot F \). Tìm rổ hàng tối ưu \( (R^*, F^*) \).</div>
+        <div class="ex-en">Income \( I = \$120 \), \( P_R = \$2 \), \( P_F = \$4 \), \( U = R \cdot F \). Find the optimal bundle \( (R^*, F^*) \).</div>
+        <details>
+          <summary>Xem đáp án chi tiết</summary>
+          <div class="answer">
+            <div class="answer-title">Đáp án chi tiết</div>
+            <p><strong>Bước 1: Viết điều kiện tối ưu \( MRS = P_R/P_F \)</strong></p>
+            <p>\( MU_R = \frac{\partial(R \cdot F)}{\partial R} = F \)</p>
+            <p>\( MU_F = \frac{\partial(R \cdot F)}{\partial F} = R \)</p>
+            <p>\( MRS_{RF} = \frac{MU_R}{MU_F} = \frac{F}{R} \)</p>
+            <p>Điều kiện: \( \frac{F}{R} = \frac{P_R}{P_F} = \frac{2}{4} = \frac{1}{2} \)</p>
+            <p>→ \( \frac{F}{R} = \frac{1}{2} \) → <span class="hl-blue">\( F = \frac{R}{2} \)</span> ... (1)</p>
+  
+            <p><strong>Bước 2: Thay vào ràng buộc ngân sách</strong></p>
+            <p>\( 2R + 4F = 120 \)</p>
+            <p>Thay \( F = \frac{R}{2} \): \( 2R + 4(\frac{R}{2}) = 120 \)</p>
+            <p>→ \( 2R + 2R = 120 \) → \( 4R = 120 \) → <span class="hl-red">\( R^* = 30 \)</span></p>
+            <p>→ <span class="hl-red">\( F^* = \frac{30}{2} = 15 \)</span></p>
+  
+            <p><strong>Kiểm tra:</strong> 2(30) + 4(15) = 60 + 60 = $120 ✓</p>
+            <p>\( U^* = 30 \times 15 = \) <span class="hl-green">450</span></p>
+            <p>\( MRS = \frac{F}{R} = \frac{15}{30} = 0.5 = \frac{P_R}{P_F} = \frac{2}{4} = 0.5 \) ✓</p>
+  
+            <p><em>Insight: Với Cobb-Douglas \( U = X \cdot Y \) (\( \alpha=\beta=1 \)), tại điểm tối ưu người tiêu dùng luôn chia đều chi tiêu: 50% cho mỗi hàng. Chi tiêu cho R = 2×30 = $60 = 50% × $120. Chi tiêu cho F = 4×15 = $60 = 50%. Đây là tính chất đặc biệt của Cobb-Douglas với \( \alpha=\beta \).</em></p>
+          </div>
+        </details>
+      </div>
+  
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập 2 — Cobb-Douglas Tổng quát \( U = X^\alpha \cdot Y^\beta \)</div>
+        <div class="ex-q">Chứng minh rằng với \( U = X^\alpha \cdot Y^\beta \), tại điểm tối ưu: \( \frac{\text{chi tiêu cho X}}{\text{chi tiêu cho Y}} = \frac{\alpha}{\beta} \). (Tức là người tiêu dùng chia ngân sách theo tỷ lệ \( \alpha:\beta \))</div>
+        <details>
+          <summary>Xem chứng minh</summary>
+          <div class="answer">
+            <div class="answer-title">Chứng minh tổng quát</div>
+            <p>\( MU_X = \alpha \cdot X^{\alpha-1} \cdot Y^\beta \)</p>
+            <p>\( MU_Y = \beta \cdot X^\alpha \cdot Y^{\beta-1} \)</p>
+            <p>\( MRS = \frac{MU_X}{MU_Y} = \frac{\alpha \cdot X^{\alpha-1} \cdot Y^\beta}{\beta \cdot X^\alpha \cdot Y^{\beta-1}} \)</p>
+            <p>\( = \frac{\alpha}{\beta} \cdot \frac{Y}{X} \)</p>
+  
+            <p>Điều kiện tối ưu: \( MRS = \frac{P_X}{P_Y} \)</p>
+            <p>\( \frac{\alpha}{\beta} \cdot \frac{Y}{X} = \frac{P_X}{P_Y} \)</p>
+            <p>→ \( \alpha \cdot P_Y \cdot Y = \beta \cdot P_X \cdot X \)</p>
+            <p>→ <span class="hl-red">\( \frac{P_X \cdot X}{P_Y \cdot Y} = \frac{\alpha}{\beta} \)</span></p>
+  
+            <p>→ \( \text{Chi tiêu cho X} = \frac{\alpha}{\alpha+\beta} \cdot I \)</p>
+            <p>→ \( \text{Chi tiêu cho Y} = \frac{\beta}{\alpha+\beta} \cdot I \)</p>
+  
+            <p><em>Ứng dụng: \( U = X^{0.4} \cdot Y^{0.6} \) → 40% thu nhập dùng mua X, 60% mua Y — bất kể giá cả! Đây là tính chất remarkable của Cobb-Douglas.</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  
+    <!-- CORNER SOLUTION -->
+    <div class="concept" id="corner">
+      <div class="concept-title">Corner Solution — Nghiệm góc</div>
+      <div class="concept-en">KHI NGƯỜI TIÊU DÙNG CHỈ MUA MỘT LOẠI HÀNG HÓA</div>
+  
+      <div class="concept-body">
+        <p><strong>Corner Solution:</strong> Situation in which the marginal rate of substitution for one good in a chosen market basket is <strong>not equal</strong> to the slope of the budget line.</p>
+        <p>Nghiệm góc xảy ra khi điểm tối ưu nằm ở <strong>góc của đường ngân sách</strong>, nghĩa là người tiêu dùng tiêu thụ hoàn toàn chỉ một trong hai hàng hóa (lượng hàng kia bằng 0).</p>
+        <p>Từ slide: Given budget line AB, the highest level of satisfaction is achieved at B on indifference curve U1 — người tiêu dùng chọn toàn bộ hàng Y và không mua X.</p>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Corner Solution — Điều kiện</div>
+        Interior solution: \( MRS = \frac{P_x}{P_y} \) (với \( x > 0, y > 0 \))<br><br>
+        Corner solution (chỉ mua Y, \( x = 0 \)):<br>
+        \( MRS > \frac{P_x}{P_y} \) tại mọi điểm trên trục Y<br>
+        → Sẵn sàng từ bỏ nhiều Y hơn giá đòi hỏi để lấy X,<br>
+          nhưng thực ra lại KHÔNG muốn mua X chút nào.<br><br>
+        Tức là: \( \frac{MU_x}{P_x} < \frac{MU_y}{P_y} \) tại \( x = 0 \)<br>
+        → "bang per buck" của Y cao hơn X ngay cả khi \( x = 0 \)
+      </div>
+  
+      <div class="concept-body">
+        <p><strong>Khi nào Corner Solution xảy ra?</strong></p>
+        <p>① Khi một hàng hóa quá đắt so với utility nó mang lại — người tiêu dùng không bao giờ muốn mua.</p>
+        <p>② Khi sở thích cực đoan — ví dụ người ăn chay tuyệt đối sẽ chọn corner solution (0 thịt, tất cả rau).</p>
+        <p>③ Với Perfect Substitutes: người tiêu dùng thường chọn all-or-nothing tùy vào giá tương đối.</p>
+      </div>
+  
+      <div class="concept-body">
+        <p><strong>Ví dụ thực tế:</strong> Bạn có thể mua bia hoặc nước lọc. Nếu bạn hoàn toàn không uống bia (vì lý do tôn giáo hoặc sức khỏe), dù bia có rẻ đến đâu, bạn vẫn chọn corner solution: 0 bia, tất cả nước lọc.</p>
+      </div>
+  
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords</div>
+        <div class="kw-list">
+          <span class="kw">corner solution</span>
+          <span class="kw">MRS ≠ P_x/P_y</span>
+          <span class="kw">consume only one good</span>
+          <span class="kw">x=0 or y=0</span>
+          <span class="kw">boundary optimum</span>
+          <span class="kw">extreme preferences</span>
+        </div>
+      </div>
+  
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy về Corner Solution</div>
+        <ul>
+          <li><strong>Corner solution KHÔNG vi phạm lý thuyết:</strong> Đây là kết quả hoàn toàn hợp lý của bài toán tối ưu hóa, chỉ là điểm tối ưu nằm ở góc thay vì bên trong.</li>
+          <li><strong>Perfect Substitutes thường dẫn đến corner solution:</strong> Nếu \( P_x/P_y < MRS \) (hằng số), người tiêu dùng mua toàn bộ X và 0 Y. Nếu \( P_x/P_y > MRS \), mua toàn bộ Y và 0 X. Chỉ khi \( P_x/P_y = MRS \) (đúng bằng) mới có vô số nghiệm.</li>
+          <li><strong>MRS tại corner solution KHÔNG bằng \( P_x/P_y \):</strong> Điều kiện \( MRS = P_x/P_y \) chỉ áp dụng cho interior solution. Ở corner, điều kiện tối ưu là dạng bất đẳng thức (Kuhn-Tucker conditions).</li>
+        </ul>
+      </div>
+  
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập 3 — Corner Solution với Perfect Substitutes</div>
+        <div class="ex-q">An xem Pepsi và Coca-Cola là thế phẩm hoàn hảo theo tỷ lệ 1:1 (\( MRS = 1 \)). Thu nhập \( I = \$30 \). \( P_{Pepsi} = \$1.50 \), \( P_{Coca} = \$1.00 \). An sẽ chọn rổ hàng nào?</div>
+        <details>
+          <summary>Xem đáp án</summary>
+          <div class="answer">
+            <div class="answer-title">Đáp án</div>
+            <p>\( MRS = 1 \) (An sẵn sàng đổi 1 Pepsi lấy 1 Coca và ngược lại)</p>
+            <p>Tỷ lệ giá: \( P_{Pepsi}/P_{Coca} = 1.50/1.00 = 1.5 \)</p>
+            <p>So sánh: \( MRS = 1 < P_{Pepsi}/P_{Coca} = 1.5 \)</p>
+            <p>→ Pepsi đắt hơn mức An sẵn sàng trả → An KHÔNG mua Pepsi</p>
+            <p>→ <span class="hl-green">Corner Solution: Pepsi = 0, Coca = 30/1 = 30 lon</span></p>
+            <p>Kiểm tra: Nếu mua 1 Pepsi phải bỏ 1.5 Coca, nhưng An chỉ cần 1 Coca để bù lại — mất 0.5 Coca "không cần thiết" → không tối ưu khi mua Pepsi.</p>
+            <p><em>General rule for Perfect Substitutes (\( U = aX + bY \), \( MRS = a/b \)): If \( \frac{P_X}{P_Y} > \frac{a}{b} \) → corner solution: buy only Y. If \( \frac{P_X}{P_Y} < \frac{a}{b} \) → buy only X. If equal → indifferent along entire budget line.</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- MANAGERIAL STRATEGY -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="chapter" id="manager">
+    <div class="chapter-header">
+      <div class="chapter-num">02</div>
+      <div class="chapter-title">
+        <h2>How Managers Strategically Influence Consumer Choices</h2>
+        <p>Chiến lược kinh doanh tác động đến lựa chọn người tiêu dùng</p>
+      </div>
+    </div>
+  
+    <div class="concept">
+      <div class="concept-title">Influencing Budget Constraints &amp; Preferences</div>
+      <div class="concept-en">TÁC ĐỘNG ĐẾN NGÂN SÁCH VÀ SỞ THÍCH — ỨNG DỤNG THỰC TẾ</div>
+  
+      <div class="concept-body">
+        <p>Managers can change consumer choices through two main levers:</p>
+        <p>① <strong>Influencing Preferences</strong> → through <strong>advertising strategies</strong></p>
+        <p>② <strong>Influencing the Budget Line</strong> → through <strong>pricing strategies</strong></p>
+      </div>
+  
+      <div class="compare">
+        <div class="compare-card">
+          <h4>① Tác động đến Sở thích (Preferences)</h4>
+          <p>Quảng cáo, branding, review, testimonials, influencer marketing → thay đổi hình dạng và vị trí của đường bàng quan (IC). Khi sở thích thay đổi, người tiêu dùng sẵn sàng chi nhiều hơn cho cùng một sản phẩm.</p>
+          <p style="margin-top:8px;font-style:italic;color:var(--muted);">Ví dụ: Apple làm quảng cáo khiến người tiêu dùng đặt giá trị cao hơn cho iPhone, dịch chuyển IC outward cho sản phẩm Apple.</p>
+        </div>
+        <div class="compare-card">
+          <h4>② Tác động đến Ngân sách (Budget Line)</h4>
+          <p>Giảm giá, coupon, bundle deals, loyalty programs → làm xoay hoặc dịch đường ngân sách outward theo hướng có lợi cho sản phẩm của doanh nghiệp.</p>
+          <p style="margin-top:8px;font-style:italic;color:var(--muted);">Ví dụ từ slide: Coupon $18 off khi mua ≥$180 → làm kink (bẻ cong) đường ngân sách tại điểm X = $180.</p>
+        </div>
+      </div>
+  
+      <div class="concept-body">
+        <p><strong>Phân tích ví dụ Coupon từ slide:</strong></p>
+        <p>Coupon $18 off khi mua ≥$180 food tạo ra đường ngân sách có <strong>kink (gãy khúc)</strong>:</p>
+        <p>• Khi mua &lt; $180 food: đường ngân sách bình thường</p>
+        <p>• Khi mua ≥ $180 food: ngân sách hiệu quả tăng thêm $18 → đường ngân sách dịch lên trên $18 tại X = $180</p>
+        <p>• Người tiêu dùng có IC cắt đường ngân sách ban đầu tại điểm &lt; $180 sẽ <strong>không bị ảnh hưởng</strong> (họ vẫn mua &lt; $180)</p>
+        <p>• Người tiêu dùng có IC cắt khu vực ≥ $180 sẽ bị <strong>ảnh hưởng</strong> và có thể tăng mua lên ≥ $180 để lấy coupon → chuyển lên IC cao hơn U1</p>
+      </div>
+  
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords</div>
+        <div class="kw-list">
+          <span class="kw">advertising → shift preferences</span>
+          <span class="kw">pricing → rotate budget line</span>
+          <span class="kw">coupon → kink budget line</span>
+          <span class="kw">threshold discount</span>
+          <span class="kw">two levers: preference & price</span>
+        </div>
+      </div>
+  
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy phân tích coupon</div>
+        <ul>
+          <li><strong>Không phải ai cũng thay đổi hành vi với coupon:</strong> Người có điểm tối ưu xa ngưỡng $180 (IC của họ đã đạt tối ưu tại &lt; $180) sẽ không thay đổi. Coupon chỉ "kéo" những người gần ngưỡng.</li>
+          <li><strong>Coupon có threshold ≠ discount toàn bộ:</strong> Giảm giá toàn bộ = xoay budget line. Coupon có điều kiện = kink budget line (phức tạp hơn về mặt phân tích đồ thị).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- CHAPTER 3: INCOME & DEMAND -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="chapter" id="income-demand">
+    <div class="chapter-header">
+      <div class="chapter-num">03</div>
+      <div class="chapter-title">
+        <h2>Income Changes &amp; Demand</h2>
+        <p>Thay đổi thu nhập và cầu · Income-Consumption Curve · Engel Curve</p>
+      </div>
+    </div>
+  
+    <div class="concept">
+      <div class="concept-title">Income-Consumption Curve (ICC)</div>
+      <div class="concept-en">ĐƯỜNG THU NHẬP-TIÊU DÙNG</div>
+  
+      <div class="concept-body">
+        <p><strong>Income-Consumption Curve:</strong> Curve tracing the <strong>utility-maximizing combinations</strong> of two goods as a consumer's income changes (with prices held constant).</p>
+        <p>Đường thu nhập-tiêu dùng là quỹ tích của tất cả các điểm tối ưu khi thu nhập thay đổi (giá cố định). Khi nối các điểm tối ưu A (I=$10), B (I=$20), D (I=$30) lại, ta được ICC.</p>
+        <p>Từ slide: Khi thu nhập tăng, đường ngân sách dịch song song ra ngoài, và người tiêu dùng di chuyển lên các đường IC cao hơn. Lần lượt nối A→B→D tạo ra ICC.</p>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Income-Consumption Curve — Đặc điểm</div>
+        Giá cố định: \( P_x, P_y = \text{const} \)<br>
+        Thu nhập thay đổi: \( I_1 < I_2 < I_3 \)<br><br>
+        Đường ngân sách dịch song song: L1 → L2 → L3<br>
+        Điểm tối ưu: A* → B* → D*<br>
+        ICC = tập hợp {A*, B*, D*, ...}<br><br>
+        Với Normal Goods: ICC dốc lên (upward sloping)<br>
+        Với Inferior Goods: ICC có thể bẻ quặt ngược (backward bending)
+      </div>
+  
+      <div class="concept-body">
+        <p><strong>Kết nối ICC với Demand Curve:</strong> Từ mỗi điểm tối ưu trên ICC, ta biết tại mức thu nhập đó người tiêu dùng mua bao nhiêu. Khi giữ cố định một mức thu nhập và thay đổi giá, ta có demand curve. Slide phần (b) cho thấy khi thu nhập tăng, demand curve dịch sang phải.</p>
+      </div>
+  
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords</div>
+        <div class="kw-list">
+          <span class="kw">ICC = locus of optima</span>
+          <span class="kw">prices fixed</span>
+          <span class="kw">income varies</span>
+          <span class="kw">parallel budget line shifts</span>
+          <span class="kw">upward sloping ICC = normal good</span>
+          <span class="kw">backward bending ICC = inferior</span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- NORMAL vs INFERIOR -->
+    <div class="concept" id="normal-inferior">
+      <div class="concept-title">Normal Goods vs Inferior Goods</div>
+      <div class="concept-en">HÀNG HÓA THÔNG THƯỜNG VÀ HÀNG HÓA CẤP THẤP</div>
+  
+      <div class="compare">
+        <div class="compare-card">
+          <h4>Normal Good (Hàng hóa thông thường)</h4>
+          <p><strong>Định nghĩa:</strong> A good for which demand increases when income increases (\( \frac{\partial Q}{\partial I} > 0 \)).</p>
+          <p style="margin-top:8px;">Khi thu nhập tăng → cầu tăng. Đây là trường hợp phổ biến nhất.</p>
+          <p style="margin-top:8px;"><strong>Ví dụ:</strong> Thịt bò chất lượng cao, du lịch, điện thoại flagship, nhà hàng sang.</p>
+          <p style="margin-top:8px;"><em>ICC dốc lên về phía phải — khi income tăng, mua nhiều cả hai hàng.</em></p>
+        </div>
+        <div class="compare-card">
+          <h4>Inferior Good (Hàng hóa cấp thấp)</h4>
+          <p><strong>Định nghĩa:</strong> A good for which demand decreases when income increases (\( \frac{\partial Q}{\partial I} < 0 \)).</p>
+          <p style="margin-top:8px;">Khi thu nhập tăng → cầu GIẢM — người tiêu dùng chuyển sang hàng tốt hơn.</p>
+          <p style="margin-top:8px;"><strong>Ví dụ:</strong> Mì gói (khi giàu lên người ta ăn ít mì gói hơn), xe buýt (thay bằng taxi/xe riêng), nhà thuê giá rẻ.</p>
+          <p style="margin-top:8px;"><em>ICC bẻ quặt ngược — khi income tăng cao, lượng hàng inferior giảm.</em></p>
+        </div>
+      </div>
+  
+      <div class="concept-body">
+        <p><strong>Lưu ý quan trọng từ slide:</strong> Một hàng hóa có thể là <em>normal ở mức thu nhập thấp</em> và <em>inferior ở mức thu nhập cao</em>. Ví dụ hamburger: là normal good khi thu nhập tăng từ thấp đến trung bình (A→B), nhưng là inferior good khi thu nhập tăng lên cao (B→C) — người có thu nhập cao chuyển sang steak thay vì hamburger.</p>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Phân loại hàng hóa theo Income Elasticity of Demand (\( \eta_I \))</div>
+        \( \eta_I = \frac{\Delta Q / Q}{\Delta I / I} = \frac{\partial Q}{\partial I} \cdot \frac{I}{Q} \)<br><br>
+        \( \eta_I > 0 \): Normal good (hàng thông thường)<br>
+        \( \eta_I > 1 \): Luxury good (hàng xa xỉ) — cầu tăng NHANH hơn thu nhập<br>
+        \( 0 < \eta_I < 1 \): Necessity (hàng thiết yếu) — cầu tăng CHẬM hơn thu nhập<br>
+        \( \eta_I < 0 \): Inferior good (hàng cấp thấp)
+      </div>
+  
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords</div>
+        <div class="kw-list">
+          <span class="kw">normal: ∂Q/∂I > 0</span>
+          <span class="kw">inferior: ∂Q/∂I < 0</span>
+          <span class="kw">luxury: η_I > 1</span>
+          <span class="kw">necessity: 0 < η_I < 1</span>
+          <span class="kw">income elasticity</span>
+          <span class="kw">same good can switch type</span>
+        </div>
+      </div>
+  
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy cực quan trọng</div>
+        <ul>
+          <li><strong>"Inferior" không có nghĩa là "chất lượng kém":</strong> Đây là thuật ngữ kinh tế học về quan hệ cầu-thu nhập. Một hàng hóa "inferior" chỉ có nghĩa là khi thu nhập tăng, người tiêu dùng mua ít hơn — không phán xét về chất lượng.</li>
+          <li><strong>Normal/Inferior là đặc điểm của người tiêu dùng, không phải hàng hóa:</strong> Cùng một mặt hàng có thể là normal với người này và inferior với người khác, hoặc normal ở mức thu nhập này và inferior ở mức thu nhập khác.</li>
+          <li><strong>Mọi inferior good đều là normal good ở mức thu nhập đủ thấp:</strong> Khi nghèo, mọi thứ đều là normal — bạn mua nhiều hơn khi có thêm tiền. Chỉ khi đủ giàu mới có hiện tượng inferior.</li>
+          <li><strong>Không nhầm Inferior Good với Giffen Good:</strong> Mọi Giffen Good đều là Inferior Good, nhưng không phải mọi Inferior Good đều là Giffen Good. (Giải thích kỹ ở phần sau)</li>
+        </ul>
+      </div>
+  
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập 4 — Phân tích Normal vs Inferior</div>
+        <div class="ex-q">Tại thu nhập \( I = \$500 \)/tháng, Hoa mua 20 bát phở/tháng. Thu nhập tăng lên $800/tháng, Hoa mua 25 bát phở/tháng. Thu nhập tiếp tục tăng lên $2,000/tháng, Hoa mua 15 bát phở/tháng (vì chuyển sang nhà hàng cao cấp). Phân tích loại hàng hóa và income elasticity trong từng giai đoạn.</div>
+        <details>
+          <summary>Xem đáp án</summary>
+          <div class="answer">
+            <div class="answer-title">Đáp án</div>
+            <p><strong>Giai đoạn 1: I = $500 → $800 (tăng 60%), Q = 20 → 25 (tăng 25%)</strong></p>
+            <p>\( \eta_I = 25\% / 60\% \approx \) <span class="hl-green">+0.42</span></p>
+            <p>→ <span class="hl-green">Normal good, cụ thể là Necessity</span> (\( 0 < \eta_I < 1 \))</p>
+            <p>Phở là thiết yếu, cầu tăng nhưng chậm hơn thu nhập.</p>
+  
+            <p><strong>Giai đoạn 2: I = $800 → $2,000 (tăng 150%), Q = 25 → 15 (giảm 40%)</strong></p>
+            <p>\( \eta_I = -40\% / 150\% \approx \) <span class="hl-red">-0.27</span></p>
+            <p>→ <span class="hl-red">Inferior good</span></p>
+            <p>Khi giàu hơn, Hoa thay phở bằng nhà hàng cao cấp → phở trở thành inferior good ở mức thu nhập cao.</p>
+  
+            <p><em>Insight: Đây minh họa hoàn hảo tính chất "cùng một hàng hóa, normal ở thu nhập thấp, inferior ở thu nhập cao." ICC sẽ bẻ ngược (backward bending) khi I vượt qua một ngưỡng nhất định.</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  
+    <!-- ENGEL CURVES -->
+    <div class="concept" id="engel">
+      <div class="concept-title">Engel Curves</div>
+      <div class="concept-en">ĐƯỜNG ENGEL — QUAN HỆ GIỮA THU NHẬP VÀ LƯỢNG TIÊU DÙNG</div>
+  
+      <div class="concept-body">
+        <p><strong>Engel Curve:</strong> Curve relating the quantity of a good consumed to <strong>income</strong> (with prices held constant).</p>
+        <p>Đường Engel biểu diễn mối quan hệ giữa thu nhập (trục hoành) và lượng tiêu dùng của một hàng hóa cụ thể (trục tung). Khác với ICC (biểu diễn tỷ lệ hai hàng trong không gian hàng-hàng), Engel Curve biểu diễn một hàng duy nhất theo thu nhập.</p>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Đặc điểm Engel Curve theo loại hàng hóa</div>
+        Normal Good (Hàng thông thường):<br>
+          EC dốc LÊN (upward sloping): \( dQ/dI > 0 \)<br>
+          → Ví dụ (từ slide): Food, Health care, Entertainment<br><br>
+        Luxury Good (Hàng xa xỉ, \( \eta_I > 1 \)):<br>
+          EC dốc lên và ngày càng dốc hơn (convex hướng lên)<br><br>
+        Necessity (Hàng thiết yếu, \( 0 < \eta_I < 1 \)):<br>
+          EC dốc lên nhưng ngày càng thoải (concave hướng lên)<br><br>
+        Inferior Good (Hàng cấp thấp, \( \eta_I < 0 \)):<br>
+          EC ban đầu dốc lên (khi là normal), sau đó bẻ XUỐNG (backward bending)<br>
+          → Ví dụ (từ slide): Hamburger, Rental housing (cho income &gt; $40,000)
+      </div>
+  
+      <div class="concept-body">
+        <p><strong>Ví dụ thực tế từ slide (U.S. Consumers):</strong></p>
+        <p>• <span class="hl-green">Health care</span>: EC dốc lên → normal good (càng giàu càng chi nhiều cho sức khỏe)</p>
+        <p>• <span class="hl-green">Entertainment</span>: EC dốc lên → normal good (luxury — tăng nhanh hơn thu nhập)</p>
+        <p>• <span class="hl-red">Rental housing</span>: EC dốc lên khi income &lt; $40,000, nhưng dốc XUỐNG khi income &gt; $40,000 → inferior good ở mức thu nhập cao (người giàu chuyển sang mua nhà thay vì thuê)</p>
+      </div>
+  
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords</div>
+        <div class="kw-list">
+          <span class="kw">Engel curve: Q vs I</span>
+          <span class="kw">upward sloping = normal</span>
+          <span class="kw">backward bending = inferior</span>
+          <span class="kw">prices held constant</span>
+          <span class="kw">derived from ICC</span>
+          <span class="kw">Ernst Engel (1857)</span>
+        </div>
+      </div>
+  
+      <div class="trap">
+        <div class="trap-title">⚠️ Phân biệt ICC và Engel Curve</div>
+        <ul>
+          <li><strong>ICC:</strong> Đồ thị trong không gian (X, Y) — trục X là lượng hàng X, trục Y là lượng hàng Y. Cho thấy tỷ lệ tiêu dùng hai hàng thay đổi khi I thay đổi.</li>
+          <li><strong>Engel Curve:</strong> Đồ thị trong không gian (I, Q_x) — trục ngang là Thu nhập, trục đứng là Lượng một hàng cụ thể. Cho thấy một hàng hóa phản ứng như thế nào với thu nhập.</li>
+          <li><strong>Cùng thông tin, khác cách trình bày:</strong> Từ ICC có thể vẽ Engel Curve cho từng hàng hóa và ngược lại.</li>
+        </ul>
+      </div>
+  
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập 5 — Vẽ và Phân tích Engel Curve</div>
+        <div class="ex-q">Từ dữ liệu sau của một hộ gia đình Việt Nam, hãy phân loại từng hàng hóa và mô tả hình dạng Engel Curve tương ứng:<br>
+        Thu nhập $300/tháng: Gạo 20kg, Thịt heo 5kg, Du lịch 0 chuyến<br>
+        Thu nhập $600/tháng: Gạo 22kg, Thịt heo 10kg, Du lịch 1 chuyến<br>
+        Thu nhập $1,200/tháng: Gạo 18kg, Thịt heo 15kg, Du lịch 3 chuyến</div>
+        <details>
+          <summary>Xem đáp án</summary>
+          <div class="answer">
+            <div class="answer-title">Đáp án</div>
+            <p><strong>Gạo:</strong> 20 → 22 → 18 kg</p>
+            <p>→ Tăng từ $300 đến $600, rồi GIẢM từ $600 đến $1,200</p>
+            <p>→ <span class="hl-blue">Normal good ở thu nhập thấp, Inferior good ở thu nhập cao</span></p>
+            <p>→ Engel Curve: dốc lên rồi bẻ xuống (∩ shape — inverted U)</p>
+  
+            <p><strong>Thịt heo:</strong> 5 → 10 → 15 kg (tăng đều)</p>
+            <p>\( \eta_I \) (giai đoạn 1) ≈ (100%/100%) = 1.0 — gần Luxury/Necessity</p>
+            <p>→ <span class="hl-green">Normal good trong cả hai giai đoạn</span></p>
+            <p>→ Engel Curve: dốc lên liên tục (upward sloping)</p>
+  
+            <p><strong>Du lịch:</strong> 0 → 1 → 3 chuyến (tăng nhanh)</p>
+            <p>→ <span class="hl-green">Luxury good</span> (\( \eta_I \gg 1 \), cầu tăng rất nhanh hơn thu nhập)</p>
+            <p>→ Engel Curve: dốc lên và ngày càng dốc hơn (convex/steep upward slope)</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- CHAPTER 4: PRICE & DEMAND -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="chapter" id="price-demand">
+    <div class="chapter-header">
+      <div class="chapter-num">04</div>
+      <div class="chapter-title">
+        <h2>Price Changes &amp; Demand</h2>
+        <p>Thay đổi giá và cầu · Price-Consumption Curve · Demand Curve</p>
+      </div>
+    </div>
+  
+    <div class="concept">
+      <div class="concept-title">Price-Consumption Curve (PCC)</div>
+      <div class="concept-en">ĐƯỜNG GIÁ-TIÊU DÙNG</div>
+  
+      <div class="concept-body">
+        <p><strong>Price-Consumption Curve:</strong> Curve tracing the utility-maximizing combinations of two goods as the price of one good changes (with income and other prices held constant).</p>
+        <p>Đường giá-tiêu dùng là quỹ tích của tất cả các điểm tối ưu khi giá của MỘT hàng hóa thay đổi (thu nhập và giá hàng kia cố định). Khi giá Food giảm, đường ngân sách xoay ra ngoài, và người tiêu dùng di chuyển đến điểm tối ưu mới. Nối A→B→D tạo ra PCC.</p>
+        <p>Từ slide: A (P_F=$2), B (P_F=$1), D (P_F=$0.50) → PCC được hình thành.</p>
+      </div>
+  
+      <div class="concept-body">
+        <p><strong>Từ PCC đến Demand Curve:</strong> Mỗi điểm trên PCC cho ta một cặp (P_F, Q_F). Khi giá Food giảm từ $2 → $1 → $0.50, lượng cầu thay đổi. Vẽ các cặp (P, Q) này trên đồ thị P-Q ta được đường cầu (demand curve). Điểm E, G, H trên demand curve tương ứng với A, B, D trên PCC.</p>
+      </div>
+  
+      <div class="formula">
+        <div class="label">PCC vs ICC — So sánh</div>
+        ICC: Giá cố định (\( P_x, P_y = \text{const} \)), Thu nhập I thay đổi<br>
+             Kết quả: Đường ngân sách DỊCH SONG SONG<br>
+             Ứng dụng: → Engel Curve, phân loại Normal/Inferior<br><br>
+        PCC: Thu nhập I cố định, Giá một hàng \( P_x \) thay đổi<br>
+             Kết quả: Đường ngân sách XOAY<br>
+             Ứng dụng: → Demand Curve, phân tích Substitution/Income Effect
+      </div>
+  
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords</div>
+        <div class="kw-list">
+          <span class="kw">PCC = locus of optima</span>
+          <span class="kw">one price changes</span>
+          <span class="kw">income & other price fixed</span>
+          <span class="kw">budget line rotates</span>
+          <span class="kw">PCC → demand curve</span>
+          <span class="kw">price-quantity pairs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- CHAPTER 5: SUBSTITUTION & INCOME EFFECTS -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="chapter" id="sub-income">
+    <div class="chapter-header">
+      <div class="chapter-num">05</div>
+      <div class="chapter-title">
+        <h2>Income &amp; Substitution Effects</h2>
+        <p>Hiệu ứng thay thế và hiệu ứng thu nhập — Phân tích Slutsky/Hicks</p>
+      </div>
+    </div>
+  
+    <div class="concept">
+      <div class="concept-title">Decomposing the Price Effect</div>
+      <div class="concept-en">PHÂN TÍCH TÁC ĐỘNG CỦA THAY ĐỔI GIÁ</div>
+  
+      <div class="concept-body">
+        <p>Khi giá của một hàng hóa thay đổi (ví dụ P_food giảm), tổng tác động lên lượng cầu được phân tích thành <strong>HAI hiệu ứng riêng biệt</strong>:</p>
+      </div>
+  
+      <div class="compare">
+        <div class="compare-card">
+          <h4>① Substitution Effect (SE) — Hiệu ứng thay thế</h4>
+          <p><strong>EN:</strong> Change in consumption of a good associated with a change in its price, with the <em>level of utility held constant</em> (relative prices change, real income unchanged).</p>
+          <p style="margin-top:8px;"><strong>VI:</strong> Khi giá Food giảm, Food trở nên rẻ hơn so với Clothing → người tiêu dùng thay thế Clothing bằng Food, dù utility vẫn không đổi. Luôn âm đối với hàng giá giảm: giá Food giảm → SE luôn làm Q_food tăng (hoặc = 0).</p>
+          <p style="margin-top:8px;font-style:italic;color:var(--muted);">Về mặt đồ thị: di chuyển DỌC THEO đường IC ban đầu đến điểm tiếp xúc với đường ngân sách mới (đường hỗ trợ — compensated budget line).</p>
+        </div>
+        <div class="compare-card">
+          <h4>② Income Effect (IE) — Hiệu ứng thu nhập</h4>
+          <p><strong>EN:</strong> Change in consumption of a good resulting from an increase in purchasing power, with <em>relative prices held constant</em>.</p>
+          <p style="margin-top:8px;"><strong>VI:</strong> Khi giá Food giảm, sức mua thực tế (real purchasing power) của thu nhập tăng lên — người tiêu dùng giàu hơn về "mặt thực tế". Tác động này làm thay đổi cầu tùy theo hàng là Normal hay Inferior.</p>
+          <p style="margin-top:8px;font-style:italic;color:var(--muted);">Về mặt đồ thị: di chuyển từ đường IC ban đầu lên đường IC mới cao hơn (parallel budget line shift).</p>
+        </div>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Slutsky Decomposition — Phân tích tổng tác động</div>
+        Total Effect (TE) = Substitution Effect (SE) + Income Effect (IE)<br><br>
+        \( \Delta Q_{\text{total}} = \Delta Q_{\text{SE}} + \Delta Q_{\text{IE}} \)<br><br>
+        Ký hiệu từ slide (giá Food giảm, \( P_F \downarrow \)):<br>
+        TE = F1→F2 (tổng thay đổi lượng Food, A→B)<br>
+        SE = F1→E  (thay đổi do giá tương đối, A→D, dọc IC ban đầu)<br>
+        IE = E→F2  (thay đổi do sức mua tăng, D→B)<br><br>
+        Luôn đúng: \( SE \ge 0 \) khi giá giảm (\( SE \le 0 \) khi giá tăng)<br>
+        IE: dấu phụ thuộc vào Normal (+) hay Inferior (−)
+      </div>
+  
+      <div class="important">
+        <div class="imp-label">🎯 Hướng dẫn vẽ đồ thị phân tích SE và IE (Hicks decomposition)</div>
+        <p>Giả sử P_x giảm. Người tiêu dùng đang ở điểm A trên đường IC ban đầu U1.</p>
+        <br>
+        <p><strong>Bước 1:</strong> Vẽ đường ngân sách mới (xoay ra ngoài quanh intercept trục Y). Tìm điểm tối ưu mới B trên IC mới U2.</p>
+        <p>→ A→B là tổng tác động (Total Effect = F1F2)</p>
+        <br>
+        <p><strong>Bước 2:</strong> Vẽ đường ngân sách BỢ TRỢ (compensated/auxiliary budget line) — song song với đường ngân sách MỚI (cùng slope/giá mới) nhưng tiếp xúc với IC CŨ U1.</p>
+        <p>→ Điểm tiếp xúc với U1 gọi là D.</p>
+        <p>→ A→D là Substitution Effect (SE = F1E) — cùng utility U1 nhưng giá tương đối mới</p>
+        <br>
+        <p><strong>Bước 3:</strong> D→B là Income Effect (IE = EF2) — giá tương đối không đổi (cùng slope), chỉ có thu nhập thực tế tăng</p>
+      </div>
+    </div>
+  
+    <!-- NORMAL GOOD ANALYSIS -->
+    <div class="concept">
+      <div class="concept-title">SE &amp; IE for Normal Good</div>
+      <div class="concept-en">PHÂN TÍCH CHO HÀNG HÓA THÔNG THƯỜNG</div>
+  
+      <div class="concept-body">
+        <p>Từ slide: "Food is a normal good because the income effect EF2 is positive."</p>
+        <p>Khi giá Food giảm:</p>
+      </div>
+  
+      <div class="steps">
+        <div class="step" data-n="1">
+          <div class="step-content">
+            <h4>Substitution Effect (F1→E): DƯƠNG với Food</h4>
+            <p>Food rẻ hơn tương đối → thay thế Clothing bằng Food → Q_food tăng (F1 → E). SE luôn dương khi giá giảm.</p>
+          </div>
+        </div>
+        <div class="step" data-n="2">
+          <div class="step-content">
+            <h4>Income Effect (E→F2): DƯƠNG với Normal Good</h4>
+            <p>Sức mua thực tế tăng → mua nhiều hơn tất cả normal goods → Q_food tiếp tục tăng (E → F2). IE &gt; 0 vì Food là normal good.</p>
+          </div>
+        </div>
+        <div class="step" data-n="3">
+          <div class="step-content">
+            <h4>Total Effect (F1→F2): DƯƠNG (rõ ràng)</h4>
+            <p>TE = SE + IE = (+) + (+) = (+). Giá giảm → cầu tăng → Đường cầu dốc xuống (Law of Demand được xác nhận). ✓</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Normal Good Summary</div>
+        Giá giảm (\( P_x \downarrow \)):<br>
+        SE: \( \Delta Q_x > 0 \)  (F1 → E, luôn cùng chiều với thay đổi giá)<br>
+        IE: \( \Delta Q_x > 0 \)  (E → F2, dương vì normal)<br>
+        TE: \( \Delta Q_x > 0 \)  (F1 → F2, Law of Demand: P↓ → Q↑ ✓)
+      </div>
+    </div>
+  
+    <!-- INFERIOR GOOD ANALYSIS -->
+    <div class="concept">
+      <div class="concept-title">SE &amp; IE for Inferior Good</div>
+      <div class="concept-en">PHÂN TÍCH CHO HÀNG HÓA CẤP THẤP</div>
+  
+      <div class="concept-body">
+        <p>Từ slide: "food is an inferior good because the income effect is negative. However, because the substitution effect exceeds the income effect, the decrease in the price of food leads to an increase in the quantity of food demanded."</p>
+      </div>
+  
+      <div class="steps">
+        <div class="step" data-n="1">
+          <div class="step-content">
+            <h4>Substitution Effect (F1→E): DƯƠNG (như mọi hàng hóa)</h4>
+            <p>Food rẻ hơn → thay thế Clothing → Q_food tăng. SE luôn dương khi giá giảm, bất kể normal hay inferior.</p>
+          </div>
+        </div>
+        <div class="step" data-n="2">
+          <div class="step-content">
+            <h4>Income Effect (E→F2): ÂM với Inferior Good</h4>
+            <p>Sức mua thực tế tăng → nhưng với inferior good, thu nhập tăng → mua ÍT hơn → Q_food giảm (E → F2 ngược chiều). IE &lt; 0.</p>
+          </div>
+        </div>
+        <div class="step" data-n="3">
+          <div class="step-content">
+            <h4>Total Effect: \( |SE| > |IE| \) → TE DƯƠNG</h4>
+            <p>TE = SE + IE = (+) + (−). Vì \( |SE| > |IE| \), tổng vẫn dương → giá giảm vẫn làm cầu tăng → Đường cầu vẫn dốc xuống (Law of Demand vẫn đúng với inferior good thông thường). ✓</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Inferior Good Summary</div>
+        Giá giảm (\( P_x \downarrow \)):<br>
+        SE: \( \Delta Q_x > 0 \)  (luôn cùng chiều với thay đổi giá)<br>
+        IE: \( \Delta Q_x < 0 \)  (âm vì inferior — sức mua tăng, mua ít hơn)<br>
+        TE: \( \Delta Q_x > 0 \)  vì \( |SE| > |IE| \) → Law of Demand vẫn đúng ✓<br><br>
+        NHƯNG: Nếu \( |IE| > |SE| \) → TE &lt; 0 → Giá giảm, cầu giảm → GIFFEN GOOD!
+      </div>
+  
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords cho SE &amp; IE</div>
+        <div class="kw-list">
+          <span class="kw">SE: utility held constant</span>
+          <span class="kw">IE: purchasing power changes</span>
+          <span class="kw">TE = SE + IE</span>
+          <span class="kw">SE always >0 when P falls</span>
+          <span class="kw">IE: + for normal, − for inferior</span>
+          <span class="kw">compensated budget line</span>
+          <span class="kw">Slutsky decomposition</span>
+          <span class="kw">Hicks decomposition</span>
+        </div>
+      </div>
+  
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy cực kỳ quan trọng về SE &amp; IE</div>
+        <ul>
+          <li><strong>SE LUÔN LUÔN dương khi giá giảm</strong> (âm khi giá tăng) — đây là định lý (Slutsky theorem). Không có ngoại lệ. SE đo tác động thuần túy của giá tương đối, giữ utility cố định.</li>
+          <li><strong>IE có thể dương hoặc âm tùy loại hàng</strong> — Normal: IE dương. Inferior: IE âm. Giffen: IE âm VÀ lớn hơn SE.</li>
+          <li><strong>Phân biệt hai loại phân tích Slutsky vs Hicks:</strong> Slides dùng phương pháp Hicks (utility cố định). Phương pháp Slutsky (purchasing power cố định — giữ cho có thể mua đúng rổ hàng cũ) là khác. Kết quả định tính giống nhau.</li>
+          <li><strong>"Compensated budget line" phải có slope của đường ngân sách MỚI</strong> (tức là giá mới), không phải slope cũ. Đây là sai lầm vẽ đồ thị rất phổ biến.</li>
+          <li><strong>IE ≠ "income effect" theo nghĩa thông thường</strong>: Trong phân tích này, thu nhập danh nghĩa không thay đổi. "Income effect" ở đây là tác động của việc sức mua THỰC TẾ thay đổi do giá thay đổi.</li>
+        </ul>
+      </div>
+  
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập 6 — Phân tích SE &amp; IE (Định tính)</div>
+        <div class="ex-q">Giá mì gói (hàng inferior) TĂNG. Phân tích dấu của SE, IE, và TE. Đường cầu có dốc xuống không?</div>
+        <details>
+          <summary>Xem đáp án</summary>
+          <div class="answer">
+            <div class="answer-title">Đáp án</div>
+            <p><strong>Khi giá mì gói TĂNG:</strong></p>
+            <p><strong>SE:</strong> Giá tăng → Mì gói đắt hơn tương đối → thay thế mì bằng hàng khác → <span class="hl-red">\( \Delta Q_{mì} < 0 \)</span> (SE âm khi giá tăng)</p>
+            <p><strong>IE:</strong> Giá tăng → sức mua thực tế GIẢM → người tiêu dùng "nghèo hơn" → với inferior good (mì gói), khi nghèo hơn lại mua NHIỀU hơn → <span class="hl-blue">\( \Delta Q_{mì} > 0 \)</span> (IE dương — ngược chiều với normal)</p>
+            <p><strong>TE:</strong> = SE + IE = (−) + (+)</p>
+            <p>Thông thường \( |SE| > |IE| \) → TE &lt; 0 → <span class="hl-green">Giá tăng, cầu giảm → đường cầu vẫn dốc xuống ✓</span></p>
+            <p>Ngoại lệ Giffen: nếu \( |IE| > |SE| \) → TE &gt; 0 → Giá tăng, cầu tăng → đường cầu dốc LÊN (Giffen good)</p>
+            <p><em>Lưu ý: Inferior good có IE ngược chiều với Normal good. Khi giá tăng (sức mua giảm), "nghèo hơn" → mua NHIỀU inferior goods hơn (vì không đủ tiền mua hàng tốt hơn).</em></p>
+          </div>
+        </details>
+      </div>
+  
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập 7 — Tính toán SE &amp; IE (Định lượng)</div>
+        <div class="ex-q">Bà Lan có I = $100. Hiện tại P_X = $2, P_Y = $5. Tại điểm tối ưu A: X = 25, Y = 10. Giá X giảm xuống P_X = $1. Tại điểm tối ưu mới B: X = 40, Y = 12. Điểm trên đường IC ban đầu tiếp xúc với compensated budget line (giá mới) là D: X = 35, Y = 11.<br>Tính: (a) Total Effect, (b) Substitution Effect, (c) Income Effect. (d) X là normal hay inferior?</div>
+        <details>
+          <summary>Xem đáp án</summary>
+          <div class="answer">
+            <div class="answer-title">Đáp án</div>
+            <p><strong>(a) Total Effect (A → B):</strong></p>
+            <p>\( \Delta Q_X = X_B - X_A = 40 - 25 = \) <span class="hl-green">+15 đơn vị</span></p>
+            <p>Giá giảm → cầu tăng 15 đơn vị ✓</p>
+  
+            <p><strong>(b) Substitution Effect (A → D):</strong></p>
+            <p>\( \Delta Q_{X\_SE} = X_D - X_A = 35 - 25 = \) <span class="hl-blue">+10 đơn vị</span></p>
+            <p>Giá tương đối thay đổi, utility cố định → mua thêm 10 đơn vị X</p>
+  
+            <p><strong>(c) Income Effect (D → B):</strong></p>
+            <p>\( \Delta Q_{X\_IE} = X_B - X_D = 40 - 35 = \) <span class="hl-red">+5 đơn vị</span></p>
+            <p>Sức mua tăng → mua thêm 5 đơn vị X</p>
+  
+            <p><strong>Kiểm tra:</strong> TE = SE + IE = 10 + 5 = 15 ✓</p>
+  
+            <p><strong>(d) X là Normal hay Inferior?</strong></p>
+            <p>IE = +5 &gt; 0 → Thu nhập thực tế tăng → cầu X tăng → <span class="hl-green">X là Normal Good</span></p>
+  
+            <p><em>Note: Compensated budget line tại D có cùng slope \( P_{X\_mới}/P_Y = 1/5 = 0.2 \), và tiếp xúc với IC ban đầu U1 (passing through D with same utility as A).</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- GIFFEN GOOD -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="chapter" id="giffen">
+    <div class="chapter-header">
+      <div class="chapter-num">06</div>
+      <div class="chapter-title">
+        <h2>The Giffen Good — Hàng Giffen</h2>
+        <p>Trường hợp ngoại lệ của Luật cầu · Upward-sloping demand curve</p>
+      </div>
+    </div>
+  
+    <div class="concept">
+      <div class="concept-title">Giffen Good — Định nghĩa và Cơ chế</div>
+      <div class="concept-en">HÀNG GIFFEN — ĐƯỜNG CẦU DỐC LÊN</div>
+  
+      <div class="concept-body">
+        <p><strong>Giffen Good:</strong> A good whose demand curve slopes <strong>upward</strong> because the (negative) income effect is <strong>larger than</strong> the substitution effect.</p>
+        <p>Hàng Giffen là hàng hóa có đường cầu <strong>dốc lên</strong> — điều này vi phạm Luật cầu thông thường (Law of Demand). Khi giá giảm, người tiêu dùng mua ÍT hơn; khi giá tăng, mua NHIỀU hơn. Đây là trường hợp ngoại lệ cực kỳ hiếm và đặc biệt.</p>
+      </div>
+  
+      <div class="formula">
+        <div class="label">Điều kiện để Có Giffen Good</div>
+        Điều kiện CẦN: Hàng phải là Inferior Good (IE âm khi giá giảm)<br><br>
+        Điều kiện ĐỦ: \( |IE| > |SE| \) (Income effect đủ lớn để áp đảo Substitution effect)<br><br>
+        Giá giảm (\( P_x \downarrow \)):<br>
+        SE: \( \Delta Q_x = F1 \rightarrow E > 0 \) (dương, nhỏ)<br>
+        IE: \( \Delta Q_x = E \rightarrow F2 < 0 \) (âm, LỚN — inferior good)<br>
+        TE: \( \Delta Q_x = F1 \rightarrow F2 < 0 \) (âm — giá giảm, cầu GIẢM!)<br><br>
+        → Upward-sloping demand curve ✓ (vi phạm Law of Demand)
+      </div>
+  
+      <div class="concept-body">
+        <p><strong>Tại sao Giffen Good cực kỳ hiếm?</strong></p>
+        <p>Cần ba điều kiện đồng thời: (1) hàng phải là inferior good, (2) phải chiếm tỷ lệ lớn trong ngân sách (để IE đủ mạnh), (3) không có hàng thay thế tốt (để SE nhỏ). Trong thực tế, các điều kiện này rất khó đồng thời thỏa mãn.</p>
+        <p><strong>Ví dụ lịch sử:</strong> Robert Giffen (thế kỷ 19) quan sát rằng khi giá bánh mì giảm ở Ireland trong thời kỳ nạn đói, người nghèo lại mua ít bánh mì hơn vì họ có thể dùng tiền dư để mua các thực phẩm khác như thịt đã bỏ lỡ.</p>
+        <p><strong>Ví dụ hiện đại (Nghiên cứu 2008 — Jensen & Miller tại Trung Quốc):</strong> Gạo và mì ở các vùng nghèo Trung Quốc được tìm thấy có hành vi Giffen trong một số điều kiện.</p>
+      </div>
+  
+      <div class="important">
+        <div class="imp-label">🎯 Hierachy: Giffen ⊂ Inferior ⊂ All Goods</div>
+        <p><strong>Mọi hàng hóa</strong> đều là <strong>Normal HOẶC Inferior</strong></p>
+        <br>
+        <p><strong>Normal goods</strong>: IE &gt; 0 → Đường cầu LUÔN dốc xuống ✓</p>
+        <p><strong>Inferior goods (non-Giffen)</strong>: IE &lt; 0, nhưng \( |SE| > |IE| \) → Đường cầu vẫn dốc xuống ✓</p>
+        <p><strong>Giffen goods</strong> (subset of Inferior): IE &lt; 0 VÀ \( |IE| > |SE| \) → Đường cầu dốc LÊN ✗</p>
+        <br>
+        <p><strong>Kết luận:</strong> Mọi Giffen good là Inferior good, nhưng không phải mọi Inferior good là Giffen good!</p>
+      </div>
+  
+      <div class="keywords">
+        <div class="keywords-title">🔑 Keywords Giffen Good</div>
+        <div class="kw-list">
+          <span class="kw">upward-sloping demand</span>
+          <span class="kw">violates Law of Demand</span>
+          <span class="kw">|IE| > |SE|</span>
+          <span class="kw">must be inferior good first</span>
+          <span class="kw">Giffen ⊂ Inferior</span>
+          <span class="kw">large budget share</span>
+          <span class="kw">few substitutes</span>
+          <span class="kw">extremely rare</span>
+        </div>
+      </div>
+  
+      <div class="trap">
+        <div class="trap-title">⚠️ Bẫy Cực Kỳ Quan Trọng — Giffen vs Inferior vs Veblen</div>
+        <ul>
+          <li><strong>Giffen Good ≠ Veblen Good:</strong> Veblen Good có đường cầu dốc lên vì lý do <em>status/prestige</em> (hàng đắt tiền hơn = "tốt hơn" trong nhận thức) — đây là hiện tượng sở thích (preferences shift). Giffen Good có đường cầu dốc lên thuần túy vì cơ chế income/substitution effect không liên quan đến prestige.</li>
+          <li><strong>Không phải mọi inferior good đều là Giffen:</strong> Mì gói là inferior good, nhưng hầu hết là NON-Giffen (khi giá mì tăng, người ta vẫn mua ít mì hơn — SE &gt; IE về độ lớn).</li>
+          <li><strong>Giffen good chỉ xảy ra ở hàng chiếm tỷ trọng lớn trong ngân sách:</strong> Nếu gạo chỉ chiếm 1% ngân sách, IE rất nhỏ → không thể lớn hơn SE. Giffen good thường gắn với người nghèo, hàng thiết yếu, chiếm nhiều thu nhập.</li>
+          <li><strong>Giffen Good không vi phạm lý thuyết kinh tế vi mô:</strong> Nó là kết quả hợp lệ từ lý thuyết khi các điều kiện đặc biệt thỏa mãn. Nó chỉ vi phạm "Luật cầu" thông thường (là một kết quả tổng quát, không phải định lý tuyệt đối).</li>
+        </ul>
+      </div>
+  
+      <div class="exercise">
+        <div class="exercise-title">✏️ Bài tập 8 — Phân tích Giffen Good</div>
+        <div class="ex-q">Một hộ gia đình nghèo có I = $100/tuần. Họ mua Gạo (G) và Thịt (T). Ban đầu \( P_G = \$2\)/kg, \( P_T = \$10\)/kg, họ mua G = 30kg, T = 4kg (chi $100). Giá gạo tăng lên \( P_G = \$3\)/kg. Sau đó, họ mua G = 35kg, T = 1kg (chi $105 ≈ $105 — giả sử thu nhập điều chỉnh nhỏ). Hỏi: (a) Gạo là loại hàng gì? (b) Tại sao lại xảy ra hiện tượng này? (c) Phân tích định tính SE và IE.</div>
+        <details>
+          <summary>Xem đáp án</summary>
+          <div class="answer">
+            <div class="answer-title">Đáp án</div>
+            <p><strong>(a) Phân loại:</strong></p>
+            <p>Giá gạo tăng (\( P_G \): $2 → $3), nhưng lượng gạo mua tăng (G: 30 → 35 kg)</p>
+            <p>→ <span class="hl-red">Đây là Giffen Good</span> — đường cầu dốc lên (P↑ → Q↑)</p>
+  
+            <p><strong>(b) Tại sao?</strong></p>
+            <p>Hộ gia đình rất nghèo. Gạo chiếm tỷ trọng lớn trong ngân sách (ban đầu 60% = $60/$100). Khi giá gạo tăng, sức mua thực tế giảm mạnh — họ "nghèo hơn" và không còn đủ tiền mua thịt. Họ buộc phải mua NHIỀU gạo hơn (hàng rẻ hơn) để đảm bảo calories, dù gạo đã đắt hơn.</p>
+  
+            <p><strong>(c) Phân tích SE &amp; IE (khi giá gạo tăng):</strong></p>
+            <p>SE: Giá gạo tăng → gạo đắt hơn tương đối → thay thế gạo bằng thịt → <span class="hl-blue">\( \Delta G_{SE} < 0 \)</span> (mua ít gạo hơn)</p>
+            <p>IE: Giá tăng → sức mua giảm → nghèo hơn → gạo là inferior good → khi nghèo hơn, chuyển từ thịt sang gạo → <span class="hl-red">\( \Delta G_{IE} > 0 \)</span> (mua nhiều gạo hơn — vì không đủ tiền mua thịt)</p>
+            <p>TE: \( |IE| = 5 \) kg &gt; \( |SE| \) → TE = +5 kg → <span class="hl-red">Giffen Good được xác nhận</span></p>
+  
+            <p><em>Real-world insight: Giffen goods typically occur among the poorest consumers for their most important staple food. When staple price rises, they can no longer afford protein supplements (meat, fish) and must substitute back toward the staple — buying more of it despite the higher price.</em></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- SUMMARY TABLE -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="chapter" id="summary">
+    <div class="chapter-header">
+      <div class="chapter-num">∑</div>
+      <div class="chapter-title">
+        <h2>Bảng tổng hợp toàn bộ Section 3</h2>
+        <p>Master Reference Table — All Concepts</p>
+      </div>
+    </div>
+  
+    <table>
+      <tr>
+        <th>Khái niệm</th>
+        <th>Tiếng Anh</th>
+        <th>Đặc điểm chính</th>
+        <th>Bẫy / Nhầm lẫn thường gặp</th>
+      </tr>
+      <tr>
+        <td><strong>Điều kiện tối ưu</strong></td>
+        <td>Consumer Optimum</td>
+        <td>\( MRS_{xy} = \frac{P_x}{P_y} \) VÀ nằm trên budget line</td>
+        <td>\( MU_x = MU_y \) sai; phải \( \frac{MU_x}{P_x} = \frac{MU_y}{P_y} \)</td>
+      </tr>
+      <tr>
+        <td><strong>Nghiệm nội</strong></td>
+        <td>Interior Solution</td>
+        <td>\( x > 0, y > 0 \); điểm tiếp xúc IC và BL</td>
+        <td>Chỉ đúng với convex IC; không phải lúc nào cũng tồn tại</td>
+      </tr>
+      <tr>
+        <td><strong>Nghiệm góc</strong></td>
+        <td>Corner Solution</td>
+        <td>Mua toàn bộ 1 hàng; \( MRS \neq \frac{P_x}{P_y} \)</td>
+        <td>Không vi phạm lý thuyết; xảy ra khi sở thích cực đoan</td>
+      </tr>
+      <tr>
+        <td><strong>Đường thu nhập-tiêu dùng</strong></td>
+        <td>ICC</td>
+        <td>Quỹ tích điểm tối ưu khi I thay đổi; giá cố định</td>
+        <td>Khác PCC; ICC → song song; PCC → xoay</td>
+      </tr>
+      <tr>
+        <td><strong>Đường giá-tiêu dùng</strong></td>
+        <td>PCC</td>
+        <td>Quỹ tích điểm tối ưu khi giá 1 hàng thay đổi; I cố định</td>
+        <td>Từ PCC → demand curve; từ ICC → Engel curve</td>
+      </tr>
+      <tr>
+        <td><strong>Đường Engel</strong></td>
+        <td>Engel Curve</td>
+        <td>Q vs Income; dốc lên = normal; bẻ xuống = inferior</td>
+        <td>Engel curve ≠ ICC; khác trục, khác không gian</td>
+      </tr>
+      <tr>
+        <td><strong>Hàng thông thường</strong></td>
+        <td>Normal Good</td>
+        <td>\( \frac{\partial Q}{\partial I} > 0 \); Luxury (\( \eta>1 \)) hoặc Necessity (\( 0<\eta<1 \))</td>
+        <td>"Normal" không phải "chất lượng bình thường"</td>
+      </tr>
+      <tr>
+        <td><strong>Hàng cấp thấp</strong></td>
+        <td>Inferior Good</td>
+        <td>\( \frac{\partial Q}{\partial I} < 0 \); có thể normal ở I thấp</td>
+        <td>"Inferior" ≠ chất lượng kém; là thuật ngữ kinh tế</td>
+      </tr>
+      <tr>
+        <td><strong>Hiệu ứng thay thế</strong></td>
+        <td>Substitution Effect</td>
+        <td>Utility cố định; luôn ngược chiều giá (SE &gt; 0 khi P↓)</td>
+        <td>Compensated BL phải có slope MỚI, tiếp xúc IC CŨ</td>
+      </tr>
+      <tr>
+        <td><strong>Hiệu ứng thu nhập</strong></td>
+        <td>Income Effect</td>
+        <td>Giá tương đối cố định; + cho normal, − cho inferior</td>
+        <td>Thu nhập danh nghĩa không đổi; chỉ sức mua thực tế đổi</td>
+      </tr>
+      <tr>
+        <td><strong>Hàng Giffen</strong></td>
+        <td>Giffen Good</td>
+        <td>Đường cầu dốc LÊN; \( |IE| > |SE| \); inferior good</td>
+        <td>≠ Veblen good; Giffen ⊂ Inferior; cực kỳ hiếm</td>
+      </tr>
+    </table>
+  
+    <div class="important" style="margin-top:32px;">
+      <div class="imp-label">🗺️ Bản đồ tư duy — Quan hệ giữa các khái niệm Section 3</div>
+      <p>
+        <strong>Từ Budget Line + Indifference Curves:</strong><br>
+        → Điểm tối ưu (Interior Solution: \( MRS = \frac{P_x}{P_y} \) | Corner: một hàng = 0)<br><br>
+        <strong>Thay đổi Thu nhập (giá cố định) → Budget Line DỊCH song song:</strong><br>
+        → Quỹ tích điểm tối ưu = <strong>ICC</strong><br>
+        → Chiếu một hàng → <strong>Engel Curve</strong><br>
+        → Hàng normal: Engel dốc lên | Inferior: Engel bẻ xuống<br><br>
+        <strong>Thay đổi Giá một hàng (I cố định) → Budget Line XOAY:</strong><br>
+        → Quỹ tích điểm tối ưu = <strong>PCC</strong><br>
+        → Chiếu vào không gian (P, Q) → <strong>Demand Curve</strong><br>
+        → Phân tích thêm = SE + IE = <strong>Total Effect</strong><br><br>
+        <strong>Phân loại theo SE &amp; IE:</strong><br>
+        Normal: SE(+) + IE(+) = TE(+) → Law of Demand ✓<br>
+        Inferior: SE(+) + IE(−) = TE(+) [nếu \( |SE|>|IE| \)] → Law of Demand ✓<br>
+        <strong>Giffen</strong>: SE(+) + IE(−) = TE(−) [nếu \( |IE|>|SE| \)] → Law of Demand ✗ (upward demand!)
+      </p>
+    </div>
+  
+    <div style="background:var(--soft);border:1.5px solid var(--border);border-radius:8px;padding:22px 28px;margin-top:24px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--green);margin-bottom:14px;font-weight:600;">📊 BẢNG PHÂN LOẠI HÀNG HÓA HOÀN CHỈNH</div>
+      <table>
+        <tr><th>Loại hàng</th><th>IE khi P↓</th><th>SE khi P↓</th><th>TE khi P↓</th><th>Đường cầu</th><th>ICC</th></tr>
+        <tr><td><strong>Normal (Luxury)</strong></td><td>+</td><td>+</td><td>+ (lớn)</td><td>Dốc xuống ↘</td><td>Dốc lên mạnh</td></tr>
+        <tr><td><strong>Normal (Necessity)</strong></td><td>+</td><td>+</td><td>+</td><td>Dốc xuống ↘</td><td>Dốc lên nhẹ</td></tr>
+        <tr><td><strong>Inferior (non-Giffen)</strong></td><td>−</td><td>+</td><td>+ (\( |SE|>|IE| \))</td><td>Dốc xuống ↘</td><td>Bẻ ngược</td></tr>
+        <tr><td><strong style="color:var(--accent)">Giffen</strong></td><td>−</td><td>+</td><td>− (\( |IE|>|SE| \))</td><td style="color:var(--accent);font-weight:700;">Dốc LÊN ↗</td><td>Bẻ ngược mạnh</td></tr>
+      </table>
+    </div>
+  </section>
+  </main>
+</div>
+
+<footer style="background:var(--ink);color:#888;text-align:center;padding:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1px;margin-top: 40px;">
+  OMIK 2026 · Microeconomics Comprehensive Guide — VGU
+</footer>
+
+<script>
+  function openSection(evt, sectionName) {
+    var i, sectionContent, tabLinks;
+    sectionContent = document.getElementsByClassName("section-content");
+    for (i = 0; i < sectionContent.length; i++) {
+      sectionContent[i].classList.remove("active");
+    }
+
+    tabLinks = document.getElementsByClassName("tab-btn");
+    for (i = 0; i < tabLinks.length; i++) {
+      tabLinks[i].classList.remove("active");
+    }
+
+    document.getElementById(sectionName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
